@@ -3,6 +3,7 @@ const pages = document.querySelectorAll('.pages')
 const reset = document.querySelector('.btn-reset')
 const minute = document.querySelector('.minute')
 const second = document.querySelector('.second')
+const scoreEl = document.querySelector('.score')
 const gameScreen = document.querySelector('.game-screen')
 
 var timer;
@@ -13,10 +14,11 @@ let imageIndex = 0
 let score = 0
 let secondIndex = 0
 let minuteIndex = 0
+let multiplyIndex = 1
 
 const images = [
     "http://pngimg.com/uploads/peach/peach_PNG4869.png",
-    "https://pngimg.com/uploads/pirate/pirate_PNG46.png",
+    "https://pngimg.com/uploads/money/money_PNG3523.png",
     "https://pngimg.com/uploads/heart/heart_PNG51192.png",
     "http://pngimg.com/uploads/dreamcatcher/dreamcatcher_PNG8.png",
     "https://pngimg.com/uploads/horseshoe/horseshoe_PNG16.png",
@@ -34,31 +36,35 @@ choices.forEach((choice, idx) => {
     choice.addEventListener('click', () => {
         showNextPage()
         startTimer()
-        console.log(images[idx])
-        console.log(getRandomPosition())
         createImages(idx)
     })
 });
 
-const randomButton = document.querySelector('.random-test')
-randomButton.addEventListener('click', () => {
-    console.log(getRandomPosition())
-})
-
-
 // create images
-function createImages(idx) {
-    console.log(idx)
-    const img = document.createElement('img')
-    img.setAttribute('src', `${images[idx]}`)
-    img.style.top = `${getRandomPosition}%`
-    img.style.left = `${getRandomPosition}%`
-    gameScreen.appendChild(img)
+const createImages = function(idx) {
+    for (let i = 0; i < multiplyIndex; i++) {
+        const img = document.createElement('img')
+        img.setAttribute('src', `${images[idx]}`)
+        img.style.top = `${getRandomPosition()}%`
+        img.style.left = `${getRandomPosition()}%`
+        img.style.transform = `rotate(${getRandomPosition()}deg)`
+        setTimeout(() => {
+            gameScreen.appendChild(img)    
+        }, 500);
+        multiplyIndex = 2
+        img.addEventListener('click', () => {
+            img.remove()
+            createImages(idx)
+            score++
+            console.log(score)
+            scoreEl.textContent = score
+        })
+    }
 }
 
-// get random position
-function getRandomPosition() {
-    return Math.floor(Math.random() * 5)
+// pupulate the item chosen
+function populateFortune() {
+    console.log('populate')
 }
 
 /// *** third page ***
@@ -70,10 +76,12 @@ reset.addEventListener('click', () => {
     minuteIndex = 0
     second.textContent = 00
     minute.textContent = 00
+    gameScreen.innerHTML = ""
+    scoreEl.innerHTML = "00"
     showNextPage()
 })
 
-/// *** utility methods ***
+/// *** utility functions ***
 // shows next page based on the index
 function showNextPage() {
     pages.forEach(page => {
@@ -82,6 +90,7 @@ function showNextPage() {
     pageIndex++
 }
 
+// starts the time and stops when it hits 30minutes
 function startTimer() {
     timer = setInterval(() => {
         secondIndex++
@@ -90,7 +99,7 @@ function startTimer() {
             minuteIndex++
         }
 
-        if (minuteIndex >= 1) clearInterval(timer)
+        if (minuteIndex >= 30) clearInterval(timer)
         
         if (secondIndex.toString().length < 2) {
             second.innerHTML = "0" + secondIndex    
@@ -108,4 +117,9 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(timer)
+}
+
+// get random position
+function getRandomPosition() {
+    return Math.floor(Math.random() * 101)
 }
