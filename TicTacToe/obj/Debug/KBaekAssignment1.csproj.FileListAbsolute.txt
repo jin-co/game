@@ -9,3 +9,14 @@ C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\3.work\ass
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\3.work\assignment_1\KBaekAssignment1\obj\Debug\KBaekAssignment1.csproj.CoreCompileInputs.cache
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\3.work\assignment_1\KBaekAssignment1\obj\Debug\KBaekAssignment1.exe
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\3.work\assignment_1\KBaekAssignment1\obj\Debug\KBaekAssignment1.pdb
+C:\Users\jin\Documents\GitHub\game\TicTacToe\bin\Debug\KBaekAssignment1.exe.config
+C:\Users\jin\Documents\GitHub\game\TicTacToe\bin\Debug\KBaekAssignment1.exe
+C:\Users\jin\Documents\GitHub\game\TicTacToe\bin\Debug\KBaekAssignment1.pdb
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.Resource.resources
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.TicTacToe.resources
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.exe
+C:\Users\jin\Documents\GitHub\game\TicTacToe\obj\Debug\KBaekAssignment1.pdb

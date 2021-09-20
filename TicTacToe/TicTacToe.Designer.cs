@@ -39,7 +39,7 @@ namespace KBaekAssignment1
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
-            this.lblText = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -163,17 +163,17 @@ namespace KBaekAssignment1
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // lblText
+            // lblTitle
             // 
-            this.lblText.BackColor = System.Drawing.Color.Black;
-            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.ForeColor = System.Drawing.Color.White;
-            this.lblText.Location = new System.Drawing.Point(350, 29);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(452, 71);
-            this.lblText.TabIndex = 10;
-            this.lblText.Text = "Tic Tac Toe";
-            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(350, 29);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(452, 71);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = "Tic Tac Toe";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TicTacToe
             // 
@@ -182,7 +182,7 @@ namespace KBaekAssignment1
             this.BackColor = System.Drawing.Color.LightCoral;
             this.BackgroundImage = global::KBaekAssignment1.Resource.bg_board4;
             this.ClientSize = new System.Drawing.Size(1154, 601);
-            this.Controls.Add(this.lblText);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox4);
@@ -221,7 +221,7 @@ namespace KBaekAssignment1
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 
