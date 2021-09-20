@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/crosshairs.png","C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/bin/Windows/crosshairs.xnb","TextureProcessor","Texture2DContent",1892,10085,0.3614438
+"C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/galleryFont.spritefont","C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/bin/Windows/galleryFont.xnb","FontDescriptionProcessor","SpriteFontContent",2065,70690,0.2174123
+"C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/sky.png","C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/bin/Windows/sky.xnb","TextureProcessor","Texture2DContent",1079607,9216085,0.3693351
+"C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/target.png","C:/Users/jin/Desktop/2.coding/cSharp/monogame/Practice/Content/bin/Windows/target.xnb","TextureProcessor","Texture2DContent",3395,32485,0.0072565
