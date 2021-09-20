@@ -26,7 +26,6 @@ namespace KBaekAssignment1
         public TicTacToe()
         {
             game.PictureBoxes = new PictureBox[game.GetMaxTurn()];
-            game.StartButton = btnStart;
             InitializeComponent();
             
             game.PictureBoxes[0] = pictureBox1;
@@ -64,7 +63,7 @@ namespace KBaekAssignment1
                         if (game.GameOver)
                         {
                             lblTitle.Text = "X Wins";
-                            game.ShowFinishMessage();
+                            ShowMessage();
                         }
                     }
                     else
@@ -76,7 +75,7 @@ namespace KBaekAssignment1
                         if (game.GameOver)
                         {
                             lblTitle.Text = "O Wins";
-                            game.ShowFinishMessage();
+                            ShowMessage();
                         }
                     }                    
                 }
@@ -89,9 +88,9 @@ namespace KBaekAssignment1
             if (game.GameIndex == game.GetMaxTurn())
             {
                 lblTitle.Text = "Tie";
-                game.ShowFinishMessage();
+                ShowMessage();
             }
-        }        
+        }
 
         // when clicked shows the game screen and changes
         // the colors and text of the title
@@ -106,6 +105,40 @@ namespace KBaekAssignment1
             lblTitle.Text = "In Play";
             lblTitle.BackColor = Color.White;
             lblTitle.ForeColor = Color.Black;
+        }
+
+        // shows a message and sets the screen either to the main screen or 
+        // initial play screen based on the answer
+        private void ShowMessage()
+        {
+            DialogResult finished = MessageBox.Show("Do you want to play again?", "Finished",
+                                MessageBoxButtons.YesNo);
+            if (finished == DialogResult.Yes)
+            {
+                game.ResetGame();
+                lblTitle.Text = Game.GetPlayMessage();
+            }
+            else
+            {
+                game.ResetGame();
+                lblTitle.Text = Game.GetTitle();
+                GoToMain();
+            }
+        }
+
+        // shows the main screen with everything set back to when the
+        // game first started with a new background image
+        private void GoToMain()
+        {
+            foreach (var i in game.PictureBoxes)
+            {
+                i.Visible = false;
+            }
+            btnStart.Visible = true;
+            this.BackgroundImage = Resource.bg_board3;
+            lblTitle.Text = Game.GetTitle();
+            lblTitle.BackColor = Color.Black;
+            lblTitle.ForeColor = Color.White;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,8 +36,6 @@ namespace KBaekAssignment1
         public int GameIndex { get; set; }
 
         public Label TitleSign { get; set; }
-
-        public Button StartButton { get; set; }
         #endregion
 
         #region Getter, setter methods
@@ -199,41 +196,6 @@ namespace KBaekAssignment1
                 i.Image = null;
                 i.Tag = "";
             }
-        }
-
-        // shows a message and sets the screen either to the main screen or 
-        // initial play screen based on the answer
-        public void ShowFinishMessage()
-        {
-            DialogResult finished = MessageBox.Show("Do you want to play again?", "Finished",
-                                MessageBoxButtons.YesNo);
-            if (finished == DialogResult.Yes)
-            {
-                ResetGame();
-                TitleSign.Text = Game.GetPlayMessage();
-            }
-            else
-            {
-                ResetGame();
-                TitleSign.Text = Game.GetTitle();
-                GoToMain();
-            }
-        }
-
-
-        // shows the main screen with everything set back to when the
-        // game first started with a new background image
-        private void GoToMain()
-        {
-            foreach (var i in PictureBoxes)
-            {
-                i.Visible = false;
-            }
-            StartButton.Visible = true;
-            //.BackgroundImage = Resource.bg_board3;
-            TitleSign.Text = Game.GetTitle();
-            TitleSign.BackColor = Color.Black;
-            TitleSign.ForeColor = Color.White;
         }
         #endregion
     }
