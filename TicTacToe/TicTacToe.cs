@@ -15,14 +15,15 @@ namespace KBaekAssignment1
     Date: 2021. Sep. 20.
     Description: 
     A game application that two players can chose a box
-    at a time to complete a straight line first to win
+    in turn to complete a straight line first to win
      */
     public partial class TicTacToe : Form
     {
         // instantiate game class
         Game game = new Game();
-        
+
         // when the app is initialized, puts picture boxes to an array
+        // and hides the boxes from the screen
         public TicTacToe()
         {
             game.PictureBoxes = new PictureBox[game.GetMaxTurn()];
@@ -44,6 +45,14 @@ namespace KBaekAssignment1
             }
         }
 
+        // catches click event on picture boxes and
+        // allows user to choose
+        // either until the game index
+        // reaches the maximum index(which is 9)
+        // or there is a winner
+        // then shows message and go back to main or
+        // let the user play another game based on the
+        // user's choice
         private void pictureBox_Click(object sender, EventArgs e)
         {
             PictureBox picClicked = sender as PictureBox;
@@ -63,7 +72,7 @@ namespace KBaekAssignment1
                         if (game.GameOver)
                         {
                             lblTitle.Text = "X Wins";
-                            ShowMessage();
+                            ShowFinishMessage();
                         }
                     }
                     else
@@ -75,7 +84,7 @@ namespace KBaekAssignment1
                         if (game.GameOver)
                         {
                             lblTitle.Text = "O Wins";
-                            ShowMessage();
+                            ShowFinishMessage();
                         }
                     }                    
                 }
@@ -88,7 +97,7 @@ namespace KBaekAssignment1
             if (game.GameIndex == game.GetMaxTurn())
             {
                 lblTitle.Text = "Tie";
-                ShowMessage();
+                ShowFinishMessage();
             }
         }
 
@@ -107,9 +116,10 @@ namespace KBaekAssignment1
             lblTitle.ForeColor = Color.Black;
         }
 
+        #region Custom Methods
         // shows a message and sets the screen either to the main screen or 
         // initial play screen based on the answer
-        private void ShowMessage()
+        private void ShowFinishMessage()
         {
             DialogResult finished = MessageBox.Show("Do you want to play again?", "Finished",
                                 MessageBoxButtons.YesNo);
@@ -140,5 +150,6 @@ namespace KBaekAssignment1
             lblTitle.BackColor = Color.Black;
             lblTitle.ForeColor = Color.White;
         }
+        #endregion
     }
 }

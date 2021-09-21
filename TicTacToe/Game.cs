@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace KBaekAssignment1
 {
     /*
-    Description: 
     This class controls the game flow 
     by setting 'GameOver' property's status to true or false
      */
@@ -59,7 +58,7 @@ namespace KBaekAssignment1
         #region Methods
         /// <summary>
         /// checks if there is a winner after each turn
-        /// if there is, sete the 'gameOver' to true  
+        /// if there is, sets the 'gameOver' to true  
         /// </summary>
         /// <param name="choice"></param>
         /// <param name="icon"></param>
@@ -68,6 +67,7 @@ namespace KBaekAssignment1
             int index = Array.IndexOf(PictureBoxes, icon);
             switch (index)
             {
+                #region Case_0
                 case 0:
                     if (PictureBoxes[1].Tag != null && PictureBoxes[1].Tag.Equals(choice))
                         if (PictureBoxes[2].Tag != null && PictureBoxes[2].Tag.Equals(choice))
@@ -81,7 +81,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[8].Tag != null && PictureBoxes[8].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_1
                 case 1:
                     if (PictureBoxes[0].Tag != null && PictureBoxes[0].Tag.Equals(choice))
                         if (PictureBoxes[2].Tag != null && PictureBoxes[2].Tag.Equals(choice))
@@ -91,7 +93,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[7].Tag != null && PictureBoxes[7].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_2
                 case 2:
                     if (PictureBoxes[1].Tag != null && PictureBoxes[1].Tag.Equals(choice))
                         if (PictureBoxes[0].Tag != null && PictureBoxes[0].Tag.Equals(choice))
@@ -105,7 +109,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[6].Tag != null && PictureBoxes[6].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_3
                 case 3:
                     if (PictureBoxes[0].Tag != null && PictureBoxes[0].Tag.Equals(choice))
                         if (PictureBoxes[6].Tag != null && PictureBoxes[6].Tag.Equals(choice))
@@ -115,7 +121,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[5].Tag != null && PictureBoxes[5].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_4
                 case 4:
                     if (PictureBoxes[1].Tag != null && PictureBoxes[1].Tag.Equals(choice))
                         if (PictureBoxes[7].Tag != null && PictureBoxes[7].Tag.Equals(choice))
@@ -133,7 +141,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[6].Tag != null && PictureBoxes[6].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_5
                 case 5:
                     if (PictureBoxes[3].Tag != null && PictureBoxes[3].Tag.Equals(choice))
                         if (PictureBoxes[4].Tag != null && PictureBoxes[4].Tag.Equals(choice))
@@ -143,7 +153,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[8].Tag != null && PictureBoxes[8].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_6
                 case 6:
                     if (PictureBoxes[3].Tag != null && PictureBoxes[3].Tag.Equals(choice))
                         if (PictureBoxes[0].Tag != null && PictureBoxes[0].Tag.Equals(choice))
@@ -157,7 +169,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[4].Tag != null && PictureBoxes[4].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_7
                 case 7:
                     if (PictureBoxes[1].Tag != null && PictureBoxes[1].Tag.Equals(choice))
                         if (PictureBoxes[4].Tag != null && PictureBoxes[4].Tag.Equals(choice))
@@ -167,7 +181,9 @@ namespace KBaekAssignment1
                         if (PictureBoxes[8].Tag != null && PictureBoxes[8].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
 
+                #region Case_8
                 case 8:
                     if (PictureBoxes[5].Tag != null && PictureBoxes[5].Tag.Equals(choice))
                         if (PictureBoxes[2].Tag != null && PictureBoxes[2].Tag.Equals(choice))
@@ -181,6 +197,7 @@ namespace KBaekAssignment1
                         if (PictureBoxes[4].Tag != null && PictureBoxes[4].Tag.Equals(choice))
                             GameOver = true;
                     break;
+                #endregion
             }
 
 
