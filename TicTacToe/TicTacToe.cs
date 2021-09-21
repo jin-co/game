@@ -28,7 +28,7 @@ namespace KBaekAssignment1
         {
             game.PictureBoxes = new PictureBox[game.GetMaxTurn()];
             InitializeComponent();
-            
+
             game.PictureBoxes[0] = pictureBox1;
             game.PictureBoxes[1] = pictureBox2;
             game.PictureBoxes[2] = pictureBox3;
@@ -74,9 +74,9 @@ namespace KBaekAssignment1
                         }
                         catch (Exception error)
                         {
-                            lblTitle.Text = error.Message;
+                            lblTitle.Text += error.Message;
                         }
-                        
+
                         if (game.GameOver)
                         {
                             lblTitle.Text = "X Wins";
@@ -94,20 +94,27 @@ namespace KBaekAssignment1
                         }
                         catch (Exception error)
                         {
-                            lblTitle.Text = error.Message;
+                            lblTitle.Text += error.Message;
                         }
-                        
+
                         if (game.GameOver)
                         {
                             lblTitle.Text = "O Wins";
                             ShowFinishMessage();
                         }
-                    }                    
+                    }
                 }
             }
             else
             {
-                game.ResetGame();
+                try
+                {
+                    game.ResetGame();
+                }
+                catch (Exception error)
+                {
+                    lblTitle.Text += error.Message;
+                }
             }
 
             if (game.GameIndex == game.GetMaxTurn())
@@ -145,11 +152,11 @@ namespace KBaekAssignment1
                 {
                     game.ResetGame();
                 }
-                catch (Exception e)
+                catch (Exception error)
                 {
-                    lblTitle.Text = e.Message;
+                    lblTitle.Text += error.Message;
                 }
-                
+
                 lblTitle.Text = Game.GetPlayMessage();
             }
             else
@@ -158,11 +165,11 @@ namespace KBaekAssignment1
                 {
                     game.ResetGame();
                 }
-                catch (Exception e)
+                catch (Exception error)
                 {
-                    lblTitle.Text = e.Message;
+                    lblTitle.Text += error.Message;
                 }
-                
+
                 lblTitle.Text = Game.GetTitle();
                 GoToMain();
             }

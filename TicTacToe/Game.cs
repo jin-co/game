@@ -200,7 +200,7 @@ namespace KBaekAssignment1
                     break;
                 #endregion
                 default:
-                    new Exception("Out of index");
+                    new Exception("Please run the game again");
                     break;
             }
 
