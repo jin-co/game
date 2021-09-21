@@ -65,6 +65,7 @@ namespace KBaekAssignment1
         public void CheckWinner(char choice, PictureBox icon)
         {
             int index = Array.IndexOf(PictureBoxes, icon);
+
             switch (index)
             {
                 #region Case_0
@@ -198,6 +199,9 @@ namespace KBaekAssignment1
                             GameOver = true;
                     break;
                 #endregion
+                default:
+                    new Exception("Out of index");
+                    break;
             }
 
 
@@ -206,12 +210,19 @@ namespace KBaekAssignment1
         // resets index to 0 and delete all the images to start over
         public void ResetGame()
         {
-            GameIndex = 0;
-            GameOver = false;
-            foreach (var i in PictureBoxes)
+            try
             {
-                i.Image = null;
-                i.Tag = "";
+                GameIndex = 0;
+                GameOver = false;
+                foreach (var i in PictureBoxes)
+                {
+                    i.Image = null;
+                    i.Tag = "";
+                }
+            }
+            catch (Exception e) 
+            {
+                throw new Exception("Failed to reset the game: " + e.Message);
             }
         }
         #endregion

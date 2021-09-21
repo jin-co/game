@@ -68,7 +68,15 @@ namespace KBaekAssignment1
                         picClicked.Image = Resource.x;
                         picClicked.Tag = 'x';
                         game.GameIndex++;
-                        game.CheckWinner('x', picClicked);
+                        try
+                        {
+                            game.CheckWinner('x', picClicked);
+                        }
+                        catch (Exception error)
+                        {
+                            lblTitle.Text = error.Message;
+                        }
+                        
                         if (game.GameOver)
                         {
                             lblTitle.Text = "X Wins";
@@ -80,7 +88,15 @@ namespace KBaekAssignment1
                         picClicked.Image = Resource.o;
                         picClicked.Tag = 'o';
                         game.GameIndex++;
-                        game.CheckWinner('o', picClicked);
+                        try
+                        {
+                            game.CheckWinner('o', picClicked);
+                        }
+                        catch (Exception error)
+                        {
+                            lblTitle.Text = error.Message;
+                        }
+                        
                         if (game.GameOver)
                         {
                             lblTitle.Text = "O Wins";
@@ -125,12 +141,28 @@ namespace KBaekAssignment1
                                 MessageBoxButtons.YesNo);
             if (finished == DialogResult.Yes)
             {
-                game.ResetGame();
+                try
+                {
+                    game.ResetGame();
+                }
+                catch (Exception e)
+                {
+                    lblTitle.Text = e.Message;
+                }
+                
                 lblTitle.Text = Game.GetPlayMessage();
             }
             else
             {
-                game.ResetGame();
+                try
+                {
+                    game.ResetGame();
+                }
+                catch (Exception e)
+                {
+                    lblTitle.Text = e.Message;
+                }
+                
                 lblTitle.Text = Game.GetTitle();
                 GoToMain();
             }
