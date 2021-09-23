@@ -1,0 +1,10 @@
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\bin\Debug\Lab_5_Collections.exe.config
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\bin\Debug\Lab_5_Collections.exe
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\bin\Debug\Lab_5_Collections.pdb
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.Collections.resources
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.exe
+C:\Users\jin\Documents\GitHub\game\Lab_5_Collections\Lab_5_Collections\obj\Debug\Lab_5_Collections.pdb

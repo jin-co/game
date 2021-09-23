@@ -30,6 +30,8 @@ namespace Lab_5_Collections
         private void InitializeComponent()
         {
             this.btnArrayList = new System.Windows.Forms.Button();
+            this.btnHash = new System.Windows.Forms.Button();
+            this.btnQueue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnArrayList
@@ -39,15 +41,39 @@ namespace Lab_5_Collections
             this.btnArrayList.Name = "btnArrayList";
             this.btnArrayList.Size = new System.Drawing.Size(112, 32);
             this.btnArrayList.TabIndex = 0;
-            this.btnArrayList.Text = "ArrayList";
+            this.btnArrayList.Text = "ArrayListAdd";
             this.btnArrayList.UseVisualStyleBackColor = true;
             this.btnArrayList.Click += new System.EventHandler(this.btnArrayList_Click);
+            // 
+            // btnHash
+            // 
+            this.btnHash.Location = new System.Drawing.Point(38, 131);
+            this.btnHash.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHash.Name = "btnHash";
+            this.btnHash.Size = new System.Drawing.Size(112, 32);
+            this.btnHash.TabIndex = 1;
+            this.btnHash.Text = "Hash table";
+            this.btnHash.UseVisualStyleBackColor = true;
+            this.btnHash.Click += new System.EventHandler(this.btnHash_Click);
+            // 
+            // btnQueue
+            // 
+            this.btnQueue.Location = new System.Drawing.Point(38, 208);
+            this.btnQueue.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQueue.Name = "btnQueue";
+            this.btnQueue.Size = new System.Drawing.Size(112, 32);
+            this.btnQueue.TabIndex = 2;
+            this.btnQueue.Text = "Queue";
+            this.btnQueue.UseVisualStyleBackColor = true;
+            this.btnQueue.Click += new System.EventHandler(this.btnQueue_Click);
             // 
             // Collections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.ClientSize = new System.Drawing.Size(797, 462);
+            this.Controls.Add(this.btnQueue);
+            this.Controls.Add(this.btnHash);
             this.Controls.Add(this.btnArrayList);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -60,6 +86,8 @@ namespace Lab_5_Collections
         #endregion
 
         private System.Windows.Forms.Button btnArrayList;
+        private System.Windows.Forms.Button btnHash;
+        private System.Windows.Forms.Button btnQueue;
     }
 }
 
