@@ -1,0 +1,10 @@
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\bin\Debug\RabbitEagle.exe.config
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\bin\Debug\RabbitEagle.exe
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\bin\Debug\RabbitEagle.pdb
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.MainGame.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.Resource.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.exe
+C:\Users\jin\Documents\GitHub\game\RabbitEagle\RabbitEagle\obj\Debug\RabbitEagle.pdb

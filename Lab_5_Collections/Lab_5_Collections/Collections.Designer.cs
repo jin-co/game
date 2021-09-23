@@ -35,7 +35,9 @@ namespace Lab_5_Collections
             this.btnStack = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.btnDictionary = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGQueue = new System.Windows.Forms.Button();
+            this.btnGStack = new System.Windows.Forms.Button();
+            this.btnLinkedList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnArrayList
@@ -104,22 +106,47 @@ namespace Lab_5_Collections
             this.btnDictionary.UseVisualStyleBackColor = true;
             this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
             // 
-            // button3
+            // btnGQueue
             // 
-            this.button3.Location = new System.Drawing.Point(203, 208);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 32);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Linked List";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGQueue.Location = new System.Drawing.Point(203, 208);
+            this.btnGQueue.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGQueue.Name = "btnGQueue";
+            this.btnGQueue.Size = new System.Drawing.Size(112, 32);
+            this.btnGQueue.TabIndex = 6;
+            this.btnGQueue.Text = "GQueue";
+            this.btnGQueue.UseVisualStyleBackColor = true;
+            this.btnGQueue.Click += new System.EventHandler(this.btnGQueue_Click);
+            // 
+            // btnGStack
+            // 
+            this.btnGStack.Location = new System.Drawing.Point(203, 289);
+            this.btnGStack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGStack.Name = "btnGStack";
+            this.btnGStack.Size = new System.Drawing.Size(112, 32);
+            this.btnGStack.TabIndex = 7;
+            this.btnGStack.Text = "GStack";
+            this.btnGStack.UseVisualStyleBackColor = true;
+            this.btnGStack.Click += new System.EventHandler(this.btnGStack_Click);
+            // 
+            // btnLinkedList
+            // 
+            this.btnLinkedList.Location = new System.Drawing.Point(362, 50);
+            this.btnLinkedList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLinkedList.Name = "btnLinkedList";
+            this.btnLinkedList.Size = new System.Drawing.Size(112, 32);
+            this.btnLinkedList.TabIndex = 8;
+            this.btnLinkedList.Text = "Linked List";
+            this.btnLinkedList.UseVisualStyleBackColor = true;
+            this.btnLinkedList.Click += new System.EventHandler(this.btnLinkedList_Click);
             // 
             // Collections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 462);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnLinkedList);
+            this.Controls.Add(this.btnGStack);
+            this.Controls.Add(this.btnGQueue);
             this.Controls.Add(this.btnDictionary);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnStack);
@@ -142,7 +169,9 @@ namespace Lab_5_Collections
         private System.Windows.Forms.Button btnStack;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnDictionary;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGQueue;
+        private System.Windows.Forms.Button btnGStack;
+        private System.Windows.Forms.Button btnLinkedList;
     }
 }
 

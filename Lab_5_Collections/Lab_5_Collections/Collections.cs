@@ -86,6 +86,7 @@ namespace Lab_5_Collections
                 Debug.WriteLine(i);
             }
 
+            // write
             q.Dequeue();
 
             foreach (var i in q)
@@ -101,6 +102,7 @@ namespace Lab_5_Collections
             s.Push(40);
             s.Push(4.4f);
 
+            // write
             s.Pop();
         }
 
@@ -110,6 +112,7 @@ namespace Lab_5_Collections
             list.Add("first");
             list.Add("second");
             list.Add("third");
+            list.Insert(1, "insert");
 
             list.RemoveAt(0);
 
@@ -121,11 +124,41 @@ namespace Lab_5_Collections
 
         private void btnDictionary_Click(object sender, EventArgs e)
         {
-            Dictionary<int, string> dict = new Dictionary<int, string>;
+            Dictionary<int, string> dict = new Dictionary<int, string>();
             dict.Add(1, "one");
             dict.Add(2, "two");
             dict.Add(3, "three");
 
+        }
+
+        private void btnGQueue_Click(object sender, EventArgs e)
+        {
+            Queue<string> q = new Queue<string>();
+            q.Enqueue("first one to be served");
+            q.Enqueue("second one to be served");
+
+            // write
+            q.Dequeue();
+        }
+
+        private void btnGStack_Click(object sender, EventArgs e)
+        {
+            Stack<string> s = new Stack<string>();
+            s.Push("first one last served");
+            s.Push("second one last served");
+
+            // write
+            s.Pop();
+        }
+
+        private void btnLinkedList_Click(object sender, EventArgs e)
+        {
+            LinkedList<string> linkedList = new LinkedList<string>();
+            linkedList.AddFirst("first");
+            linkedList.AddLast("second");
+            linkedList.AddLast("last");
+
+            linkedList.RemoveFirst();
         }
     }
 }
