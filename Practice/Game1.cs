@@ -149,9 +149,9 @@ namespace Practice
             }
 
             // test
-            _spriteBatch.DrawString(gameFont, "mState" + mState.Position.ToVector2().ToString(), new Vector2(10, 150), Color.White);
-            _spriteBatch.DrawString(gameFont, "target X: " + target.Position.X.ToString(), new Vector2(10, 250), Color.White);
-            _spriteBatch.DrawString(gameFont, "target Y: " + target.Position.Y.ToString(), new Vector2(10, 350), Color.White);
+            //_spriteBatch.DrawString(gameFont, "mState" + mState.Position.ToVector2().ToString(), new Vector2(10, 150), Color.White);
+            //_spriteBatch.DrawString(gameFont, "target X: " + target.Position.X.ToString(), new Vector2(10, 250), Color.White);
+            //_spriteBatch.DrawString(gameFont, "target Y: " + target.Position.Y.ToString(), new Vector2(10, 350), Color.White);
 
             _spriteBatch.End();
 
