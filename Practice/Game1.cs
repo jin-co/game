@@ -60,8 +60,9 @@ namespace Practice
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            KeyboardState state = Keyboard.GetState();
             // start game
-            if (kState.IsKeyDown(Keys.Space))
+            if (state.IsKeyDown(Keys.Space) )
             {
                 gameStarted = true;
             }
