@@ -60,12 +60,16 @@ namespace Practice
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            KeyboardState state = Keyboard.GetState();
+            // getting keyboard status
+            // https://gamefromscratch.com/monogame-tutorial-handling-keyboard-mouse-and-gamepad-input/
+            kState = Keyboard.GetState();
+
             // start game
-            if (state.IsKeyDown(Keys.Space) )
+            if (kState.IsKeyDown(Keys.Space) )
             {
                 gameStarted = true;
             }
+
 
             // timer
             if (timer > 0) timer -= gameTime.ElapsedGameTime.TotalSeconds;
