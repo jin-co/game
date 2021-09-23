@@ -49,12 +49,14 @@ namespace RabbitEagle
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(965, 526);
+            this.btnNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(486, 308);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(166, 23);
+            this.btnNewGame.Size = new System.Drawing.Size(212, 43);
             this.btnNewGame.TabIndex = 6;
             this.btnNewGame.Text = "New Game";
-            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // gametimer
@@ -130,11 +132,14 @@ namespace RabbitEagle
             // lblGameEnd
             // 
             this.lblGameEnd.AutoSize = true;
-            this.lblGameEnd.Location = new System.Drawing.Point(962, 447);
+            this.lblGameEnd.BackColor = System.Drawing.Color.Transparent;
+            this.lblGameEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameEnd.Location = new System.Drawing.Point(403, 211);
             this.lblGameEnd.Name = "lblGameEnd";
-            this.lblGameEnd.Size = new System.Drawing.Size(85, 18);
+            this.lblGameEnd.Size = new System.Drawing.Size(378, 76);
             this.lblGameEnd.TabIndex = 7;
             this.lblGameEnd.Text = "Game Over";
+            this.lblGameEnd.Click += new System.EventHandler(this.lblGameEnd_Click);
             // 
             // MainGame
             // 

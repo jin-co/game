@@ -74,11 +74,6 @@ namespace RabbitEagle
             rabbit.player = ptbBRabbit;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -102,6 +97,11 @@ namespace RabbitEagle
             btnNewGame.Visible = false;
             lblGameEnd.Visible = false;
             eagles.newGame = true;
+        }
+
+        private void lblGameEnd_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
