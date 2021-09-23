@@ -85,6 +85,47 @@ namespace Lab_5_Collections
             {
                 Debug.WriteLine(i);
             }
+
+            q.Dequeue();
+
+            foreach (var i in q)
+            {
+                Debug.WriteLine(i);
+            }
+        }
+
+        private void btnStack_Click(object sender, EventArgs e)
+        {
+            Stack s = new Stack();
+            s.Push("this is string stack ele");
+            s.Push(40);
+            s.Push(4.4f);
+
+            s.Pop();
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            list.Add("first");
+            list.Add("second");
+            list.Add("third");
+
+            list.RemoveAt(0);
+
+            foreach (var i in list)
+            {
+                Debug.WriteLine(i);
+            }
+        }
+
+        private void btnDictionary_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, string> dict = new Dictionary<int, string>;
+            dict.Add(1, "one");
+            dict.Add(2, "two");
+            dict.Add(3, "three");
+
         }
     }
 }
