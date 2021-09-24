@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Practice",
+    "\\PracticeRE",
+    "\\PracticeRE\\PracticeRE",
+    "\\RabbitEagle",
+    "\\RabbitEagle\\RabbitEagle",
     "\\TicTacToe"
   ],
-  "SelectedNode": "\\Practice\\Practice.sln",
+  "SelectedNode": "\\PracticeRE\\PracticeRE.sln",
   "PreviewInSolutionExplorer": false
 }
