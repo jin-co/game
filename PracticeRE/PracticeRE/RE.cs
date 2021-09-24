@@ -44,5 +44,20 @@ namespace PracticeRE
         {
             Close();
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Left:
+                    ptbRabbit.Left -= 1;
+                    return true;
+
+                case Keys.Right:
+                    ptbRabbit.Left += 1;
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
