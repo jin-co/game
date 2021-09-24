@@ -41,7 +41,7 @@ namespace RabbitEagle
                 newGame = false;
             }
 
-            foreach (var i in eagles)
+            foreach (PictureBox i in eagles)
             {
                 if (rabbitStartToMove)
                 {

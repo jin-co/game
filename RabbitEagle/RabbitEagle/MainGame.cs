@@ -22,26 +22,6 @@ namespace RabbitEagle
             InitializeComponent();
         }
 
-        private void gametimer_Tick(object sender, EventArgs e)
-        {
-            eagles.Update();
-            GameOver();
-        }
-
-        private void GameOver()
-        {
-            eagles.rabbitStartToMove = false;
-            foreach (PictureBox i in eagles.eagles)
-            {
-                if (ptbBRabbit.Bounds.IntersectsWith(i.Bounds))
-                {
-                    gametimer.Enabled = false;
-                    btnNewGame.Visible = true;
-                    lblGameEnd.Visible = true;
-                }
-            }
-        }
-
         private void MainGame_Load(object sender, EventArgs e)
         {
             gametimer.Enabled = true;
@@ -74,6 +54,26 @@ namespace RabbitEagle
             rabbit.player = ptbBRabbit;
         }
 
+        private void gametimer_Tick(object sender, EventArgs e)
+        {
+            eagles.Update();
+            GameOver();
+        }
+
+        private void GameOver()
+        {
+            eagles.rabbitStartToMove = false;
+            foreach (PictureBox i in eagles.eagles)
+            {
+                if (ptbBRabbit.Bounds.IntersectsWith(i.Bounds))
+                {
+                    gametimer.Enabled = false;
+                    btnNewGame.Visible = true;
+                    lblGameEnd.Visible = true;
+                }
+            }
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -82,11 +82,13 @@ namespace RabbitEagle
                     eagles.rabbitStartToMove = true;
                     rabbit.goLeft = true;
                     eagles.goLeft = true;
+                    rabbit.Update(playerSpeed);
                     return true;
                 case Keys.Right:
                     eagles.rabbitStartToMove = true;
                     rabbit.goLeft = false;
                     eagles.goLeft = false;
+                    rabbit.Update(playerSpeed);
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
