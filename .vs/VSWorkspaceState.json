@@ -2,12 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Practice",
-    "\\PracticeRE",
-    "\\PracticeRE\\PracticeRE",
     "\\RabbitEagle",
     "\\RabbitEagle\\RabbitEagle",
     "\\TicTacToe"
   ],
-  "SelectedNode": "\\PracticeRE\\PracticeRE.sln",
+  "SelectedNode": "\\RabbitEagle\\RabbitEagle\\MainGame.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -53,7 +53,7 @@ namespace RabbitEagle
             rabbit = new Rabbit(this);
             rabbit.player = ptbBRabbit;
         }
-
+        
         private void gametimer_Tick(object sender, EventArgs e)
         {
             eagles.Update();
