@@ -42,6 +42,8 @@ namespace PracticeRE
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTest = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEagle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEagle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEagle3)).BeginInit();
@@ -167,12 +169,30 @@ namespace PracticeRE
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "00:00";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(383, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Test: ";
+            // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(430, 8);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(755, 24);
+            this.txtTest.TabIndex = 12;
+            // 
             // RE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PracticeRE.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.txtTest);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnNewGame);
@@ -215,6 +235,8 @@ namespace PracticeRE
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
 

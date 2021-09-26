@@ -10,12 +10,33 @@ using System.Windows.Forms;
 
 namespace PracticeRE
 {
+    // Game app
     public partial class RE : Form
     {
+        Rabbit rabbit = new Rabbit();
+        Eagles eagles = new Eagles();
         int alarmCount = 0;
+
+        // initializes 
         public RE()
         {
             InitializeComponent();
+            rabbit.RabbitPic = ptbRabbit;
+            eagles.EaglesPic = new PictureBox[] {
+                ptbEagle1,
+                ptbEagle2,
+                ptbEagle3,
+                ptbEagle4,
+                ptbEagle5
+            };
+
+            eagles.StartingPoint = new Point[] {
+                ptbEagle1.Location,
+                ptbEagle2.Location,
+                ptbEagle3.Location,
+                ptbEagle4.Location,
+                ptbEagle5.Location
+            };
         }
 
         private void RE_Load(object sender, EventArgs e)
@@ -27,12 +48,21 @@ namespace PracticeRE
 
         }
 
+        // moves eagles and tracks timer
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            // timer
             gameTimer.Interval = 1000;
             alarmCount += 1;
             gameTimer.Start();
             lblTime.Text = alarmCount.ToString();
+
+            for (int i = 0; i < eagles.StartingPoint.Length; i++)
+            {
+                txtTest.Text = eagles.StartingPoint[i].ToString();
+                eagles.StartingPoint[i].X += 10;
+                
+            }
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -50,11 +80,11 @@ namespace PracticeRE
             switch (keyData)
             {
                 case Keys.Left:
-                    ptbRabbit.Left -= 1;
+                    rabbit.RabbitPic.Left -= 1;
                     return true;
 
                 case Keys.Right:
-                    ptbRabbit.Left += 1;
+                    rabbit.RabbitPic.Left += 1;
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
