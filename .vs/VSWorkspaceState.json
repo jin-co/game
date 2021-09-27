@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Practice",
     "\\PracticeRE",
-    "\\PracticeRE\\PracticeRE",
-    "\\RabbitEagle\\RabbitEagle"
+    "\\PracticeRE\\PracticeRE"
   ],
   "SelectedNode": "\\PracticeRE\\PracticeRE\\RE.cs",
   "PreviewInSolutionExplorer": false

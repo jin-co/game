@@ -44,8 +44,6 @@ namespace PracticeRE
             gameTimer.Enabled = true;
             btnNewGame.Visible = false;
             lblGameOver.Visible = false;
-            
-
         }
 
         // moves eagles and tracks timer
@@ -57,12 +55,7 @@ namespace PracticeRE
             gameTimer.Start();
             lblTime.Text = alarmCount.ToString();
 
-            for (int i = 0; i < eagles.StartingPoint.Length; i++)
-            {
-                txtTest.Text = eagles.StartingPoint[i].ToString();
-                eagles.StartingPoint[i].X += 10;
-                
-            }
+            eagles.UpdatePosition();
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
