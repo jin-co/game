@@ -24,9 +24,10 @@ namespace PracticeRE
         #region Methods
         public void UpdatePosition()
         {
-            for (int i = 0; i <= EaglesPic.Length; i++)
+            for (int i = 0; i < EaglesPic.Length; i++)
             {
                 EaglesPic[i].Top += 30;
+                
             }
         }
         #endregion

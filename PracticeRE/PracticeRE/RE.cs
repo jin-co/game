@@ -15,6 +15,7 @@ namespace PracticeRE
     {
         Rabbit rabbit = new Rabbit();
         Eagles eagles = new Eagles();
+        Game game = new Game();
         int alarmCount = 0;
 
         // initializes 
@@ -22,12 +23,15 @@ namespace PracticeRE
         {
             InitializeComponent();
             rabbit.RabbitPic = ptbRabbit;
+            rabbit.StartingPoint = new Point();
+
             eagles.EaglesPic = new PictureBox[] {
                 ptbEagle1,
                 ptbEagle2,
                 ptbEagle3,
                 ptbEagle4,
-                ptbEagle5
+                ptbEagle5,
+                ptbEagle6
             };
 
             eagles.StartingPoint = new Point[] {
@@ -35,8 +39,11 @@ namespace PracticeRE
                 ptbEagle2.Location,
                 ptbEagle3.Location,
                 ptbEagle4.Location,
-                ptbEagle5.Location
+                ptbEagle5.Location,
+                ptbEagle6.Location
             };
+
+            //game.Timer = gameTimer;
         }
 
         private void RE_Load(object sender, EventArgs e)
@@ -55,6 +62,7 @@ namespace PracticeRE
             gameTimer.Start();
             lblTime.Text = alarmCount.ToString();
 
+            // eagle move
             eagles.UpdatePosition();
         }
 
@@ -73,11 +81,13 @@ namespace PracticeRE
             switch (keyData)
             {
                 case Keys.Left:
-                    rabbit.RabbitPic.Left -= 1;
+                    rabbit.GoLeft = true;
+                    rabbit.UpdatePosition();
                     return true;
 
                 case Keys.Right:
-                    rabbit.RabbitPic.Left += 1;
+                    rabbit.GoLeft = false;
+                    rabbit.UpdatePosition();
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
