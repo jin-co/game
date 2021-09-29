@@ -43,13 +43,14 @@ namespace PracticeRE
                 ptbEagle6.Location
             };
 
-            //game.Timer = gameTimer;
+
+                
         }
 
         private void RE_Load(object sender, EventArgs e)
         {
             gameTimer.Enabled = true;
-            btnNewGame.Visible = false;
+            //btnNewGame.Visible = false;
             lblGameOver.Visible = false;
         }
 
@@ -64,11 +65,19 @@ namespace PracticeRE
 
             // eagle move
             eagles.UpdatePosition();
+
+            // Test
+            txtTest.Text =
+                $"rabbit left: {rabbit.RabbitPic.Left.ToString()}\t" +
+                $"rabbit right: {rabbit.RabbitPic.Right.ToString()}\t" +
+                $"parent width: {rabbit.RabbitPic.Parent.Width}\t" +
+                $"rabbit width: {rabbit.RabbitPic.Width}";
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-
+            eagles.resetEaglePosition();
+            rabbit.resetRabbitPosition();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -82,11 +91,13 @@ namespace PracticeRE
             {
                 case Keys.Left:
                     rabbit.GoLeft = true;
+                    eagles.GoLeft = true;
                     rabbit.UpdatePosition();
                     return true;
 
                 case Keys.Right:
                     rabbit.GoLeft = false;
+                    eagles.GoLeft = false;
                     rabbit.UpdatePosition();
                     return true;
             }

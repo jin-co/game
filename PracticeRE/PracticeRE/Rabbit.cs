@@ -28,12 +28,32 @@ namespace PracticeRE
         {
             if (GoLeft)
             {
-                RabbitPic.Left -= 10;
+                if (RabbitPic.Left <= 0)
+                {
+                    RabbitPic.Left -= 0;
+                }
+                else
+                {
+                    RabbitPic.Left -= 10;
+                }
             }
             if (!GoLeft)
             {
-                RabbitPic.Left += 10;
+                if (RabbitPic.Right + 19 >= RabbitPic.Parent.Width)
+                {
+                    RabbitPic.Left += 0;
+                }
+                else
+                {
+                    RabbitPic.Left += 10;
+                }
             }
+        }
+
+        // resets rabbit to the starting position
+        public void resetRabbitPosition()
+        {
+            RabbitPic.Location = StartingPoint;
         }
         #endregion
     }
