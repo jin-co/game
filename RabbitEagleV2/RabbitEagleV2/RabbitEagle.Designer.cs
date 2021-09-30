@@ -53,6 +53,7 @@ namespace RabbitEagleV2
             this.lblGameOver.Size = new System.Drawing.Size(378, 76);
             this.lblGameOver.TabIndex = 1;
             this.lblGameOver.Text = "Game Over";
+            this.lblGameOver.Click += new System.EventHandler(this.lblGameOver_Click);
             // 
             // RabbitEagle
             // 
@@ -62,9 +63,10 @@ namespace RabbitEagleV2
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.btnNewGame);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RabbitEagle";
             this.Text = "Rabbit Eagle";
+            this.Load += new System.EventHandler(this.RabbitEagle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

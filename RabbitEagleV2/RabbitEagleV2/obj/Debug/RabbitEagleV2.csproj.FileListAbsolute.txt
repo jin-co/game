@@ -1,0 +1,11 @@
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\bin\Debug\RabbitEagleV2.exe.config
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\bin\Debug\RabbitEagleV2.exe
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\bin\Debug\RabbitEagleV2.pdb
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.RabbitEagle.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.Resources.resources
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.exe
+C:\Users\jin\Documents\GitHub\game\RabbitEagleV2\RabbitEagleV2\obj\Debug\RabbitEagleV2.pdb
