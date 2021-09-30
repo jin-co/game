@@ -14,7 +14,7 @@ namespace HorseRace
     public partial class HorseRace : Form
     {
         // without the static it will always be 1
-        private static int nThGame = 1;
+        private static int nThGame = 1; // this will increment the number for each game
         private List<Horse> horses;
         private const int MIN_SPEED = 5;
         private const int MAX_SPEED = 20;
@@ -33,7 +33,7 @@ namespace HorseRace
             int numberOfHorses = int.Parse(txtNumberOfHorses.Text);
             Random random = new Random();
             int startX = 10;
-            int startY = 50;
+            int startY = 150;
             int no;
             horses = new List<Horse>();
 
@@ -63,6 +63,38 @@ namespace HorseRace
         private void HorseRace_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            string title = this.Text + " Race Results";
+            if (horses == null)
+            {
+                MessageBox.Show("Please enter number of horses then start the game first", "Tips");
+                return;
+            }
+
+            foreach (Horse i in horses)
+            {
+                if ((i.finishedReport != null) && (i.finishedReport.Length > 0))
+                {
+                    message += i.finishedReport + "\n";
+                }
+            }
+
+            MessageBox.Show(message, title);
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            HorseRace hourseRaceGame = new HorseRace();
+            hourseRaceGame .Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

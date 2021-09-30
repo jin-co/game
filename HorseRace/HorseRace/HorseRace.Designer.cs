@@ -36,6 +36,7 @@ namespace HorseRace
             this.btnNewGame = new System.Windows.Forms.Button();
             this.pnlFinishiLine = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@ namespace HorseRace
             this.btnRecord.TabIndex = 3;
             this.btnRecord.Text = "Show Record";
             this.btnRecord.UseVisualStyleBackColor = true;
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
             // btnNewGame
             // 
@@ -83,6 +85,7 @@ namespace HorseRace
             this.btnNewGame.TabIndex = 4;
             this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // pnlFinishiLine
             // 
@@ -100,11 +103,22 @@ namespace HorseRace
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(994, 69);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(167, 23);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // HorseRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlFinishiLine);
             this.Controls.Add(this.btnNewGame);
@@ -113,7 +127,7 @@ namespace HorseRace
             this.Controls.Add(this.txtNumberOfHorses);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HorseRace";
             this.Text = "Horse Race";
             this.Load += new System.EventHandler(this.HorseRace_Load);
@@ -132,6 +146,7 @@ namespace HorseRace
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Panel pnlFinishiLine;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

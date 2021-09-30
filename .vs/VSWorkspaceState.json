@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\HorseRace",
+    "\\HorseRace\\HorseRace",
     "\\Practice",
     "\\PracticeRE",
     "\\PracticeRE\\PracticeRE"
   ],
-  "SelectedNode": "\\PracticeRE\\PracticeRE\\RE.cs",
+  "SelectedNode": "\\HorseRace\\HorseRace\\HorseRace.cs",
   "PreviewInSolutionExplorer": false
 }
