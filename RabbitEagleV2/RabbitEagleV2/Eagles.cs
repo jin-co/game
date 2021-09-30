@@ -19,7 +19,7 @@ namespace RabbitEagleV2
             // setting position
             startX = 10;
             startY = 10;
-            gapX = 100;
+            gapX = 70;
 
             // generating artifacts
             eaglesPic = GeneratePicBoxes(1, 10);

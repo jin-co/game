@@ -30,12 +30,29 @@ namespace RabbitEagleV2
 
         public override void UnloadContent()
         {
-            
+            parent.Controls.Remove(Rabbit);
         }
 
         public override void Update()
         {
-            
+            if (goLeft)
+            {
+                Rabbit.Left -= speed;
+            }
+            else
+            {
+                Rabbit.Left += speed;
+            }
+
+            // boundary check
+            if (parent.Left < 0)
+            {
+                Rabbit.Left += speed;
+            }
+            if (parent.Left >= parent.Width)
+            {
+                Rabbit.Left -= speed;
+            }
         }
     }
 }
