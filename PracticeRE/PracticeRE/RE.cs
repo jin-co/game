@@ -47,7 +47,7 @@ namespace PracticeRE
         private void RE_Load(object sender, EventArgs e)
         {
             gameTimer.Enabled = true;
-            //btnNewGame.Visible = false;
+            btnNewGame.Visible = false;
             lblGameOver.Visible = false;
         }
 
@@ -69,15 +69,31 @@ namespace PracticeRE
                 $"rabbit right: {rabbit.RabbitPic.Right.ToString()}\t" +
                 $"parent width: {rabbit.RabbitPic.Parent.Width}\t" +
                 $"rabbit width: {rabbit.RabbitPic.Width}";
+
+            // gameover
+            foreach (var i in eagles.EaglesPic)
+            {
+                if (rabbit.RabbitPic.Bounds.IntersectsWith(i.Bounds))
+                {
+                    gameTimer.Enabled = false;
+                    lblGameOver.Visible = true;
+                    btnNewGame.Visible = true;
+                    rabbit.GameOver = true;
+                }
+            }
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
+            lblGameOver.Visible = false;
+            btnNewGame.Visible = false;
+            rabbit.GameOver = false;
             eagles.resetEaglePosition();
             rabbit.resetRabbitPosition();
+            gameTimer.Start();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblGameOver_Click(object sender, EventArgs e)
         {
             Close();
         }

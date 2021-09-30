@@ -17,9 +17,7 @@ namespace PracticeRE
 
         #region Properties
         public PictureBox[] EaglesPic { get; set; }
-
         public Point[] StartingPoint { get; set; }
-        
         public bool GoLeft { get; set; }
         #endregion
 
@@ -34,9 +32,11 @@ namespace PracticeRE
         {
             for (int i = 0; i < EaglesPic.Length; i++)
             {
+                // vertical movement
                 xSpeed = random.Next(20, 50);
                 EaglesPic[i].Top += xSpeed;
 
+                // horizontal movement
                 if (GoLeft)
                 {
                     if (EaglesPic[i].Left <= 0)
@@ -59,7 +59,6 @@ namespace PracticeRE
                         EaglesPic[i].Left += 10;
                     }
                 }
-
             }
         }
 

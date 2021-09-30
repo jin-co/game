@@ -133,7 +133,7 @@ namespace PracticeRE
             this.lblGameOver.Size = new System.Drawing.Size(516, 89);
             this.lblGameOver.TabIndex = 7;
             this.lblGameOver.Text = "Game Over";
-            this.lblGameOver.Click += new System.EventHandler(this.label1_Click);
+            this.lblGameOver.Click += new System.EventHandler(this.lblGameOver_Click);
             // 
             // btnNewGame
             // 
