@@ -59,6 +59,7 @@ namespace RabbitEagleV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RabbitEagleV2.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1200, 623);
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.btnNewGame);

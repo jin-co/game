@@ -35,7 +35,10 @@ namespace RabbitEagleV2
 
         public override void UnloadContent()
         {
-            
+            foreach (var i in eaglesPic)
+            {
+                parent.Controls.Remove(i);
+            }
         }
 
         public override void Update()
@@ -61,11 +64,11 @@ namespace RabbitEagleV2
                 // vertical movement
                 if (i.Top < parent.Height - startY)
                 {
-                    i.Top = startY;
+                    i.Top += speedY;
                 }
                 else
                 {
-                    i.Top += speedY;
+                    i.Top = startY;
                 }
             }
         }
