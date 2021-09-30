@@ -23,7 +23,7 @@ namespace PracticeRE
         {
             InitializeComponent();
             rabbit.RabbitPic = ptbRabbit;
-            rabbit.StartingPoint = new Point();
+            rabbit.StartingPoint = new Point(ptbRabbit.Left, ptbRabbit.Top);
 
             eagles.EaglesPic = new PictureBox[] {
                 ptbEagle1,
@@ -42,9 +42,6 @@ namespace PracticeRE
                 ptbEagle5.Location,
                 ptbEagle6.Location
             };
-
-
-                
         }
 
         private void RE_Load(object sender, EventArgs e)
