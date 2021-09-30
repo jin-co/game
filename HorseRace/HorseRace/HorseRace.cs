@@ -82,7 +82,6 @@ namespace HorseRace
                     message += i.finishedReport + "\n";
                 }
             }
-
             MessageBox.Show(message, title);
         }
 

@@ -56,7 +56,7 @@ namespace RabbitEagleV2
                     number++;
                 }
                 x = startX;
-                y += height + gapX;
+                y += height + gapY;
             }
             return pictureBoxes;
         }
