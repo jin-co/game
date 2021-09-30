@@ -16,5 +16,10 @@ namespace RabbitEagleV2
         {
             InitializeComponent();
         }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
