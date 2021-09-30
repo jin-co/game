@@ -45,11 +45,11 @@ namespace RabbitEagleV2
             }
 
             // boundary check
-            if (parent.Left < 0)
+            if (Rabbit.Left < 0)
             {
                 Rabbit.Left += speed;
             }
-            if (parent.Left >= parent.Width)
+            if (Rabbit.Left >= parent.Width - 60)
             {
                 Rabbit.Left -= speed;
             }
