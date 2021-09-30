@@ -10,6 +10,9 @@ namespace RabbitEagleV2
     class Eagles : Game2DGen
     {
         public PictureBox[,] eaglesPic;
+        private Random random = new Random();
+        public bool playerMoved;
+        public bool goLeft;
         public Eagles(Control parent, int width, int height) : base(parent, width, height)
         {
         }
@@ -37,7 +40,34 @@ namespace RabbitEagleV2
 
         public override void Update()
         {
-            
+            foreach (PictureBox i in eaglesPic)
+            {
+                int speedY = random.Next(3, 15);
+
+                // horizontal movement
+                if (playerMoved)
+                {
+                    int speedX = random.Next(2, 10);
+                    if (goLeft)
+                    {
+                        i.Left -= speedX;
+                    }
+                    else
+                    {
+                        i.Left += speedX;
+                    }
+                }
+
+                // vertical movement
+                if (i.Top < parent.Height - startY)
+                {
+                    i.Top = startY;
+                }
+                else
+                {
+                    i.Top += speedY;
+                }
+            }
         }
     }
 }
