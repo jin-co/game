@@ -40,7 +40,6 @@ namespace PracticeRE
                 {
                     EaglesPic[i].Location = StartingPoint[i];
                 }
-                
 
                 // horizontal movement
                 if (GoLeft)
