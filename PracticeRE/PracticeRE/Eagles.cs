@@ -36,7 +36,7 @@ namespace PracticeRE
                 xSpeed = random.Next(20, 50);
                 EaglesPic[i].Top += xSpeed;
                 
-                if (EaglesPic[i].Top > EaglesPic[i].Bottom)
+                if (EaglesPic[i].Top > EaglesPic[i].Parent.Bottom)
                 {
                     EaglesPic[i].Location = StartingPoint[i];
                 }
