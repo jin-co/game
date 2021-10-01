@@ -35,6 +35,12 @@ namespace PracticeRE
                 // vertical movement
                 xSpeed = random.Next(20, 50);
                 EaglesPic[i].Top += xSpeed;
+                
+                if (EaglesPic[i].Top > EaglesPic[i].Bottom)
+                {
+                    EaglesPic[i].Location = StartingPoint[i];
+                }
+                
 
                 // horizontal movement
                 if (GoLeft)

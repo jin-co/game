@@ -172,7 +172,7 @@ namespace PracticeRE
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(383, 9);
+            this.label1.Location = new System.Drawing.Point(126, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 11;
@@ -180,9 +180,9 @@ namespace PracticeRE
             // 
             // txtTest
             // 
-            this.txtTest.Location = new System.Drawing.Point(430, 8);
+            this.txtTest.Location = new System.Drawing.Point(177, 8);
             this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(755, 24);
+            this.txtTest.Size = new System.Drawing.Size(1008, 24);
             this.txtTest.TabIndex = 12;
             // 
             // RE

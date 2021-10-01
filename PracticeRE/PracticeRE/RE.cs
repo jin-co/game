@@ -68,7 +68,9 @@ namespace PracticeRE
                 $"rabbit left: {rabbit.RabbitPic.Left.ToString()}\t" +
                 $"rabbit right: {rabbit.RabbitPic.Right.ToString()}\t" +
                 $"parent width: {rabbit.RabbitPic.Parent.Width}\t" +
-                $"rabbit width: {rabbit.RabbitPic.Width}";
+                $"rabbit width: {rabbit.RabbitPic.Width}\t" +
+                $"parent bottom: {rabbit.RabbitPic.Parent.Bottom}\t" +
+                $"eagle vertical: {eagles.EaglesPic[0].Top}";
 
             // gameover
             foreach (var i in eagles.EaglesPic)
