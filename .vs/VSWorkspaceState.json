@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Practice",
+    "\\PracticeHorseRace",
+    "\\PracticeHorseRace\\PracticeHorseRace"
   ],
-  "SelectedNode": "\\HorseRace.sln",
+  "SelectedNode": "\\PracticeHorseRace\\PracticeHorseRace\\HorseRace.cs",
   "PreviewInSolutionExplorer": false
 }
