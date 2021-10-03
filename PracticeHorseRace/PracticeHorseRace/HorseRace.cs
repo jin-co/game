@@ -26,28 +26,37 @@ namespace PracticeHorseRace
         {
             int numberOfHorses = int.Parse(txtNumberOfHorses.Text);
             Button[] horses = new Button[numberOfHorses];
-            //for (int i = 0; i < numberOfHorses; i++)
-            //{
-            //    horses[i].Image = Resources.horse;
-            //    horses[i].Height = 50;
-            //    horses[i].Width = 50;
-            //    this.Controls.Add(horses[i]);
-
-            //}
-
-            foreach (var i in horses)
+            for (int i = 0; i < numberOfHorses; i++)
             {
-                i.Height = 50;
-                i.Width = 50;
-                i.Image = Resources.horse;
-                i.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                this.Controls.Add(i);
+                horses[i] = new Button();
+                //horses[i].Image = Resources.horse;
+                horses[i].Height = 150;
+                horses[i].Width = 150;
+                horses[i].Top = 50 + (i * 30);
+                horses[i].Left = 50;
+                horses[i].AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                horses[i].AutoSize = true;
+
+                this.Controls.Add(horses[i]);
             }
+
+            //foreach (var i in horses)
+            //{
+            //    i.Height = 50;
+            //    i.Width = 50;
+            //    i.Image = Resources.horse;
+            //    i.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            //    this.Controls.Add(i);
+            //}
         }
 
         private void btnShowRecord_Click(object sender, EventArgs e)
         {
-
+            Button n = new Button();
+            n.Height = 20;
+            n.Width = 20;
+            this.Controls.Add(n);
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
