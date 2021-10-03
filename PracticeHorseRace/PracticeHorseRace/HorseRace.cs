@@ -40,6 +40,7 @@ namespace PracticeHorseRace
                 i.Image = Resources.horse;
                 i.Height = 50;
                 i.Width = 50;
+                i.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 this.Controls.Add(i);
             }
         }
