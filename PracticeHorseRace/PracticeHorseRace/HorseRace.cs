@@ -24,7 +24,24 @@ namespace PracticeHorseRace
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            int numberOfHorses = int.Parse(txtNumberOfHorses.Text);
+            Button[] horses = new Button[numberOfHorses];
+            //for (int i = 0; i < numberOfHorses; i++)
+            //{
+            //    horses[i].Image = Resources.horse;
+            //    horses[i].Height = 50;
+            //    horses[i].Width = 50;
+            //    this.Controls.Add(horses[i]);
 
+            //}
+
+            foreach (var i in horses)
+            {
+                i.Image = Resources.horse;
+                i.Height = 50;
+                i.Width = 50;
+                this.Controls.Add(i);
+            }
         }
 
         private void btnShowRecord_Click(object sender, EventArgs e)
