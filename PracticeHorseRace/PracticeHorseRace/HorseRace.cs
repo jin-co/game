@@ -29,10 +29,10 @@ namespace PracticeHorseRace
             for (int i = 0; i < numberOfHorses; i++)
             {
                 horses[i] = new Button();
-                //horses[i].Image = Resources.horse;
-                horses[i].Height = 150;
-                horses[i].Width = 150;
-                horses[i].Top = 50 + (i * 30);
+                horses[i].Image = Resources.horse;
+                horses[i].Height = 50;
+                horses[i].Width = 50;
+                horses[i].Top = 150 + (i * 50);
                 horses[i].Left = 50;
                 horses[i].AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 horses[i].AutoSize = true;
