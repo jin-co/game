@@ -108,6 +108,7 @@ namespace PracticeHorseRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 623);
             this.Controls.Add(this.pnlFinishLine);
             this.Controls.Add(this.btnExit);
@@ -117,7 +118,7 @@ namespace PracticeHorseRace
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNumberOfHorses);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HorseRace";
             this.Text = "Horse Race";
             this.Load += new System.EventHandler(this.HorseRace_Load);

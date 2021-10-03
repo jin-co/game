@@ -37,9 +37,9 @@ namespace PracticeHorseRace
 
             foreach (var i in horses)
             {
-                i.Image = Resources.horse;
                 i.Height = 50;
                 i.Width = 50;
+                i.Image = Resources.horse;
                 i.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 this.Controls.Add(i);
             }
