@@ -12,6 +12,9 @@ namespace PracticeHorseRace
 {
     public partial class HorseRace : Form
     {
+        int numberOfHorses = 0;
+        Button[] horses = new Button[] { };
+        int second = 0;
         public HorseRace()
         {
             InitializeComponent();
@@ -24,8 +27,15 @@ namespace PracticeHorseRace
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            int numberOfHorses = int.Parse(txtNumberOfHorses.Text);
-            Button[] horses = new Button[numberOfHorses];
+            horseTimer.Enabled = true;
+            horseTimer.Start();
+            horseTimer.Tick += new EventHandler(gameTimer_Tick);
+            gameTimer.Enabled = true;
+            gameTimer.Start();
+            gameTimer.Tick += new EventHandler(horseTimer_Tick);
+
+            numberOfHorses = int.Parse(txtNumberOfHorses.Text);
+            horses = new Button[numberOfHorses];
             for (int i = 0; i < numberOfHorses; i++)
             {
                 horses[i] = new Button();
@@ -39,16 +49,6 @@ namespace PracticeHorseRace
 
                 this.Controls.Add(horses[i]);
             }
-
-            //foreach (var i in horses)
-            //{
-            //    i.Height = 50;
-            //    i.Width = 50;
-            //    i.Image = Resources.horse;
-            //    i.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
-            //    this.Controls.Add(i);
-            //}
         }
 
         private void btnShowRecord_Click(object sender, EventArgs e)
@@ -68,6 +68,23 @@ namespace PracticeHorseRace
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void gameTimer_Tick(object sender, EventArgs e)
+        {
+            gameTimer.Interval = 1000;
+
+            foreach (var i in horses)
+            {
+                i.Left += 10;
+            }
+        }
+
+        private void horseTimer_Tick(object sender, EventArgs e)
+        {
+            horseTimer.Interval = 100;
+            second++;
+            txtTest.Text = second.ToString();
         }
     }
 }

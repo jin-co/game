@@ -29,6 +29,7 @@ namespace PracticeHorseRace
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtNumberOfHorses = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
@@ -36,6 +37,10 @@ namespace PracticeHorseRace
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlFinishLine = new System.Windows.Forms.Panel();
+            this.txtTest = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.horseTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtNumberOfHorses
@@ -104,12 +109,38 @@ namespace PracticeHorseRace
             this.pnlFinishLine.Size = new System.Drawing.Size(10, 509);
             this.pnlFinishLine.TabIndex = 6;
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(60, 12);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(1128, 24);
+            this.txtTest.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Test:";
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // horseTimer
+            // 
+            this.horseTimer.Tick += new System.EventHandler(this.horseTimer_Tick);
+            // 
             // HorseRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.pnlFinishLine);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNewGame);
@@ -136,6 +167,10 @@ namespace PracticeHorseRace
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnlFinishLine;
+        private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Timer horseTimer;
     }
 }
 
