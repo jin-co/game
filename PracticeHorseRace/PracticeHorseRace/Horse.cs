@@ -20,6 +20,7 @@ namespace PracticeHorseRace
         public Button[] Horses { get; set; }
         public int NumberOfHorses { get; set; }
         public int speed { get; set; }
+        
         #endregion
 
         #region Methods
