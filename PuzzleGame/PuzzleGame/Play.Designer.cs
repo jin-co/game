@@ -1,7 +1,7 @@
 ﻿
 namespace PuzzleGame
 {
-    partial class Form1
+    partial class Play
     {
         /// <summary>
         /// Required designer variable.
