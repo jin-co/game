@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.cs" />
     <Compile Include="HorseRace.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HorseRace.Designer.cs">
       <DependentUpon>HorseRace.cs</DependentUpon>
     </Compile>
+    <Compile Include="Horse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources.Designer.cs">

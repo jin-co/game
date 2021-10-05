@@ -40,7 +40,6 @@ namespace PracticeHorseRace
             this.txtTest = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.horseTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtNumberOfHorses
@@ -129,10 +128,6 @@ namespace PracticeHorseRace
             // 
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
-            // horseTimer
-            // 
-            this.horseTimer.Tick += new System.EventHandler(this.horseTimer_Tick);
-            // 
             // HorseRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -170,7 +165,6 @@ namespace PracticeHorseRace
         private System.Windows.Forms.TextBox txtTest;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer gameTimer;
-        private System.Windows.Forms.Timer horseTimer;
     }
 }
 
