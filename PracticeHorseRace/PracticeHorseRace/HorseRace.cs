@@ -17,8 +17,6 @@ namespace PracticeHorseRace
     public partial class HorseRace : Form
     {
         Horse horse = new Horse();
-        int numberOfHorses = 0;
-        Button[] horses = new Button[] { };
         int second = 0;
         public HorseRace()
         {
@@ -36,8 +34,9 @@ namespace PracticeHorseRace
             gameTimer.Start();
             gameTimer.Tick += new EventHandler(gameTimer_Tick);
 
+            // creating horses
             horse.NumberOfHorses = int.Parse(txtNumberOfHorses.Text);
-            horse.createHorses();
+            horse.CreateHorses();
             foreach (var i in horse.Horses)
             {
                 this.Controls.Add(i);
@@ -62,13 +61,10 @@ namespace PracticeHorseRace
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            gameTimer.Interval = 1000;
+            gameTimer.Interval = 100;
             second++;
             txtTest.Text = second.ToString();
-            foreach (var i in horses)
-            {
-                i.Left += 10;
-            }
+            horse.RunHorses();
         }
     }
 }

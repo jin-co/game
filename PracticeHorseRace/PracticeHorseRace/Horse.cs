@@ -19,11 +19,12 @@ namespace PracticeHorseRace
         #region Properties
         public Button[] Horses { get; set; }
         public int NumberOfHorses { get; set; }
+        public int speed { get; set; }
         #endregion
 
         #region Methods
 
-        public Button[] createHorses()
+        public Button[] CreateHorses()
         {
             Horses = new Button[NumberOfHorses];
             for (int i = 0; i < NumberOfHorses; i++)
@@ -38,6 +39,16 @@ namespace PracticeHorseRace
                 Horses[i].AutoSize = true;
             }
             return Horses;
+        }
+
+        public void RunHorses()
+        {
+            Random random = new Random();
+            foreach (var i in Horses)
+            {
+                speed = random.Next(10, 40);
+                i.Left += speed;
+            }
         }
         #endregion
     }
