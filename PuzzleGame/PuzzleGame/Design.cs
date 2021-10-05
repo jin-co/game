@@ -16,5 +16,15 @@ namespace PuzzleGame
         {
             InitializeComponent();
         }
+
+        private void designToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void level13X3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PuzzleData.currentLevel = 1;
+        }
     }
 }
