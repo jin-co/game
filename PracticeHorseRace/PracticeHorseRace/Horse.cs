@@ -38,6 +38,7 @@ namespace PracticeHorseRace
                 Horses[i].Top = 150 + (i * 50);
                 Horses[i].Left = 50;
                 Horses[i].AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                //IsFinished = false;
                 Horses[i].AutoSize = true;
             }
             return Horses;

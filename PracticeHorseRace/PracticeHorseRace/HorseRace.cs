@@ -75,8 +75,10 @@ namespace PracticeHorseRace
                     if (i.Right > game.FinishLine.Left)
                     {
                         //txtTest.Text = $"{i.Right}\t{game.FinishLine.Left}";
+                        //
                         stopWatch.Stop();
                         txtTest.Text += "\t" + stopWatch.ElapsedMilliseconds;
+                        //
                         horse.IsFinished = true;
                     }
                 }
