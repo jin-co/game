@@ -19,8 +19,9 @@ namespace PracticeHorseRace
         #region Properties
         public Button[] Horses { get; set; }
         public int NumberOfHorses { get; set; }
-        public int speed { get; set; }
-        
+        public int Speed { get; set; }
+        public bool IsFinished { get; set; }
+
         #endregion
 
         #region Methods
@@ -47,8 +48,8 @@ namespace PracticeHorseRace
             Random random = new Random();
             foreach (var i in Horses)
             {
-                speed = random.Next(10, 40);
-                i.Left += speed;
+                Speed = random.Next(10, 40);
+                i.Left += Speed;
             }
         }
         #endregion

@@ -147,7 +147,6 @@ namespace PracticeHorseRace
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HorseRace";
             this.Text = "Horse Race";
-            this.Load += new System.EventHandler(this.HorseRace_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
