@@ -98,5 +98,15 @@ namespace PuzzleGame
             wholePiece[0, 0].Image = wholeImage;
             parent.Controls.Add(wholePiece[0, 0]);
         }
+
+        public void LoadPuzzleFromFile(string[] lines)
+        {
+            currentLevel = int.Parse(lines[0]);
+            int rows, cols;
+            DecideRowsCols(out cols, out rows);
+            pieces = null;
+            GenWidget();
+
+        }
     }
 }

@@ -64,14 +64,14 @@ namespace PuzzleGame
             // level13X3ToolStripMenuItem
             // 
             this.level13X3ToolStripMenuItem.Name = "level13X3ToolStripMenuItem";
-            this.level13X3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.level13X3ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.level13X3ToolStripMenuItem.Text = "Level 1 (3 x 3)";
             this.level13X3ToolStripMenuItem.Click += new System.EventHandler(this.level13X3ToolStripMenuItem_Click);
             // 
             // level24X4ToolStripMenuItem
             // 
             this.level24X4ToolStripMenuItem.Name = "level24X4ToolStripMenuItem";
-            this.level24X4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.level24X4ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.level24X4ToolStripMenuItem.Text = "Level 2 (4 x 4)";
             // 
             // fileToolStripMenuItem
@@ -89,17 +89,18 @@ namespace PuzzleGame
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Load";
             // 
             // closeToolStripMenuItem1
             // 
             this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
-            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem1.Text = "Close";
             // 
             // Design
@@ -111,6 +112,7 @@ namespace PuzzleGame
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Design";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Design_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
