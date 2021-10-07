@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,47 +11,49 @@ namespace PracticeHorseRace
     /*
      * horse class
      */
-    class Horse
+    class Horse : Button
     {
-        #region Constructors
-        public Horse() {}
+        #region Properties
+        public Timer HorseTimer { get; set; }
+        public string FinishedReport { get; set; }
+        public Stopwatch Stopwatch { get; set; }
         #endregion
 
-        #region Properties
-        public Button[] Horses { get; set; }
-        public int NumberOfHorses { get; set; }
-        public int Speed { get; set; }
-        public bool IsFinished { get; set; }
+        #region Fields
+        private int speedX;
+        private Panel finishLine;
+        private bool isFinished;
+        #endregion
 
+        #region Constructors
+        public Horse() {}
+
+        public Horse(Panel finishLine, int speedX, int tickInterval)
+        {
+            this.finishLine = finishLine;
+            this.speedX = speedX;
+
+            HorseTimer = new Timer();
+            HorseTimer.Interval = tickInterval;
+            HorseTimer.Enabled = false;
+            HorseTimer.Tick += HorseTimer_Tick;
+        }
         #endregion
 
         #region Methods
-
-        public Button[] CreateHorses()
+        private void HorseTimer_Tick(object sender, EventArgs e)
         {
-            Horses = new Button[NumberOfHorses];
-            for (int i = 0; i < NumberOfHorses; i++)
+            this.Left += speedX;
+            if (!isFinished)
             {
-                Horses[i] = new Button();
-                Horses[i].Image = Resources.horse;
-                Horses[i].Height = 50;
-                Horses[i].Width = 50;
-                Horses[i].Top = 150 + (i * 50);
-                Horses[i].Left = 50;
-                Horses[i].AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                //IsFinished = false;
-                Horses[i].AutoSize = true;
-            }
-            return Horses;
-        }
+                if (this.Right > finishLine.Left)
+                {
+                    isFinished = true;
+                    Stopwatch.Stop();
+                    HorseTimer.Stop();
 
-        public void RunHorses()
-        {
-            Random random = new Random();
-            foreach (var i in Horses)
-            {
-                Speed = random.Next(10, 40);
-                i.Left += Speed;
+                    FinishedReport = this.Text + $"Race Time: {Stopwatch.ElapsedMilliseconds}ms";
+                }
             }
         }
         #endregion

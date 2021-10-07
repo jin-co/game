@@ -17,43 +17,74 @@ namespace PracticeHorseRace
      */
     public partial class HorseRace : Form
     {
-        Horse horse = new Horse();
-        Game game = new Game();
-        int second = 0;
-        Stopwatch stopWatch = new Stopwatch();
+        private static int nThGame = 1;
+        private List<Horse> horses;
+        private const int MIN_SPEED = 5;
+        private const int MAX_SPEED = 20;
+        private const int MIN_TICK_INT = 200;
+        private const int MAX_TICK_INT = 600;
+        
         public HorseRace()
         {
             InitializeComponent();
+            this.Text = "Game" + nThGame;
+            nThGame++;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            gameTimer.Enabled = true;
-            gameTimer.Start();
-            gameTimer.Tick += new EventHandler(gameTimer_Tick);
-
-            // creating horses
-            horse.NumberOfHorses = int.Parse(txtNumberOfHorses.Text);
-            horse.CreateHorses();
-            foreach (var i in horse.Horses)
+            int numberOfHorses = int.Parse(txtNumberOfHorses.Text);
+            Random random = new Random();
+            int startX = 10;
+            int startY = 100;
+            int no;
+            horses = new List<Horse>();
+            for (int i = 0; i < numberOfHorses; i++)
             {
-                this.Controls.Add(i);
-            }
+                int speedX = random.Next(MIN_SPEED, MAX_SPEED);
+                int tickInterval = random.Next(MIN_TICK_INT, MAX_TICK_INT);
 
-            // game
-            game.FinishLine = pnlFinishLine;
+                Horse horse = new Horse(pnlFinishLine, speedX, tickInterval);
+                horse.Left = startX;
+                horse.Top = startY;
+                horse.Height = 50;
+                horse.Width = 40;
+                no = i + 1;
+                horse.Text = "No: " + no;
+                horse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                horse.Image = Resources.horse;
+                horse.HorseTimer.Enabled = true;
+                horse.Stopwatch.Start();
+                horses.Add(horse);
+                startY += 45;
+                this.Controls.Add(horse);
+            }
         }
 
         private void btnShowRecord_Click(object sender, EventArgs e)
         {
-           
+            string message = "";
+            string title = this.Text + " Race Results";
+            if (horses == null)
+            {
+                MessageBox.Show("Please enter number of horses");
+                return;
+            }
+            foreach (var i in horses)
+            {
+                if ((i.FinishedReport != null) && (i.FinishedReport.Length > 0))
+                {
+                    message += i.FinishedReport + "\n";
+                }
+            }
+            MessageBox.Show(message, title);
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             HorseRace horseRace = new HorseRace();
             horseRace.Show();
-            stopWatch.Start();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -63,32 +94,8 @@ namespace PracticeHorseRace
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            gameTimer.Interval = 100;
-            second++;
-            //txtTest.Text = second.ToString();
-
-            if (!horse.IsFinished)
-            {
-                horse.RunHorses();
-                foreach (var i in horse.Horses)
-                {
-                    if (i.Right > game.FinishLine.Left)
-                    {
-                        //txtTest.Text = $"{i.Right}\t{game.FinishLine.Left}";
-                        //
-                        stopWatch.Stop();
-                        txtTest.Text += "\t" + stopWatch.ElapsedMilliseconds;
-                        //
-                        horse.IsFinished = true;
-                    }
-                }
-
-                //if (this.Left + this.Width > game.FinishLine.Left)
-                //{
-                //    txtTest.Text = $"{this.Left}\t{this.Right}\t{game.FinishLine.Left}";
-                //    horse.IsFinished = true;
-                //}
-            }
+            
+            
         }
     }
 }
