@@ -91,11 +91,5 @@ namespace PracticeHorseRace
         {
             Close();
         }
-
-        private void gameTimer_Tick(object sender, EventArgs e)
-        {
-            
-            
-        }
     }
 }

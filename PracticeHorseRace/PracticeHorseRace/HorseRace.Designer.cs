@@ -124,10 +124,6 @@ namespace PracticeHorseRace
             this.label2.TabIndex = 8;
             this.label2.Text = "Test:";
             // 
-            // gameTimer
-            // 
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
-            // 
             // HorseRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
