@@ -28,6 +28,7 @@ namespace PuzzleGame
             null,
             null
         };
+        public static Image wholeImage = Resources.whole;
         public static Dictionary<string, Image> imageSet = 
             new Dictionary<string, Image>();
         public static bool notLoaded = true;
