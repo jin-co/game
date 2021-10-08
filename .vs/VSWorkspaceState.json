@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Practice",
+    "\\PracticeHorseRace",
+    "\\PracticeHorseRace\\PracticeHorseRace"
   ],
-  "SelectedNode": "\\PuzzleGame.sln (PuzzleGame\\PuzzleGame.sln)",
+  "SelectedNode": "\\PracticeHorseRace\\PracticeHorseRace\\Horse.cs",
   "PreviewInSolutionExplorer": false
 }
