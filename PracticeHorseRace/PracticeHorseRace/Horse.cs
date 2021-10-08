@@ -33,6 +33,7 @@ namespace PracticeHorseRace
             this.finishLine = finishLine;
             this.speedX = speedX;
 
+            Stopwatch = new Stopwatch();
             HorseTimer = new Timer();
             HorseTimer.Interval = tickInterval;
             HorseTimer.Enabled = false;

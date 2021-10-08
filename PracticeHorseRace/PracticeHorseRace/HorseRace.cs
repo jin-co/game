@@ -54,7 +54,6 @@ namespace PracticeHorseRace
                 horse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 horse.Image = Resources.horse;
                 horse.HorseTimer.Enabled = true;
-                horse.Stopwatch = new Stopwatch();
                 horse.Stopwatch.Start();
                 horses.Add(horse);
                 startY += 45;
