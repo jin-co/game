@@ -36,6 +36,8 @@ namespace HorseRace
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlFinishLine = new System.Windows.Forms.Panel();
+            this.pnlGround = new System.Windows.Forms.Panel();
+            this.pnlGround.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -97,17 +99,25 @@ namespace HorseRace
             // pnlFinishLine
             // 
             this.pnlFinishLine.BackColor = System.Drawing.Color.Red;
-            this.pnlFinishLine.Location = new System.Drawing.Point(959, 92);
+            this.pnlFinishLine.Location = new System.Drawing.Point(1037, 1);
             this.pnlFinishLine.Name = "pnlFinishLine";
             this.pnlFinishLine.Size = new System.Drawing.Size(10, 519);
             this.pnlFinishLine.TabIndex = 6;
+            // 
+            // pnlGround
+            // 
+            this.pnlGround.Controls.Add(this.pnlFinishLine);
+            this.pnlGround.Location = new System.Drawing.Point(29, 92);
+            this.pnlGround.Name = "pnlGround";
+            this.pnlGround.Size = new System.Drawing.Size(1129, 519);
+            this.pnlGround.TabIndex = 7;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
-            this.Controls.Add(this.pnlFinishLine);
+            this.Controls.Add(this.pnlGround);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.btnShowRecord);
@@ -118,6 +128,7 @@ namespace HorseRace
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Horese Race";
+            this.pnlGround.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +143,7 @@ namespace HorseRace
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlFinishLine;
+        private System.Windows.Forms.Panel pnlGround;
     }
 }
 
