@@ -19,8 +19,8 @@ namespace PracticeHorseRace
     {
         private static int nThGame = 1;
         private List<Horse> horses;
-        private const int MIN_SPEED = 5;
-        private const int MAX_SPEED = 20;
+        private const int MIN_SPEED = 20;
+        private const int MAX_SPEED = 60;
         private const int MIN_TICK_INT = 200;
         private const int MAX_TICK_INT = 600;
         
@@ -54,6 +54,7 @@ namespace PracticeHorseRace
                 horse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 horse.Image = Resources.horse;
                 horse.HorseTimer.Enabled = true;
+                horse.Stopwatch = new Stopwatch();
                 horse.Stopwatch.Start();
                 horses.Add(horse);
                 startY += 45;
