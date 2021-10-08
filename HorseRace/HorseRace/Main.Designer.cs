@@ -82,6 +82,7 @@ namespace HorseRace
             this.btnNewGame.TabIndex = 4;
             this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // btnClose
             // 

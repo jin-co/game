@@ -21,5 +21,12 @@ namespace HorseRace
         {
             Close();
         }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }
