@@ -8,3 +8,4 @@ C:\Users\jin\Documents\GitHub\game\HorseRace\HorseRace\obj\Debug\HorseRace.cspro
 C:\Users\jin\Documents\GitHub\game\HorseRace\HorseRace\obj\Debug\HorseRace.csproj.CoreCompileInputs.cache
 C:\Users\jin\Documents\GitHub\game\HorseRace\HorseRace\obj\Debug\HorseRace.exe
 C:\Users\jin\Documents\GitHub\game\HorseRace\HorseRace\obj\Debug\HorseRace.pdb
+C:\Users\jin\Documents\GitHub\game\HorseRace\HorseRace\obj\Debug\HorseRace.Resources.resources

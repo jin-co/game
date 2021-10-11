@@ -29,25 +29,25 @@ namespace HorseRace
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumberOfHorses = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnShowRecord = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pnlFinishLine = new System.Windows.Forms.Panel();
             this.pnlGround = new System.Windows.Forms.Panel();
+            this.pnlFinishLine = new System.Windows.Forms.Panel();
             this.pnlGround.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNumberOfHorses
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(30, 24);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "8";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNumberOfHorses.Location = new System.Drawing.Point(235, 60);
+            this.txtNumberOfHorses.Name = "txtNumberOfHorses";
+            this.txtNumberOfHorses.Size = new System.Drawing.Size(30, 24);
+            this.txtNumberOfHorses.TabIndex = 0;
+            this.txtNumberOfHorses.Text = "8";
+            this.txtNumberOfHorses.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -66,6 +66,7 @@ namespace HorseRace
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnShowRecord
             // 
@@ -96,6 +97,15 @@ namespace HorseRace
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pnlGround
+            // 
+            this.pnlGround.BackgroundImage = global::HorseRace.Resources.track;
+            this.pnlGround.Controls.Add(this.pnlFinishLine);
+            this.pnlGround.Location = new System.Drawing.Point(29, 92);
+            this.pnlGround.Name = "pnlGround";
+            this.pnlGround.Size = new System.Drawing.Size(1129, 519);
+            this.pnlGround.TabIndex = 7;
+            // 
             // pnlFinishLine
             // 
             this.pnlFinishLine.BackColor = System.Drawing.Color.Red;
@@ -103,14 +113,6 @@ namespace HorseRace
             this.pnlFinishLine.Name = "pnlFinishLine";
             this.pnlFinishLine.Size = new System.Drawing.Size(10, 519);
             this.pnlFinishLine.TabIndex = 6;
-            // 
-            // pnlGround
-            // 
-            this.pnlGround.Controls.Add(this.pnlFinishLine);
-            this.pnlGround.Location = new System.Drawing.Point(29, 92);
-            this.pnlGround.Name = "pnlGround";
-            this.pnlGround.Size = new System.Drawing.Size(1129, 519);
-            this.pnlGround.TabIndex = 7;
             // 
             // Main
             // 
@@ -123,9 +125,9 @@ namespace HorseRace
             this.Controls.Add(this.btnShowRecord);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNumberOfHorses);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Horese Race";
             this.pnlGround.ResumeLayout(false);
@@ -136,7 +138,7 @@ namespace HorseRace
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumberOfHorses;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnShowRecord;
