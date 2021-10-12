@@ -29,6 +29,12 @@ namespace PuzzleGame
             {
                 toBox = clicked;
                 PictureBox temp = new PictureBox();
+                temp.Image = toBox.Image;
+                temp.Tag = toBox.Tag;
+                toBox.Image = fromBox.Image;
+                toBox.Tag = fromBox.Tag;
+                fromBox.Image = null;
+                fromBox.Tag = toBox.Tag;
             }
         }
     }
