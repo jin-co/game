@@ -87,6 +87,7 @@ namespace PuzzleGame
                 for (int col = 0; col < cols; col++)
                 {
                     string key = pieces[row, col].Tag.ToString();
+                    pieces[row, col].Click += new EventHandler(new Game().OnClick);
                     pieces[row, col].Image = imageSet[key];
                     parent.Controls.Add(pieces[row, col]);
                 }
