@@ -62,7 +62,7 @@ namespace PuzzleGame
                     }
                 }
             }
-            MessageBox.Show
+            MessageBox.Show();
         }
     }
 }

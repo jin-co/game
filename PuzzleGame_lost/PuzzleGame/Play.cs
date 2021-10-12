@@ -16,5 +16,10 @@ namespace PuzzleGame
         {
             InitializeComponent();
         }
+
+        private void Play_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

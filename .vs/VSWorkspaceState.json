@@ -3,8 +3,10 @@
     "",
     "\\HorseRace",
     "\\HorseRace\\HorseRace",
-    "\\Practice"
+    "\\Practice",
+    "\\PuzzleGame",
+    "\\PuzzleGame\\PuzzleGame"
   ],
-  "SelectedNode": "\\HorseRace\\HorseRace\\Main.cs",
+  "SelectedNode": "\\PuzzleGame\\PuzzleGame\\Game2DGen.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -49,6 +49,7 @@ namespace PuzzleGame
             this.Controls.Add(this.button1);
             this.Name = "Play";
             this.Text = "Play";
+            this.Load += new System.EventHandler(this.Play_Load);
             this.ResumeLayout(false);
 
         }
