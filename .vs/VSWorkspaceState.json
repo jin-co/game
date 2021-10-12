@@ -5,8 +5,9 @@
     "\\HorseRace\\HorseRace",
     "\\Practice",
     "\\PuzzleGame",
-    "\\PuzzleGame\\PuzzleGame"
+    "\\PuzzleGame\\PuzzleGame",
+    "\\PuzzleGame\\PuzzleGame\\PuzzleGame"
   ],
-  "SelectedNode": "\\PuzzleGame\\PuzzleGame\\Game2DGen.cs",
+  "SelectedNode": "\\PuzzleGame\\PuzzleGame\\PuzzleGame\\Game2DGen.cs",
   "PreviewInSolutionExplorer": false
 }
