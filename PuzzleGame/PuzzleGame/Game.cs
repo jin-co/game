@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,13 +48,21 @@ namespace PuzzleGame
         {
             int rows, cols;
             DecideRowsCols(out rows, out cols);
+            int n = 0;
             for (int row = 0; row < rows; row++)
             {
                 for (int col = 0; col < cols; col++)
                 {
-
+                    string key = PicBoxPrefix + n;
+                    n++;
+                    Image image = ImageSet[key];
+                    if (pieces[row, col].Image != image)
+                    {
+                        return;
+                    }
                 }
             }
+            MessageBox.Show
         }
     }
 }
