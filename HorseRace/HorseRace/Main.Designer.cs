@@ -76,6 +76,7 @@ namespace HorseRace
             this.btnShowRecord.TabIndex = 3;
             this.btnShowRecord.Text = "Show Record";
             this.btnShowRecord.UseVisualStyleBackColor = true;
+            this.btnShowRecord.Click += new System.EventHandler(this.btnShowRecord_Click);
             // 
             // btnNewGame
             // 

@@ -18,12 +18,24 @@ namespace HorseRace
         #region Properties
         public Timer HorseTime { get; set; }
         public Stopwatch Stopwatch { get; set; }
+        public int Speed { get; set; }
+        public Panel FinishLine { get; set; }
+        public string Record { get; set; }
         #endregion
 
         #region Fields
         #endregion
 
         #region Methods
+        public void Timer_Tick(object sender, EventArgs e)
+        {
+            if (!(this.Right >= FinishLine.Left))
+            {
+                this.Left += 10;
+                Stopwatch.Stop();
+                Record = Stopwatch.ElapsedMilliseconds.ToString();
+            }
+        }
         #endregion
 
     }
