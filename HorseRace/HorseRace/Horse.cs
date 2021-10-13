@@ -21,6 +21,7 @@ namespace HorseRace
         public int Speed { get; set; }
         public Panel FinishLine { get; set; }
         public string Record { get; set; }
+        public bool isFinished { get; set; }
         #endregion
 
         #region Fields
@@ -31,7 +32,8 @@ namespace HorseRace
         {
             if (!(this.Right >= FinishLine.Left))
             {
-                this.Left += 10;
+                this.Left += Speed;
+                isFinished = true;
                 Stopwatch.Stop();
                 Record = Stopwatch.ElapsedMilliseconds.ToString();
             }

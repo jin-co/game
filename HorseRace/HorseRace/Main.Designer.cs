@@ -37,6 +37,7 @@ namespace HorseRace
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlGround = new System.Windows.Forms.Panel();
             this.pnlFinishLine = new System.Windows.Forms.Panel();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.pnlGround.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,11 +116,19 @@ namespace HorseRace
             this.pnlFinishLine.Size = new System.Drawing.Size(10, 519);
             this.pnlFinishLine.TabIndex = 6;
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(29, 22);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(1129, 24);
+            this.txtTest.TabIndex = 8;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.pnlGround);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNewGame);
@@ -147,6 +156,7 @@ namespace HorseRace
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlFinishLine;
         private System.Windows.Forms.Panel pnlGround;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
 

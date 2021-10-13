@@ -15,6 +15,7 @@ namespace HorseRace
     {
         Horse horse;
         List<Horse> horses = new List<Horse>();
+        string message = "";
         public Main()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace HorseRace
                 horse.HorseTime = new Timer();
                 horse.HorseTime.Enabled = true;
                 horse.HorseTime.Interval = speed;
+                horse.Speed = speed; // test
                 horse.Stopwatch = new Stopwatch();
                 horse.Stopwatch.Start();
                 horses.Add(horse);
@@ -48,7 +50,14 @@ namespace HorseRace
 
         private void btnShowRecord_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(horse.Record);
+            foreach (var i in horses)
+            {
+                if (i.isFinished)
+                {
+                    message += i.Record + "\n";
+                }
+            }
+            MessageBox.Show(message);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
