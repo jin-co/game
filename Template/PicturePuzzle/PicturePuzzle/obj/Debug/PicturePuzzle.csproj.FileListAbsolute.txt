@@ -1,0 +1,12 @@
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\bin\Debug\PicturePuzzle.exe.config
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\bin\Debug\PicturePuzzle.exe
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\bin\Debug\PicturePuzzle.pdb
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.GameDesign.resources
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.GameMain.resources
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.GamePlay.resources
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.exe
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.pdb
