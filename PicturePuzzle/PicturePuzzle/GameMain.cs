@@ -17,9 +17,21 @@ namespace PicturePuzzle
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
+            GameDesign designForm = new GameDesign();
+            designForm.Show();
+        }
 
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            GamePlay playForm = new GamePlay();
+            playForm.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -16,5 +16,25 @@ namespace PicturePuzzle
         {
             InitializeComponent();
         }
+
+        private void level13X3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void level24X4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
