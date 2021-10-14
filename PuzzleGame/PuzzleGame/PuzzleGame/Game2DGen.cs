@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ namespace PuzzleGame
     public class Game2DGen : PuzzleData
     {
         protected Control parent;
+        private GameEventHandler gameHandler;
 
         public Game2DGen (Control parent)
         {
@@ -25,7 +28,7 @@ namespace PuzzleGame
             DecideWidthHeith(out width, out height);
             int startX, startY;
             DecideStartXStartY(out startX, out startY);
-
+            gameHandler = new GameEventHandler();
             if (NotLoaded)
             {
                 LoadImage();
@@ -77,7 +80,7 @@ namespace PuzzleGame
                 for (int col = 0; col < cols; col++)
                 {
                     string key = Pieces[row, col].Tag.ToString();
-                    Pieces[row, col].Click += new EventHandler(OnClick);
+                    Pieces[row, col].MouseDown += gameHandler.MouseDown;
                     Pieces[row, col].Image = ImageSet[key];
                     parent.Controls.Add(Pieces[row, col]);
                 }
@@ -86,47 +89,6 @@ namespace PuzzleGame
             ShowWholePiece();
         }
 
-        private void OnClick (object sender, EventArgs e)
-        {
-            // temp hook
-        }
-
-        public void show()
-        {
-            Console.WriteLine("do sth");
-        }
-
-        public void dummy ()
-        {
-            int x = 1;
-
-            if (x==1)
-            {
-                //do sth
-                show();
-            } else if (x==2)
-            {
-                //do sth else
-                show();
-            }
-        }
-
-        public void dummy1()
-        {
-            int x = 1;
-
-            if (x == 1)
-            {
-                //do sth
-            }
-            else if (x == 2)
-            {
-                //do sth else
-            }
-            show();
-        }
-
-        // method dummy = dummy1
 
         private void ShowWholePiece ()
         {
@@ -154,6 +116,8 @@ namespace PuzzleGame
                 {
                     string key = lines[lineNo];
                     Pieces[row, col].Image = ImageSet[key];
+                    // missed this line in class
+                    Pieces[row, col].MouseDown += gameHandler.MouseDown;
                     parent.Controls.Add(Pieces[row, col]);
                     lineNo++;
                 }

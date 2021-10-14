@@ -14,7 +14,7 @@ namespace PuzzleGame
     {
         private FileHandler fileHandler;
         private Game2DGen gameGen;
-
+        private GameEventHandler gameHandler;
         public PlayGame()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace PuzzleGame
         {
             fileHandler = new FileHandler();
             gameGen = new Game2DGen(this);
+            gameHandler = new GameEventHandler();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,14 +43,10 @@ namespace PuzzleGame
             Close();
         }
 
-        private void pixBox_Click(object sender, EventArgs e)
+        private void btnScramble_Click(object sender, EventArgs e)
         {
-                OpenFileDialog ofd = new OpenFileDialog();
-         
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                   pixBox.Load(ofd.FileName);
-                }
+            // game handle will do that
+            gameHandler.Scramble();
         }
     }
 }

@@ -34,9 +34,8 @@ namespace PuzzleGame
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pixBox = new System.Windows.Forms.PictureBox();
+            this.btnScramble = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pixBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,23 +79,22 @@ namespace PuzzleGame
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
-            // pixBox
+            // btnScramble
             // 
-            this.pixBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pixBox.Location = new System.Drawing.Point(396, 233);
-            this.pixBox.Name = "pixBox";
-            this.pixBox.Size = new System.Drawing.Size(265, 241);
-            this.pixBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pixBox.TabIndex = 1;
-            this.pixBox.TabStop = false;
-            this.pixBox.Click += new System.EventHandler(this.pixBox_Click);
+            this.btnScramble.Location = new System.Drawing.Point(1013, 700);
+            this.btnScramble.Name = "btnScramble";
+            this.btnScramble.Size = new System.Drawing.Size(89, 42);
+            this.btnScramble.TabIndex = 1;
+            this.btnScramble.Text = "Scramble";
+            this.btnScramble.UseVisualStyleBackColor = true;
+            this.btnScramble.Click += new System.EventHandler(this.btnScramble_Click);
             // 
             // PlayGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 754);
-            this.Controls.Add(this.pixBox);
+            this.Controls.Add(this.btnScramble);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PlayGame";
@@ -104,7 +102,6 @@ namespace PuzzleGame
             this.Load += new System.EventHandler(this.PlayGame_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pixBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +114,6 @@ namespace PuzzleGame
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pixBox;
+        private System.Windows.Forms.Button btnScramble;
     }
 }
