@@ -32,7 +32,7 @@ namespace HorseRace
         {
             if (!(this.Right >= FinishLine.Left))
             {
-                this.Left += Speed;
+                this.Left += 12;
                 isFinished = true;
                 Stopwatch.Stop();
                 Record = Stopwatch.ElapsedMilliseconds.ToString();

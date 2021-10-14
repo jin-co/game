@@ -39,7 +39,6 @@ namespace HorseRace
                 horse.HorseTime = new Timer();
                 horse.HorseTime.Enabled = true;
                 horse.HorseTime.Interval = speed;
-                horse.Speed = speed; // test
                 horse.Stopwatch = new Stopwatch();
                 horse.Stopwatch.Start();
                 horses.Add(horse);
