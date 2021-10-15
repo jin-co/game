@@ -10,3 +10,4 @@ C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\Picture
 C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.csproj.CoreCompileInputs.cache
 C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.exe
 C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.pdb
+C:\Users\jin\Documents\GitHub\game\PicturePuzzle\PicturePuzzle\obj\Debug\PicturePuzzle.Resources.resources
