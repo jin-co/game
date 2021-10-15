@@ -3,11 +3,10 @@
     "",
     "\\HorseRace",
     "\\HorseRace\\HorseRace",
-    "\\Practice",
-    "\\PuzzleGame",
-    "\\PuzzleGame\\PuzzleGame",
-    "\\PuzzleGame\\PuzzleGame\\PuzzleGame"
+    "\\PicturePuzzle",
+    "\\PicturePuzzle\\PicturePuzzle",
+    "\\Practice"
   ],
-  "SelectedNode": "\\HorseRace\\HorseRace\\Main.cs",
+  "SelectedNode": "\\PicturePuzzle\\PicturePuzzle\\Resources.resx",
   "PreviewInSolutionExplorer": false
 }
