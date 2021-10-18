@@ -12,29 +12,39 @@ namespace PicturePuzzle
 {
     public partial class GameDesign : Form
     {
+        private FileIO fileIo;
+        private GameGenerator generator;
         public GameDesign()
         {
             InitializeComponent();
         }
 
-        private void level13X3ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnsLevel1_Click(object sender, EventArgs e)
+        {
+            PuzzleData.CurrentLevel = 1;
+            generator.GenWidgets();
+            generator.ShowGame();
+        }
+
+        private void mnsLevel2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void level24X4ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnsSave_Click(object sender, EventArgs e)
         {
-
+            fileIo.SaveGame();
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnsClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void GameDesign_Load(object sender, EventArgs e)
+        {
+            generator = new GameGenerator(this);
+            fileIo = new FileIO();
         }
     }
 }

@@ -31,11 +31,11 @@ namespace PicturePuzzle
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.level13X3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.level24X4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsLevel1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsLevel2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,48 +53,48 @@ namespace PicturePuzzle
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.mnsSave,
+            this.mnsClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // saveToolStripMenuItem
+            // mnsSave
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.mnsSave.Name = "mnsSave";
+            this.mnsSave.Size = new System.Drawing.Size(180, 22);
+            this.mnsSave.Text = "&Save";
+            this.mnsSave.Click += new System.EventHandler(this.mnsSave_Click);
             // 
-            // closeToolStripMenuItem
+            // mnsClose
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.closeToolStripMenuItem.Text = "&Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.mnsClose.Name = "mnsClose";
+            this.mnsClose.Size = new System.Drawing.Size(180, 22);
+            this.mnsClose.Text = "&Close";
+            this.mnsClose.Click += new System.EventHandler(this.mnsClose_Click);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.level13X3ToolStripMenuItem,
-            this.level24X4ToolStripMenuItem});
+            this.mnsLevel1,
+            this.mnsLevel2});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.createToolStripMenuItem.Text = "Create";
             // 
-            // level13X3ToolStripMenuItem
+            // mnsLevel1
             // 
-            this.level13X3ToolStripMenuItem.Name = "level13X3ToolStripMenuItem";
-            this.level13X3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.level13X3ToolStripMenuItem.Text = "Level 1 (3 x 3)";
-            this.level13X3ToolStripMenuItem.Click += new System.EventHandler(this.level13X3ToolStripMenuItem_Click);
+            this.mnsLevel1.Name = "mnsLevel1";
+            this.mnsLevel1.Size = new System.Drawing.Size(180, 22);
+            this.mnsLevel1.Text = "Level 1 (3 x 3)";
+            this.mnsLevel1.Click += new System.EventHandler(this.mnsLevel1_Click);
             // 
-            // level24X4ToolStripMenuItem
+            // mnsLevel2
             // 
-            this.level24X4ToolStripMenuItem.Name = "level24X4ToolStripMenuItem";
-            this.level24X4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.level24X4ToolStripMenuItem.Text = "Level 2 (4 x 4)";
-            this.level24X4ToolStripMenuItem.Click += new System.EventHandler(this.level24X4ToolStripMenuItem_Click);
+            this.mnsLevel2.Name = "mnsLevel2";
+            this.mnsLevel2.Size = new System.Drawing.Size(180, 22);
+            this.mnsLevel2.Text = "Level 2 (4 x 4)";
+            this.mnsLevel2.Click += new System.EventHandler(this.mnsLevel2_Click);
             // 
             // GameDesign
             // 
@@ -104,9 +104,10 @@ namespace PicturePuzzle
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GameDesign";
             this.Text = "GameDesign";
+            this.Load += new System.EventHandler(this.GameDesign_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -118,10 +119,10 @@ namespace PicturePuzzle
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnsSave;
+        private System.Windows.Forms.ToolStripMenuItem mnsClose;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem level13X3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem level24X4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnsLevel1;
+        private System.Windows.Forms.ToolStripMenuItem mnsLevel2;
     }
 }
