@@ -12,24 +12,43 @@ namespace PicturePuzzle
 {
     public partial class GamePlay : Form
     {
+        private FileIO fileIO;
+        private GameGenerator generator;
+        private GameEventHandler eventHandler;
         public GamePlay()
         {
             InitializeComponent();
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GamePlay_Load(object sender, EventArgs e)
         {
-
+            fileIO = new FileIO();
+            generator = new GameGenerator(this);
+            eventHandler = new GameEventHandler();
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnsLoad_Click(object sender, EventArgs e)
         {
-
+            string[] lines = fileIO.LoadGame();
+            generator.LoadPuzzleFromFile(lines);
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnsSave_Click(object sender, EventArgs e)
+        {
+            fileIO.SaveGame();
+        }
+
+        private void mnsExit_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void btnScramble_Click(object sender, EventArgs e)
+        {
+            // game handle will do that
+            eventHandler.Scramble();
+        }
+
+
     }
 }

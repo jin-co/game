@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace PicturePuzzle
 {
-    class GameGenarator : PuzzleData
+    class GameGenerator : PuzzleData
     {
         protected Control parent;
         private GameEventHandler gameHandler;
 
-        public GameGenarator(Control parent)
+        public GameGenerator(Control parent)
         {
             this.parent = parent;
         }
