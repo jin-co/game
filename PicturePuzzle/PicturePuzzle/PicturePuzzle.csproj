@@ -53,6 +53,8 @@
     <Compile Include="GameDesign.Designer.cs">
       <DependentUpon>GameDesign.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameEventHandler.cs" />
+    <Compile Include="GameGenarator.cs" />
     <Compile Include="GameMain.cs">
       <SubType>Form</SubType>
     </Compile>

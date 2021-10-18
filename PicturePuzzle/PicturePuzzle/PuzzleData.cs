@@ -10,7 +10,7 @@ namespace PicturePuzzle
 {
     class PuzzleData
     {
-        public static int CurrentLevel = 1;
+        public static int CurrentLevel = 1; 
 
         public static PictureBox[,] Pieces;
         public static PictureBox[,] WholePiece;
