@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace PicturePuzzle
 {
-    class FileIO
+    class FileIO : PuzzleData
     {
+        public void SaveGame()
+        {
+            int rows, cols;
+            DecideRowsCols(out rows, out cols);
+
+        }
     }
 }
