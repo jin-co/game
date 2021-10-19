@@ -35,7 +35,14 @@ namespace ImageLoading
         
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            GroupBox groupBox = new GroupBox();
+            groupBox.Left = grbPics.Left;
+            groupBox.Top = grbPics.Top;
+            groupBox.Width = grbPics.Width;
+            groupBox.Height = grbPics.Height;
+            Controls.Remove(grbPics);
+            grbPics = groupBox;
+            Controls.Add(grbPics);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
