@@ -37,6 +37,9 @@ namespace ImageLoading
             this.btnClose = new System.Windows.Forms.Button();
             this.txtTest = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.rtbPath = new System.Windows.Forms.RichTextBox();
+            this.txtPath = new System.Windows.Forms.Button();
+            this.grbPics = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // label1
@@ -108,11 +111,40 @@ namespace ImageLoading
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // rtbPath
+            // 
+            this.rtbPath.Location = new System.Drawing.Point(677, 107);
+            this.rtbPath.Name = "rtbPath";
+            this.rtbPath.Size = new System.Drawing.Size(511, 291);
+            this.rtbPath.TabIndex = 8;
+            this.rtbPath.Text = "";
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(677, 419);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(75, 23);
+            this.txtPath.TabIndex = 9;
+            this.txtPath.Text = "File Path";
+            this.txtPath.UseVisualStyleBackColor = true;
+            this.txtPath.Click += new System.EventHandler(this.txtPath_Click);
+            // 
+            // grbPics
+            // 
+            this.grbPics.Location = new System.Drawing.Point(45, 92);
+            this.grbPics.Name = "grbPics";
+            this.grbPics.Size = new System.Drawing.Size(537, 434);
+            this.grbPics.TabIndex = 10;
+            this.grbPics.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.grbPics);
+            this.Controls.Add(this.txtPath);
+            this.Controls.Add(this.rtbPath);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.txtTest);
             this.Controls.Add(this.btnClose);
@@ -140,6 +172,9 @@ namespace ImageLoading
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtTest;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.RichTextBox rtbPath;
+        private System.Windows.Forms.Button txtPath;
+        private System.Windows.Forms.GroupBox grbPics;
     }
 }
 
