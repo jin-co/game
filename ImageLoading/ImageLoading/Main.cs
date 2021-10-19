@@ -25,7 +25,7 @@ namespace ImageLoading
             picBox.Top = 0;
             string path = Path.GetFullPath(@"../../../");
             txtTest.Text = path;
-            Image image = Image.FromFile($@"{path}images\p1.jpg");
+            Image image = Image.FromFile($@"ThisPC\Desktop\p1.jpg");
             picBox.Image = image;
             //C: \Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\images\p1.jpg
             picBox.Height = 100;

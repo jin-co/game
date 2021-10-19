@@ -40,6 +40,9 @@ namespace ImageLoading
             this.rtbPath = new System.Windows.Forms.RichTextBox();
             this.txtPath = new System.Windows.Forms.Button();
             this.grbPics = new System.Windows.Forms.GroupBox();
+            this.ptbMyImage = new System.Windows.Forms.PictureBox();
+            this.grbPics.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMyImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -131,11 +134,22 @@ namespace ImageLoading
             // 
             // grbPics
             // 
+            this.grbPics.Controls.Add(this.ptbMyImage);
             this.grbPics.Location = new System.Drawing.Point(45, 92);
             this.grbPics.Name = "grbPics";
             this.grbPics.Size = new System.Drawing.Size(537, 434);
             this.grbPics.TabIndex = 10;
             this.grbPics.TabStop = false;
+            // 
+            // ptbMyImage
+            // 
+            this.ptbMyImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbMyImage.Location = new System.Drawing.Point(120, 112);
+            this.ptbMyImage.Name = "ptbMyImage";
+            this.ptbMyImage.Size = new System.Drawing.Size(190, 125);
+            this.ptbMyImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMyImage.TabIndex = 11;
+            this.ptbMyImage.TabStop = false;
             // 
             // Main
             // 
@@ -154,9 +168,11 @@ namespace ImageLoading
             this.Controls.Add(this.txtRows);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Main";
+            this.grbPics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMyImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +191,7 @@ namespace ImageLoading
         private System.Windows.Forms.RichTextBox rtbPath;
         private System.Windows.Forms.Button txtPath;
         private System.Windows.Forms.GroupBox grbPics;
+        private System.Windows.Forms.PictureBox ptbMyImage;
     }
 }
 
