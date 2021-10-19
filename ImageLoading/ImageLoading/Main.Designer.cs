@@ -35,6 +35,8 @@ namespace ImageLoading
             this.label2 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtTest = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +73,7 @@ namespace ImageLoading
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(813, 50);
+            this.btnCreate.Location = new System.Drawing.Point(677, 50);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 4;
@@ -89,11 +91,30 @@ namespace ImageLoading
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(95, 546);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(1043, 24);
+            this.txtTest.TabIndex = 6;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(821, 50);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtCols);
@@ -117,6 +138,8 @@ namespace ImageLoading
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 

@@ -8,3 +8,4 @@ C:\Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\obj\Debug\ImageLoad
 C:\Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\obj\Debug\ImageLoading.csproj.CoreCompileInputs.cache
 C:\Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\obj\Debug\ImageLoading.exe
 C:\Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\obj\Debug\ImageLoading.pdb
+C:\Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\obj\Debug\ImageLoading.Resources.resources
