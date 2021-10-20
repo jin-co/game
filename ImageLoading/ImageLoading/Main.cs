@@ -52,9 +52,9 @@ namespace ImageLoading
                 MessageBox.Show("enter row and col");
             }
 
-            btns = new Button[rows, cols];
-
-            for (int row = 0; row < rows; row++)
+            btns = new Button[rows + 1, cols];
+            int row;
+            for (row = 0; row < rows; row++)
             {
                 for (int col = 0; col < cols; col++)
                 {
@@ -73,6 +73,20 @@ namespace ImageLoading
                 xGap = 0;
                 yGap += 20;
             }
+
+            for (int col = 0; col < cols; col++)
+            {
+                Button btn = new Button();
+                btn.Left = (col * x) + xGap;
+                btn.Top = (row * y) + yGap;
+                btn.Width = 40;
+                btn.Height = 40;
+                grbPics.Controls.Add(btn);
+                btns[row, col] = btn;
+                num++;
+                xGap += 20;
+                btns[row, col].MouseDown += this.MouseDown;
+            }
         }
 
         // this doesn't work
@@ -90,11 +104,24 @@ namespace ImageLoading
 
         public void MouseDown (object sender, EventArgs eventArgs)
         {
-            
+            fromBtn = new Button();
+            toBtn = new Button();
             Button clicked = (Button)sender;
-            clicked.Text = "clicked";
+            if (clicked.Text == "")
+            {
+                fromBtn.Location = clicked.Location;
+            }
+            else
+            {
 
-            fromBtn.Location = clicked.Location;
+                toBtn.Location = clicked.Location;
+                toBtn.Location = fromBtn.Location;
+
+            }
+            //clicked.Text = "clicked";
+
+            toBtn.Location = clicked.Location;
+            fromBtn.Location = toBtn.Location;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
