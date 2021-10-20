@@ -13,6 +13,11 @@ namespace ImageLoading
 {
     public partial class Main : Form
     {
+        Button fromBtn;
+        Button toBtn;
+        Button[,] btns;
+        int rows;
+        int cols;
         public Main()
         {
             InitializeComponent();
@@ -32,13 +37,11 @@ namespace ImageLoading
             //picBox.Width = 100;
             //this.Controls.Add(picBox);
 
-
-
-            int rows;
-            int cols;
+            int xGap = 0;
+            int yGap = 0;
+            int num = 1;
             int x = 30;
             int y = 30;
-            int gap = 20;
 
             if (!int.TryParse(txtRows.Text, out rows))
             {
@@ -55,14 +58,43 @@ namespace ImageLoading
                 for (int col = 0; col < cols; col++)
                 {
                     Button btn = new Button();
-                    btn.Left = (col * x);
-                    btn.Top = (row * y);
+                    btn.Left = (col * x) + xGap;
+                    btn.Top = (row * y) + yGap;
                     btn.Width = 40;
                     btn.Height = 40;
-                    btn.Text = "btn";   
+                    btn.Text = num.ToString(); 
                     grbPics.Controls.Add(btn);
+                    btns[row, col] = btn;
+                    num++;
+                    xGap += 20;
+                }
+                xGap = 0;
+                yGap += 20;
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    //btns[row, col].Click += new System.EventHandler(this.MouseDown);
+                    btns[row, col].MouseDown += MouseDown;
                 }
             }
+        }
+
+        public void MouseDown (object sender, EventArgs eventArgs)
+        {
+            
+            Button clicked = (Button)sender;
+            clicked.Text = "clicked";
+
+            fromBtn.Location = clicked.Location;
+
+
+
 
         }
 
@@ -101,10 +133,6 @@ namespace ImageLoading
             //Directory.Delete(@"C:Users\jin\TESTDIR");
 
             /* Write */
-
-
-
-
         }
     }
 }
