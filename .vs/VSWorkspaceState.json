@@ -3,10 +3,12 @@
     "",
     "\\HorseRace",
     "\\HorseRace\\HorseRace",
+    "\\ImageLoading",
+    "\\ImageLoading\\ImageLoading",
     "\\PicturePuzzle",
     "\\PicturePuzzle\\PicturePuzzle",
     "\\Practice"
   ],
-  "SelectedNode": "\\PicturePuzzle\\PicturePuzzle\\GamePlay.cs",
+  "SelectedNode": "\\ImageLoading\\ImageLoading\\Main.cs",
   "PreviewInSolutionExplorer": false
 }

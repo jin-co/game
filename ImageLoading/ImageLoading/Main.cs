@@ -59,7 +59,7 @@ namespace ImageLoading
                     btn.Top = (row * y);
                     btn.Width = 40;
                     btn.Height = 40;
-                    btn.Text = "btn";
+                    btn.Text = "btn";   
                     grbPics.Controls.Add(btn);
                 }
             }
