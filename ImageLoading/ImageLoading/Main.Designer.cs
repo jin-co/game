@@ -60,6 +60,7 @@ namespace ImageLoading
             this.txtRows.Name = "txtRows";
             this.txtRows.Size = new System.Drawing.Size(100, 24);
             this.txtRows.TabIndex = 1;
+            this.txtRows.Text = "3";
             // 
             // txtCols
             // 
@@ -67,6 +68,7 @@ namespace ImageLoading
             this.txtCols.Name = "txtCols";
             this.txtCols.Size = new System.Drawing.Size(100, 24);
             this.txtCols.TabIndex = 3;
+            this.txtCols.Text = "3";
             // 
             // label2
             // 
