@@ -15,9 +15,9 @@ namespace ImageLoading
     {
         Button fromBtn;
         Button toBtn;
-        Button[,] btns;
         int rows;
         int cols;
+        Button[,] btns; 
         public Main()
         {
             InitializeComponent();
@@ -52,6 +52,7 @@ namespace ImageLoading
                 MessageBox.Show("enter row and col");
             }
 
+            btns = new Button[rows, cols];
 
             for (int row = 0; row < rows; row++)
             {
@@ -67,23 +68,25 @@ namespace ImageLoading
                     btns[row, col] = btn;
                     num++;
                     xGap += 20;
+                    btns[row, col].MouseDown += this.MouseDown;
                 }
                 xGap = 0;
                 yGap += 20;
             }
         }
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    //btns[row, col].Click += new System.EventHandler(this.MouseDown);
-                    btns[row, col].MouseDown += MouseDown;
-                }
-            }
-        }
+        // this doesn't work
+        //private void Main_Load(object sender, EventArgs e)
+        //{
+        //    for (int row = 0; row < rows; row++)
+        //    {
+        //        for (int col = 0; col < cols; col++)
+        //        {
+        //            //btns[row, col].Click += new System.EventHandler(this.MouseDown);
+        //            btns[row, col].Click += new System.EventHandler(this.MouseDown);
+        //        }
+        //    }
+        //}
 
         public void MouseDown (object sender, EventArgs eventArgs)
         {
@@ -92,10 +95,6 @@ namespace ImageLoading
             clicked.Text = "clicked";
 
             fromBtn.Location = clicked.Location;
-
-
-
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
