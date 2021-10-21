@@ -1,0 +1,10 @@
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\bin\Debug\BoatGame.exe.config
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\bin\Debug\BoatGame.exe
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\bin\Debug\BoatGame.pdb
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.form.resources
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.exe
+C:\Users\jin\Documents\GitHub\game\BoatGame\BoatGame\obj\Debug\BoatGame.pdb

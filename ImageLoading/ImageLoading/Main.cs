@@ -15,6 +15,7 @@ namespace ImageLoading
     {
         Button fromBtn;
         Button toBtn;
+        Button temp;
         int rows;
         int cols;
         Button[,] btns; 
@@ -104,24 +105,19 @@ namespace ImageLoading
 
         public void MouseDown (object sender, EventArgs eventArgs)
         {
-            fromBtn = new Button();
-            toBtn = new Button();
             Button clicked = (Button)sender;
-            if (clicked.Text == "")
+            if (clicked.Text == "" || clicked.Text == null)
             {
-                fromBtn.Location = clicked.Location;
+                clicked.Text = temp.Text;
+                return;
             }
-            else
-            {
+            temp = new Button();
+            temp = clicked;
 
-                toBtn.Location = clicked.Location;
-                toBtn.Location = fromBtn.Location;
+            txtTest.Text = clicked.Text;
+            txtTest.Text += temp.Text;
 
-            }
-            //clicked.Text = "clicked";
-
-            toBtn.Location = clicked.Location;
-            fromBtn.Location = toBtn.Location;
+            clicked.Text = "";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
