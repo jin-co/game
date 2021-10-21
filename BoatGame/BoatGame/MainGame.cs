@@ -14,7 +14,9 @@ namespace BoatGame
     {
         int colorCount;
         int yGap;
-        Color[] colors = new Color[]
+        List<Boat> boats = new List<Boat>();
+
+        List<Color> colors = new List<Color>()
         {
             Color.Red,
             Color.Orange,
@@ -34,21 +36,49 @@ namespace BoatGame
             colorCount = int.Parse(txtColorSequence.Text);
             for (int i = 0; i < colorCount; i++)
             {
+                Random random = new Random();
+                int speed = random.Next(40, 80);
+
                 Boat boat = new Boat();
                 boat.Left = 20;
-                boat.Top = 20;
+                boat.Top = (20 * i) + yGap;
                 boat.BackColor = colors[i];
-                boat.Height = 50;
+                boat.Height = 20;
                 boat.Width = 50;
-                boat.Margin.Bottom = yGap;
-                grbWater.Controls.Add(boat);
+                boats.Add(boat);
 
+                grbWater.Controls.Add(boat);
+                yGap += 10;
+                boat.BoatTimer = new Timer();
+                boat.BoatTimer.Enabled = true;
+                boat.BoatTimer.Interval = speed;
+                boat.BoatTimer.Start();
+                boat.BoatTimer.Tick += boat.Timer_Tick;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int i = boats.Count; 
+            Random random = new Random();
+            int speed = random.Next(40, 80);
+            
+            Boat boat = new Boat();
+            boat.Left = 20;
+            boat.Top = (20 * i) + yGap;
+            boat.BackColor = colors[random.Next(colors.Count)];
+            boat.Height = 20;
+            boat.Width = 50;
+            boat.Water = grbWater;
+            boats.Add(boat);
 
+            grbWater.Controls.Add(boat);
+            yGap += 10;
+            boat.BoatTimer = new Timer();
+            boat.BoatTimer.Enabled = true;
+            boat.BoatTimer.Interval = speed;
+            boat.BoatTimer.Start();
+            boat.BoatTimer.Tick += boat.Timer_Tick;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -60,6 +90,5 @@ namespace BoatGame
         {
             Close();
         }
-
     }
 }

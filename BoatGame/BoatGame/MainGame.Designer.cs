@@ -42,7 +42,7 @@ namespace BoatGame
             // 
             this.grbWater.Location = new System.Drawing.Point(54, 145);
             this.grbWater.Name = "grbWater";
-            this.grbWater.Size = new System.Drawing.Size(1116, 244);
+            this.grbWater.Size = new System.Drawing.Size(1116, 406);
             this.grbWater.TabIndex = 0;
             this.grbWater.TabStop = false;
             // 
