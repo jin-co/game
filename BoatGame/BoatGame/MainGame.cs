@@ -31,6 +31,17 @@ namespace BoatGame
             InitializeComponent();
         }
 
+        private void form_Load(object sender, EventArgs e)
+        {
+            dgvColors.ColumnCount = 1;
+            dgvColors.Columns[0].Name = "Colors";
+            foreach (var i in colors)
+            {
+                dgvColors.Rows.Add(i);
+                cbbRemoveColors.Items.Add(i);
+            }
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             colorCount = int.Parse(txtColorSequence.Text);
@@ -45,6 +56,7 @@ namespace BoatGame
                 boat.BackColor = colors[i];
                 boat.Height = 20;
                 boat.Width = 50;
+                boat.Water = grbWater;
                 boats.Add(boat);
 
                 grbWater.Controls.Add(boat);
@@ -86,9 +98,21 @@ namespace BoatGame
 
         }
 
+        private void btnAddColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemoveColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
     }
 }

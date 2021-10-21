@@ -20,7 +20,7 @@ namespace BoatGame
 
         public void Timer_Tick(object sender, EventArgs e)
         {
-            if (!(this.Right >= Water.Left))
+            if (!(this.Right >= Water.Width))
             {
                 this.Left += 12;
                 IsFinished = false;
