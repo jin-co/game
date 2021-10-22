@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -96,11 +97,12 @@ namespace LoadImage
                 MessageBox.Show("No Image added");
             }
             int idx = Array.IndexOf(images, ptbSlider.Image);
-            if (idx != 0)
+            if (idx <= 0)
             {
-                idx--;
-                ptbSlider.Image = images[idx];
+                idx = 5;
             }
+            idx--;
+            ptbSlider.Image = images[idx];
             txtTest.Text = idx.ToString();
         }
 
@@ -111,11 +113,13 @@ namespace LoadImage
                 MessageBox.Show("No Image added");
             }
             int idx = Array.IndexOf(images, ptbSlider.Image);
-            if (idx != 4)
+            if (idx >= 4)
             {
-                idx++;
-                ptbSlider.Image = images[idx];
+                idx = -1;
             }
+            idx++;
+            ptbSlider.Image = images[idx];
+            txtTest.Text = idx.ToString();
         }
 
         private void btnLast_Click(object sender, EventArgs e)
@@ -133,13 +137,38 @@ namespace LoadImage
             {
                 MessageBox.Show("No Image added");
             }
+            
+            timer1.Start();
+            timer1.Interval = 1000;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-
+            timer1.Stop();
         }
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (ptbSlider.Image == images[0])
+            {
+                ptbSlider.Image = images[1];
+            }
+            else if (ptbSlider.Image == images[1])
+            {
+                ptbSlider.Image = images[2];
+            }
+            else if (ptbSlider.Image == images[2])
+            {
+                ptbSlider.Image = images[3];
+            }
+            else if (ptbSlider.Image == images[3])
+            {
+                ptbSlider.Image = images[4];
+            }
+            else
+            {
+                ptbSlider.Image = images[0];
+            }
+        }
     }
 }

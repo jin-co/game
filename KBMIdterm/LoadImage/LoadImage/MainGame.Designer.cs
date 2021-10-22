@@ -29,6 +29,7 @@ namespace LoadImage
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnManual = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace LoadImage
             this.btnStop = new System.Windows.Forms.Button();
             this.ptbSlider = new System.Windows.Forms.PictureBox();
             this.txtTest = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSlider)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +173,10 @@ namespace LoadImage
             this.txtTest.Size = new System.Drawing.Size(100, 27);
             this.txtTest.TabIndex = 16;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -211,6 +217,7 @@ namespace LoadImage
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox ptbSlider;
         private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
