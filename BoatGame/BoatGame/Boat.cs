@@ -14,20 +14,33 @@ namespace BoatGame
         public int X { get; set; }
         public int Y { get; set; }
         public Timer BoatTimer { get; set; }
-        public bool IsFinished { get; set; }
+        public bool GoLeft { get; set; }
         public GroupBox Water { get; set; }
 
 
         public void Timer_Tick(object sender, EventArgs e)
         {
-            if (!(this.Right >= Water.Width))
+            if (GoLeft)
             {
-                this.Left += 12;
-                IsFinished = false;
+                if (!(this.Left <= (Water.Width - Water.Width)))
+                {
+                    this.Left -= 12;
+                }
+                else
+                {
+                    GoLeft = false;
+                }
             }
             else
             {
-                IsFinished = true;
+                if (!(this.Right >= Water.Width))
+                {
+                    this.Left += 12;
+                }
+                else
+                {
+                    GoLeft = true;
+                }
             }
         }
     }

@@ -34,6 +34,7 @@ namespace BoatGame
         private void form_Load(object sender, EventArgs e)
         {
             dgvColors.ColumnCount = 1;
+            dgvColors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvColors.Columns[0].Name = "Colors";
             foreach (var i in colors)
             {
@@ -95,7 +96,16 @@ namespace BoatGame
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int idx = int.Parse(txtDelete.Text);
+                grbWater.Controls.RemoveAt(idx);
+                boats.RemoveAt(idx);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Enter boat number");
+            }
         }
 
         private void btnAddColor_Click(object sender, EventArgs e)
@@ -124,5 +134,27 @@ namespace BoatGame
         #region Custom Methods
 
         #endregion
+
+        private void form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTest.Text = "enter";
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                foreach (var i in boats)
+                {
+                    i.GoLeft = true;
+                }
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                foreach (var i in boats)
+                {
+                    i.GoLeft = false;
+                }
+            }
+        }
     }
 }

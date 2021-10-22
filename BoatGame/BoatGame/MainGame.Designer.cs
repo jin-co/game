@@ -42,6 +42,7 @@ namespace BoatGame
             this.cbbRemoveColors = new System.Windows.Forms.ComboBox();
             this.dgvColors = new System.Windows.Forms.DataGridView();
             this.txtTest = new System.Windows.Forms.TextBox();
+            this.txtDelete = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@ namespace BoatGame
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(713, 12);
+            this.btnStart.Location = new System.Drawing.Point(130, 162);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(94, 37);
             this.btnStart.TabIndex = 3;
@@ -84,7 +85,7 @@ namespace BoatGame
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(840, 12);
+            this.btnAdd.Location = new System.Drawing.Point(230, 162);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 37);
             this.btnAdd.TabIndex = 4;
@@ -104,7 +105,7 @@ namespace BoatGame
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(967, 12);
+            this.btnDelete.Location = new System.Drawing.Point(330, 162);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 37);
             this.btnDelete.TabIndex = 6;
@@ -163,11 +164,19 @@ namespace BoatGame
             this.txtTest.Size = new System.Drawing.Size(100, 24);
             this.txtTest.TabIndex = 14;
             // 
+            // txtDelete
+            // 
+            this.txtDelete.Location = new System.Drawing.Point(430, 162);
+            this.txtDelete.Name = "txtDelete";
+            this.txtDelete.Size = new System.Drawing.Size(45, 24);
+            this.txtDelete.TabIndex = 15;
+            // 
             // form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.txtDelete);
             this.Controls.Add(this.txtTest);
             this.Controls.Add(this.dgvColors);
             this.Controls.Add(this.cbbRemoveColors);
@@ -186,6 +195,7 @@ namespace BoatGame
             this.Name = "form";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.form_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,6 +217,7 @@ namespace BoatGame
         private System.Windows.Forms.ComboBox cbbRemoveColors;
         private System.Windows.Forms.DataGridView dgvColors;
         private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.TextBox txtDelete;
     }
 }
 
