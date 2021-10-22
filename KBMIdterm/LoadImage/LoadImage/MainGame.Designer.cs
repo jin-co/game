@@ -41,7 +41,6 @@ namespace LoadImage
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.ptbSlider = new System.Windows.Forms.PictureBox();
-            this.txtTest = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSlider)).BeginInit();
@@ -137,7 +136,7 @@ namespace LoadImage
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(171, 347);
+            this.btnPlay.Location = new System.Drawing.Point(171, 236);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(86, 52);
@@ -148,7 +147,7 @@ namespace LoadImage
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(277, 347);
+            this.btnStop.Location = new System.Drawing.Point(277, 236);
             this.btnStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(86, 52);
@@ -166,13 +165,6 @@ namespace LoadImage
             this.ptbSlider.TabIndex = 15;
             this.ptbSlider.TabStop = false;
             // 
-            // txtTest
-            // 
-            this.txtTest.Location = new System.Drawing.Point(238, 142);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(100, 27);
-            this.txtTest.TabIndex = 16;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -181,8 +173,7 @@ namespace LoadImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 570);
-            this.Controls.Add(this.txtTest);
+            this.ClientSize = new System.Drawing.Size(1077, 570);
             this.Controls.Add(this.ptbSlider);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
@@ -200,7 +191,6 @@ namespace LoadImage
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbSlider)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -216,7 +206,6 @@ namespace LoadImage
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox ptbSlider;
-        private System.Windows.Forms.TextBox txtTest;
         private System.Windows.Forms.Timer timer1;
     }
 }
