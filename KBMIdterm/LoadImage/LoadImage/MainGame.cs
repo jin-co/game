@@ -15,7 +15,7 @@ namespace LoadImage
     public partial class MainGame : Form
     {
         string path = Path.GetFullPath(@"../../..");
-        Image[] images;
+        Image[] images = new Image[5];
         public MainGame()
         {
             InitializeComponent();
@@ -29,21 +29,19 @@ namespace LoadImage
             btnLast.Visible = true;
             btnPlay.Visible = false;
             btnStop.Visible = false;
-        }
-
-        private void btnLoadImage_Click(object sender, EventArgs e)
-        {
-            Image[] images1 = new Image[5];
 
             // load images1
-            
-            
             for (int i = 0; i < 5; i++)
             {
                 string fname = "image" + (i + 1) + ".jpg"; // fname = $"p{n}.jpg";
                 string path = Path.GetFullPath(@"../../..");
-                images1[i] = Image.FromFile($@"{path}/images/{fname}");
+                images[i] = Image.FromFile($@"{path}/images/{fname}");
             }
+        }
+
+        private void btnLoadImage_Click(object sender, EventArgs e)
+        {
+            
 
             //OpenFileDialog ofd = new OpenFileDialog();
             //ofd.Filter = "Puzzle Game Data (*.puzzle)|*.puzzle";
@@ -88,9 +86,7 @@ namespace LoadImage
             {
                 MessageBox.Show("No Image added");
             }
-            string fname = "image" + 1 + ".jpg"; // fname = $"p{i}.jpg";
-            Image image = Image.FromFile($@"{path}/images/{fname}");
-            ptbSlider.Image = image;
+            ptbSlider.Image = images[0];
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -99,6 +95,13 @@ namespace LoadImage
             {
                 MessageBox.Show("No Image added");
             }
+            int idx = Array.IndexOf(images, ptbSlider.Image);
+            if (idx != 0)
+            {
+                idx--;
+                ptbSlider.Image = images[idx];
+            }
+            txtTest.Text = idx.ToString();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -106,6 +109,12 @@ namespace LoadImage
             if (images == null)
             {
                 MessageBox.Show("No Image added");
+            }
+            int idx = Array.IndexOf(images, ptbSlider.Image);
+            if (idx != 4)
+            {
+                idx++;
+                ptbSlider.Image = images[idx];
             }
         }
 
@@ -115,9 +124,7 @@ namespace LoadImage
             {
                 MessageBox.Show("No Image added");
             }
-            string fname = "image" + 5 + ".jpg"; // fname = $"p{i}.jpg";
-            Image image = Image.FromFile($@"{path}/images/{fname}");
-            ptbSlider.Image = image;
+            ptbSlider.Image = images[images.Length - 1];
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
