@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Midterm_KwangjinBaek")]
+[assembly: AssemblyTitle("KBMidterm")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Midterm_KwangjinBaek")]
+[assembly: AssemblyProduct("KBMidterm")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1d81f1ce-ae2f-4656-9714-34a4b4560d21")]
+[assembly: Guid("229af48e-315e-44df-90eb-e24fcbf0cbe4")]
 
 // Version information for an assembly consists of the following four values:
 //
