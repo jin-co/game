@@ -33,7 +33,13 @@ namespace BoatGame
 
         private void form_Load(object sender, EventArgs e)
         {
-            updateColors();            
+            dgvColors.ColumnCount = 1;
+            dgvColors.Columns[0].Name = "Colors";
+            foreach (var i in colors)
+            {
+                dgvColors.Rows.Add(i);
+                cbbRemoveColors.Items.Add(i);
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -95,7 +101,9 @@ namespace BoatGame
         private void btnAddColor_Click(object sender, EventArgs e)
         {
             string newColor = txtColorSequence.Text;
-            colors.Add(Color.)
+            colors.Add(Color.Lavender);
+            dgvColors.Rows.Add(Color.Lavender);
+            cbbRemoveColors.Items.Add(Color.Lavender);
         }
 
         private void btnRemoveColor_Click(object sender, EventArgs e)
@@ -109,16 +117,7 @@ namespace BoatGame
         }
 
         #region Custom Methods
-        private void updateColors()
-        {
-            dgvColors.ColumnCount = 1;
-            dgvColors.Columns[0].Name = "Colors";
-            foreach (var i in colors)
-            {
-                dgvColors.Rows.Add(i);
-                cbbRemoveColors.Items.Add(i);
-            }
-        }
+
         #endregion
     }
 }
