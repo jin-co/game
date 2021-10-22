@@ -90,7 +90,7 @@ namespace BoatGame
             boat.BoatTimer.Enabled = true;
             boat.BoatTimer.Interval = speed;
             boat.BoatTimer.Start();
-            boat.BoatTimer.Tick += boat.Timer_Tick;
+            boat.BoatTimer.Tick += boat.Timer_Tick;            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -104,11 +104,16 @@ namespace BoatGame
             colors.Add(Color.Lavender);
             dgvColors.Rows.Add(Color.Lavender);
             cbbRemoveColors.Items.Add(Color.Lavender);
+            txtColorSequence.Text = colors.Count.ToString();
         }
 
         private void btnRemoveColor_Click(object sender, EventArgs e)
         {
-
+            int idx = cbbRemoveColors.SelectedIndex;
+            colors.RemoveAt(idx);
+            dgvColors.Rows.RemoveAt(idx);
+            cbbRemoveColors.Items.RemoveAt(idx);
+            txtColorSequence.Text = colors.Count.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -41,6 +41,7 @@ namespace BoatGame
             this.btnRemoveColor = new System.Windows.Forms.Button();
             this.cbbRemoveColors = new System.Windows.Forms.ComboBox();
             this.dgvColors = new System.Windows.Forms.DataGridView();
+            this.txtTest = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,11 +156,19 @@ namespace BoatGame
             this.dgvColors.Size = new System.Drawing.Size(116, 551);
             this.dgvColors.TabIndex = 13;
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(464, 100);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 24);
+            this.txtTest.TabIndex = 14;
+            // 
             // form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.dgvColors);
             this.Controls.Add(this.cbbRemoveColors);
             this.Controls.Add(this.txtRemoveColor);
@@ -197,6 +206,7 @@ namespace BoatGame
         private System.Windows.Forms.Button btnRemoveColor;
         private System.Windows.Forms.ComboBox cbbRemoveColors;
         private System.Windows.Forms.DataGridView dgvColors;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
 
