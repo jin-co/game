@@ -14,10 +14,8 @@ namespace LoadImage
 {
     public partial class MainGame : Form
     {
-        
-
-        
         string path = Path.GetFullPath(@"../../..");
+        Image[] images;
         public MainGame()
         {
             InitializeComponent();
@@ -35,18 +33,33 @@ namespace LoadImage
 
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
-            Image[] images = new Image[5];
+            Image[] images1 = new Image[5];
 
-            // load images
-            int max = 5;
-
-            for (int i = 0; i < max; i++)
+            // load images1
+            
+            
+            for (int i = 0; i < 5; i++)
             {
-                string fname = "image" + i + ".jpg"; // fname = $"p{i}.jpg";
+                string fname = "image" + (i + 1) + ".jpg"; // fname = $"p{n}.jpg";
                 string path = Path.GetFullPath(@"../../..");
-                images[i] = Image.FromFile($@"{path}/images/{fname}");
-                MessageBox.Show(i + "added");
+                images1[i] = Image.FromFile($@"{path}/images/{fname}");
             }
+
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.Filter = "Puzzle Game Data (*.puzzle)|*.puzzle";
+            //string filePath = @"c:/5555/puzzle/data";
+            //ofd.InitialDirectory = filePath;
+
+            //string[] lines = new string[rows * cols + 1];
+            //if (ofd.ShowDialog() == DialogResult.OK)
+            //{
+            //    StreamReader sr = new StreamReader(ofd.FileName);
+            //    for (int n = 0; n < rows * cols + 1; n++)
+            //    {
+            //        lines[n] = sr.ReadLine();
+            //    }
+            //}
+            //return lines;
         }
 
         private void btnAutomatic_Click(object sender, EventArgs e)
@@ -71,6 +84,10 @@ namespace LoadImage
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
+            if (images == null)
+            {
+                MessageBox.Show("No Image added");
+            }
             string fname = "image" + 1 + ".jpg"; // fname = $"p{i}.jpg";
             Image image = Image.FromFile($@"{path}/images/{fname}");
             ptbSlider.Image = image;
@@ -78,16 +95,26 @@ namespace LoadImage
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-
+            if (images == null)
+            {
+                MessageBox.Show("No Image added");
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            if (images == null)
+            {
+                MessageBox.Show("No Image added");
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
+            if (images == null)
+            {
+                MessageBox.Show("No Image added");
+            }
             string fname = "image" + 5 + ".jpg"; // fname = $"p{i}.jpg";
             Image image = Image.FromFile($@"{path}/images/{fname}");
             ptbSlider.Image = image;
@@ -95,7 +122,10 @@ namespace LoadImage
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-
+            if (images == null)
+            {
+                MessageBox.Show("No Image added");
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
