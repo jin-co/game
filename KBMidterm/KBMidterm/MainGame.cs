@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,14 @@ namespace KBMidterm
             btnPlay.Visible = false;
             btnStop.Visible = false;
 
+        }
+
+        private void btnLoadImage_Click(object sender, EventArgs e)
+        {
+            string fname = "image" + 1 + ".jpg"; // fname = $"p{n}.jpg";
+           ;
+            string path = Path.GetFullPath(@"../../..");
+            Image images = Image.FromFile($@"{path}/images/{fname}");
         }
     }
 }

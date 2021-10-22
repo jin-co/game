@@ -119,6 +119,7 @@ namespace KBMidterm
             this.btnLoadImage.TabIndex = 6;
             this.btnLoadImage.Text = "Load Image";
             this.btnLoadImage.UseVisualStyleBackColor = true;
+            this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
             // 
             // btnStop
             // 
