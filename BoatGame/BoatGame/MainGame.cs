@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,10 @@ namespace BoatGame
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            string path = Path.GetFullPath(@"../../../");
+            string dir = Path.GetDirectoryName(Application.ExecutablePath);
+            string fileName = Path.Combine(dir, @"images\b1.png");
+
             colorCount = int.Parse(txtColorSequence.Text);
             for (int i = 0; i < colorCount; i++)
             {
