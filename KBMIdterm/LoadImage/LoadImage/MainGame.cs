@@ -114,7 +114,7 @@ namespace LoadImage
                 int idx = images.IndexOf(ptbSlider.Image);
                 if (idx <= 0)
                 {
-                    idx = 5;
+                    idx = images.Count;
                 }
                 idx--;
                 ptbSlider.Image = images[idx];
@@ -132,12 +132,12 @@ namespace LoadImage
             else
             {
                 int idx = images.IndexOf(ptbSlider.Image);
-                if (idx >= 4)
+                if (idx >= images.Count - 1)
                 {
                     idx = -1;
                 }
                 idx++;
-                ptbSlider.Image = images[idx];            
+                ptbSlider.Image = images[idx];
             }
         }
 
@@ -175,28 +175,16 @@ namespace LoadImage
             timerSlider.Stop();
         }
 
+        // timer event that loads the next image after 1 second
         private void timerSlider_Tick(object sender, EventArgs e)
         {
-            if (ptbSlider.Image == images[0])
+            int idx = images.IndexOf(ptbSlider.Image);
+            if (idx >= images.Count - 1)
             {
-                ptbSlider.Image = images[1];
+                idx = -1;
             }
-            else if (ptbSlider.Image == images[1])
-            {
-                ptbSlider.Image = images[2];
-            }
-            else if (ptbSlider.Image == images[2])
-            {
-                ptbSlider.Image = images[3];
-            }
-            else if (ptbSlider.Image == images[3])
-            {
-                ptbSlider.Image = images[4];
-            }
-            else
-            {
-                ptbSlider.Image = images[0];
-            }
+            idx++;
+            ptbSlider.Image = images[idx];
         }
     }
 }
