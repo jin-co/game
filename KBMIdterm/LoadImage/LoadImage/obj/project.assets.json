@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\game\\KBMIdterm\\LoadImage\\LoadImage\\KBMidterm.csproj",
+      "projectUniqueName": "C:\\Users\\jin\\Downloads\\KBMIdterm\\LoadImage\\LoadImage\\KBMidterm.csproj",
       "projectName": "KBMidterm",
-      "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\KBMIdterm\\LoadImage\\LoadImage\\KBMidterm.csproj",
+      "projectPath": "C:\\Users\\jin\\Downloads\\KBMIdterm\\LoadImage\\LoadImage\\KBMidterm.csproj",
       "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\KBMIdterm\\LoadImage\\LoadImage\\obj\\",
+      "outputPath": "C:\\Users\\jin\\Downloads\\KBMIdterm\\LoadImage\\LoadImage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
