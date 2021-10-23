@@ -13,16 +13,26 @@ using System.Windows.Forms;
 
 namespace LoadImage
 {
+    /* Author: Kwangjin Baek
+     * Date: 2021. Oct. 22.
+     * Description: Image slider application that allows 
+     *      users to add and show the images using 
+     *      buttons with two view options
+     */
+
     public partial class MainGame : Form
     {
+        #region variables
         string path = Path.GetFullPath(@"../../..");
-        //Image[] images = new Image[5];
         List<Image> images = new List<Image>();
+        #endregion
+
         public MainGame()
         {
             InitializeComponent();
         }
 
+        // on load, the app starts with manual mode(play, stop not showing)
         private void MainGame_Load(object sender, EventArgs e)
         {
             btnFirst.Visible = true;
@@ -31,20 +41,14 @@ namespace LoadImage
             btnLast.Visible = true;
             btnPlay.Visible = false;
             btnStop.Visible = false;
-
-            // load images1
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    string fname = "image" + (i + 1) + ".jpg"; // fname = $"p{n}.jpg";
-            //    string path = Path.GetFullPath(@"../../..");
-            //    images.Add(Image.FromFile($@"{path}/images/{fname}"));
-            //}
         }
 
+        // adds images to the list to be used in slider
+        // shows a message when an image is added
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            //filter the file you want to get
+            //filter the file
             ofd.Filter = "img (*.jpg)|*.jpg|All files (*.*)|*.*";
             //set an intial directory
             ofd.InitialDirectory = path + @"images";
@@ -62,6 +66,7 @@ namespace LoadImage
             }
         }
 
+        // changes to 'auto' mode(shows play and stop buttons only)
         private void btnAutomatic_Click(object sender, EventArgs e)
         {
             btnFirst.Visible = false;
@@ -72,6 +77,7 @@ namespace LoadImage
             btnStop.Visible = true;
         }
 
+        // changes to 'manual' mode(hides play and stop buttons)
         private void btnManual_Click(object sender, EventArgs e)
         {
             btnFirst.Visible = true;
@@ -82,6 +88,7 @@ namespace LoadImage
             btnStop.Visible = false;
         }
 
+        // show the first image only if the image list is not empty
         private void btnFirst_Click(object sender, EventArgs e)
         {
             if (images.Count == 0)
@@ -94,6 +101,8 @@ namespace LoadImage
             }
         }
 
+        // allows users to move to the previous image
+        // only if the image list is not empty
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (images.Count == 0)
@@ -112,6 +121,8 @@ namespace LoadImage
             }     
         }
 
+        // allows users to move to the next image
+        // only if the image list is not empty
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (images.Count == 0)
@@ -130,6 +141,7 @@ namespace LoadImage
             }
         }
 
+        // show the last image only if the image list is not empty
         private void btnLast_Click(object sender, EventArgs e)
         {
             if (images.Count == 0)
@@ -142,6 +154,8 @@ namespace LoadImage
             }
         }
 
+        // automatically move through the images
+        // only if the image list is not empty
         private void btnPlay_Click(object sender, EventArgs e)
         {
             if (images.Count == 0)
@@ -150,17 +164,18 @@ namespace LoadImage
             }
             else
             {
-                timer1.Start();
-                timer1.Interval = 1000;
+                timerSlider.Start();
+                timerSlider.Interval = 1000;
             }
         }
 
+        // stop the slide show
         private void btnStop_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timerSlider.Stop();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerSlider_Tick(object sender, EventArgs e)
         {
             if (ptbSlider.Image == images[0])
             {

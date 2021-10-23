@@ -41,7 +41,7 @@ namespace LoadImage
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.ptbSlider = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerSlider = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSlider)).BeginInit();
             this.SuspendLayout();
@@ -165,9 +165,9 @@ namespace LoadImage
             this.ptbSlider.TabIndex = 15;
             this.ptbSlider.TabStop = false;
             // 
-            // timer1
+            // timerSlider
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerSlider.Tick += new System.EventHandler(this.timerSlider_Tick);
             // 
             // MainGame
             // 
@@ -206,7 +206,7 @@ namespace LoadImage
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.PictureBox ptbSlider;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerSlider;
     }
 }
 
