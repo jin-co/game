@@ -30,7 +30,7 @@ namespace PicturePuzzle
             pic.Top = (this.Height / 2) - (pic.Height / 2);
             //pic.BackColor = Color.Red;
             rtbTest.Text = path + "\n" + fileName + "\n" + path2;
-            //pic.Image = Image.FromFile($@"{path}\p1.jpg");
+            pic.Image = Image.FromFile($@"{path2}PicturePuzzle\images\p1.jpg");
             this.Controls.Add(pic);
         }
     }
