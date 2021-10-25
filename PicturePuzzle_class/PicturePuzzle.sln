@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicturePuzzle", "PicturePuzzle\PicturePuzzle.csproj", "{178B4D35-52D5-450C-8DBC-CF10915BC156}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicturePuzzle", "PicturePuzzle\PicturePuzzle.csproj", "{104165FC-9BA1-414E-AF6C-DF2582C6F477}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{178B4D35-52D5-450C-8DBC-CF10915BC156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{178B4D35-52D5-450C-8DBC-CF10915BC156}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{178B4D35-52D5-450C-8DBC-CF10915BC156}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{178B4D35-52D5-450C-8DBC-CF10915BC156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104165FC-9BA1-414E-AF6C-DF2582C6F477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104165FC-9BA1-414E-AF6C-DF2582C6F477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104165FC-9BA1-414E-AF6C-DF2582C6F477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104165FC-9BA1-414E-AF6C-DF2582C6F477}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5ED8C76C-ABF9-4582-9C90-16B8AE92DE90}
+		SolutionGuid = {AB5B0B7C-D399-4388-A62C-FC2980942428}
 	EndGlobalSection
 EndGlobal
