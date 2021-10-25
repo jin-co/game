@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\LoadImage",
-    "\\LoadImage\\LoadImage"
+    "\\LoadImage\\LoadImage",
+    "\\LoadImage\\LoadImage\\images"
   ],
-  "SelectedNode": "\\LoadImage\\LoadImage\\MainGame.cs",
+  "SelectedNode": "\\LoadImage\\LoadImage\\images\\p1.jpg",
   "PreviewInSolutionExplorer": false
 }
