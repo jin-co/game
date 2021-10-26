@@ -17,7 +17,8 @@ namespace PicturePuzzle
         string path2 = Path.GetFullPath(@"../../../");
         string fileName = Path.GetFileName("p1.jpg");
 
-        int gap = 30;
+        int xGap = 30;
+        int yGap = 30;
         public MainGame()
         {
             InitializeComponent();
