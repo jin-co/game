@@ -13,25 +13,46 @@ namespace PicturePuzzle
 {
     public partial class MainGame : Form
     {
+        string path = Path.GetFullPath("images");
+        string path2 = Path.GetFullPath(@"../../../");
+        string fileName = Path.GetFileName("p1.jpg");
+
+        int gap = 30;
         public MainGame()
         {
             InitializeComponent();
         }
 
         private void MainGame_Load(object sender, EventArgs e)
+        {            
+            
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            string path = Path.GetFullPath("images");
-            string path2 = Path.GetFullPath(@"../../../");
-            string fileName = Path.GetFileName("p1.jpg");
-            PictureBox pic = new PictureBox();
-            pic.Width = 140;
-            pic.Height = 140;
-            pic.Left = (this.Width / 2) - (pic.Width / 2);
-            pic.Top = (this.Height / 2) - (pic.Height / 2);
-            //pic.BackColor = Color.Red;
-            rtbTest.Text = path + "\n" + fileName + "\n" + path2;
-            pic.Image = Image.FromFile($@"{path2}PicturePuzzle\images\p1.jpg");
-            this.Controls.Add(pic);
+            ptbWholePic.Image = Image.FromFile($@"{path2}PicturePuzzle\images\L1\M\whole.jpg");
+            int n = 1;
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Width = 140;
+                    pic.Height = 140;
+                    pic.Left = row * n;
+                    pic.Top = col * n;
+                    //pic.BackColor = Color.Red;
+                    rtbTest.Text = path + "\n" + fileName + "\n" + path2;
+                    pic.Image = Image.FromFile($@"{path2}PicturePuzzle\images\L1\M\m{n}.jpg");
+                    n++;
+                    grbBoard.Controls.Add(pic);
+                }
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

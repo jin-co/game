@@ -81,6 +81,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="images\L1\M\m1.jpg" />
+    <Content Include="images\L1\M\m2.jpg" />
+    <Content Include="images\L1\M\m3.jpg" />
+    <Content Include="images\L1\M\m4.jpg" />
+    <Content Include="images\L1\M\m5.jpg" />
+    <Content Include="images\L1\M\m6.jpg" />
+    <Content Include="images\L1\M\m7.jpg" />
+    <Content Include="images\L1\M\m8.jpg" />
+    <Content Include="images\L1\M\m9.jpg" />
+    <Content Include="images\L1\M\whole.jpg" />
     <Content Include="images\p1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
