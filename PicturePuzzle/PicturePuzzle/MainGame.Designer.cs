@@ -34,6 +34,7 @@ namespace PicturePuzzle
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rtbTest = new System.Windows.Forms.RichTextBox();
+            this.grbBoard = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,33 +61,42 @@ namespace PicturePuzzle
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "&Load";
             // 
             // rtbTest
             // 
-            this.rtbTest.Location = new System.Drawing.Point(8, 8);
+            this.rtbTest.Location = new System.Drawing.Point(8, 28);
             this.rtbTest.Name = "rtbTest";
-            this.rtbTest.Size = new System.Drawing.Size(951, 96);
+            this.rtbTest.Size = new System.Drawing.Size(951, 76);
             this.rtbTest.TabIndex = 1;
             this.rtbTest.Text = "";
+            // 
+            // grbBoard
+            // 
+            this.grbBoard.Location = new System.Drawing.Point(12, 122);
+            this.grbBoard.Name = "grbBoard";
+            this.grbBoard.Size = new System.Drawing.Size(440, 440);
+            this.grbBoard.TabIndex = 2;
+            this.grbBoard.TabStop = false;
             // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 488);
+            this.ClientSize = new System.Drawing.Size(971, 574);
+            this.Controls.Add(this.grbBoard);
             this.Controls.Add(this.rtbTest);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainGame";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.MainGame_Load);
@@ -104,6 +114,7 @@ namespace PicturePuzzle
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.RichTextBox rtbTest;
+        private System.Windows.Forms.GroupBox grbBoard;
     }
 }
 
