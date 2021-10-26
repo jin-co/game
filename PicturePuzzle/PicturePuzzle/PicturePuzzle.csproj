@@ -91,6 +91,23 @@
     <Content Include="images\L1\M\m8.jpg" />
     <Content Include="images\L1\M\m9.jpg" />
     <Content Include="images\L1\M\whole.jpg" />
+    <Content Include="images\L2\P\p1.jpg" />
+    <Content Include="images\L2\P\p10.jpg" />
+    <Content Include="images\L2\P\p11.jpg" />
+    <Content Include="images\L2\P\p12.jpg" />
+    <Content Include="images\L2\P\p13.jpg" />
+    <Content Include="images\L2\P\p14.jpg" />
+    <Content Include="images\L2\P\p15.jpg" />
+    <Content Include="images\L2\P\p16.jpg" />
+    <Content Include="images\L2\P\p2.jpg" />
+    <Content Include="images\L2\P\p3.jpg" />
+    <Content Include="images\L2\P\p4.jpg" />
+    <Content Include="images\L2\P\p5.jpg" />
+    <Content Include="images\L2\P\p6.jpg" />
+    <Content Include="images\L2\P\p7.jpg" />
+    <Content Include="images\L2\P\p8.jpg" />
+    <Content Include="images\L2\P\p9.jpg" />
+    <Content Include="images\L2\P\whole.jpg" />
     <Content Include="images\p1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

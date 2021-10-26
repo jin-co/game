@@ -17,8 +17,8 @@ namespace PicturePuzzle
         string path2 = Path.GetFullPath(@"../../../");
         string fileName = Path.GetFileName("p1.jpg");
 
-        int xGap = 30;
-        int yGap = 30;
+        int xGap = 0;
+        int yGap = 0;
         public MainGame()
         {
             InitializeComponent();
@@ -38,16 +38,19 @@ namespace PicturePuzzle
                 for (int col = 0; col < 3; col++)
                 {
                     PictureBox pic = new PictureBox();
-                    pic.Width = 140;
-                    pic.Height = 140;
-                    pic.Left = row * n;
-                    pic.Top = col * n;
+                    pic.Width = 100;
+                    pic.Height = 100;
+                    pic.Left = (col * pic.Width) + xGap;
+                    pic.Top = (row * pic.Height) + yGap;
                     //pic.BackColor = Color.Red;
                     rtbTest.Text = path + "\n" + fileName + "\n" + path2;
                     pic.Image = Image.FromFile($@"{path2}PicturePuzzle\images\L1\M\m{n}.jpg");
                     n++;
                     grbBoard.Controls.Add(pic);
+                    xGap += 5;
                 }
+                xGap = 0;
+                yGap += 5;
             }
         }
 

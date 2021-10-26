@@ -110,9 +110,9 @@ namespace PicturePuzzle
             // 
             // ptbWholePic
             // 
-            this.ptbWholePic.Location = new System.Drawing.Point(581, 77);
+            this.ptbWholePic.Location = new System.Drawing.Point(539, 77);
             this.ptbWholePic.Name = "ptbWholePic";
-            this.ptbWholePic.Size = new System.Drawing.Size(378, 320);
+            this.ptbWholePic.Size = new System.Drawing.Size(370, 370);
             this.ptbWholePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbWholePic.TabIndex = 4;
             this.ptbWholePic.TabStop = false;
