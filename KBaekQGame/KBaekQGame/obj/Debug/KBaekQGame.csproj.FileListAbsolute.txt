@@ -1,0 +1,11 @@
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\bin\Debug\KBaekQGame.exe.config
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\bin\Debug\KBaekQGame.exe
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\bin\Debug\KBaekQGame.pdb
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.GameDesign.resources
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.GameMain.resources
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.exe
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.pdb

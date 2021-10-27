@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainGame.cs">
+    <Compile Include="GameDesign.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainGame.Designer.cs">
-      <DependentUpon>MainGame.cs</DependentUpon>
+    <Compile Include="GameDesign.Designer.cs">
+      <DependentUpon>GameDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameMain.Designer.cs">
+      <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainGame.resx">
-      <DependentUpon>MainGame.cs</DependentUpon>
+    <EmbeddedResource Include="GameDesign.resx">
+      <DependentUpon>GameDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameMain.resx">
+      <DependentUpon>GameMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

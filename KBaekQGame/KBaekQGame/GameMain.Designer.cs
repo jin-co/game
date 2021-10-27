@@ -1,7 +1,7 @@
 ﻿
 namespace KBaekQGame
 {
-    partial class MainGame
+    partial class GameMain
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@ namespace KBaekQGame
             this.btnDesign.TabIndex = 0;
             this.btnDesign.Text = "Design";
             this.btnDesign.UseVisualStyleBackColor = true;
+            this.btnDesign.Click += new System.EventHandler(this.btnDesign_Click);
             // 
             // btnPlay
             // 
@@ -53,6 +54,7 @@ namespace KBaekQGame
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnExit
             // 
@@ -63,6 +65,7 @@ namespace KBaekQGame
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MainGame
             // 
