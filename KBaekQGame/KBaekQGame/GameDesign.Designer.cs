@@ -54,6 +54,7 @@ namespace KBaekQGame
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNone = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.rtbTest = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).BeginInit();
@@ -127,7 +128,7 @@ namespace KBaekQGame
             this.txtRows.Name = "txtRows";
             this.txtRows.Size = new System.Drawing.Size(58, 24);
             this.txtRows.TabIndex = 6;
-            this.txtRows.Text = "3";
+            this.txtRows.Text = "7";
             this.txtRows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -145,7 +146,7 @@ namespace KBaekQGame
             this.txtCols.Name = "txtCols";
             this.txtCols.Size = new System.Drawing.Size(58, 24);
             this.txtCols.TabIndex = 3;
-            this.txtCols.Text = "3";
+            this.txtCols.Text = "7";
             this.txtCols.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnGenerate
@@ -191,6 +192,7 @@ namespace KBaekQGame
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 18;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnGreenBox
             // 
@@ -202,6 +204,7 @@ namespace KBaekQGame
             this.btnGreenBox.Text = "Green Box";
             this.btnGreenBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGreenBox.UseVisualStyleBackColor = true;
+            this.btnGreenBox.Click += new System.EventHandler(this.Cube_Click);
             // 
             // pictureBox5
             // 
@@ -212,6 +215,7 @@ namespace KBaekQGame
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnRedBox
             // 
@@ -223,6 +227,7 @@ namespace KBaekQGame
             this.btnRedBox.Text = "Red Box";
             this.btnRedBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRedBox.UseVisualStyleBackColor = true;
+            this.btnRedBox.Click += new System.EventHandler(this.Cube_Click);
             // 
             // pictureBox4
             // 
@@ -233,6 +238,7 @@ namespace KBaekQGame
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnGreenDoor
             // 
@@ -244,6 +250,7 @@ namespace KBaekQGame
             this.btnGreenDoor.Text = "Green Door";
             this.btnGreenDoor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGreenDoor.UseVisualStyleBackColor = true;
+            this.btnGreenDoor.Click += new System.EventHandler(this.Cube_Click);
             // 
             // pictureBox3
             // 
@@ -254,6 +261,7 @@ namespace KBaekQGame
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnRedDoor
             // 
@@ -265,6 +273,7 @@ namespace KBaekQGame
             this.btnRedDoor.Text = "Red Door";
             this.btnRedDoor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRedDoor.UseVisualStyleBackColor = true;
+            this.btnRedDoor.Click += new System.EventHandler(this.Cube_Click);
             // 
             // pictureBox2
             // 
@@ -275,6 +284,7 @@ namespace KBaekQGame
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnWall
             // 
@@ -286,6 +296,7 @@ namespace KBaekQGame
             this.btnWall.Text = "Wall";
             this.btnWall.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnWall.UseVisualStyleBackColor = true;
+            this.btnWall.Click += new System.EventHandler(this.Cube_Click);
             // 
             // pictureBox1
             // 
@@ -296,6 +307,7 @@ namespace KBaekQGame
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.ToolBox_Click);
             // 
             // btnNone
             // 
@@ -307,6 +319,7 @@ namespace KBaekQGame
             this.btnNone.Text = "None";
             this.btnNone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNone.UseVisualStyleBackColor = true;
+            this.btnNone.Click += new System.EventHandler(this.Cube_Click);
             // 
             // label3
             // 
@@ -317,11 +330,20 @@ namespace KBaekQGame
             this.label3.TabIndex = 7;
             this.label3.Text = "Toolbox";
             // 
+            // rtbTest
+            // 
+            this.rtbTest.Location = new System.Drawing.Point(6, 577);
+            this.rtbTest.Name = "rtbTest";
+            this.rtbTest.Size = new System.Drawing.Size(837, 61);
+            this.rtbTest.TabIndex = 0;
+            this.rtbTest.Text = "";
+            // 
             // GameDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 567);
+            this.ClientSize = new System.Drawing.Size(855, 650);
+            this.Controls.Add(this.rtbTest);
             this.Controls.Add(this.spcBoard);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -375,5 +397,6 @@ namespace KBaekQGame
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNone;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox rtbTest;
     }
 }

@@ -15,8 +15,16 @@ namespace KBaekQGame
      */
     public partial class GameDesign : Form
     {
+        // variables
         int rows, cols, xGap, yGap, gap = 5, blockSize = 30, xStart, yStart;
-        
+
+        // list
+        PictureBox[,] cubes = new PictureBox[,] { };
+
+        // test 
+        PictureBox toolBoxPic = new PictureBox();
+        PictureBox temp = new PictureBox();
+
         public GameDesign()
         {
             InitializeComponent();
@@ -42,12 +50,14 @@ namespace KBaekQGame
                     MessageBoxIcon.Warning);
             }
 
-            // test
+            // sets array size
+            cubes = new PictureBox[rows, cols];
+
+            // sets starting point
             xStart = (spcBoard.Panel2.Width / 2) - ((cols / 2) * (blockSize + gap));
             yStart = (spcBoard.Panel2.Height / 2) - ((rows / 2) * (blockSize + gap));
             xGap = xStart;
             yGap = yStart;
-
 
             // generates board
             for (int row = 0; row < rows; row++)
@@ -60,8 +70,10 @@ namespace KBaekQGame
                     pic.Left = xGap + (pic.Width * col);
                     pic.Top = yGap + (pic.Height * row);
                     pic.BorderStyle = BorderStyle.Fixed3D;
-                    pic.SizeMode = PictureBoxSizeMode.StretchImage; 
+                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    cubes[row, col] = pic;
                     spcBoard.Panel2.Controls.Add(pic);
+                    pic.Click += Cube_Click;
                     xGap += gap;
                 }
                 xGap = xStart;
@@ -83,6 +95,24 @@ namespace KBaekQGame
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        /// <summary>
+        /// Selects the image chosen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cube_Click(object sender, EventArgs e)
+        {
+            PictureBox clicked = (PictureBox)sender;
+            clicked.Image = toolBoxPic.Image;
+            
+            rtbTest.Text = "chosen";
+        }
+
+        private void ToolBox_Click(object sender, EventArgs e)
+        {             
+            toolBoxPic = (PictureBox)sender;
         }
     }
 }
