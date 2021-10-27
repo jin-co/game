@@ -17,7 +17,7 @@ namespace KBaekQGame
     public partial class GameDesign : Form
     {
         // variables
-        int rows, cols, xGap, yGap, gap = 5, blockSize = 30, xStart, yStart;
+        int rows, cols, xGap, yGap, gap = 1, blockSize = 45, xStart, yStart;
 
         // list
         PictureBox[,] cubes = new PictureBox[,] { };
@@ -87,7 +87,39 @@ namespace KBaekQGame
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Maze Game Data (*.txt)|*.txt";
+            string filePath = @"c:/";
+            sfd.InitialDirectory = filePath;
+            sfd.Title = "Save";
+            sfd.FileName = "maze";
+            
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
 
+            }
+
+            int wallCount = 0, doorCount = 0, boxCount = 0;
+            Bitmap bm;
+            foreach (var i in cubes)
+            {
+                if (i.Image == Resources.wall)
+                {
+                    wallCount++;
+                }
+                
+                if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
+                {
+                    boxCount++;
+                }
+                
+                if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
+                {
+                    doorCount++;
+                }
+            }
+
+            rtbTest.Text = $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
         }
 
         /// <summary>
@@ -99,7 +131,7 @@ namespace KBaekQGame
         {
             Close();
         }
-
+          
         /// <summary>
         /// Selects the image chosen
         /// </summary>
@@ -116,11 +148,12 @@ namespace KBaekQGame
         private void ToolBox_Click(object sender, EventArgs e)
         {
             PictureBox pic = (PictureBox)sender;
-            if (pic.AccessibleName.Equals("none"))
+            if (pic.AccessibleName != null && pic.AccessibleName.Equals("none"))
             {
                 toolBoxPic = null;
                 return;
             }
+
             toolBoxPic = pic.Image;
         }
 
@@ -135,6 +168,6 @@ namespace KBaekQGame
             }
             string path = Path.GetFullPath(@"../../../");
             toolBoxPic = Image.FromFile(path + $@"KBaekQGame\Resources\{fileName}.jpg");
-        }
+        }        
     }
 }
