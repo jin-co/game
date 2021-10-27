@@ -204,7 +204,7 @@ namespace KBaekQGame
             this.btnGreenBox.Text = "Green Box";
             this.btnGreenBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGreenBox.UseVisualStyleBackColor = true;
-            this.btnGreenBox.Click += new System.EventHandler(this.Cube_Click);
+            this.btnGreenBox.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // pictureBox5
             // 
@@ -227,7 +227,7 @@ namespace KBaekQGame
             this.btnRedBox.Text = "Red Box";
             this.btnRedBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRedBox.UseVisualStyleBackColor = true;
-            this.btnRedBox.Click += new System.EventHandler(this.Cube_Click);
+            this.btnRedBox.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // pictureBox4
             // 
@@ -250,7 +250,7 @@ namespace KBaekQGame
             this.btnGreenDoor.Text = "Green Door";
             this.btnGreenDoor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGreenDoor.UseVisualStyleBackColor = true;
-            this.btnGreenDoor.Click += new System.EventHandler(this.Cube_Click);
+            this.btnGreenDoor.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // pictureBox3
             // 
@@ -273,7 +273,7 @@ namespace KBaekQGame
             this.btnRedDoor.Text = "Red Door";
             this.btnRedDoor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRedDoor.UseVisualStyleBackColor = true;
-            this.btnRedDoor.Click += new System.EventHandler(this.Cube_Click);
+            this.btnRedDoor.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // pictureBox2
             // 
@@ -296,10 +296,11 @@ namespace KBaekQGame
             this.btnWall.Text = "Wall";
             this.btnWall.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnWall.UseVisualStyleBackColor = true;
-            this.btnWall.Click += new System.EventHandler(this.Cube_Click);
+            this.btnWall.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.AccessibleName = "none";
             this.pictureBox1.Image = global::KBaekQGame.Resources.none;
             this.pictureBox1.Location = new System.Drawing.Point(6, 66);
             this.pictureBox1.Name = "pictureBox1";
@@ -319,7 +320,7 @@ namespace KBaekQGame
             this.btnNone.Text = "None";
             this.btnNone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNone.UseVisualStyleBackColor = true;
-            this.btnNone.Click += new System.EventHandler(this.Cube_Click);
+            this.btnNone.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
             // label3
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,10 @@ namespace KBaekQGame
         PictureBox[,] cubes = new PictureBox[,] { };
 
         // test 
-        PictureBox toolBoxPic = new PictureBox();
+        //PictureBox toolBoxPic = new PictureBox();
+        Image toolBoxPic;
         PictureBox temp = new PictureBox();
+        
 
         public GameDesign()
         {
@@ -105,14 +108,33 @@ namespace KBaekQGame
         private void Cube_Click(object sender, EventArgs e)
         {
             PictureBox clicked = (PictureBox)sender;
-            clicked.Image = toolBoxPic.Image;
+            clicked.Image = toolBoxPic;
             
             rtbTest.Text = "chosen";
         }
 
         private void ToolBox_Click(object sender, EventArgs e)
-        {             
-            toolBoxPic = (PictureBox)sender;
+        {
+            PictureBox pic = (PictureBox)sender;
+            if (pic.AccessibleName.Equals("none"))
+            {
+                toolBoxPic = null;
+                return;
+            }
+            toolBoxPic = pic.Image;
+        }
+
+        private void ToolBoxBtn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string fileName = btn.Name.Substring(3).ToLower();
+            if (fileName.Equals("none"))
+            {
+                toolBoxPic = null;
+                return;
+            }
+            string path = Path.GetFullPath(@"../../../");
+            toolBoxPic = Image.FromFile(path + $@"KBaekQGame\Resources\{fileName}.jpg");
         }
     }
 }
