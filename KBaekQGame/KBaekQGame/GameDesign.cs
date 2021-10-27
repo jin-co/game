@@ -22,11 +22,38 @@ namespace KBaekQGame
         // list
         PictureBox[,] cubes = new PictureBox[,] { };
 
-        // test 
-        //PictureBox toolBoxPic = new PictureBox();
+        // temporary image 
         Image toolBoxPic;
-        PictureBox temp = new PictureBox();
-        
+        //PictureBox temp = new PictureBox();
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            int wallCount = 0, doorCount = 0, boxCount = 0;
+            Bitmap bm;
+            foreach (var i in cubes)
+            {
+                ptbTest.Image = i.Image;
+                ptbTest2.Image = Resources.wall;
+                rtbTest.Text += Resources.wall.ToString() + "\n";
+                rtbTest.Text += i.ToString() + "\n";
+                if (i.Image == Resources.wall)
+                {
+                    wallCount++;
+                }
+
+                if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
+                {
+                    boxCount++;
+                }
+
+                if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
+                {
+                    doorCount++;
+                }
+            }
+
+            rtbTest.Text += $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
+        }
 
         public GameDesign()
         {
@@ -99,27 +126,29 @@ namespace KBaekQGame
 
             }
 
-            int wallCount = 0, doorCount = 0, boxCount = 0;
-            Bitmap bm;
-            foreach (var i in cubes)
-            {
-                if (i.Image == Resources.wall)
-                {
-                    wallCount++;
-                }
+            //int wallCount = 0, doorCount = 0, boxCount = 0;
+            //Bitmap bm;
+            //foreach (var i in cubes)
+            //{
+            //    rtbTest.Text += Resources.wall.ToString() + "\n";
+            //    rtbTest.Text += i.ToString() + "\n";
+            //    if (i.Image == Resources.wall)
+            //    {
+            //        wallCount++;
+            //    }
                 
-                if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
-                {
-                    boxCount++;
-                }
+            //    if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
+            //    {
+            //        boxCount++;
+            //    }
                 
-                if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
-                {
-                    doorCount++;
-                }
-            }
+            //    if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
+            //    {
+            //        doorCount++;
+            //    }
+            //}
 
-            rtbTest.Text = $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
+            //rtbTest.Text += $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
         }
 
         /// <summary>

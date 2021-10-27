@@ -55,6 +55,9 @@ namespace KBaekQGame
             this.btnNone = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.rtbTest = new System.Windows.Forms.RichTextBox();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.ptbTest = new System.Windows.Forms.PictureBox();
+            this.ptbTest2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).BeginInit();
@@ -66,6 +69,8 @@ namespace KBaekQGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTest2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -128,7 +133,7 @@ namespace KBaekQGame
             this.txtRows.Name = "txtRows";
             this.txtRows.Size = new System.Drawing.Size(58, 24);
             this.txtRows.TabIndex = 6;
-            this.txtRows.Text = "7";
+            this.txtRows.Text = "3";
             this.txtRows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -146,7 +151,7 @@ namespace KBaekQGame
             this.txtCols.Name = "txtCols";
             this.txtCols.Size = new System.Drawing.Size(58, 24);
             this.txtCols.TabIndex = 3;
-            this.txtCols.Text = "7";
+            this.txtCols.Text = "3";
             this.txtCols.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnGenerate
@@ -333,17 +338,48 @@ namespace KBaekQGame
             // 
             // rtbTest
             // 
-            this.rtbTest.Location = new System.Drawing.Point(6, 577);
+            this.rtbTest.Location = new System.Drawing.Point(162, 577);
             this.rtbTest.Name = "rtbTest";
-            this.rtbTest.Size = new System.Drawing.Size(837, 61);
+            this.rtbTest.Size = new System.Drawing.Size(646, 61);
             this.rtbTest.TabIndex = 0;
             this.rtbTest.Text = "";
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(814, 577);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(41, 61);
+            this.btnTest.TabIndex = 7;
+            this.btnTest.Text = "T";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // ptbTest
+            // 
+            this.ptbTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbTest.Location = new System.Drawing.Point(6, 577);
+            this.ptbTest.Name = "ptbTest";
+            this.ptbTest.Size = new System.Drawing.Size(72, 61);
+            this.ptbTest.TabIndex = 8;
+            this.ptbTest.TabStop = false;
+            // 
+            // ptbTest2
+            // 
+            this.ptbTest2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbTest2.Location = new System.Drawing.Point(84, 577);
+            this.ptbTest2.Name = "ptbTest2";
+            this.ptbTest2.Size = new System.Drawing.Size(72, 61);
+            this.ptbTest2.TabIndex = 9;
+            this.ptbTest2.TabStop = false;
             // 
             // GameDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 650);
+            this.Controls.Add(this.ptbTest2);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.ptbTest);
             this.Controls.Add(this.rtbTest);
             this.Controls.Add(this.spcBoard);
             this.Controls.Add(this.panel1);
@@ -367,6 +403,8 @@ namespace KBaekQGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTest2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +437,8 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnNone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rtbTest;
+        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.PictureBox ptbTest2;
+        private System.Windows.Forms.PictureBox ptbTest;
     }
 }
