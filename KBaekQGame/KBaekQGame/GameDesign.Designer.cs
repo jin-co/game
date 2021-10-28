@@ -29,6 +29,7 @@ namespace KBaekQGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameDesign));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,34 +42,23 @@ namespace KBaekQGame
             this.txtCols = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.spcBoard = new System.Windows.Forms.SplitContainer();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnGreenBox = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnRedBox = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnGreenDoor = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnRedDoor = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnWall = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNone = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.rtbTest = new System.Windows.Forms.RichTextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.ptbTest = new System.Windows.Forms.PictureBox();
             this.ptbTest2 = new System.Windows.Forms.PictureBox();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).BeginInit();
             this.spcBoard.Panel1.SuspendLayout();
             this.spcBoard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTest2)).BeginInit();
             this.SuspendLayout();
@@ -171,37 +161,23 @@ namespace KBaekQGame
             // 
             // spcBoard.Panel1
             // 
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox6);
             this.spcBoard.Panel1.Controls.Add(this.btnGreenBox);
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox5);
             this.spcBoard.Panel1.Controls.Add(this.btnRedBox);
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox4);
             this.spcBoard.Panel1.Controls.Add(this.btnGreenDoor);
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox3);
             this.spcBoard.Panel1.Controls.Add(this.btnRedDoor);
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox2);
             this.spcBoard.Panel1.Controls.Add(this.btnWall);
-            this.spcBoard.Panel1.Controls.Add(this.pictureBox1);
             this.spcBoard.Panel1.Controls.Add(this.btnNone);
             this.spcBoard.Panel1.Controls.Add(this.label3);
             this.spcBoard.Size = new System.Drawing.Size(855, 497);
             this.spcBoard.SplitterDistance = 123;
             this.spcBoard.TabIndex = 7;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::KBaekQGame.Resources.greenbox;
-            this.pictureBox6.Location = new System.Drawing.Point(6, 416);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnGreenBox
             // 
             this.btnGreenBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGreenBox.ImageIndex = 5;
+            this.btnGreenBox.ImageList = this.imageList;
             this.btnGreenBox.Location = new System.Drawing.Point(3, 413);
             this.btnGreenBox.Name = "btnGreenBox";
             this.btnGreenBox.Size = new System.Drawing.Size(117, 51);
@@ -211,20 +187,12 @@ namespace KBaekQGame
             this.btnGreenBox.UseVisualStyleBackColor = true;
             this.btnGreenBox.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::KBaekQGame.Resources.redbox;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 346);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnRedBox
             // 
             this.btnRedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRedBox.ImageIndex = 4;
+            this.btnRedBox.ImageList = this.imageList;
             this.btnRedBox.Location = new System.Drawing.Point(3, 343);
             this.btnRedBox.Name = "btnRedBox";
             this.btnRedBox.Size = new System.Drawing.Size(117, 51);
@@ -234,20 +202,12 @@ namespace KBaekQGame
             this.btnRedBox.UseVisualStyleBackColor = true;
             this.btnRedBox.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::KBaekQGame.Resources.greendoor;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 276);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnGreenDoor
             // 
             this.btnGreenDoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenDoor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGreenDoor.ImageIndex = 3;
+            this.btnGreenDoor.ImageList = this.imageList;
             this.btnGreenDoor.Location = new System.Drawing.Point(3, 273);
             this.btnGreenDoor.Name = "btnGreenDoor";
             this.btnGreenDoor.Size = new System.Drawing.Size(117, 51);
@@ -257,20 +217,12 @@ namespace KBaekQGame
             this.btnGreenDoor.UseVisualStyleBackColor = true;
             this.btnGreenDoor.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 206);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnRedDoor
             // 
             this.btnRedDoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedDoor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRedDoor.ImageIndex = 2;
+            this.btnRedDoor.ImageList = this.imageList;
             this.btnRedDoor.Location = new System.Drawing.Point(3, 203);
             this.btnRedDoor.Name = "btnRedDoor";
             this.btnRedDoor.Size = new System.Drawing.Size(117, 51);
@@ -280,20 +232,12 @@ namespace KBaekQGame
             this.btnRedDoor.UseVisualStyleBackColor = true;
             this.btnRedDoor.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::KBaekQGame.Resources.wall;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 136);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnWall
             // 
             this.btnWall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWall.ImageIndex = 1;
+            this.btnWall.ImageList = this.imageList;
             this.btnWall.Location = new System.Drawing.Point(3, 133);
             this.btnWall.Name = "btnWall";
             this.btnWall.Size = new System.Drawing.Size(117, 51);
@@ -303,21 +247,12 @@ namespace KBaekQGame
             this.btnWall.UseVisualStyleBackColor = true;
             this.btnWall.Click += new System.EventHandler(this.ToolBoxBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.AccessibleName = "none";
-            this.pictureBox1.Image = global::KBaekQGame.Resources.none;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.ToolBox_Click);
-            // 
             // btnNone
             // 
             this.btnNone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNone.ImageIndex = 0;
+            this.btnNone.ImageList = this.imageList;
             this.btnNone.Location = new System.Drawing.Point(3, 63);
             this.btnNone.Name = "btnNone";
             this.btnNone.Size = new System.Drawing.Size(117, 51);
@@ -372,6 +307,17 @@ namespace KBaekQGame
             this.ptbTest2.TabIndex = 9;
             this.ptbTest2.TabStop = false;
             // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "none.jpg");
+            this.imageList.Images.SetKeyName(1, "wall.jpg");
+            this.imageList.Images.SetKeyName(2, "reddoor.jpg");
+            this.imageList.Images.SetKeyName(3, "greendoor.jpg");
+            this.imageList.Images.SetKeyName(4, "redbox.jpg");
+            this.imageList.Images.SetKeyName(5, "greenbox.jpg");
+            // 
             // GameDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -397,12 +343,6 @@ namespace KBaekQGame
             this.spcBoard.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).EndInit();
             this.spcBoard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTest2)).EndInit();
             this.ResumeLayout(false);
@@ -423,22 +363,17 @@ namespace KBaekQGame
         private System.Windows.Forms.TextBox txtCols;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.SplitContainer spcBoard;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnGreenBox;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnRedBox;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnGreenDoor;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnRedDoor;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnWall;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rtbTest;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.PictureBox ptbTest2;
         private System.Windows.Forms.PictureBox ptbTest;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

@@ -169,8 +169,6 @@ namespace KBaekQGame
         {
             PictureBox clicked = (PictureBox)sender;
             clicked.Image = toolBoxPic;
-            
-            rtbTest.Text = "chosen";
         }
 
         private void ToolBox_Click(object sender, EventArgs e)
@@ -188,14 +186,14 @@ namespace KBaekQGame
         private void ToolBoxBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            
             string fileName = btn.Name.Substring(3).ToLower();
             if (fileName.Equals("none"))
             {
                 toolBoxPic = null;
                 return;
             }
-            string path = Path.GetFullPath(@"../../../");
-            toolBoxPic = Image.FromFile(path + $@"KBaekQGame\Resources\{fileName}.jpg");
+            toolBoxPic = imageList.Images[btn.ImageIndex];
         }        
     }
 }
