@@ -124,6 +124,25 @@ namespace KBaekQGame
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+                StreamWriter sw = new StreamWriter(sfd.FileName);
+                for (int row = 0; row < rows; row++)
+                {
+                    for (int col = 0; col < cols; col++)
+                    {
+                        sw.WriteLine(row.ToString());
+                        sw.WriteLine(col.ToString());
+                        if (cubes[row, col].Tag != null)
+                        {
+                            sw.WriteLine(cubes[row, col].Tag.ToString());
+                        }
+                        else
+                        {
+                            sw.WriteLine("0");
+                        }
+                    }
+                }
+                sw.Dispose();
+
                 MessageBox.Show(
                     $"Walls: {wallCount} \n Doors: {doorCount} \n Boxes: {boxCount}",
                     "Q Game",
