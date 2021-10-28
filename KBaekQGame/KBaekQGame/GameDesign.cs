@@ -90,14 +90,18 @@ namespace KBaekQGame
             yGap = yStart;
         }
 
+        /// <summary>
+        /// Saves the game design
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Maze Game Data (*.txt)|*.txt";
-            string filePath = @"c:/";
-            sfd.InitialDirectory = filePath;
-            sfd.Title = "Save";
-            sfd.FileName = "maze";
+            FileHandler fileHandler = new FileHandler();
+            fileHandler.Rows = rows;
+            fileHandler.Cols = cols;
+            fileHandler.Cubes = cubes;
+            fileHandler.SaveFile();
 
             int wallCount = 0, doorCount = 0, boxCount = 0;
             foreach (var i in cubes)
@@ -120,43 +124,14 @@ namespace KBaekQGame
                         boxCount++;
                     }
                 }
-            }
+            }            
 
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                StreamWriter sw = new StreamWriter(sfd.FileName);
-                for (int row = 0; row < rows; row++)
-                {
-                    for (int col = 0; col < cols; col++)
-                    {
-                        sw.WriteLine(row.ToString());
-                        sw.WriteLine(col.ToString());
-                        if (cubes[row, col].Tag != null)
-                        {
-                            sw.WriteLine(cubes[row, col].Tag.ToString());
-                        }
-                        else
-                        {
-                            sw.WriteLine("0");
-                        }
-                    }
-                }
-                sw.Dispose();
-
-                MessageBox.Show(
-                    $"Walls: {wallCount} \n Doors: {doorCount} \n Boxes: {boxCount}",
+            MessageBox.Show(
+                    $"File Saved Successfully\n" +
+                    $"Walls: {wallCount} \nDoors: {doorCount} \nBoxes: {boxCount}",
                     "Q Game",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(
-                    $"No File Added",
-                    "Q Game",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }            
         }
 
         /// <summary>
