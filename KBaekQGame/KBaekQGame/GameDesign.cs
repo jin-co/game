@@ -26,32 +26,10 @@ namespace KBaekQGame
         Image toolBoxPic;
         //PictureBox temp = new PictureBox();
 
+        // test
         private void btnTest_Click(object sender, EventArgs e)
         {
-            int wallCount = 0, doorCount = 0, boxCount = 0;
-            foreach (var i in cubes)
-            {
-                if (i.Tag != null)
-                {
-                    int tag = int.Parse(i.Tag.ToString());
-                    if (tag == 1)                    
-                    {
-                        wallCount++;
-                    }
-
-                    if (tag == 2 || tag == 3)
-                    {
-                        doorCount++;
-                    }
-
-                    if (tag == 4 || tag == 5)
-                    {
-                        boxCount++;
-                    }
-                }                
-            }
-
-            rtbTest.Text += $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
+            
         }
 
         public GameDesign()
@@ -120,11 +98,34 @@ namespace KBaekQGame
             sfd.InitialDirectory = filePath;
             sfd.Title = "Save";
             sfd.FileName = "maze";
-            
+
+            int wallCount = 0, doorCount = 0, boxCount = 0;
+            foreach (var i in cubes)
+            {
+                if (i.Tag != null)
+                {
+                    int tag = int.Parse(i.Tag.ToString());
+                    if (tag == 1)
+                    {
+                        wallCount++;
+                    }
+
+                    if (tag == 2 || tag == 3)
+                    {
+                        doorCount++;
+                    }
+
+                    if (tag == 4 || tag == 5)
+                    {
+                        boxCount++;
+                    }
+                }
+            }
+
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(
-                    $"Walls: \n Doors: \n Boxes",
+                    $"Walls: {wallCount} \n Doors: {doorCount} \n Boxes: {boxCount}",
                     "Q Game",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -136,33 +137,7 @@ namespace KBaekQGame
                     "Q Game",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-            }
-
-            
-
-            //int wallCount = 0, doorCount = 0, boxCount = 0;
-            //Bitmap bm;
-            //foreach (var i in cubes)
-            //{
-            //    rtbTest.Text += Resources.wall.ToString() + "\n";
-            //    rtbTest.Text += i.ToString() + "\n";
-            //    if (i.Image == Resources.wall)
-            //    {
-            //        wallCount++;
-            //    }
-
-            //    if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
-            //    {
-            //        boxCount++;
-            //    }
-
-            //    if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
-            //    {
-            //        doorCount++;
-            //    }
-            //}
-
-            //rtbTest.Text += $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
+            }            
         }
 
         /// <summary>
