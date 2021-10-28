@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileHandler.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="GameDesign.cs">
       <SubType>Form</SubType>
     </Compile>

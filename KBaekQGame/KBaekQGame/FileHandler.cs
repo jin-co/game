@@ -8,12 +8,15 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
-    /* FileHandling class that handles calls 
+    /* FileHandling class that handles calls(save, load, ...)
      * related to the files
-     * 
      */
     class FileHandler
     {
+        #region Fields
+        Game game = new Game();
+        #endregion
+
         #region Properties
         public int Rows { get; set; }
         public int Cols { get; set; }
@@ -56,11 +59,41 @@ namespace KBaekQGame
                     }
                 }
                 sw.Dispose();
+                GameMessage.ShowMessage(0, CalculateResult());
             }
             else
             {
                 GameMessage.ShowMessage(2, "No File Added");
             }
+        }
+
+        private string CalculateResult()
+        {
+            int wallCount = 0, doorCount = 0, boxCount = 0;
+            foreach (var i in Cubes)
+            {
+                if (i.Tag != null)
+                {
+                    int tag = int.Parse(i.Tag.ToString());
+                    if (tag == 1)
+                    {
+                        wallCount++;
+                    }
+
+                    if (tag == 2 || tag == 3)
+                    {
+                        doorCount++;
+                    }
+
+                    if (tag == 4 || tag == 5)
+                    {
+                        boxCount++;
+                    }
+                }
+            }
+
+            return $"File Saved Successfully\n" +
+                    $"Walls: {wallCount} \nDoors: {doorCount} \nBoxes: {boxCount}";
         }
         #endregion
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace KBaekQGame
     {// variables
         #region Fields
         private int gap = 1, blockSize = 45;
+        private Image toolBoxPic;
         #endregion
 
         #region Properties
@@ -22,64 +24,88 @@ namespace KBaekQGame
         public int YStart { get; set; }
         public int ImageTag { get; set; }
         public PictureBox[,] Cubes { get; set; }
-        public Form Parent { get; set; }
+        public SplitContainer SpcBoard { get; set; }        
+        public ImageList ImageList { get; set; }
         #endregion
 
         #region Constructors
         public Game() { }
 
-        public Game(Form parent)
+        public Game(SplitContainer spcBoard, ImageList imageList)
         {
-            Parent = parent;
+            SpcBoard = spcBoard;            
+            ImageList = imageList;
         }
-
-
         #endregion
 
         #region Methods        
-        public void Test()
+        public void GenerateGame()
         {
             // clear game board
-            Parent.spcBoard.Panel2.Controls.Clear();
-
-            // checks input error
-            if (!int.TryParse(txtRows.Text, out rows) || !int.TryParse(txtCols.Text, out cols))
-            {
-                GameMessage.ShowMessage(1, "Please provide numbers for rows and columns");
-            }
+            SpcBoard.Panel2.Controls.Clear();
 
             // sets array size
-            cubes = new PictureBox[rows, cols];
+            Cubes = new PictureBox[Rows, Cols];
 
             // sets starting point
-            xStart = (spcBoard.Panel2.Width / 2) - ((cols / 2) * (blockSize + gap));
-            yStart = (spcBoard.Panel2.Height / 2) - ((rows / 2) * (blockSize + gap));
-            xGap = xStart;
-            yGap = yStart;
+            XStart = (SpcBoard.Panel2.Width / 2) - ((Cols / 2) * (blockSize + gap));
+            YStart = (SpcBoard.Panel2.Height / 2) - ((Rows / 2) * (blockSize + gap));
+            XGap = XStart;
+            YGap = YStart;
 
             // generates board
-            for (int row = 0; row < rows; row++)
+            for (int row = 0; row < Rows; row++)
             {
-                for (int col = 0; col < cols; col++)
+                for (int col = 0; col < Cols; col++)
                 {
                     PictureBox pic = new PictureBox();
                     pic.Width = blockSize;
                     pic.Height = blockSize;
-                    pic.Left = xGap + (pic.Width * col);
-                    pic.Top = yGap + (pic.Height * row);
+                    pic.Left = XGap + (pic.Width * col);
+                    pic.Top = YGap + (pic.Height * row);
                     pic.BorderStyle = BorderStyle.Fixed3D;
                     pic.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                    cubes[row, col] = pic;
-                    spcBoard.Panel2.Controls.Add(pic);
+                    Cubes[row, col] = pic;
+                    SpcBoard.Panel2.Controls.Add(pic);
                     pic.Click += Cube_Click;
-                    xGap += gap;
+                    XGap += gap;
                 }
-                xGap = xStart;
-                yGap += gap;
+                XGap = XStart;
+                YGap += gap;
             }
-            yGap = yStart;
+            YGap = YStart;
         }
+
+        /// <summary>
+        /// Event handler that fills the game board with the
+        /// image chosen from the tool box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cube_Click(object sender, EventArgs e)
+        {
+            PictureBox clicked = (PictureBox)sender;
+            clicked.Image = toolBoxPic;
+            clicked.Tag = ImageTag;
+        }
+
+        /// <summary>
+        /// Event handler that selects a image from the tool box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ToolBox_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.ImageIndex == 0)
+            {
+                toolBoxPic = null;
+                return;
+            }
+            toolBoxPic = ImageList.Images[btn.ImageIndex];
+            ImageTag = btn.ImageIndex;
+        }       
         #endregion
     }
 }
