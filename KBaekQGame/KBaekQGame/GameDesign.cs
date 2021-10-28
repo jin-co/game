@@ -29,7 +29,6 @@ namespace KBaekQGame
         private void btnTest_Click(object sender, EventArgs e)
         {
             int wallCount = 0, doorCount = 0, boxCount = 0;
-            Bitmap bm;
             foreach (var i in cubes)
             {
                 ptbTest.Image = i.Image;
