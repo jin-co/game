@@ -41,9 +41,9 @@ namespace KBaekQGame
             {
                 GameMessage.ShowMessage(1, "Please provide numbers for rows and columns");
             }
-            game.Rows = rows;
-            game.Cols = cols;
-            game.GenerateGame();
+            Game.Rows = rows;
+            Game.Cols = cols;
+            GameGenerator.GenerateGame();
         }
 
         // Saves the game design
@@ -52,7 +52,7 @@ namespace KBaekQGame
             FileHandler fileHandler = new FileHandler();
             fileHandler.Rows = rows;
             fileHandler.Cols = cols;
-            fileHandler.Cubes = game.Cubes;
+            fileHandler.Cubes = Game.Cubes;
             fileHandler.SaveFile();            
         }
 
