@@ -43,6 +43,7 @@ namespace KBaekQGame
             this.btnGenerate = new System.Windows.Forms.Button();
             this.spcBoard = new System.Windows.Forms.SplitContainer();
             this.btnGreenBox = new System.Windows.Forms.Button();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.btnRedBox = new System.Windows.Forms.Button();
             this.btnGreenDoor = new System.Windows.Forms.Button();
             this.btnRedDoor = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace KBaekQGame
             this.btnTest = new System.Windows.Forms.Button();
             this.ptbTest = new System.Windows.Forms.PictureBox();
             this.ptbTest2 = new System.Windows.Forms.PictureBox();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).BeginInit();
@@ -72,6 +72,7 @@ namespace KBaekQGame
             this.menuStrip1.Size = new System.Drawing.Size(855, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -186,6 +187,17 @@ namespace KBaekQGame
             this.btnGreenBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGreenBox.UseVisualStyleBackColor = true;
             this.btnGreenBox.Click += new System.EventHandler(this.ToolBox_Click);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "none.jpg");
+            this.imageList.Images.SetKeyName(1, "wall.jpg");
+            this.imageList.Images.SetKeyName(2, "reddoor.jpg");
+            this.imageList.Images.SetKeyName(3, "greendoor.jpg");
+            this.imageList.Images.SetKeyName(4, "redbox.jpg");
+            this.imageList.Images.SetKeyName(5, "greenbox.jpg");
             // 
             // btnRedBox
             // 
@@ -306,17 +318,6 @@ namespace KBaekQGame
             this.ptbTest2.Size = new System.Drawing.Size(72, 61);
             this.ptbTest2.TabIndex = 9;
             this.ptbTest2.TabStop = false;
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "none.jpg");
-            this.imageList.Images.SetKeyName(1, "wall.jpg");
-            this.imageList.Images.SetKeyName(2, "reddoor.jpg");
-            this.imageList.Images.SetKeyName(3, "greendoor.jpg");
-            this.imageList.Images.SetKeyName(4, "redbox.jpg");
-            this.imageList.Images.SetKeyName(5, "greenbox.jpg");
             // 
             // GameDesign
             // 

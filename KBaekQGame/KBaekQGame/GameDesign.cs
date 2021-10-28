@@ -22,9 +22,13 @@ namespace KBaekQGame
         // list
         PictureBox[,] cubes = new PictureBox[,] { };
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Game game = new Game(this);
+        }
+
         // temporary image 
         Image toolBoxPic;
-        //PictureBox temp = new PictureBox();
 
         // test
         private void btnTest_Click(object sender, EventArgs e)

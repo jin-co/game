@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
+    /* FileHandling class that handles calls 
+     * related to the files
+     * 
+     */
     class FileHandler
     {
         #region Properties
@@ -17,9 +21,15 @@ namespace KBaekQGame
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Saves file to a chosen path with a message showing
+        /// if the save was successful or not
+        /// </summary>
         public void SaveFile()
         {
             SaveFileDialog sfd = new SaveFileDialog();
+            
+            // settings
             sfd.Filter = "Maze Game Data (*.txt)|*.txt";
             string filePath = @"c:/";
             sfd.InitialDirectory = filePath;
