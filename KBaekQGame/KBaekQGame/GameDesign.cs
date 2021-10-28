@@ -50,11 +50,7 @@ namespace KBaekQGame
             // checks input error
             if (!int.TryParse(txtRows.Text, out rows) || !int.TryParse(txtCols.Text, out cols))
             {
-                MessageBox.Show(                     
-                    "Please provide numbers for rows and columns",
-                    "Q Game",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                GameMessage.ShowMessage(1, "Please provide numbers for rows and columns");
             }
 
             // sets array size
@@ -124,14 +120,9 @@ namespace KBaekQGame
                         boxCount++;
                     }
                 }
-            }            
-
-            MessageBox.Show(
-                    $"File Saved Successfully\n" +
-                    $"Walls: {wallCount} \nDoors: {doorCount} \nBoxes: {boxCount}",
-                    "Q Game",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            }
+            GameMessage.ShowMessage(0, $"File Saved Successfully\n" +
+                    $"Walls: {wallCount} \nDoors: {doorCount} \nBoxes: {boxCount}");
         }
 
         /// <summary>

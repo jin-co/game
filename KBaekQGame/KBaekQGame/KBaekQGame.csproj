@@ -59,6 +59,7 @@
     <Compile Include="GameMain.Designer.cs">
       <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources.Designer.cs">

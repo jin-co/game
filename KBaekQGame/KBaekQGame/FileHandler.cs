@@ -49,11 +49,7 @@ namespace KBaekQGame
             }
             else
             {
-                MessageBox.Show(
-                    $"No File Added",
-                    "Q Game",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                GameMessage.ShowMessage(2, "No File Added");
             }
         }
         #endregion
