@@ -17,7 +17,7 @@ namespace KBaekQGame
     public partial class GameDesign : Form
     {
         // variables
-        int rows, cols, xGap, yGap, gap = 1, blockSize = 45, xStart, yStart;
+        int rows, cols, xGap, yGap, gap = 1, blockSize = 45, xStart, yStart, imageTag;
 
         // list
         PictureBox[,] cubes = new PictureBox[,] { };
@@ -31,24 +31,24 @@ namespace KBaekQGame
             int wallCount = 0, doorCount = 0, boxCount = 0;
             foreach (var i in cubes)
             {
-                ptbTest.Image = i.Image;
-                ptbTest2.Image = Resources.wall;
-                rtbTest.Text += Resources.wall.ToString() + "\n";
-                rtbTest.Text += i.ToString() + "\n";
-                if (i.Image == Resources.wall)
+                if (i.Tag != null)
                 {
-                    wallCount++;
-                }
+                    int tag = int.Parse(i.Tag.ToString());
+                    if (tag == 1)                    
+                    {
+                        wallCount++;
+                    }
 
-                if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
-                {
-                    boxCount++;
-                }
+                    if (tag == 2 || tag == 3)
+                    {
+                        doorCount++;
+                    }
 
-                if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
-                {
-                    doorCount++;
-                }
+                    if (tag == 4 || tag == 5)
+                    {
+                        boxCount++;
+                    }
+                }                
             }
 
             rtbTest.Text += $"wall: {wallCount}\nbox: {boxCount}\ndoor: {doorCount}";
@@ -100,6 +100,7 @@ namespace KBaekQGame
                     pic.Top = yGap + (pic.Height * row);
                     pic.BorderStyle = BorderStyle.Fixed3D;
                     pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    
                     cubes[row, col] = pic;
                     spcBoard.Panel2.Controls.Add(pic);
                     pic.Click += Cube_Click;
@@ -122,8 +123,22 @@ namespace KBaekQGame
             
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show(
+                    $"Walls: \n Doors: \n Boxes",
+                    "Q Game",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show(
+                    $"No File Added",
+                    "Q Game",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
+            
 
             //int wallCount = 0, doorCount = 0, boxCount = 0;
             //Bitmap bm;
@@ -135,12 +150,12 @@ namespace KBaekQGame
             //    {
             //        wallCount++;
             //    }
-                
+
             //    if (i.Image == Resources.greenbox || i.Image == Resources.redbox)
             //    {
             //        boxCount++;
             //    }
-                
+
             //    if (i.Image == Resources.greendoor || i.Image == Resources.reddoor)
             //    {
             //        doorCount++;
@@ -169,31 +184,19 @@ namespace KBaekQGame
         {
             PictureBox clicked = (PictureBox)sender;
             clicked.Image = toolBoxPic;
+            clicked.Tag = imageTag;
         }
 
         private void ToolBox_Click(object sender, EventArgs e)
         {
-            PictureBox pic = (PictureBox)sender;
-            if (pic.AccessibleName != null && pic.AccessibleName.Equals("none"))
-            {
-                toolBoxPic = null;
-                return;
-            }
-
-            toolBoxPic = pic.Image;
-        }
-
-        private void ToolBoxBtn_Click(object sender, EventArgs e)
-        {
             Button btn = (Button)sender;
-            
-            string fileName = btn.Name.Substring(3).ToLower();
-            if (fileName.Equals("none"))
+            if (btn.ImageIndex == 0)
             {
                 toolBoxPic = null;
                 return;
             }
             toolBoxPic = imageList.Images[btn.ImageIndex];
+            imageTag = btn.ImageIndex;
         }        
     }
 }
