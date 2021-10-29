@@ -37,7 +37,6 @@ namespace KBaekQGame
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtRows = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCols = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@ namespace KBaekQGame
             this.btnWall = new System.Windows.Forms.Button();
             this.btnNone = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtRows = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBoard)).BeginInit();
@@ -111,15 +111,6 @@ namespace KBaekQGame
             this.label2.TabIndex = 5;
             this.label2.Text = "Rows:";
             // 
-            // txtRows
-            // 
-            this.txtRows.Location = new System.Drawing.Point(69, 7);
-            this.txtRows.Name = "txtRows";
-            this.txtRows.Size = new System.Drawing.Size(58, 24);
-            this.txtRows.TabIndex = 6;
-            this.txtRows.Text = "3";
-            this.txtRows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -135,7 +126,6 @@ namespace KBaekQGame
             this.txtCols.Name = "txtCols";
             this.txtCols.Size = new System.Drawing.Size(58, 24);
             this.txtCols.TabIndex = 3;
-            this.txtCols.Text = "3";
             this.txtCols.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnGenerate
@@ -276,6 +266,14 @@ namespace KBaekQGame
             this.label3.TabIndex = 7;
             this.label3.Text = "Toolbox";
             // 
+            // txtRows
+            // 
+            this.txtRows.Location = new System.Drawing.Point(69, 7);
+            this.txtRows.Name = "txtRows";
+            this.txtRows.Size = new System.Drawing.Size(58, 24);
+            this.txtRows.TabIndex = 6;
+            this.txtRows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // GameDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -311,7 +309,6 @@ namespace KBaekQGame
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRows;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCols;
         private System.Windows.Forms.Button btnGenerate;
@@ -324,5 +321,6 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnNone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.TextBox txtRows;
     }
 }

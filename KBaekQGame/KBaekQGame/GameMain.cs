@@ -25,6 +25,7 @@ namespace KBaekQGame
             InitializeComponent();
         }
 
+        // Shows design form
         private void btnDesign_Click(object sender, EventArgs e)
         {
             GameDesign gameDesign = new GameDesign();
