@@ -42,6 +42,7 @@ namespace KBaekQGame
             if (btn.ImageIndex == 0)
             {
                 ToolBoxPic = null;
+                ImageTag = 0;
                 return;
             }
             ToolBoxPic = Game.ImageList.Images[btn.ImageIndex];

@@ -120,5 +120,8 @@
   <ItemGroup>
     <None Include="Resources\reddoor.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="design\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
