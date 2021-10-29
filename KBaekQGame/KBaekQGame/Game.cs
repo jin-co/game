@@ -36,11 +36,7 @@ namespace KBaekQGame
         public Game(SplitContainer spcBoard, ImageList imageList)
         {
             SpcBoard = spcBoard;            
-            ImageList = imageList;
-            
-            // sets array size
-            Cubes = new PictureBox[Rows, Cols];
-
+            ImageList = imageList;            
             BlockSize = blockSize;
             Gap = gap;
         }
