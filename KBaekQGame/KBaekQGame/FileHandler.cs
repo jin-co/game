@@ -17,18 +17,18 @@ namespace KBaekQGame
         Game game = new Game();
         #endregion
 
-        #region Properties
-        public int Rows { get; set; }
-        public int Cols { get; set; }
-        public PictureBox[,] Cubes { get; set; }
-        #endregion
+        //#region Properties
+        //public int Rows { get; set; }
+        //public int Cols { get; set; }
+        //public PictureBox[,] Cubes { get; set; }
+        //#endregion
 
         #region Methods
         /// <summary>
         /// Saves file to a chosen path with a message showing
         /// if the save was successful or not
         /// </summary>
-        public void SaveFile()
+        public static void SaveFile()
         {
             SaveFileDialog sfd = new SaveFileDialog();
             
@@ -42,15 +42,15 @@ namespace KBaekQGame
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter sw = new StreamWriter(sfd.FileName);
-                for (int row = 0; row < Rows; row++)
+                for (int row = 0; row < Game.Rows; row++)
                 {
-                    for (int col = 0; col < Cols; col++)
+                    for (int col = 0; col < Game.Cols; col++)
                     {
                         sw.WriteLine(row.ToString());
                         sw.WriteLine(col.ToString());
-                        if (Cubes[row, col].Tag != null)
+                        if (Game.Cubes[row, col].Tag != null)
                         {
-                            sw.WriteLine(Cubes[row, col].Tag.ToString());
+                            sw.WriteLine(Game.Cubes[row, col].Tag.ToString());
                         }
                         else
                         {
@@ -67,10 +67,10 @@ namespace KBaekQGame
             }
         }
 
-        private string CalculateResult()
+        private static string CalculateResult()
         {
             int wallCount = 0, doorCount = 0, boxCount = 0;
-            foreach (var i in Cubes)
+            foreach (var i in Game.Cubes)
             {
                 if (i.Tag != null)
                 {

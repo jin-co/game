@@ -51,11 +51,7 @@ namespace KBaekQGame
         // Saves the game design
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileHandler fileHandler = new FileHandler();
-            fileHandler.Rows = rows;
-            fileHandler.Cols = cols;
-            fileHandler.Cubes = Game.Cubes;
-            fileHandler.SaveFile();            
+            FileHandler.SaveFile();            
         }
 
         // Closes the design form
