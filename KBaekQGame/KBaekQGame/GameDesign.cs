@@ -63,7 +63,7 @@ namespace KBaekQGame
         // Handles click event for buttons in the toolbox
         private void ToolBox_Click(object sender, EventArgs e)
         {
-            game.ToolBox_Click(sender, e);
+            EventHandler.ToolBox_Click(sender, e);
         }
     }
 }
