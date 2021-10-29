@@ -8,10 +8,15 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
+    /* Game class that has properties to be used 
+     * across the classes
+     * when it is called it sets the basic settings 
+     * such as gap and cube size
+     */
     class Game
     {// variables
         #region Fields
-        private int gap = 1, blockSize = 45;
+        private int gap = 1, cubeSize = 45;
         #endregion
 
         #region Properties
@@ -21,7 +26,7 @@ namespace KBaekQGame
         public static int YGap { get; set; }
         public static int XStart { get; set; }
         public static int YStart { get; set; }        
-        public static int BlockSize { get; set; }
+        public static int CubeSize { get; set; }
         public static int Gap { get; set; }        
         public static PictureBox[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
@@ -35,7 +40,7 @@ namespace KBaekQGame
         {
             SpcBoard = spcBoard;            
             ImageList = imageList;            
-            BlockSize = blockSize;
+            CubeSize = cubeSize;
             Gap = gap;
         }
         #endregion       

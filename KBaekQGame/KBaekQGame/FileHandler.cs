@@ -17,12 +17,6 @@ namespace KBaekQGame
         Game game = new Game();
         #endregion
 
-        //#region Properties
-        //public int Rows { get; set; }
-        //public int Cols { get; set; }
-        //public PictureBox[,] Cubes { get; set; }
-        //#endregion
-
         #region Methods
         /// <summary>
         /// Saves file to a chosen path with a message showing
@@ -67,6 +61,11 @@ namespace KBaekQGame
             }
         }
 
+        /// <summary>
+        /// Calculates the total amount of each items chosen
+        /// returns a message with the calculated value
+        /// </summary>
+        /// <returns></returns>
         private static string CalculateResult()
         {
             int wallCount = 0, doorCount = 0, boxCount = 0;

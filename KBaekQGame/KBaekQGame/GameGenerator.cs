@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
+    /* Game Generator class that creates game board
+     * based on the rows and cols entered
+     */
     class GameGenerator
     {
         /// <summary>
@@ -19,8 +22,12 @@ namespace KBaekQGame
             Game.SpcBoard.Panel2.Controls.Clear();
 
             // sets starting point
-            Game.XStart = (Game.SpcBoard.Panel2.Width / 2) - ((Game.Cols / 2) * (Game.BlockSize + Game.Gap));
-            Game.YStart = (Game.SpcBoard.Panel2.Height / 2) - ((Game.Rows / 2) * (Game.BlockSize + Game.Gap));
+            Game.XStart = 
+                (Game.SpcBoard.Panel2.Width / 2) - 
+                ((Game.Cols / 2) * (Game.CubeSize + Game.Gap));
+            Game.YStart = 
+                (Game.SpcBoard.Panel2.Height / 2) - 
+                ((Game.Rows / 2) * (Game.CubeSize + Game.Gap));
             Game.XGap = Game.XStart;
             Game.YGap = Game.YStart;
 
@@ -30,8 +37,8 @@ namespace KBaekQGame
                 for (int col = 0; col < Game.Cols; col++)
                 {
                     PictureBox pic = new PictureBox();
-                    pic.Width = Game.BlockSize;
-                    pic.Height = Game.BlockSize;
+                    pic.Width = Game.CubeSize;
+                    pic.Height = Game.CubeSize;
                     pic.Left = Game.XGap + (pic.Width * col);
                     pic.Top = Game.YGap + (pic.Height * row);
                     pic.BorderStyle = BorderStyle.Fixed3D;

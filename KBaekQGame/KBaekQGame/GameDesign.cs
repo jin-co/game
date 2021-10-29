@@ -11,16 +11,14 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
-    /* Game design form that creates initial game board
-     * depending on the user input
-     * and saves created design pattern to a file
+    /* Game design form that controls game design parts.
+     * It connects all different classes related to the
+     * generation of the game as well as file handling 
      */
     public partial class GameDesign : Form
     {
-        Game game;
-
-        // variables
-        int rows, cols;
+        private Game game;
+        private int rows, cols;
 
         public GameDesign()
         {

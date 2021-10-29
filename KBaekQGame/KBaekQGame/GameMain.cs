@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace KBaekQGame
 {
     /* Author: Kwangjin Baek
-     * Date: 2021. Nov. 1.
+     * Date: 2021. Oct. 29.
      * Description: Game application consisting of a number of colored doors 
      * and corresponding number of colored boxes for users to create and 
      * play to remove all the blocks by matching each pieces that have the same
@@ -36,11 +36,7 @@ namespace KBaekQGame
 
         }
 
-        /// <summary>
-        /// Closes the main form
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        // Closes the main form
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();

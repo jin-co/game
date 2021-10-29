@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
+    /* Class that handles events
+     */
     class EventHandler
     {
         #region Properties
