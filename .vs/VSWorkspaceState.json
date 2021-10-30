@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BoatGame",
-    "\\BoatGame\\BoatGame",
-    "\\HorseRace",
-    "\\HorseRace\\HorseRace",
-    "\\ImageLoading",
-    "\\ImageLoading\\ImageLoading",
-    "\\PicturePuzzle",
-    "\\PicturePuzzle\\PicturePuzzle",
-    "\\Practice"
+    ""
   ],
-  "SelectedNode": "\\PicturePuzzle\\PicturePuzzle\\MainGame.cs",
   "PreviewInSolutionExplorer": false
 }
