@@ -110,6 +110,10 @@ namespace ImageLoading
             {
                 temp.Text = clicked.Text;
             }
+            else
+            {
+                return;
+            }
 
             if (clicked.Text == "" || clicked.Text == null)
             {
