@@ -119,19 +119,7 @@ namespace ImageLoading
                 }
                 return;
             }
-
-            if (clicked.Text == "" || clicked.Text == null)
-            {
-                clicked.Text = temp.Text;
-                temp.Text = "";
-            }            
-            else
-            {
-                clicked.Text = "";
-            }
-
-            txtTest.Text = clicked.Text;
-            txtTest.Text += temp.Text;
+            clicked.Text = "";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
