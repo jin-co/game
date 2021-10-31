@@ -115,7 +115,7 @@ namespace ImageLoading
             {
                 clicked.Text = temp.Text;
                 temp.Text = "";
-            }
+            }            
             else
             {
                 clicked.Text = "";
