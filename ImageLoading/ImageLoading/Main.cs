@@ -112,7 +112,7 @@ namespace ImageLoading
             }
             else
             {
-                return;
+                
             }
 
             if (clicked.Text == "" || clicked.Text == null)
