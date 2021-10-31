@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ImageLoading",
+    "\\ImageLoading\\ImageLoading",
     "\\Practice"
   ],
-  "SelectedNode": "\\Practice\\Practice.sln",
+  "SelectedNode": "\\ImageLoading\\ImageLoading\\Main.cs",
   "PreviewInSolutionExplorer": false
 }
