@@ -109,13 +109,16 @@ namespace ImageLoading
             if (temp.Text == "" || temp.Text == null)
             {
                 temp.Text = clicked.Text;
-                clicked.Text = "";
             }
 
             if (clicked.Text == "" || clicked.Text == null)
             {
                 clicked.Text = temp.Text;
                 temp.Text = "";
+            }
+            else
+            {
+                clicked.Text = "";
             }
 
             txtTest.Text = clicked.Text;
