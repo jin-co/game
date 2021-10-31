@@ -15,7 +15,7 @@ namespace ImageLoading
     {
         Button fromBtn;
         Button toBtn;
-        Button temp;
+        Button temp = new Button();
         int rows;
         int cols;
         Button[,] btns; 
@@ -86,7 +86,7 @@ namespace ImageLoading
                 btns[row, col] = btn;
                 num++;
                 xGap += 20;
-                btns[row, col].MouseDown += this.MouseDown;
+                btns[row, col].MouseDown += MouseDown;
             }
         }
 
@@ -106,18 +106,20 @@ namespace ImageLoading
         public void MouseDown (object sender, EventArgs eventArgs)
         {
             Button clicked = (Button)sender;
+            if (temp.Text == "" || temp.Text == null)
+            {
+                temp.Text = clicked.Text;
+                clicked.Text = "";
+            }
+
             if (clicked.Text == "" || clicked.Text == null)
             {
                 clicked.Text = temp.Text;
-                return;
+                temp.Text = "";
             }
-            temp = new Button();
-            temp = clicked;
 
             txtTest.Text = clicked.Text;
             txtTest.Text += temp.Text;
-
-            clicked.Text = "";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
