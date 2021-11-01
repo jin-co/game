@@ -75,19 +75,28 @@ namespace ImageLoading
                 yGap += 20;
             }
 
-            for (int col = 0; col < cols; col++)
-            {
-                Button btn = new Button();
-                btn.Left = (col * x) + xGap;
-                btn.Top = (row * y) + yGap;
-                btn.Width = 40;
-                btn.Height = 40;
-                grbPics.Controls.Add(btn);
-                btns[row, col] = btn;
-                num++;
-                xGap += 20;
-                btns[row, col].MouseDown += MouseDown;
-            }
+            Button btnL = new Button();
+            btnL.Left = 100 + xGap;
+            btnL.Top = 90 + yGap;
+            btnL.Width = 40;
+            btnL.Height = 40;
+            grbPics.Controls.Add(btnL);
+            num++;
+            btnL.MouseDown += MouseDown;
+
+            //for (int col = 0; col < cols; col++)
+            //{
+            //    Button btn = new Button();
+            //    btn.Left = (col * x) + xGap;
+            //    btn.Top = (row * y) + yGap;
+            //    btn.Width = 40;
+            //    btn.Height = 40;
+            //    grbPics.Controls.Add(btn);
+            //    btns[row, col] = btn;
+            //    num++;
+            //    xGap += 20;
+            //    btns[row, col].MouseDown += MouseDown;
+            //}
         }
 
         // this doesn't work
