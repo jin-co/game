@@ -55,7 +55,11 @@ namespace ImageLoading
                     btn.Tag = num;
                     grbPics.Controls.Add(btn);
                     btns[row, col] = btn;
+
+
                     btnsList.Add(btn);
+                    btn.Enabled = false;
+                    
                     num++;
                     xGap += 20;
                     btns[row, col].MouseDown += this.MouseDown2;
@@ -73,6 +77,75 @@ namespace ImageLoading
             grbPics.Controls.Add(btnL);
             num++;
             btnL.MouseDown += MouseDown2;
+
+            checkPosition();
+        }
+
+        private void checkPosition()
+        {
+            closePosition();
+            for (int i = 0; i < btnsList.Count; i++)
+            {
+                if (btnsList[i].Text == "")
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            btnsList[1].Enabled = true;
+                            btnsList[3].Enabled = true;
+                            break;
+                        case 1:
+                            btnsList[0].Enabled = true;
+                            btnsList[2].Enabled = true;
+                            btnsList[4].Enabled = true;
+                            break;
+                        case 2:
+                            btnsList[1].Enabled = true;
+                            btnsList[5].Enabled = true;
+                            break;
+                        case 3:
+                            btnsList[0].Enabled = true;
+                            btnsList[4].Enabled = true;
+                            btnsList[6].Enabled = true;
+                            break;
+                        case 4:
+                            btnsList[1].Enabled = true;
+                            btnsList[3].Enabled = true;
+                            btnsList[5].Enabled = true;
+                            btnsList[7].Enabled = true;
+                            break;
+                        case 5:
+                            btnsList[2].Enabled = true;
+                            btnsList[4].Enabled = true;
+                            btnsList[8].Enabled = true;
+                            break;
+                        case 6:
+                            btnsList[3].Enabled = true;
+                            btnsList[7].Enabled = true;
+                            break;
+                        case 7:
+                            btnsList[4].Enabled = true;
+                            btnsList[6].Enabled = true;
+                            btnsList[8].Enabled = true;
+                            break;
+                        case 8:
+                            btnsList[5].Enabled = true;
+                            btnsList[7].Enabled = true;
+                            break;
+                        default:
+                            btnsList[8].Enabled = true;
+                            break;
+                    }                    
+                }
+            }            
+        }
+
+        private void closePosition()
+        {
+            foreach (var i in btnsList)
+            {
+                i.Enabled = false;
+            }
         }
 
         public void MouseDown (object sender, EventArgs eventArgs)
@@ -92,7 +165,7 @@ namespace ImageLoading
                 }
                 return;
             }
-            clicked.Text = "";
+            clicked.Text = "";            
         }
 
         public void MouseDown2(object sender, EventArgs eventArgs)
@@ -110,6 +183,7 @@ namespace ImageLoading
                     }
                 }
             }
+            checkPosition();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
