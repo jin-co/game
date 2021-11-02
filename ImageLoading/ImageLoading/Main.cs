@@ -13,12 +13,11 @@ namespace ImageLoading
 {
     public partial class Main : Form
     {
-        Button fromBtn;
-        Button toBtn;
         Button temp = new Button();
         int rows;
         int cols;
-        Button[,] btns; 
+        Button[,] btns;
+        List<Button> btnsList = new List<Button>();
         public Main()
         {
             InitializeComponent();
@@ -26,18 +25,6 @@ namespace ImageLoading
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //PictureBox picBox = new PictureBox();
-            //picBox.Left = 0;
-            //picBox.Top = 0;
-            //string path = Path.GetFullPath(@"../../../");
-            //txtTest.Text = path;
-            //Image image = Image.FromFile($@"{path}images/p1.jpg");
-            //picBox.Image = image;
-            ////C: \Users\jin\Documents\GitHub\game\ImageLoading\ImageLoading\images\p1.jpg
-            //picBox.Height = 100;
-            //picBox.Width = 100;
-            //this.Controls.Add(picBox);
-
             int xGap = 0;
             int yGap = 0;
             int num = 1;
@@ -65,11 +52,13 @@ namespace ImageLoading
                     btn.Width = 40;
                     btn.Height = 40;
                     btn.Text = num.ToString(); 
+                    btn.Tag = num;
                     grbPics.Controls.Add(btn);
                     btns[row, col] = btn;
+                    btnsList.Add(btn);
                     num++;
                     xGap += 20;
-                    btns[row, col].MouseDown += this.MouseDown;
+                    btns[row, col].MouseDown += this.MouseDown2;
                 }
                 xGap = 0;
                 yGap += 20;
@@ -80,41 +69,16 @@ namespace ImageLoading
             btnL.Top = 90 + yGap;
             btnL.Width = 40;
             btnL.Height = 40;
+            btnsList.Add(btnL);
             grbPics.Controls.Add(btnL);
             num++;
-            btnL.MouseDown += MouseDown;
-
-            //for (int col = 0; col < cols; col++)
-            //{
-            //    Button btn = new Button();
-            //    btn.Left = (col * x) + xGap;
-            //    btn.Top = (row * y) + yGap;
-            //    btn.Width = 40;
-            //    btn.Height = 40;
-            //    grbPics.Controls.Add(btn);
-            //    btns[row, col] = btn;
-            //    num++;
-            //    xGap += 20;
-            //    btns[row, col].MouseDown += MouseDown;
-            //}
+            btnL.MouseDown += MouseDown2;
         }
-
-        // this doesn't work
-        //private void Main_Load(object sender, EventArgs e)
-        //{
-        //    for (int row = 0; row < rows; row++)
-        //    {
-        //        for (int col = 0; col < cols; col++)
-        //        {
-        //            //btns[row, col].Click += new System.EventHandler(this.MouseDown);
-        //            btns[row, col].Click += new System.EventHandler(this.MouseDown);
-        //        }
-        //    }
-        //}
 
         public void MouseDown (object sender, EventArgs eventArgs)
         {
             Button clicked = (Button)sender;
+            
             if (temp.Text == "" || temp.Text == null)
             {
                 temp.Text = clicked.Text;
@@ -129,6 +93,23 @@ namespace ImageLoading
                 return;
             }
             clicked.Text = "";
+        }
+
+        public void MouseDown2(object sender, EventArgs eventArgs)
+        {
+            Button clicked = (Button)sender;
+
+            if (clicked.Text != "")
+            {
+                foreach (var i in btnsList)
+                {
+                    if (i.Text == "")
+                    {
+                        i.Text = clicked.Text;
+                        clicked.Text = "";
+                    }
+                }
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
