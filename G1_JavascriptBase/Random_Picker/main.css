@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Lato&family=Muli&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serifs;
+    height: 100vh;    
+}
+
+.btn-start {
+    font-size: 2rem;
+}
+
+.pages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-one {
+    
+}
+
+.page-two {
+    position: absolute;
+    transform: translate(100%, -100%)
+}
+
+.page-three {
+    position: absolute;
+    transform: translateX(100%)
+}
+
+.page-four {
+
+}
+
+
+
+
