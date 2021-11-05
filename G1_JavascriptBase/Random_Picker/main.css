@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Press Start 2P', sans-serifs;
-    height: 100vh;    
+    height: 100vh;
+    overflow: hidden;
 }
 
 .btn-start {
@@ -39,9 +40,13 @@ body {
     transform: translateX(100%);
 }
 
-.page-four {
-
+.img {
+    background-image: url('https://unsplash.com/photos/7Z03R1wOdmI');
+    height: 100px;
+    width: 100px;
 }
+
+
 
 
 
