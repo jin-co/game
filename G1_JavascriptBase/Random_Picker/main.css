@@ -29,22 +29,60 @@ body {
     
 }
 
+/* second page */
 .page-two {
     position: absolute;
     transform: translate(100%, -100%);
     background-color: aqua;
 }
 
+.page-two .img {
+    background-image: url('https://unsplash.com/photos/7Z03R1wOdmI');
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.page-two .container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-two .container .title {
+    
+}
+
+.page-two .container .row .character-box {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-two .container .row .character-box .img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.page-two .container .row .character-box input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-family: 'Lato';
+}
+
+
+/* third page */
 .page-three {
     position: absolute;
     transform: translateX(100%);
 }
 
-.img {
-    background-image: url('https://unsplash.com/photos/7Z03R1wOdmI');
-    height: 100px;
-    width: 100px;
-}
+
 
 
 
