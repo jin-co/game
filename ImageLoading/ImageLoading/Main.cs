@@ -56,7 +56,6 @@ namespace ImageLoading
                     grbPics.Controls.Add(btn);
                     btns[row, col] = btn;
 
-
                     btnsList.Add(btn);
                     btn.Enabled = false;
                     
@@ -69,8 +68,8 @@ namespace ImageLoading
             }
 
             Button btnL = new Button();
-            btnL.Left = 100 + xGap;
-            btnL.Top = 90 + yGap;
+            btnL.Left = btnsList[btnsList.Count - 1].Left;
+            btnL.Top = btnsList[btnsList.Count - 1].Top + (10 + 40);
             btnL.Width = 40;
             btnL.Height = 40;
             btnsList.Add(btnL);
