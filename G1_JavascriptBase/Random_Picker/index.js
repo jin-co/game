@@ -1,14 +1,28 @@
-const moves = document.querySelectorAll('.move')
+const nextBtns = document.querySelectorAll('.next')
+const goBackBtns = document.querySelectorAll('.go-back')
 const pages = document.querySelectorAll('.pages')
 
 let idx
 
-moves.forEach((move, index) => {
-    move.addEventListener('click', () => {
-        console.log(index)
+nextBtns.forEach((next, index) => {
+    next.addEventListener('click', () => {
         shuffleCard(index)
-        
-        // move.style.transform = 'translate()'
+        console.log(index)
+        // next.style.transform = 'translate()'
+    })
+});
+
+goBackBtns.forEach((pre, index) => {
+    pre.addEventListener('click', () => {
+        if (index > 0) {
+            index--
+            shuffleCard(index)
+        } 
+        if (index <= 0) {
+            shuffleCard(3)    
+        }
+        console.log(index)
+        // next.style.transform = 'translate()'
     })
 });
 

@@ -54,6 +54,20 @@ body {
     
 }
 
+.page-two .container .players {
+    text-align: right;
+}
+
+.page-two .container .players input {
+    width: 80px;
+    padding: 0 10px;
+    text-align: right;
+}
+
+.page-two .container .players input:focus {
+    outline: none;
+}
+
 .page-two .container .row .character-box {
     width: 120px;
     display: flex;
