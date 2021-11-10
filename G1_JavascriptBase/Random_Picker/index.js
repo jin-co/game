@@ -2,8 +2,8 @@ const nextBtns = document.querySelectorAll('.next')
 const goBackBtns = document.querySelectorAll('.go-back')
 const pages = document.querySelectorAll('.pages')
 
-let idx
 
+// page moving
 nextBtns.forEach((next, index) => {
     next.addEventListener('click', () => {
         shuffleCard(index)
@@ -12,20 +12,46 @@ nextBtns.forEach((next, index) => {
     })
 });
 
+let idx = 0
 goBackBtns.forEach((pre, index) => {
     pre.addEventListener('click', () => {
-        if (index > 0) {
-            index--
-            shuffleCard(index)
+        idx = index
+        console.log('b: ', idx)
+        if (idx >= 0) {
+            idx--
+            console.log(idx)
+            shuffleCard(idx)
         } 
-        if (index <= 0) {
+        if (idx < 0) {
+            console.log('below: ', idx)
             shuffleCard(3)    
         }
-        console.log(index)
+        console.log(idx)
         // next.style.transform = 'translate()'
     })
 });
+// page moving
+const playerCount = document.querySelector('.player-count')
+playerCount.addEventListener('click', () => {
+    playerCount.readOnly = false
+})
 
+playerCount.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        playerCount.readOnly = true
+        let count = playerCount.value
+        
+
+    }
+})
+
+// player choice
+
+
+
+// player choice
+
+// functions
 function shuffleCard(index) {
     switch (index) {
         case 0:
