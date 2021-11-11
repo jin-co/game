@@ -1,6 +1,10 @@
 const nextBtns = document.querySelectorAll('.next')
 const goBackBtns = document.querySelectorAll('.go-back')
 const pages = document.querySelectorAll('.pages')
+const characterBoxContainer = document.querySelector('.character-box-container')
+
+// for generated characters
+let characters = []
 
 
 // page moving
@@ -30,23 +34,39 @@ goBackBtns.forEach((pre, index) => {
         // next.style.transform = 'translate()'
     })
 });
+
 // page moving
+
+// player choice
+const POKEAPI = 'https://pokeapi.co/api/v2/pokemon/'
+
+async function fetchCharacter() {
+    const res = await fetch(POKEAPI + '1' + '/')
+    const data = await JSON.parse(res)
+    console.log(data)
+}
+
 const playerCount = document.querySelector('.player-count')
 playerCount.addEventListener('click', () => {
     playerCount.readOnly = false
 })
 
 playerCount.addEventListener('keydown', (e) => {
+    fetchCharacter()
     if (e.key === 'Enter') {
         playerCount.readOnly = true
         let count = playerCount.value
-        
-
+        for (let i = 0; i < count; i++) {
+            const playerEl = document.createElement('div')
+            playerEl.className = 'character-box'
+            playerEl.innerHTML = `
+                <img class="img" src="https://unsplash.com/photos/fIq0tET6llw" alt="">
+                <input type="text">            
+            `
+            characterBoxContainer.appendChild(playerEl)
+        }
     }
 })
-
-// player choice
-
 
 
 // player choice

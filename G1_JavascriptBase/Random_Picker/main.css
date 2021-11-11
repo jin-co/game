@@ -68,11 +68,17 @@ body {
     outline: none;
 }
 
+.page-two .container .row {
+    justify-content: center;
+    align-items: center;
+}
+
 .page-two .container .row .character-box {
     width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5px;
 }
 
 .page-two .container .row .character-box .img{
