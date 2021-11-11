@@ -31,7 +31,9 @@ C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.AssemblyInfoInputs.cache
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.AssemblyInfo.cs
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.csproj.CoreCompileInputs.cache
-C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.csproj.CopyComplete
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.dll
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.pdb
 C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\obj\Debug\netcoreapp3.1\SimpleString.genruntimeconfig.cache
+C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\bin\Debug\netcoreapp3.1\Content\File.xnb
+C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\bin\Debug\netcoreapp3.1\Content\b1.xnb
+C:\Users\jin\Documents\GitHub\game\SimpleString\SimpleString\bin\Debug\netcoreapp3.1\Content\b2.xnb
