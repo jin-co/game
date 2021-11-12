@@ -21,20 +21,27 @@ namespace MonoRotationScale
 
         protected override void Initialize()
         {
-            gameEntity = new GameEntity();
-            gameText = new GameText();
+            gameEntity = new GameEntity();            
             gameEntity.name = images[0];
-            gameEntity.position = 
-                new Vector2(
-                    _graphics.PreferredBackBufferWidth / 2, 
-                    _graphics.PreferredBackBufferHeight / 2);
+            gameEntity.position = new Vector2(
+                _graphics.PreferredBackBufferWidth / 2, 
+                _graphics.PreferredBackBufferHeight / 2);
+
+            gameText = new GameText();
+            gameText.name = "rotationFont";
+            gameText.position = new Vector2(
+                _graphics.PreferredBackBufferWidth - 300, 
+                _graphics.PreferredBackBufferHeight - 30);
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            gameEntity.Load(Content);
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            // loading classes
+            gameEntity.Load(Content);
+            gameText.Load(Content);
         }
 
         protected override void Update(GameTime gameTime)
@@ -42,8 +49,9 @@ namespace MonoRotationScale
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // comes from gameEntity class
+            // comes classes
             gameEntity.Update();
+            gameText.text = ($"Rotation: {gameEntity.rotation}");
 
             base.Update(gameTime);
         }
@@ -53,8 +61,9 @@ namespace MonoRotationScale
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
 
-            // comes from gameEntity clasee
+            // comes from classes
             gameEntity.Draw(_spriteBatch);
+            gameText.Draw(_spriteBatch);
 
             _spriteBatch.End();
             base.Draw(gameTime);

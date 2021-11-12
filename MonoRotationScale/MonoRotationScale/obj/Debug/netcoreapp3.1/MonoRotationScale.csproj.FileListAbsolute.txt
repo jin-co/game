@@ -36,7 +36,6 @@ C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.AssemblyInfoInputs.cache
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.AssemblyInfo.cs
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.csproj.CoreCompileInputs.cache
-C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.csproj.CopyComplete
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.dll
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.pdb
 C:\Users\jin\Documents\GitHub\game\MonoRotationScale\MonoRotationScale\obj\Debug\netcoreapp3.1\MonoRotationScale.genruntimeconfig.cache
