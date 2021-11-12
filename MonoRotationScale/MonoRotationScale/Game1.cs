@@ -8,6 +8,8 @@ namespace MonoRotationScale
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private GameEntity gameEntity;
+        private GameText gameText;
 
         public Game1()
         {
@@ -18,7 +20,6 @@ namespace MonoRotationScale
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
@@ -26,8 +27,6 @@ namespace MonoRotationScale
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
