@@ -18,22 +18,22 @@ namespace MonoRotationScale
         private const float MIN_SCALE = 0.1f;
         private const float MAX_SCALE = 2.0f;
 
-        public float Rotation;
-        public string Name;
-        public Vector2 Position;
+        public float rotation;
+        public string name;
+        public Vector2 position;
 
-        public void Load(ContentManager Content)
+        public void Load(ContentManager content)
         {
-            entity = Content.Load<Texture2D>(Name);
+            entity = content.Load<Texture2D>(name);
             origin = new Vector2(entity.Width / 2, entity.Height / 2);
             sourceRectangle = new Rectangle(0, 0, entity.Width, entity.Height);
         }
 
         public void Update()
         {
-            Rotation += rotationChange;
+            rotation += rotationChange;
             scale += scaleChange;
-            if ((scale > MAX_SCALE) || (scale < MIN_SCALE))
+            if (scale > MAX_SCALE || scale < MIN_SCALE)
             {
                 scaleChange = -scaleChange;
             }
@@ -41,7 +41,7 @@ namespace MonoRotationScale
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(entity, Position, sourceRectangle, Color.White, Rotation, origin, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(entity, position, sourceRectangle, Color.White, rotation, origin, scale, SpriteEffects.None, 0f);
         }
     }
 }
