@@ -16,7 +16,11 @@ namespace MonoCarRace
         private SpriteFont stateFont;
 
         private int startX = 0;
-        private int[] startY = { GameMain.ScreenHeight - 65, GameMain.ScreenHeight - 91, GameMain.ScreenHeight - 117 };
+        private int[] startY = { 
+            GameMain.ScreenHeight - 65, 
+            GameMain.ScreenHeight - 91, 
+            GameMain.ScreenHeight - 117 
+        };
 
         private Vector2[] positions = { Vector2.Zero, Vector2.Zero, Vector2.Zero };
         private bool[] winstates = { false, false, false };
