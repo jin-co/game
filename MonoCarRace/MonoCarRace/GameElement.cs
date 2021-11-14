@@ -30,8 +30,8 @@ namespace MonoCarRace
             carSound = Content.Load<SoundEffect>("car");
             carSoundInstance = carSound.CreateInstance();
             music = Content.Load<Song>("music");
-            //MediaPlayer.Play(music);
-            //MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(music);
+            MediaPlayer.IsRepeating = true;
 
             cars = new CarSet(Content);
         }
