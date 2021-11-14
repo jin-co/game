@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/about.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/aboutbutton.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/background.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/help.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/helpbutton.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/menu.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/menubutton.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
