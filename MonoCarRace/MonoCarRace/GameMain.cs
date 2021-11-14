@@ -8,8 +8,10 @@ namespace MonoCarRace
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        public static int screenWidth;
-        public static int screenHeight;
+
+        public static int ScreenWidth;
+        public static int ScreenHeight;
+        private GameElement gameElements;
 
         public GameMain()
         {
@@ -20,16 +22,16 @@ namespace MonoCarRace
 
         protected override void Initialize()
         {
-            screenWidth = GraphicsDevice.Viewport.Width;
-            screenHeight = GraphicsDevice.Viewport.Height;
-
+            // TODO: Add your initialization logic here
+            ScreenWidth = GraphicsDevice.Viewport.Width;
+            ScreenHeight = GraphicsDevice.Viewport.Height;
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            gameElements = new GameElement(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -39,14 +41,14 @@ namespace MonoCarRace
                 Exit();
 
             // TODO: Add your update logic here
-
+            gameElements.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            gameElements.Draw(gameTime, _spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

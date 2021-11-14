@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/car.wav</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/finishline.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/gameFont.spritefont</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/music.mp3</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/redCar.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/road.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/statefont.spritefont</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/whiteCar.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoCarRace/MonoCarRace/Content/yellowCar.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
