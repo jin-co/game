@@ -72,8 +72,6 @@ namespace KBaekQGame
             ofd.InitialDirectory = filePath;
             ofd.Title = "Load";
 
-            GameGenerator.GenerateGame();
-
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 StreamReader sr = new StreamReader(ofd.FileName);

@@ -185,6 +185,7 @@ namespace KBaekQGame
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GamePlay";
             this.Text = "Play form";
+            this.Load += new System.EventHandler(this.GamePlay_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -17,9 +17,22 @@ namespace KBaekQGame
             InitializeComponent();
         }
 
+        private void GamePlay_Load(object sender, EventArgs e)
+        {
+            Game game = new Game();
+        }
+
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rtxTest.Text = FileHandler.LoadFile();
+            string loadString = FileHandler.LoadFile();
+            char x = loadString[0];
+            char y = loadString[1];
+            Game.Rows = int.Parse(x.ToString());
+            Game.Cols = int.Parse(y.ToString());
+            Game.Cubes = new PictureBox[int.Parse(x.ToString()), int.Parse(y.ToString())];
+            GameGenerator.RegenerateGame(pnlPlayBoard);
+
+            rtxTest.Text = loadString + ", " + x + ", " + y;
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
