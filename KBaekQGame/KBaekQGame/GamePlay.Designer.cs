@@ -29,6 +29,7 @@ namespace KBaekQGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,7 @@ namespace KBaekQGame
             this.btnRight = new System.Windows.Forms.Button();
             this.pnlPlayBoard = new System.Windows.Forms.Panel();
             this.rtxTest = new System.Windows.Forms.RichTextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,6 +166,12 @@ namespace KBaekQGame
             this.rtxTest.TabIndex = 0;
             this.rtxTest.Text = "";
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // GamePlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -209,5 +217,6 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Panel pnlPlayBoard;
         private System.Windows.Forms.RichTextBox rtxTest;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
