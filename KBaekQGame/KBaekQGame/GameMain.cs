@@ -34,7 +34,8 @@ namespace KBaekQGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-
+            GamePlay gamePlay = new GamePlay();
+            gamePlay.Show();
         }
 
         // Closes the main form

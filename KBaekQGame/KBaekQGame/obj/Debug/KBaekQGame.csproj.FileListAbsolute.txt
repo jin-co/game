@@ -10,3 +10,4 @@ C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.cs
 C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.exe
 C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.pdb
 C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.Resources.resources
+C:\Users\jin\Documents\GitHub\game\KBaekQGame\KBaekQGame\obj\Debug\KBaekQGame.GamePlay.resources
