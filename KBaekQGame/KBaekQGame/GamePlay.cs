@@ -19,7 +19,7 @@ namespace KBaekQGame
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileHandler.LoadFile();
+            rtxTest.Text = FileHandler.LoadFile();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

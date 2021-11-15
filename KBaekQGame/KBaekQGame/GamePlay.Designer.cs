@@ -42,6 +42,7 @@ namespace KBaekQGame
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.pnlPlayBoard = new System.Windows.Forms.Panel();
+            this.rtxTest = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,11 +156,20 @@ namespace KBaekQGame
             this.pnlPlayBoard.Size = new System.Drawing.Size(805, 551);
             this.pnlPlayBoard.TabIndex = 9;
             // 
+            // rtxTest
+            // 
+            this.rtxTest.Location = new System.Drawing.Point(826, 179);
+            this.rtxTest.Name = "rtxTest";
+            this.rtxTest.Size = new System.Drawing.Size(365, 229);
+            this.rtxTest.TabIndex = 0;
+            this.rtxTest.Text = "";
+            // 
             // GamePlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.rtxTest);
             this.Controls.Add(this.pnlPlayBoard);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
@@ -197,5 +207,6 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Panel pnlPlayBoard;
+        private System.Windows.Forms.RichTextBox rtxTest;
     }
 }

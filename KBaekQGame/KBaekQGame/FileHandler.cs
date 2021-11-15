@@ -27,7 +27,7 @@ namespace KBaekQGame
             SaveFileDialog sfd = new SaveFileDialog();
             
             // settings
-            sfd.Filter = "Maze Game Data (*.qgame)|*.qgame";
+            sfd.Filter = "Maze Game Data (*.txt)|*.txt";
             string filePath = @"c:/";
             sfd.InitialDirectory = filePath;
             sfd.Title = "Save";
@@ -36,6 +36,8 @@ namespace KBaekQGame
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter sw = new StreamWriter(sfd.FileName);
+                sw.WriteLine(Game.Rows);
+                sw.WriteLine(Game.Cols);
                 for (int row = 0; row < Game.Rows; row++)
                 {
                     for (int col = 0; col < Game.Cols; col++)
@@ -61,11 +63,11 @@ namespace KBaekQGame
             }
         }
 
-        public static void LoadFile()
+        public static string LoadFile()
         {
-
+            string result = "";
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Maze Game Data (*.qgame)|*.qgame";
+            ofd.Filter = "Maze Game Data (*.txt)|*.txt";
             string filePath = @"c:/";
             ofd.InitialDirectory = filePath;
             ofd.Title = "Load";
@@ -75,12 +77,9 @@ namespace KBaekQGame
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 StreamReader sr = new StreamReader(ofd.FileName);
-                for (int row = 0; row < Game.Rows; row++)
+                while (!sr.EndOfStream)
                 {
-                    for (int col = 0; col < Game.Cols; col++)
-                    {
-                        
-                    }
+                    result += sr.ReadLine();
                 }
                 sr.Dispose();
             }
@@ -88,6 +87,7 @@ namespace KBaekQGame
             {
                 GameMessage.ShowMessage(2, "Loading Failed");
             }
+            return result;
         }
 
         /// <summary>
