@@ -61,6 +61,11 @@ namespace KBaekQGame
             }
         }
 
+        public void LoadFile()
+        {
+
+        }
+
         /// <summary>
         /// Calculates the total amount of each items chosen
         /// returns a message with the calculated value
