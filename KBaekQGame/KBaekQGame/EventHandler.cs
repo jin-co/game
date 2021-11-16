@@ -59,7 +59,7 @@ namespace KBaekQGame
 
                 if ((clicked.Image.Tag).ToString() == "4")
                 {
-                    MessageBox.Show("red");
+                    MessageBox.Show("");
                     Game.IsMove = true;
                 }
 
