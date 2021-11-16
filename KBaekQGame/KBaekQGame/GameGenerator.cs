@@ -46,7 +46,13 @@ namespace KBaekQGame
 
                     Game.Cubes[row, col] = pic;
                     Game.SpcBoard.Panel2.Controls.Add(pic);
-                    pic.Click += EventHandler.Cube_Click;
+
+                    //test
+                    if (!Game.IsPlay)
+                    {
+                        pic.Click += EventHandler.Cube_Click;
+                    }
+
                     Game.XGap += Game.Gap;
                 }
                 Game.XGap = Game.XStart;

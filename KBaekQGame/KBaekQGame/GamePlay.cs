@@ -37,7 +37,12 @@ namespace KBaekQGame
             Game.Rows = int.Parse(loadString[0].ToString());
             Game.Cols = int.Parse(loadString[1].ToString());
             Game.Cubes = new PictureBox[Game.Rows, Game.Cols];
+
+            // test 
+            Game.IsPlay = true;
+
             GameGenerator.GenerateGame();
+
             for (int i = 2, j = 3, k = 4; k < loadString.Length; i += 3, j += 3, k +=3)
             {
                 if (int.Parse(loadString[k].ToString()) != 0)
@@ -52,11 +57,6 @@ namespace KBaekQGame
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void CursorDown_Click(object sender, EventArgs eventArgs)
-        {
-
         }
     }
 }

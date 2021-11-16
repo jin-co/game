@@ -33,7 +33,7 @@ namespace KBaekQGame
         public static ImageList ImageList { get; set; }
 
         //test
-        public bool IsPlay { get; set; }
+        public static bool IsPlay { get; set; }
         #endregion
 
         #region Constructors
@@ -45,6 +45,9 @@ namespace KBaekQGame
             ImageList = imageList;            
             CubeSize = cubeSize;
             Gap = gap;
+
+            //test
+            IsPlay = false;
         }
         #endregion       
     }
