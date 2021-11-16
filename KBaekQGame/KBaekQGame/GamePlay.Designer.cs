@@ -42,10 +42,12 @@ namespace KBaekQGame
             this.btnDown = new System.Windows.Forms.Button();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
-            this.pnlPlayBoard = new System.Windows.Forms.Panel();
             this.rtxTest = new System.Windows.Forms.RichTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.spcPlayBoard = new System.Windows.Forms.SplitContainer();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcPlayBoard)).BeginInit();
+            this.spcPlayBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -151,13 +153,6 @@ namespace KBaekQGame
             this.btnRight.Text = "Right";
             this.btnRight.UseVisualStyleBackColor = true;
             // 
-            // pnlPlayBoard
-            // 
-            this.pnlPlayBoard.Location = new System.Drawing.Point(12, 27);
-            this.pnlPlayBoard.Name = "pnlPlayBoard";
-            this.pnlPlayBoard.Size = new System.Drawing.Size(805, 551);
-            this.pnlPlayBoard.TabIndex = 9;
-            // 
             // rtxTest
             // 
             this.rtxTest.Location = new System.Drawing.Point(826, 179);
@@ -172,13 +167,21 @@ namespace KBaekQGame
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // spcPlayBoard
+            // 
+            this.spcPlayBoard.Location = new System.Drawing.Point(12, 39);
+            this.spcPlayBoard.Name = "spcPlayBoard";
+            this.spcPlayBoard.Size = new System.Drawing.Size(790, 538);
+            this.spcPlayBoard.SplitterDistance = 25;
+            this.spcPlayBoard.TabIndex = 9;
+            // 
             // GamePlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.spcPlayBoard);
             this.Controls.Add(this.rtxTest);
-            this.Controls.Add(this.pnlPlayBoard);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.btnDown);
@@ -196,6 +199,8 @@ namespace KBaekQGame
             this.Load += new System.EventHandler(this.GamePlay_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcPlayBoard)).EndInit();
+            this.spcPlayBoard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,8 +220,8 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnRight;
-        private System.Windows.Forms.Panel pnlPlayBoard;
         private System.Windows.Forms.RichTextBox rtxTest;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.SplitContainer spcPlayBoard;
     }
 }

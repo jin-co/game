@@ -12,6 +12,8 @@ namespace KBaekQGame
 {
     public partial class GamePlay : Form
     {
+        private Game game;
+        private int rows, cols;
         public GamePlay()
         {
             InitializeComponent();
@@ -19,20 +21,16 @@ namespace KBaekQGame
 
         private void GamePlay_Load(object sender, EventArgs e)
         {
-            Game game = new Game();
+            game = new Game(spcPlayBoard, imageList1);
         }
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string loadString = FileHandler.LoadFile();
-            char x = loadString[0];
-            char y = loadString[1];
-            Game.Rows = int.Parse(x.ToString());
-            Game.Cols = int.Parse(y.ToString());
-            Game.Cubes = new PictureBox[int.Parse(x.ToString()), int.Parse(y.ToString())];
-            GameGenerator.RegenerateGame(pnlPlayBoard);
-
-            rtxTest.Text = loadString + ", " + x + ", " + y;
+            string loadString = FileHandler.LoadFile();                        
+            Game.Rows = int.Parse(loadString[0].ToString());
+            Game.Cols = int.Parse(loadString[1].ToString());
+            Game.Cubes = new PictureBox[Game.Rows, Game.Cols];
+            GameGenerator.GenerateGame();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

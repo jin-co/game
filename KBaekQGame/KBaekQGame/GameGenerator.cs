@@ -54,45 +54,5 @@ namespace KBaekQGame
             }
             Game.YGap = Game.YStart;
         }
-
-        // test
-        public static void RegenerateGame(Panel panel)
-        {
-            // clear game board
-            panel.Controls.Clear();
-
-            // sets starting point
-            Game.XStart =
-                (panel.Width / 2) -
-                ((Game.Cols / 2) * (Game.CubeSize + Game.Gap));
-            Game.YStart =
-                (panel.Height / 2) -
-                ((Game.Rows / 2) * (Game.CubeSize + Game.Gap));
-            Game.XGap = Game.XStart;
-            Game.YGap = Game.YStart;
-
-            // generates board
-            for (int row = 0; row < Game.Rows; row++)
-            {
-                for (int col = 0; col < Game.Cols; col++)
-                {
-                    PictureBox pic = new PictureBox();
-                    pic.Width = Game.CubeSize;
-                    pic.Height = Game.CubeSize;
-                    pic.Left = Game.XGap + (pic.Width * col);
-                    pic.Top = Game.YGap + (pic.Height * row);
-                    pic.BorderStyle = BorderStyle.Fixed3D;
-                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                    Game.Cubes[row, col] = pic;
-                    panel.Controls.Add(pic);
-                    pic.Click += EventHandler.Cube_Click;
-                    Game.XGap += Game.Gap;
-                }
-                Game.XGap = Game.XStart;
-                Game.YGap += Game.Gap;
-            }
-            Game.YGap = Game.YStart;
-        }
     }
 }
