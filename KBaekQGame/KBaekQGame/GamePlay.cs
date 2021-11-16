@@ -33,12 +33,9 @@ namespace KBaekQGame
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string loadString = FileHandler.LoadFile();
-            //char[] loadString = FileHandler.LoadFile().ToCharArray();
             Game.Rows = int.Parse(loadString[0].ToString());
             Game.Cols = int.Parse(loadString[1].ToString());
             Game.Cubes = new PictureBox[Game.Rows, Game.Cols];
-
-            // test 
             Game.IsPlay = true;
 
             GameGenerator.GenerateGame();
@@ -56,12 +53,11 @@ namespace KBaekQGame
                         int.Parse(loadString[k].ToString());
                 }
             }
+        }
 
-            //test
-            foreach (var i in Game.Cubes)
-            {
-                rtxTest.Text += i.Tag;
-            }
+        private void Cursor_Click(object sender, EventArgs e)
+        {
+            EventHandler.Cursor_Click(sender, e);
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

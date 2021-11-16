@@ -125,6 +125,7 @@ namespace KBaekQGame
             this.btnUp.TabIndex = 5;
             this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.Cursor_Click);
             // 
             // btnDown
             // 
@@ -134,6 +135,7 @@ namespace KBaekQGame
             this.btnDown.TabIndex = 6;
             this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.Cursor_Click);
             // 
             // btnLeft
             // 
@@ -143,6 +145,7 @@ namespace KBaekQGame
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Text = "Left";
             this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.Cursor_Click);
             // 
             // btnRight
             // 
@@ -152,6 +155,7 @@ namespace KBaekQGame
             this.btnRight.TabIndex = 8;
             this.btnRight.Text = "Right";
             this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.Cursor_Click);
             // 
             // rtxTest
             // 

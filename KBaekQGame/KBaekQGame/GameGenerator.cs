@@ -47,7 +47,8 @@ namespace KBaekQGame
                     Game.Cubes[row, col] = pic;
                     Game.SpcBoard.Panel2.Controls.Add(pic);
 
-                    //test
+                    // differentiates behavior of cube click event between
+                    // when play and design
                     if (!Game.IsPlay)
                     {
                         pic.Click += EventHandler.Cube_Click;
@@ -56,7 +57,6 @@ namespace KBaekQGame
                     {
                         pic.Click += EventHandler.PlayCursor_Click;
                     }
-
                     Game.XGap += Game.Gap;
                 }
                 Game.XGap = Game.XStart;

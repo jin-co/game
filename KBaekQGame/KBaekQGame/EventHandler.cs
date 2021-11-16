@@ -60,13 +60,38 @@ namespace KBaekQGame
                 if ((clicked.Image.Tag).ToString() == "4")
                 {
                     MessageBox.Show("red");
+                    Game.IsMove = true;
                 }
 
                 if ((clicked.Image.Tag).ToString() == "5")
                 {
                     MessageBox.Show("green");
+                    Game.IsMove = true;
                 }
             }
+        }
+
+        public static void Cursor_Click(object sender, EventArgs e)
+        {
+            Button clicked = (Button)sender;
+            switch (clicked.Text)
+            {
+                case "Up":
+                    MessageBox.Show(clicked.Text);
+                    break;
+
+                case "Down":
+                    MessageBox.Show(clicked.Text);
+                    break;
+
+                case "Right":
+                    MessageBox.Show(clicked.Text);
+                    break;
+
+                case "Left":
+                    MessageBox.Show(clicked.Text);
+                    break;
+            }            
         }
 
         #endregion

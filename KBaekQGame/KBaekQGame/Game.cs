@@ -28,12 +28,12 @@ namespace KBaekQGame
         public static int YStart { get; set; }        
         public static int CubeSize { get; set; }
         public static int Gap { get; set; }        
+        public static bool IsPlay { get; set; }
+        public static bool IsMove { get; set; } //test
         public static PictureBox[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
         public static ImageList ImageList { get; set; }
 
-        //test
-        public static bool IsPlay { get; set; }
         #endregion
 
         #region Constructors
@@ -45,9 +45,8 @@ namespace KBaekQGame
             ImageList = imageList;            
             CubeSize = cubeSize;
             Gap = gap;
-
-            //test
             IsPlay = false;
+            IsMove = false; //test
         }
         #endregion       
     }
