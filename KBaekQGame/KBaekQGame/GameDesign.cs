@@ -17,7 +17,6 @@ namespace KBaekQGame
      */
     public partial class GameDesign : Form
     {
-        private Game game;
         private int rows, cols;
 
         public GameDesign()
@@ -28,7 +27,7 @@ namespace KBaekQGame
         // On load instantiate the Game class
         private void GameDesign_Load(object sender, EventArgs e)
         {
-            game = new Game(spcBoard, imageList);
+            new Game(spcBoard, imageList);
         }
 
         // Generates cubes based on the rows and columns 

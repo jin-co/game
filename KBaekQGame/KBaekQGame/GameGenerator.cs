@@ -52,6 +52,10 @@ namespace KBaekQGame
                     {
                         pic.Click += EventHandler.Cube_Click;
                     }
+                    else
+                    {
+                        pic.Click += EventHandler.PlayCursor_Click;
+                    }
 
                     Game.XGap += Game.Gap;
                 }

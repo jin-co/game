@@ -50,7 +50,16 @@ namespace KBaekQGame
                     Game.Cubes[int.Parse(loadString[i].ToString()), 
                         int.Parse(loadString[j].ToString())].Image = 
                         Game.ImageList.Images[int.Parse(loadString[k].ToString())];
+                    Game.Cubes[int.Parse(loadString[i].ToString()),
+                        int.Parse(loadString[j].ToString())].Image.Tag =
+                        int.Parse(loadString[k].ToString());
                 }
+            }
+
+            //test
+            foreach (var i in Game.Cubes)
+            {
+                rtxTest.Text += i.Tag;
             }
         }
 
