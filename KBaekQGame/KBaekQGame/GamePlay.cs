@@ -32,8 +32,8 @@ namespace KBaekQGame
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string loadString = FileHandler.LoadFile();
-            char[] loadString = FileHandler.LoadFile().ToCharArray();
+            string loadString = FileHandler.LoadFile();
+            //char[] loadString = FileHandler.LoadFile().ToCharArray();
             Game.Rows = int.Parse(loadString[0].ToString());
             Game.Cols = int.Parse(loadString[1].ToString());
             Game.Cubes = new PictureBox[Game.Rows, Game.Cols];
@@ -47,6 +47,7 @@ namespace KBaekQGame
             {
                 if (int.Parse(loadString[k].ToString()) != 0)
                 {
+                    string tag = loadString[k].ToString();
                     Game.Cubes[int.Parse(loadString[i].ToString()), 
                         int.Parse(loadString[j].ToString())].Image = 
                         Game.ImageList.Images[int.Parse(loadString[k].ToString())];

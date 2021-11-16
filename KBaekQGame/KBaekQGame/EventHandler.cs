@@ -52,15 +52,17 @@ namespace KBaekQGame
         //test
         public static void PlayCursor_Click(object sender, EventArgs e)
         {
-            if (sender != null)
+            
+            PictureBox clicked = (PictureBox)sender;
+            if (clicked.Image != null)
             {
-                PictureBox clicked = (PictureBox)sender;
-                if (clicked.Image.Tag == "4")
+
+                if ((clicked.Image.Tag).ToString() == "4")
                 {
                     MessageBox.Show("red");
                 }
 
-                if (clicked.Image.Tag == "5")
+                if ((clicked.Image.Tag).ToString() == "5")
                 {
                     MessageBox.Show("green");
                 }
