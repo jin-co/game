@@ -31,6 +31,9 @@ namespace KBaekQGame
         public static PictureBox[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
         public static ImageList ImageList { get; set; }
+
+        //test
+        public bool IsPlay { get; set; }
         #endregion
 
         #region Constructors
