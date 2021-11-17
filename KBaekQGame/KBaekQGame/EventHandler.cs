@@ -59,15 +59,12 @@ namespace KBaekQGame
             {
                 if ((clicked.Image.Tag).ToString() == "4")
                 {
-                    MessageBox.Show("red");
                     Game.IsMove = true;
-
                     CubeClicked = clicked;
                 }
 
                 if ((clicked.Image.Tag).ToString() == "5")
                 {
-                    MessageBox.Show("green");
                     Game.IsMove = true;
                     CubeClicked = clicked;
                 }
@@ -78,15 +75,20 @@ namespace KBaekQGame
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
-            Cube cube;
+            Cube cube = new Cube();
             if (Game.IsMove)
             {
                 switch (clicked.Text)
                 {
                     case "Up":
-                        cube = Game.Cubes[CubeClicked.X, CubeClicked.Y];
-                        cube.Y++;
-                        Game.Cubes[cube.X, cube.Y].Image = cube.Image;
+                        //cube = Game.Cubes[CubeClicked.X, CubeClicked.Y];
+                        //cube.Image = CubeClicked.Image;
+                        //Game.Cubes[CubeClicked.X, CubeClicked.Y].Image = null;
+                        //cube.X--;
+                        //Game.Cubes[cube.X, cube.Y] = cube;
+                        //Game.Cubes[cube.X, cube.Y].Image = cube.Image;
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y] = null;
+
                         break;
 
                     case "Down":
