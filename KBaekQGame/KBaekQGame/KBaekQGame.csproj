@@ -79,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Wall.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="GameDesign.resx">
       <DependentUpon>GameDesign.cs</DependentUpon>
     </EmbeddedResource>

@@ -62,18 +62,11 @@ namespace KBaekQGame
                     }
                 }
             }
+            // deletes boxes without a picture
+            GameGenerator.RemoveEmptyBoxes();
 
-            //test clean -> delete box without pic
-            for (int row = 0; row < Game.Rows; row++)
-            {
-                for (int col = 0; col < Game.Cols; col++)
-                {
-                    if (Game.Cubes[row, col].Image == null)
-                    {
-                        Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
-                    }
-                }
-            }
+            //test for wall collision
+            Wall.SetWalls();
 
             // remaining box
             txtNumberOfRemainingBoxes.Text = boxCount.ToString();
