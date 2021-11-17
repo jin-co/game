@@ -16,7 +16,7 @@ namespace KBaekQGame
         public static Image ToolBoxPic { get; set; }
         public static int ImageTag { get; set; }
 
-        public static PictureBox CubeClicked { get; set; } // test
+        public static Cube CubeClicked { get; set; } // test
         #endregion
 
         #region Methods     
@@ -54,7 +54,7 @@ namespace KBaekQGame
         //test
         public static void PlayCursor_Click(object sender, EventArgs e)
         {
-            PictureBox clicked = (PictureBox)sender;
+            Cube clicked = (Cube)sender;
             if (clicked.Image != null)
             {
                 if ((clicked.Image.Tag).ToString() == "4")
@@ -78,12 +78,15 @@ namespace KBaekQGame
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
+            Cube cube;
             if (Game.IsMove)
             {
                 switch (clicked.Text)
                 {
                     case "Up":
-                        MessageBox.Show(clicked.Text);
+                        cube = Game.Cubes[CubeClicked.X, CubeClicked.Y];
+                        cube.Y++;
+                        Game.Cubes[cube.X, cube.Y].Image = cube.Image;
                         break;
 
                     case "Down":
@@ -101,11 +104,9 @@ namespace KBaekQGame
             }
             else
             {
-
+                GameMessage.ShowMessage(3, "Select a box to move first");
             }
-          
         }
-
         #endregion
     }
 }

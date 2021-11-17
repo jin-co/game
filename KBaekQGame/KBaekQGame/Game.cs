@@ -30,7 +30,7 @@ namespace KBaekQGame
         public static int Gap { get; set; }        
         public static bool IsPlay { get; set; }
         public static bool IsMove { get; set; } //test
-        public static PictureBox[,] Cubes { get; set; }
+        public static Cube[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
         public static ImageList ImageList { get; set; }
 

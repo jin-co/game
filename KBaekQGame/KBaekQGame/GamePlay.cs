@@ -35,7 +35,7 @@ namespace KBaekQGame
             string loadString = FileHandler.LoadFile();
             Game.Rows = int.Parse(loadString[0].ToString());
             Game.Cols = int.Parse(loadString[1].ToString());
-            Game.Cubes = new PictureBox[Game.Rows, Game.Cols];
+            Game.Cubes = new Cube[Game.Rows, Game.Cols];
             Game.IsPlay = true;
 
             GameGenerator.GenerateGame();

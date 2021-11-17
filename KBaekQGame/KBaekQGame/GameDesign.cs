@@ -41,7 +41,7 @@ namespace KBaekQGame
             Game.Rows = rows;
             Game.Cols = cols;
             // sets array size
-            Game.Cubes = new PictureBox[rows, cols];
+            Game.Cubes = new Cube[rows, cols];
             GameGenerator.GenerateGame();
         }
 
