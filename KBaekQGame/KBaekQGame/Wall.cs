@@ -25,9 +25,20 @@ namespace KBaekQGame
                             Walls.Add(Game.Cubes[row, col]);
                         }
                     }
-
                 }
             }
+        }
+
+        public static bool DetectCollision(Cube cube)
+        {
+            foreach (var i in Walls)
+            {
+                if (i.Bounds.IntersectsWith(cube.Bounds))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

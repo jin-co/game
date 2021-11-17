@@ -83,28 +83,20 @@ namespace KBaekQGame
                 switch (clicked.Text)
                 {
                     case "Up":
-                        //cube = Game.Cubes[CubeClicked.X, CubeClicked.Y];
-                        //cube.Image = CubeClicked.Image;
-                        //Game.Cubes[CubeClicked.X, CubeClicked.Y].Image = null;
-                        //cube.X--;
-                        //Game.Cubes[cube.X, cube.Y] = cube;
-                        //Game.Cubes[cube.X, cube.Y].Image = cube.Image;
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                        //Game.Cubes[CubeClicked.X--, CubeClicked.Y].Image = ToolBoxPic;
                         
-
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
                         break;
 
                     case "Down":
-                        MessageBox.Show(clicked.Text);
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
                         break;
 
                     case "Right":
-                        MessageBox.Show(clicked.Text);
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
                         break;
 
                     case "Left":
-                        MessageBox.Show(clicked.Text);
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
                         break;
                 }
             }
