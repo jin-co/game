@@ -15,6 +15,8 @@ namespace KBaekQGame
         #region Properties
         public static Image ToolBoxPic { get; set; }
         public static int ImageTag { get; set; }
+
+        public static PictureBox CubeClicked { get; set; } // test
         #endregion
 
         #region Methods     
@@ -52,46 +54,56 @@ namespace KBaekQGame
         //test
         public static void PlayCursor_Click(object sender, EventArgs e)
         {
-            
             PictureBox clicked = (PictureBox)sender;
             if (clicked.Image != null)
             {
-
                 if ((clicked.Image.Tag).ToString() == "4")
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show("red");
                     Game.IsMove = true;
+
+                    CubeClicked = clicked;
                 }
 
                 if ((clicked.Image.Tag).ToString() == "5")
                 {
                     MessageBox.Show("green");
                     Game.IsMove = true;
+                    CubeClicked = clicked;
                 }
             }
         }
 
+        //test
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
-            switch (clicked.Text)
+            if (Game.IsMove)
             {
-                case "Up":
-                    MessageBox.Show(clicked.Text);
-                    break;
+                switch (clicked.Text)
+                {
+                    case "Up":
+                        MessageBox.Show(clicked.Text);
+                        break;
 
-                case "Down":
-                    MessageBox.Show(clicked.Text);
-                    break;
+                    case "Down":
+                        MessageBox.Show(clicked.Text);
+                        break;
 
-                case "Right":
-                    MessageBox.Show(clicked.Text);
-                    break;
+                    case "Right":
+                        MessageBox.Show(clicked.Text);
+                        break;
 
-                case "Left":
-                    MessageBox.Show(clicked.Text);
-                    break;
-            }            
+                    case "Left":
+                        MessageBox.Show(clicked.Text);
+                        break;
+                }
+            }
+            else
+            {
+
+            }
+          
         }
 
         #endregion

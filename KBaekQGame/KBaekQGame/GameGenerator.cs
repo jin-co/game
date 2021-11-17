@@ -32,30 +32,66 @@ namespace KBaekQGame
             Game.YGap = Game.YStart;
 
             // generates board
+            //for (int row = 0; row < Game.Rows; row++)
+            //{
+            //    for (int col = 0; col < Game.Cols; col++)
+            //    {
+            //        PictureBox pic = new PictureBox();
+            //        pic.Width = Game.CubeSize;
+            //        pic.Height = Game.CubeSize;
+            //        pic.Left = Game.XGap + (pic.Width * col);
+            //        pic.Top = Game.YGap + (pic.Height * row);
+            //        pic.BorderStyle = BorderStyle.Fixed3D;
+            //        pic.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            //        Game.Cubes[row, col] = pic;
+            //        Game.SpcBoard.Panel2.Controls.Add(pic);
+
+            //        // differentiates behavior of cube click event between
+            //        // when play and design
+            //        if (!Game.IsPlay)
+            //        {
+            //            pic.Click += EventHandler.Cube_Click;
+            //        }
+            //        else
+            //        {
+            //            pic.Click += EventHandler.PlayCursor_Click;
+            //        }
+            //        Game.XGap += Game.Gap;
+            //    }
+            //    Game.XGap = Game.XStart;
+            //    Game.YGap += Game.Gap;
+            //}
+            //Game.YGap = Game.YStart;
+
+            //test with cube class
             for (int row = 0; row < Game.Rows; row++)
             {
                 for (int col = 0; col < Game.Cols; col++)
                 {
-                    PictureBox pic = new PictureBox();
-                    pic.Width = Game.CubeSize;
-                    pic.Height = Game.CubeSize;
-                    pic.Left = Game.XGap + (pic.Width * col);
-                    pic.Top = Game.YGap + (pic.Height * row);
-                    pic.BorderStyle = BorderStyle.Fixed3D;
-                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Cube cube = new Cube();
+                    cube.Width = Game.CubeSize;
+                    cube.Height = Game.CubeSize;
+                    cube.Left = Game.XGap + (cube.Width * col);
+                    cube.Top = Game.YGap + (cube.Height * row);
+                    cube.BorderStyle = BorderStyle.Fixed3D;
+                    cube.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                    Game.Cubes[row, col] = pic;
-                    Game.SpcBoard.Panel2.Controls.Add(pic);
+                    cube.X = row;
+                    cube.Y = col;
+
+                    Game.Cubes[row, col] = cube;
+                    Game.SpcBoard.Panel2.Controls.Add(cube);
 
                     // differentiates behavior of cube click event between
                     // when play and design
                     if (!Game.IsPlay)
                     {
-                        pic.Click += EventHandler.Cube_Click;
+                        cube.Click += EventHandler.Cube_Click;
                     }
                     else
                     {
-                        pic.Click += EventHandler.PlayCursor_Click;
+                        cube.Click += EventHandler.PlayCursor_Click;
                     }
                     Game.XGap += Game.Gap;
                 }

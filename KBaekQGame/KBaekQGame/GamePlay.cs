@@ -40,6 +40,8 @@ namespace KBaekQGame
 
             GameGenerator.GenerateGame();
 
+            int boxCount = 0;
+
             for (int i = 2, j = 3, k = 4; k < loadString.Length; i += 3, j += 3, k +=3)
             {
                 if (int.Parse(loadString[k].ToString()) != 0)
@@ -51,8 +53,18 @@ namespace KBaekQGame
                     Game.Cubes[int.Parse(loadString[i].ToString()),
                         int.Parse(loadString[j].ToString())].Image.Tag =
                         int.Parse(loadString[k].ToString());
+
+                    // box count
+                    if ((int.Parse(loadString[k].ToString())).ToString() == "4" || 
+                        (int.Parse(loadString[k].ToString())).ToString() == "5")
+                    {
+                        boxCount++;
+                    }
                 }
             }
+
+            // remaining box
+            txtNumberOfRemainingBoxes.Text = boxCount.ToString();
         }
 
         private void Cursor_Click(object sender, EventArgs e)
