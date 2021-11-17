@@ -61,12 +61,14 @@ namespace KBaekQGame
                 {
                     Game.IsMove = true;
                     CubeClicked = clicked;
+                    ToolBoxPic = clicked.Image;
                 }
 
                 if ((clicked.Image.Tag).ToString() == "5")
                 {
                     Game.IsMove = true;
                     CubeClicked = clicked;
+                    ToolBoxPic = clicked.Image;
                 }
             }
         }
@@ -87,7 +89,9 @@ namespace KBaekQGame
                         //cube.X--;
                         //Game.Cubes[cube.X, cube.Y] = cube;
                         //Game.Cubes[cube.X, cube.Y].Image = cube.Image;
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y] = null;
+                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                        Game.Cubes[CubeClicked.X--, CubeClicked.Y].Image = ToolBoxPic;
+                        
 
                         break;
 

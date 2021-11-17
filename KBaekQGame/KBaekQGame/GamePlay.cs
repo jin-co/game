@@ -63,6 +63,9 @@ namespace KBaekQGame
                 }
             }
 
+            //test clean -> delete box without pic
+            
+
             // remaining box
             txtNumberOfRemainingBoxes.Text = boxCount.ToString();
         }

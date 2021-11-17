@@ -73,26 +73,26 @@ namespace KBaekQGame
                     cube.Width = Game.CubeSize;
                     cube.Height = Game.CubeSize;
                     cube.Left = Game.XGap + (cube.Width * col);
-                    cube.Top = Game.YGap + (cube.Height * row);
-                    cube.BorderStyle = BorderStyle.Fixed3D;
+                    cube.Top = Game.YGap + (cube.Height * row);                    
                     cube.SizeMode = PictureBoxSizeMode.StretchImage;
+                    cube.BorderStyle = BorderStyle.Fixed3D;
 
                     cube.X = row;
                     cube.Y = col;
-
-                    Game.Cubes[row, col] = cube;
-                    Game.SpcBoard.Panel2.Controls.Add(cube);
 
                     // differentiates behavior of cube click event between
                     // when play and design
                     if (!Game.IsPlay)
                     {
+                        
                         cube.Click += EventHandler.Cube_Click;
                     }
                     else
                     {
                         cube.Click += EventHandler.PlayCursor_Click;
                     }
+                    Game.Cubes[row, col] = cube;
+                    Game.SpcBoard.Panel2.Controls.Add(cube);
                     Game.XGap += Game.Gap;
                 }
                 Game.XGap = Game.XStart;
