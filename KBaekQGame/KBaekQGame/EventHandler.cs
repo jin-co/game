@@ -77,26 +77,37 @@ namespace KBaekQGame
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
-            Cube cube = new Cube();
+            
             if (Game.IsMove)
             {
                 switch (clicked.Text)
                 {
                     case "Up":
-                        
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                        if (!Wall.DetectCollision(CubeClicked))
+                        {
+                            Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                        }
                         break;
 
                     case "Down":
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                        if (!Wall.DetectCollision(CubeClicked))
+                        {
+                            Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                        }                        
                         break;
 
                     case "Right":
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                        if (!Wall.DetectCollision(CubeClicked))
+                        {
+                            Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                        }                        
                         break;
 
                     case "Left":
-                        Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                        if (!Wall.DetectCollision(CubeClicked))
+                        {
+                            Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                        }                        
                         break;
                 }
             }
