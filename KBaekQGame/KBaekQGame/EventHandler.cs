@@ -90,7 +90,7 @@ namespace KBaekQGame
                         //Game.Cubes[cube.X, cube.Y] = cube;
                         //Game.Cubes[cube.X, cube.Y].Image = cube.Image;
                         Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                        Game.Cubes[CubeClicked.X--, CubeClicked.Y].Image = ToolBoxPic;
+                        //Game.Cubes[CubeClicked.X--, CubeClicked.Y].Image = ToolBoxPic;
                         
 
                         break;
