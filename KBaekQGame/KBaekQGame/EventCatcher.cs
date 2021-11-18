@@ -122,7 +122,7 @@ namespace KBaekQGame
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-                CubeTimer.Stop();
+                CubeTimer.Stop();                
             }
         }
 
@@ -138,7 +138,7 @@ namespace KBaekQGame
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                CubeTimer.Stop();
+                CubeTimer.Stop();                
             }
         }
 
@@ -154,7 +154,7 @@ namespace KBaekQGame
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-                CubeTimer.Stop();
+                CubeTimer.Stop();                
             }
         }
 
@@ -165,12 +165,17 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
+                if (Door.DetectCollision(CubeClicked))
+                {
+                    CubeClicked.Image = null;
+                }
+
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-                CubeTimer.Stop();
+                CubeTimer.Stop();                
             }
         }
 

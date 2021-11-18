@@ -34,5 +34,31 @@ namespace KBaekQGame
                 }
             }
         }
+
+        public static bool DetectCollision(Cube cube)
+        {
+            if (RedCubes.Contains(cube))
+            {
+                foreach (var i in RedDoors)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            if (GreenCubes.Contains(cube))
+            {
+                foreach (var i in GreenDoors)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }                
+            }
+            return false;
+        }
     }
 }
