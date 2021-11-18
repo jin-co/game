@@ -81,44 +81,28 @@ namespace KBaekQGame
             Button clicked = (Button)sender;
 
             CubeTimer = new Timer();
-            CubeTimer.Interval = 300;
-            CubeTimer.Enabled = true;
-            CubeTimer.Start();
+            CubeTimer.Interval = 150;
             
             if (Game.IsMove)
             {
+                CubeTimer.Enabled = true;
+                CubeTimer.Start();
                 switch (clicked.Text)
                 {
-                    case "Up":
-                        if (!Wall.DetectCollision(CubeClicked))
-                        {
-                            //Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                            CubeTimer.Tick += new EventHandler(Top_Tick);
-                        }
+                    case "Up":                        
+                        CubeTimer.Tick += new EventHandler(Top_Tick);                                                        
                         break;
 
-                    case "Down":
-                        if (!Wall.DetectCollision(CubeClicked))
-                        {
-                            //Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-                            CubeTimer.Tick += new EventHandler(Bottom_Tick);
-                        }                        
+                    case "Down":                        
+                        CubeTimer.Tick += new EventHandler(Bottom_Tick);                                                        
                         break;
 
-                    case "Right":
-                        if (!Wall.DetectCollision(CubeClicked))
-                        {
-                            //Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-                            CubeTimer.Tick += new EventHandler(Right_Tick);
-                        }                        
+                    case "Right":                        
+                        CubeTimer.Tick += new EventHandler(Right_Tick);                                                        
                         break;
 
-                    case "Left":
-                        if (!Wall.DetectCollision(CubeClicked))
-                        {
-                            //Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-                            CubeTimer.Tick += new EventHandler(Left_Tick);
-                        }                        
+                    case "Left":                        
+                        CubeTimer.Tick += new EventHandler(Left_Tick);                                                        
                         break;
                 }
             }
@@ -130,22 +114,38 @@ namespace KBaekQGame
 
         public static void Top_Tick(object sender, EventArgs eventArgs)
         {
-            Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+            if (!Wall.DetectCollision(CubeClicked))
+            {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                
+            }
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
         {
             Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+            if (Wall.DetectCollision(CubeClicked))
+            {
+                CubeTimer.Stop();
+            }
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
         {
             Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+            if (Wall.DetectCollision(CubeClicked))
+            {
+                CubeTimer.Stop();
+            }
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
         {
             Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+            if (Wall.DetectCollision(CubeClicked))
+            {
+                CubeTimer.Stop();
+            }
         }
 
         #endregion
