@@ -15,6 +15,8 @@ namespace KBaekQGame
         #region Properties
         public static Image ToolBoxPic { get; set; }
         public static int ImageTag { get; set; }
+        
+        public static Timer CubeTimer { get; set; }
 
         public static Cube CubeClicked { get; set; } // test
         #endregion
@@ -77,6 +79,10 @@ namespace KBaekQGame
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
+
+            CubeTimer = new Timer(500);
+            CubeTimer.Enabled = true;
+            CubeTimer.Start();
             
             if (Game.IsMove)
             {
