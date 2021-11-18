@@ -85,11 +85,11 @@ namespace KBaekQGame
                     if (!Game.IsPlay)
                     {
                         
-                        cube.Click += EventHandler.Cube_Click;
+                        cube.Click += EventCatcher.Cube_Click;
                     }
                     else
                     {
-                        cube.Click += EventHandler.PlayCursor_Click;
+                        cube.Click += EventCatcher.PlayCursor_Click;
                     }
                     Game.Cubes[row, col] = cube;
                     Game.SpcBoard.Panel2.Controls.Add(cube);

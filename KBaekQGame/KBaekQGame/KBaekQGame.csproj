@@ -52,7 +52,7 @@
     <Compile Include="Cube.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EventHandler.cs" />
+    <Compile Include="EventCatcher.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameDesign.cs">

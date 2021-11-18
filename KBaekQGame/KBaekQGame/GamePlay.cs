@@ -74,7 +74,7 @@ namespace KBaekQGame
 
         private void Cursor_Click(object sender, EventArgs e)
         {
-            EventHandler.Cursor_Click(sender, e);
+            EventCatcher.Cursor_Click(sender, e);
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
