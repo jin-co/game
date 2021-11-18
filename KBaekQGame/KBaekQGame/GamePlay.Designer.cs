@@ -42,7 +42,7 @@ namespace KBaekQGame
             this.btnDown = new System.Windows.Forms.Button();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
-            this.rtxTest = new System.Windows.Forms.RichTextBox();
+            this.rtbTest = new System.Windows.Forms.RichTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.spcPlayBoard = new System.Windows.Forms.SplitContainer();
             this.menuStrip1.SuspendLayout();
@@ -157,13 +157,13 @@ namespace KBaekQGame
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.Cursor_Click);
             // 
-            // rtxTest
+            // rtbTest
             // 
-            this.rtxTest.Location = new System.Drawing.Point(826, 179);
-            this.rtxTest.Name = "rtxTest";
-            this.rtxTest.Size = new System.Drawing.Size(365, 229);
-            this.rtxTest.TabIndex = 0;
-            this.rtxTest.Text = "";
+            this.rtbTest.Location = new System.Drawing.Point(826, 179);
+            this.rtbTest.Name = "rtbTest";
+            this.rtbTest.Size = new System.Drawing.Size(365, 229);
+            this.rtbTest.TabIndex = 0;
+            this.rtbTest.Text = "";
             // 
             // imageList1
             // 
@@ -185,7 +185,7 @@ namespace KBaekQGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
             this.Controls.Add(this.spcPlayBoard);
-            this.Controls.Add(this.rtxTest);
+            this.Controls.Add(this.rtbTest);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.btnDown);
@@ -224,7 +224,7 @@ namespace KBaekQGame
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnRight;
-        private System.Windows.Forms.RichTextBox rtxTest;
+        private System.Windows.Forms.RichTextBox rtbTest;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.SplitContainer spcPlayBoard;
     }

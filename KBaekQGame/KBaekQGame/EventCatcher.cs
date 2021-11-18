@@ -109,7 +109,7 @@ namespace KBaekQGame
             else
             {
                 GameMessage.ShowMessage(3, "Select a box to move first");
-            }
+            }  
         }
 
         public static void Top_Tick(object sender, EventArgs eventArgs)
@@ -117,33 +117,55 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked))
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                
+            }
+            else
+            {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                CubeTimer.Stop();
             }
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
         {
-            Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-            if (Wall.DetectCollision(CubeClicked))
+            
+            
+            if (!Wall.DetectCollision(CubeClicked))
             {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+            }
+            else
+            {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
                 CubeTimer.Stop();
             }
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
         {
-            Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-            if (Wall.DetectCollision(CubeClicked))
+            
+            
+            if (!Wall.DetectCollision(CubeClicked))
             {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+            }
+            else
+            {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
                 CubeTimer.Stop();
             }
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
         {
-            Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-            if (Wall.DetectCollision(CubeClicked))
+            
+            
+            if (!Wall.DetectCollision(CubeClicked))
             {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+            }
+            else
+            {
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
                 CubeTimer.Stop();
             }
         }
