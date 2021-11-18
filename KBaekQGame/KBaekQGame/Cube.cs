@@ -11,5 +11,57 @@ namespace KBaekQGame
     {
         public int X { get; set; }
         public int Y { get; set; }
+        public static List<Cube> RedCubes { get; set; }
+        public static List<Cube> GreenCubes { get; set; }
+
+        public static void SetCubes()
+        {
+            RedCubes = new List<Cube>();
+            GreenCubes = new List<Cube>();
+            for (int row = 0; row < Game.Rows; row++)
+            {
+                for (int col = 0; col < Game.Cols; col++)
+                {
+                    if (Game.Cubes[row, col].Image != null)
+                    {
+                        if (Game.Cubes[row, col].Image.Tag.ToString() == "4")
+                        {
+                            RedCubes.Add(Game.Cubes[row, col]);
+                        }
+
+                        if (Game.Cubes[row, col].Image.Tag.ToString() == "5")
+                        {
+                            GreenCubes.Add(Game.Cubes[row, col]);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static bool DetectCollision(Cube cube)
+        {
+            if (RedCubes.Contains(cube))
+            {
+                foreach (var i in GreenCubes)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            if (GreenCubes.Contains(cube))
+            {
+                foreach (var i in RedCubes)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

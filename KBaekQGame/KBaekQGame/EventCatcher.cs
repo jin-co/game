@@ -114,7 +114,8 @@ namespace KBaekQGame
 
         public static void Top_Tick(object sender, EventArgs eventArgs)
         {
-            if (!Wall.DetectCollision(CubeClicked))
+            if (!Wall.DetectCollision(CubeClicked) &&
+                !Cube.DetectCollision(CubeClicked))
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
             }
@@ -127,9 +128,10 @@ namespace KBaekQGame
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
         {
-            
-            
-            if (!Wall.DetectCollision(CubeClicked))
+
+
+            if (!Wall.DetectCollision(CubeClicked) &&
+                !Cube.DetectCollision(CubeClicked))
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
             }
@@ -142,9 +144,10 @@ namespace KBaekQGame
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
         {
-            
-            
-            if (!Wall.DetectCollision(CubeClicked))
+
+
+            if (!Wall.DetectCollision(CubeClicked) &&
+                !Cube.DetectCollision(CubeClicked))
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
             }
@@ -157,9 +160,10 @@ namespace KBaekQGame
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
         {
-            
-            
-            if (!Wall.DetectCollision(CubeClicked))
+
+
+            if (!Wall.DetectCollision(CubeClicked) &&
+                !Cube.DetectCollision(CubeClicked))
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
             }

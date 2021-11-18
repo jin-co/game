@@ -65,8 +65,11 @@ namespace KBaekQGame
             // deletes boxes without a picture
             GameGenerator.RemoveEmptyBoxes();
 
-            //test for wall collision
+            // Adds created walls to a list for collision test
             Wall.SetWalls();
+
+            // Adds created cubes to each set of a list for collision test
+            Cube.SetCubes();
 
             // remaining box
             txtNumberOfRemainingBoxes.Text = boxCount.ToString();
