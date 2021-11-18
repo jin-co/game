@@ -68,8 +68,11 @@ namespace KBaekQGame
             // Adds created walls to a list for collision test
             Wall.SetWalls();
 
-            // Adds created cubes to each set of a list for collision test
+            // Adds created boxes to each set of a list for collision test
             Cube.SetCubes();
+
+            // Adds created doors to each set of a list for collision test
+            Door.SetDoors();
 
             // remaining box
             txtNumberOfRemainingBoxes.Text = boxCount.ToString();

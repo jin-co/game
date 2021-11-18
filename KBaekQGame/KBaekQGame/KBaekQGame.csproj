@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Door.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Wall.cs">
       <SubType>Component</SubType>
     </Compile>
