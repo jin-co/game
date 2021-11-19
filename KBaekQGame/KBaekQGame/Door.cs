@@ -44,7 +44,6 @@ namespace KBaekQGame
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
-                        GameScore.UpdateBoxCount();
                     }
                 }
             }
@@ -56,7 +55,6 @@ namespace KBaekQGame
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
-                        GameScore.UpdateBoxCount();
                     }
                 }                
             }

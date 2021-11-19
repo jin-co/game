@@ -27,13 +27,13 @@ namespace KBaekQGame
                         if (Game.Cubes[row, col].Image.Tag.ToString() == "4")
                         {
                             RedCubes.Add(Game.Cubes[row, col]);
-                            GameScore.UpdateBoxCount();
+                            GameScore.BoxCount++;
                         }
 
                         if (Game.Cubes[row, col].Image.Tag.ToString() == "5")
                         {
                             GreenCubes.Add(Game.Cubes[row, col]);
-                            GameScore.UpdateBoxCount();
+                            GameScore.BoxCount++;
                         }
                     }
                 }
@@ -59,7 +59,7 @@ namespace KBaekQGame
                     if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         Game.SpcBoard.Panel2.Controls.Remove(i);
-                        SetCubes();
+                        GameScore.BoxCount--;
                     }
                 }
             }
@@ -81,7 +81,8 @@ namespace KBaekQGame
                     if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         Game.SpcBoard.Panel2.Controls.Remove(i);
-                        SetCubes();
+                        
+                        GameScore.BoxCount--;
                     }
                 }
             }
