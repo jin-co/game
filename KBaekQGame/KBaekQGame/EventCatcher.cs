@@ -119,10 +119,12 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);              
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                GameScore.MovementCount++;//test
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                GameScore.MovementCount--;//test
                 CubeTimer.Stop();                
             }
 
@@ -138,10 +140,12 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                GameScore.MovementCount++;//test
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                GameScore.MovementCount--;//test
                 CubeTimer.Stop();                
             }
 
@@ -157,10 +161,12 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                GameScore.MovementCount++;//test
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                GameScore.MovementCount--;//test
                 CubeTimer.Stop();                
             }
 
@@ -176,10 +182,12 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                GameScore.MovementCount++;//test
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                GameScore.MovementCount--;//test
                 CubeTimer.Stop();                
             }
 
