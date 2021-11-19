@@ -43,6 +43,7 @@ namespace KBaekQGame
                 {
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
+                        cube.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
                     }
                 }
@@ -54,6 +55,7 @@ namespace KBaekQGame
                 {
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
+                        cube.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
                     }
                 }                

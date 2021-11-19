@@ -58,8 +58,8 @@ namespace KBaekQGame
                 {
                     if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
                     {
+                        i.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(i);
-                        GameScore.BoxCount--;
                     }
                 }
             }
@@ -80,9 +80,8 @@ namespace KBaekQGame
                 {
                     if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
                     {
+                        i.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(i);
-                        
-                        GameScore.BoxCount--;
                     }
                 }
             }

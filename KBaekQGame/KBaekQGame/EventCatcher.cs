@@ -127,7 +127,7 @@ namespace KBaekQGame
             }
 
             //test
-            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
@@ -146,7 +146,7 @@ namespace KBaekQGame
             }
 
             //test
-            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
@@ -165,7 +165,7 @@ namespace KBaekQGame
             }
 
             //test
-            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
@@ -184,7 +184,7 @@ namespace KBaekQGame
             }
 
             //test
-            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
