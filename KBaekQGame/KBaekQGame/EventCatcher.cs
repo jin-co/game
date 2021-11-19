@@ -117,10 +117,7 @@ namespace KBaekQGame
             if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
-                if (Door.DetectDoorCollision(CubeClicked))
-                {
-                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
-                }                
+                Door.DetectDoorCollision(CubeClicked);              
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
             }
             else
@@ -128,19 +125,18 @@ namespace KBaekQGame
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
                 CubeTimer.Stop();                
             }
+
+            //test
+            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
         {
-
-
             if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
-                if (Door.DetectDoorCollision(CubeClicked))
-                {
-                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
-                }
+                Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
             }
             else
@@ -148,19 +144,18 @@ namespace KBaekQGame
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
                 CubeTimer.Stop();                
             }
+
+            //test
+            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
         {
-
-
             if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
-                if (Door.DetectDoorCollision(CubeClicked))
-                {
-                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
-                }
+                Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
             }
             else
@@ -168,24 +163,18 @@ namespace KBaekQGame
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
                 CubeTimer.Stop();                
             }
+
+            //test
+            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
         {
-
-
             if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
-                if (Door.DetectDoorCollision(CubeClicked))
-                {
-                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
-                }
-                if (Door.DetectCollision(CubeClicked))
-                {
-                    CubeClicked.Image = null;
-                }
-
+                Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
             }
             else
@@ -193,6 +182,10 @@ namespace KBaekQGame
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
                 CubeTimer.Stop();                
             }
+
+            //test
+            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
         }
 
         #endregion

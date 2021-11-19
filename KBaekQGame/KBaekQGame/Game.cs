@@ -33,6 +33,8 @@ namespace KBaekQGame
         public static Cube[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
         public static ImageList ImageList { get; set; }
+        public static TextBox BoxesLeftDisplay { get; set; } //test
+        public static TextBox MovementDisplay { get; set; } //test
 
         #endregion
 

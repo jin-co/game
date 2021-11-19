@@ -12,8 +12,6 @@ namespace KBaekQGame
 {
     public partial class GamePlay : Form
     {
-        private Game game;
-        private int rows, cols;
         public GamePlay()
         {
             InitializeComponent();
@@ -28,6 +26,8 @@ namespace KBaekQGame
         private void GamePlay_Load(object sender, EventArgs e)
         {
             new Game(spcPlayBoard, imageList1);
+            Game.BoxesLeftDisplay = txtNumberOfRemainingBoxes;
+            Game.MovementDisplay = txtNumberOfMoves;
         }
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,13 +53,6 @@ namespace KBaekQGame
                     Game.Cubes[int.Parse(loadString[i].ToString()),
                         int.Parse(loadString[j].ToString())].Image.Tag =
                         int.Parse(loadString[k].ToString());
-
-                    // box count
-                    if ((int.Parse(loadString[k].ToString())).ToString() == "4" || 
-                        (int.Parse(loadString[k].ToString())).ToString() == "5")
-                    {
-                        boxCount++;
-                    }
                 }
             }
             // deletes boxes without a picture
@@ -75,7 +68,7 @@ namespace KBaekQGame
             Door.SetDoors();
 
             // remaining box
-            txtNumberOfRemainingBoxes.Text = boxCount.ToString();
+            Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
         }
 
         private void Cursor_Click(object sender, EventArgs e)

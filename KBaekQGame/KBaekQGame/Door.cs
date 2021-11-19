@@ -35,7 +35,7 @@ namespace KBaekQGame
             }
         }
 
-        public static bool DetectDoorCollision(Cube cube)
+        public static void DetectDoorCollision(Cube cube)
         {
             if (RedCubes.Contains(cube))
             {
@@ -43,7 +43,8 @@ namespace KBaekQGame
                 {
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
-                        return true;
+                        Game.SpcBoard.Panel2.Controls.Remove(cube);
+                        GameScore.UpdateBoxCount();
                     }
                 }
             }
@@ -54,11 +55,11 @@ namespace KBaekQGame
                 {
                     if (i.Bounds.IntersectsWith(cube.Bounds))
                     {
-                        return true;
+                        Game.SpcBoard.Panel2.Controls.Remove(cube);
+                        GameScore.UpdateBoxCount();
                     }
                 }                
             }
-            return false;
         }
     }
 }

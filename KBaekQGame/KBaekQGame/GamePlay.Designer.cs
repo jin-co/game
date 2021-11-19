@@ -99,6 +99,8 @@ namespace KBaekQGame
             this.txtNumberOfMoves.ReadOnly = true;
             this.txtNumberOfMoves.Size = new System.Drawing.Size(100, 24);
             this.txtNumberOfMoves.TabIndex = 2;
+            this.txtNumberOfMoves.Text = "0";
+            this.txtNumberOfMoves.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNumberOfRemainingBoxes
             // 
@@ -107,6 +109,7 @@ namespace KBaekQGame
             this.txtNumberOfRemainingBoxes.ReadOnly = true;
             this.txtNumberOfRemainingBoxes.Size = new System.Drawing.Size(100, 24);
             this.txtNumberOfRemainingBoxes.TabIndex = 4;
+            this.txtNumberOfRemainingBoxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
