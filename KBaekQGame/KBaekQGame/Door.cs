@@ -21,12 +21,12 @@ namespace KBaekQGame
                 {
                     if (Game.Cubes[row, col].Image != null)
                     {
-                        if (Game.Cubes[row, col].Image.Tag.ToString() == "4")
+                        if (Game.Cubes[row, col].Image.Tag.ToString() == "2")
                         {
                             RedDoors.Add(Game.Cubes[row, col]);
                         }
 
-                        if (Game.Cubes[row, col].Image.Tag.ToString() == "5")
+                        if (Game.Cubes[row, col].Image.Tag.ToString() == "3")
                         {
                             GreenDoors.Add(Game.Cubes[row, col]);
                         }
@@ -35,7 +35,7 @@ namespace KBaekQGame
             }
         }
 
-        public static bool DetectCollision(Cube cube)
+        public static bool DetectDoorCollision(Cube cube)
         {
             if (RedCubes.Contains(cube))
             {

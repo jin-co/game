@@ -117,6 +117,10 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
+                if (Door.DetectDoorCollision(CubeClicked))
+                {
+                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
+                }                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
             }
             else
@@ -133,6 +137,10 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
+                if (Door.DetectDoorCollision(CubeClicked))
+                {
+                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
+                }
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
             }
             else
@@ -149,6 +157,10 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
+                if (Door.DetectDoorCollision(CubeClicked))
+                {
+                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
+                }
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
             }
             else
@@ -165,6 +177,10 @@ namespace KBaekQGame
             if (!Wall.DetectCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
+                if (Door.DetectDoorCollision(CubeClicked))
+                {
+                    Game.SpcBoard.Panel2.Controls.Remove(CubeClicked);
+                }
                 if (Door.DetectCollision(CubeClicked))
                 {
                     CubeClicked.Image = null;

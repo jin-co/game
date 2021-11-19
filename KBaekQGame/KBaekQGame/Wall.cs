@@ -38,6 +38,29 @@ namespace KBaekQGame
                     return true;
                 }
             }
+
+            if (GreenCubes.Contains(cube))
+            {
+                foreach (var i in Door.RedDoors)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            if (RedCubes.Contains(cube))
+            {
+                foreach (var i in Door.GreenDoors)
+                {
+                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+
             return false;
         }
     }
