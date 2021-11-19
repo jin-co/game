@@ -49,6 +49,7 @@
     <Compile Include="Door.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GameScore.cs" />
     <Compile Include="Wall.cs">
       <SubType>Component</SubType>
     </Compile>
