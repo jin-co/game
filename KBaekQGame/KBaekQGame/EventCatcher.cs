@@ -119,7 +119,7 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);              
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                GameScore.MovementCount++;//test
+                GameScore.MovementCount++;//test                
             }
             else
             {
@@ -131,6 +131,13 @@ namespace KBaekQGame
             //test
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
+
+            //test
+            if (GameScore.BoxCount <= 0)
+            {
+                CubeTimer.Stop();
+                GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+            }
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
@@ -140,7 +147,7 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-                GameScore.MovementCount++;//test
+                GameScore.MovementCount++;//test                
             }
             else
             {
@@ -152,6 +159,13 @@ namespace KBaekQGame
             //test
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
+
+            //test
+            if (GameScore.BoxCount <= 0)
+            {
+                CubeTimer.Stop();
+                GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+            }
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
@@ -161,7 +175,7 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-                GameScore.MovementCount++;//test
+                GameScore.MovementCount++;//test                
             }
             else
             {
@@ -173,6 +187,13 @@ namespace KBaekQGame
             //test
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
+
+            //test
+            if (GameScore.BoxCount <= 0)
+            {
+                CubeTimer.Stop();
+                GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+            }
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
@@ -182,7 +203,7 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-                GameScore.MovementCount++;//test
+                GameScore.MovementCount++;//test                
             }
             else
             {
@@ -194,6 +215,13 @@ namespace KBaekQGame
             //test
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
+
+            //test
+            if (GameScore.BoxCount <= 0)
+            {
+                CubeTimer.Stop();
+                GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+            }
         }
 
         #endregion
