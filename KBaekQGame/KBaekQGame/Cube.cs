@@ -50,6 +50,16 @@ namespace KBaekQGame
                     }
                 }
             }
+            else
+            {
+                foreach (var i in GreenCubes)
+                {
+                    if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        Game.SpcBoard.Panel2.Controls.Remove(i);
+                    }
+                }
+            }
 
             if (GreenCubes.Contains(cube))
             {
@@ -61,6 +71,17 @@ namespace KBaekQGame
                     }
                 }
             }
+            else
+            {
+                foreach (var i in RedCubes)
+                {
+                    if (i != cube && i.Bounds.IntersectsWith(cube.Bounds))
+                    {
+                        Game.SpcBoard.Panel2.Controls.Remove(i);
+                    }
+                }
+            }
+
             return false;
         }
     }

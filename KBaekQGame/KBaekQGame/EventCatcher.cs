@@ -114,7 +114,7 @@ namespace KBaekQGame
 
         public static void Top_Tick(object sender, EventArgs eventArgs)
         {
-            if (!Wall.DetectCollision(CubeClicked) &&
+            if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
                 if (Door.DetectDoorCollision(CubeClicked))
@@ -134,7 +134,7 @@ namespace KBaekQGame
         {
 
 
-            if (!Wall.DetectCollision(CubeClicked) &&
+            if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
                 if (Door.DetectDoorCollision(CubeClicked))
@@ -154,7 +154,7 @@ namespace KBaekQGame
         {
 
 
-            if (!Wall.DetectCollision(CubeClicked) &&
+            if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
                 if (Door.DetectDoorCollision(CubeClicked))
@@ -174,7 +174,7 @@ namespace KBaekQGame
         {
 
 
-            if (!Wall.DetectCollision(CubeClicked) &&
+            if (!Wall.DetectWallCollision(CubeClicked) &&
                 !Cube.DetectCollision(CubeClicked))
             {
                 if (Door.DetectDoorCollision(CubeClicked))

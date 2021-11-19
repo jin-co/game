@@ -29,7 +29,7 @@ namespace KBaekQGame
             }
         }
 
-        public static bool DetectCollision(Cube cube)
+        public static bool DetectWallCollision(Cube cube)
         {
             foreach (var i in Walls)
             {
