@@ -29,12 +29,13 @@ namespace KBaekQGame
         public static int CubeSize { get; set; }
         public static int Gap { get; set; }        
         public static bool IsPlay { get; set; }
-        public static bool IsMove { get; set; } //test
+        public static bool IsMove { get; set; } 
         public static Cube[,] Cubes { get; set; }
         public static SplitContainer SpcBoard { get; set; }        
         public static ImageList ImageList { get; set; }
-        public static TextBox BoxesLeftDisplay { get; set; } //test
-        public static TextBox MovementDisplay { get; set; } //test
+        public static TextBox BoxesLeftDisplay { get; set; } 
+        public static TextBox MovementDisplay { get; set; }
+        public static string LoadString { get; set; }
 
         #endregion
 
@@ -48,7 +49,7 @@ namespace KBaekQGame
             CubeSize = cubeSize;
             Gap = gap;
             IsPlay = false;
-            IsMove = false; //test
+            IsMove = false;
         }
         #endregion       
     }

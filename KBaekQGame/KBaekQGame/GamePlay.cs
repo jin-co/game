@@ -28,44 +28,18 @@ namespace KBaekQGame
             new Game(spcPlayBoard, imageList1);
             Game.BoxesLeftDisplay = txtNumberOfRemainingBoxes;
             Game.MovementDisplay = txtNumberOfMoves;
+            Game.IsPlay = true;
         }
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string loadString = FileHandler.LoadFile();
-            Game.Rows = int.Parse(loadString[0].ToString());
-            Game.Cols = int.Parse(loadString[1].ToString());
-            Game.Cubes = new Cube[Game.Rows, Game.Cols];
-            Game.IsPlay = true;
+            //string loadString = FileHandler.LoadFile();
+            Game.LoadString = FileHandler.LoadFile();
+            Game.Rows = int.Parse(Game.LoadString[0].ToString());
+            Game.Cols = int.Parse(Game.LoadString[1].ToString());
+            Game.Cubes = new Cube[Game.Rows, Game.Cols];            
 
             GameGenerator.GenerateGame();
-
-            int boxCount = 0;
-
-            for (int i = 2, j = 3, k = 4; k < loadString.Length; i += 3, j += 3, k +=3)
-            {
-                if (int.Parse(loadString[k].ToString()) != 0)
-                {
-                    string tag = loadString[k].ToString();
-                    Game.Cubes[int.Parse(loadString[i].ToString()), 
-                        int.Parse(loadString[j].ToString())].Image = 
-                        Game.ImageList.Images[int.Parse(loadString[k].ToString())];
-                    Game.Cubes[int.Parse(loadString[i].ToString()),
-                        int.Parse(loadString[j].ToString())].Image.Tag =
-                        int.Parse(loadString[k].ToString());
-                }
-            }
-            // deletes boxes without a picture
-            GameGenerator.RemoveEmptyBoxes();
-
-            // Adds created walls to a list for collision test
-            Wall.SetWalls();
-
-            // Adds created boxes to each set of a list for collision test
-            Cube.SetCubes();
-
-            // Adds created doors to each set of a list for collision test
-            Door.SetDoors();
 
             // remaining box
             Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();

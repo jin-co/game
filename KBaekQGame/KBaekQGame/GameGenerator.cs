@@ -31,40 +31,6 @@ namespace KBaekQGame
             Game.XGap = Game.XStart;
             Game.YGap = Game.YStart;
 
-            // generates board
-            //for (int row = 0; row < Game.Rows; row++)
-            //{
-            //    for (int col = 0; col < Game.Cols; col++)
-            //    {
-            //        PictureBox pic = new PictureBox();
-            //        pic.Width = Game.CubeSize;
-            //        pic.Height = Game.CubeSize;
-            //        pic.Left = Game.XGap + (pic.Width * col);
-            //        pic.Top = Game.YGap + (pic.Height * row);
-            //        pic.BorderStyle = BorderStyle.Fixed3D;
-            //        pic.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //        Game.Cubes[row, col] = pic;
-            //        Game.SpcBoard.Panel2.Controls.Add(pic);
-
-            //        // differentiates behavior of cube click event between
-            //        // when play and design
-            //        if (!Game.IsPlay)
-            //        {
-            //            pic.Click += EventHandler.Cube_Click;
-            //        }
-            //        else
-            //        {
-            //            pic.Click += EventHandler.PlayCursor_Click;
-            //        }
-            //        Game.XGap += Game.Gap;
-            //    }
-            //    Game.XGap = Game.XStart;
-            //    Game.YGap += Game.Gap;
-            //}
-            //Game.YGap = Game.YStart;
-
-            //test with cube class
             for (int row = 0; row < Game.Rows; row++)
             {
                 for (int col = 0; col < Game.Cols; col++)
@@ -83,8 +49,7 @@ namespace KBaekQGame
                     // differentiates behavior of cube click event between
                     // when play and design
                     if (!Game.IsPlay)
-                    {
-                        
+                    {                        
                         cube.Click += EventCatcher.Cube_Click;
                     }
                     else
@@ -99,9 +64,44 @@ namespace KBaekQGame
                 Game.YGap += Game.Gap;
             }
             Game.YGap = Game.YStart;
+
+            if (Game.IsPlay)
+            {
+                AddPictures();
+            }
         }
 
-        public static void RemoveEmptyBoxes()
+        /// <summary>
+        /// Adds pictures to created boxes
+        /// </summary>
+        private static void AddPictures()
+        {
+            for (int i = 2, j = 3, k = 4; k < Game.LoadString.Length; i += 3, j += 3, k += 3)
+            {
+                if (int.Parse(Game.LoadString[k].ToString()) != 0)
+                {
+                    string tag = Game.LoadString[k].ToString();
+                    Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
+                        int.Parse(Game.LoadString[j].ToString())].Image =
+                        Game.ImageList.Images[int.Parse(Game.LoadString[k].ToString())];
+                    Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
+                        int.Parse(Game.LoadString[j].ToString())].Image.Tag =
+                        int.Parse(Game.LoadString[k].ToString());
+                }
+            }
+            RemoveEmptyBoxes();
+
+            // Adds created walls to a list for collision test
+            Wall.SetWalls();
+
+            // Adds created boxes to each set of a list for collision test
+            Cube.SetCubes();
+
+            // Adds created doors to each set of a list for collision test
+            Door.SetDoors();
+        }
+
+        private static void RemoveEmptyBoxes()
         {
             //test clean -> delete box without pic
             for (int row = 0; row < Game.Rows; row++)
