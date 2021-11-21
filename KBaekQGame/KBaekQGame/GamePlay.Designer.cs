@@ -109,6 +109,7 @@ namespace KBaekQGame
             this.txtNumberOfRemainingBoxes.ReadOnly = true;
             this.txtNumberOfRemainingBoxes.Size = new System.Drawing.Size(100, 24);
             this.txtNumberOfRemainingBoxes.TabIndex = 4;
+            this.txtNumberOfRemainingBoxes.Text = "0";
             this.txtNumberOfRemainingBoxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2

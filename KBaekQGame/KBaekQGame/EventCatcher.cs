@@ -74,7 +74,6 @@ namespace KBaekQGame
                 }
             }
         }
-
         
         public static void Cursor_Click(object sender, EventArgs e)
         {
@@ -135,7 +134,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }
+            }            
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
@@ -161,7 +160,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }
+            }            
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
@@ -187,7 +186,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }
+            }            
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
@@ -213,7 +212,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }
+            }            
         }
         #endregion
     }

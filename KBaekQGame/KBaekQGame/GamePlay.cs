@@ -33,16 +33,12 @@ namespace KBaekQGame
 
         private void loadGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string loadString = FileHandler.LoadFile();
-            Game.LoadString = FileHandler.LoadFile();
-            Game.Rows = int.Parse(Game.LoadString[0].ToString());
-            Game.Cols = int.Parse(Game.LoadString[1].ToString());
-            Game.Cubes = new Cube[Game.Rows, Game.Cols];            
-
+            FileHandler.LoadFile();
             GameGenerator.GenerateGame();
 
             // remaining box
             Game.BoxesLeftDisplay.Text = GameScore.BoxCount.ToString();
+            txtNumberOfMoves.Text = "0";
         }
 
         private void Cursor_Click(object sender, EventArgs e)

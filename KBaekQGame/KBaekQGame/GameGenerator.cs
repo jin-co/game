@@ -76,29 +76,33 @@ namespace KBaekQGame
         /// </summary>
         private static void AddPictures()
         {
-            for (int i = 2, j = 3, k = 4; k < Game.LoadString.Length; i += 3, j += 3, k += 3)
+            if (Game.LoadString != null)
             {
-                if (int.Parse(Game.LoadString[k].ToString()) != 0)
+                for (int i = 2, j = 3, k = 4; k < Game.LoadString.Length; i += 3, j += 3, k += 3)
                 {
-                    string tag = Game.LoadString[k].ToString();
-                    Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
-                        int.Parse(Game.LoadString[j].ToString())].Image =
-                        Game.ImageList.Images[int.Parse(Game.LoadString[k].ToString())];
-                    Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
-                        int.Parse(Game.LoadString[j].ToString())].Image.Tag =
-                        int.Parse(Game.LoadString[k].ToString());
+                    if (int.Parse(Game.LoadString[k].ToString()) != 0)
+                    {
+                        string tag = Game.LoadString[k].ToString();
+                        Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
+                            int.Parse(Game.LoadString[j].ToString())].Image =
+                            Game.ImageList.Images[int.Parse(Game.LoadString[k].ToString())];
+                        Game.Cubes[int.Parse(Game.LoadString[i].ToString()),
+                            int.Parse(Game.LoadString[j].ToString())].Image.Tag =
+                            int.Parse(Game.LoadString[k].ToString());
+                    }
                 }
-            }
-            RemoveEmptyBoxes();
 
-            // Adds created walls to a list for collision test
-            Wall.SetWalls();
+                RemoveEmptyBoxes();
 
-            // Adds created boxes to each set of a list for collision test
-            Cube.SetCubes();
+                // Adds created walls to a list for collision test
+                Wall.SetWalls();
 
-            // Adds created doors to each set of a list for collision test
-            Door.SetDoors();
+                // Adds created boxes to each set of a list for collision test
+                Cube.SetCubes();
+
+                // Adds created doors to each set of a list for collision test
+                Door.SetDoors();
+            }            
         }
 
         private static void RemoveEmptyBoxes()

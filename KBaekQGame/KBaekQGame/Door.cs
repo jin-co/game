@@ -45,6 +45,8 @@ namespace KBaekQGame
                     {
                         cube.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
+                        EventCatcher.CubeTimer.Stop();
+                        GameScore.BoxCount--;
                     }
                 }
             }
@@ -57,6 +59,8 @@ namespace KBaekQGame
                     {
                         cube.Image = null;
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
+                        EventCatcher.CubeTimer.Stop();
+                        GameScore.BoxCount--;
                     }
                 }                
             }

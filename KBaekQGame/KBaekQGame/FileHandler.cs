@@ -63,7 +63,7 @@ namespace KBaekQGame
             }
         }
 
-        public static string LoadFile()
+        public static void LoadFile()
         {
             string result = "";
             OpenFileDialog ofd = new OpenFileDialog();
@@ -73,19 +73,23 @@ namespace KBaekQGame
             ofd.Title = "Load";
 
             if (ofd.ShowDialog() == DialogResult.OK)
-            {
+            {                                
                 StreamReader sr = new StreamReader(ofd.FileName);
                 while (!sr.EndOfStream)
                 {
                     result += sr.ReadLine();
                 }
                 sr.Dispose();
+
+                Game.LoadString = result;
+                Game.Rows = int.Parse(Game.LoadString[0].ToString());
+                Game.Cols = int.Parse(Game.LoadString[1].ToString());
+                Game.Cubes = new Cube[Game.Rows, Game.Cols];
             }
             else
             {
                 GameMessage.ShowMessage(2, "Loading Failed");
             }
-            return result;
         }
 
         /// <summary>
