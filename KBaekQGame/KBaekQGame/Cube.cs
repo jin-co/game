@@ -7,6 +7,8 @@ using System.Windows.Forms;
 
 namespace KBaekQGame
 {
+    // Sub class PictureBox that stores the data for boxes
+    // and adds necessary features for a box
     class Cube : PictureBox
     {
         public int X { get; set; }
@@ -14,6 +16,10 @@ namespace KBaekQGame
         public static List<Cube> RedCubes { get; set; }
         public static List<Cube> GreenCubes { get; set; }
 
+        /// <summary>
+        /// Generates lists of red and green boxes with tags attached
+        /// and add count of each box
+        /// </summary>
         public static void SetCubes()
         {
             RedCubes = new List<Cube>();
@@ -22,7 +28,8 @@ namespace KBaekQGame
             {
                 for (int col = 0; col < Game.Cols; col++)
                 {
-                    if (Game.Cubes[row, col].Image != null)
+                    if (Game.Cubes[row, col] != null && 
+                        Game.Cubes[row, col].Image != null)
                     {
                         if (Game.Cubes[row, col].Image.Tag.ToString() == "4")
                         {
@@ -40,6 +47,13 @@ namespace KBaekQGame
             }
         }
 
+        /// <summary>
+        /// When Detection happens between boxes
+        /// prevent passing through when they are different
+        /// merges when they are the same
+        /// </summary>
+        /// <param name="cube"></param>
+        /// <returns></returns>
         public static bool DetectCollision(Cube cube)
         {
             if (RedCubes.Contains(cube))
@@ -85,7 +99,6 @@ namespace KBaekQGame
                     }
                 }
             }
-
             return false;
         }
     }

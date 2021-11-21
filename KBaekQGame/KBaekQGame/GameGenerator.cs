@@ -105,7 +105,11 @@ namespace KBaekQGame
             }            
         }
 
-        private static void RemoveEmptyBoxes()
+        /// <summary>
+        /// Removes empty boxes after creating game board
+        /// leaving only boxed(red and green) on the board
+        /// </summary>
+        public static void RemoveEmptyBoxes()
         {
             //test clean -> delete box without pic
             for (int row = 0; row < Game.Rows; row++)
@@ -114,6 +118,7 @@ namespace KBaekQGame
                 {
                     if (Game.Cubes[row, col].Image == null)
                     {
+                        Game.Cubes[row, col] = null;
                         Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
                     }
                 }

@@ -186,7 +186,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }            
+            } 
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)

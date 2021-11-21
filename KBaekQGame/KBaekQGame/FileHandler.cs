@@ -63,6 +63,10 @@ namespace KBaekQGame
             }
         }
 
+        /// <summary>
+        /// Loads a file that has been saved on the design form
+        /// a message showing if the save was successful or not
+        /// </summary>
         public static void LoadFile()
         {
             string result = "";

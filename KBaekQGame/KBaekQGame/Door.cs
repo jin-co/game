@@ -19,7 +19,7 @@ namespace KBaekQGame
             {
                 for (int col = 0; col < Game.Cols; col++)
                 {
-                    if (Game.Cubes[row, col].Image != null)
+                    if (Game.Cubes[row, col] != null && Game.Cubes[row, col].Image != null)
                     {
                         if (Game.Cubes[row, col].Image.Tag.ToString() == "2")
                         {
