@@ -53,7 +53,7 @@ namespace KBaekQGame
             ImageTag = btn.ImageIndex;
         }
 
-        //test
+        
         public static void PlayCursor_Click(object sender, EventArgs e)
         {
             Cube clicked = (Cube)sender;
@@ -75,7 +75,7 @@ namespace KBaekQGame
             }
         }
 
-        //test
+        
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
@@ -119,20 +119,20 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);              
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                GameScore.MovementCount++;//test                
+                GameScore.MovementCount++;                
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-                GameScore.MovementCount--;//test
+                GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
 
-            //test
+            
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
 
-            //test
+            
             if (GameScore.BoxCount <= 0)
             {
                 CubeTimer.Stop();
@@ -147,20 +147,20 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
-                GameScore.MovementCount++;//test                
+                GameScore.MovementCount++;                
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
-                GameScore.MovementCount--;//test
+                GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
 
-            //test
+            
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
 
-            //test
+            
             if (GameScore.BoxCount <= 0)
             {
                 CubeTimer.Stop();
@@ -175,20 +175,20 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-                GameScore.MovementCount++;//test                
+                GameScore.MovementCount++;                
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-                GameScore.MovementCount--;//test
+                GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
 
-            //test
+            
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
 
-            //test
+            
             if (GameScore.BoxCount <= 0)
             {
                 CubeTimer.Stop();
@@ -203,20 +203,20 @@ namespace KBaekQGame
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
-                GameScore.MovementCount++;//test                
+                GameScore.MovementCount++;                
             }
             else
             {
                 Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
-                GameScore.MovementCount--;//test
+                GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
 
-            //test
+            
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
 
-            //test
+            
             if (GameScore.BoxCount <= 0)
             {
                 CubeTimer.Stop();
