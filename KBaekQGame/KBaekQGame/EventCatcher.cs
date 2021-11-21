@@ -127,11 +127,9 @@ namespace KBaekQGame
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
-
             
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
-
             
             if (GameScore.BoxCount <= 0)
             {
@@ -155,11 +153,9 @@ namespace KBaekQGame
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
-
             
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
-
             
             if (GameScore.BoxCount <= 0)
             {
@@ -183,11 +179,9 @@ namespace KBaekQGame
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
-
             
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
-
             
             if (GameScore.BoxCount <= 0)
             {
@@ -211,11 +205,9 @@ namespace KBaekQGame
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
-
             
             Game.BoxesLeftDisplay.Text = GameScore.UpdateBoxCount().ToString();
             Game.MovementDisplay.Text = GameScore.MovementCount.ToString();
-
             
             if (GameScore.BoxCount <= 0)
             {
@@ -223,7 +215,6 @@ namespace KBaekQGame
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
             }
         }
-
         #endregion
     }
 }
