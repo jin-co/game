@@ -118,9 +118,14 @@ namespace KBaekQGame
                 {
                     if (Game.Cubes[row, col].Image == null)
                     {
-                        Game.Cubes[row, col] = null;
+                        //Game.Cubes[row, col] = null; // this creates errors
                         Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
                     }
+                    //if (Game.Cubes[row, col] != null && Game.Cubes[row, col].Image == null)
+                    //{
+                    //    Game.Cubes[row, col] = null; // this creates errors
+                    //    Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
+                    //}
                 }
             }
         }

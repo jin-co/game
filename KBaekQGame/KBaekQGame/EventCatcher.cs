@@ -117,12 +117,12 @@ namespace KBaekQGame
                 !Cube.DetectCollision(CubeClicked))
             {
                 Door.DetectDoorCollision(CubeClicked);              
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize + Game.Gap;
                 GameScore.MovementCount++;                
             }
             else
             {
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize + Game.Gap;
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
@@ -134,7 +134,8 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }            
+            }
+            GameGenerator.RemoveEmptyBoxes();
         }
 
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
@@ -143,12 +144,12 @@ namespace KBaekQGame
                 !Cube.DetectCollision(CubeClicked))
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top += Game.CubeSize + Game.Gap;
                 GameScore.MovementCount++;                
             }
             else
             {
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Top -= Game.CubeSize + Game.Gap;
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
@@ -160,7 +161,8 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }            
+            }
+            GameGenerator.RemoveEmptyBoxes();
         }
 
         public static void Right_Tick(object sender, EventArgs eventArgs)
@@ -169,12 +171,12 @@ namespace KBaekQGame
                 !Cube.DetectCollision(CubeClicked))
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize + Game.Gap;
                 GameScore.MovementCount++;                
             }
             else
             {
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize + Game.Gap;
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
@@ -186,7 +188,8 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            } 
+            }
+            GameGenerator.RemoveEmptyBoxes();
         }
 
         public static void Left_Tick(object sender, EventArgs eventArgs)
@@ -195,12 +198,12 @@ namespace KBaekQGame
                 !Cube.DetectCollision(CubeClicked))
             {
                 Door.DetectDoorCollision(CubeClicked);                                                
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left -= Game.CubeSize + Game.Gap;
                 GameScore.MovementCount++;                
             }
             else
             {
-                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize;
+                Game.Cubes[CubeClicked.X, CubeClicked.Y].Left += Game.CubeSize + Game.Gap;
                 GameScore.MovementCount--;
                 CubeTimer.Stop();                
             }
@@ -212,7 +215,8 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
-            }            
+            }
+            GameGenerator.RemoveEmptyBoxes();
         }
         #endregion
     }

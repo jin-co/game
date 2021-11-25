@@ -94,6 +94,8 @@ namespace KBaekQGame
             {
                 GameMessage.ShowMessage(2, "Loading Failed");
             }
+
+            GameScore.MovementCount = 0;
         }
 
         /// <summary>
