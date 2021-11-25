@@ -47,6 +47,7 @@ namespace KBaekQGame
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
                         EventCatcher.CubeTimer.Stop();
                         GameScore.BoxCount--;
+                        GameScore.MovementCount--;
                     }
                 }
             }
@@ -61,6 +62,7 @@ namespace KBaekQGame
                         Game.SpcBoard.Panel2.Controls.Remove(cube);
                         EventCatcher.CubeTimer.Stop();
                         GameScore.BoxCount--;
+                        GameScore.MovementCount--;
                     }
                 }                
             }

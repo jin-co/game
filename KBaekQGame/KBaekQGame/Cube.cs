@@ -60,7 +60,7 @@ namespace KBaekQGame
             {
                 foreach (var i in GreenCubes)
                 {
-                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                    if (i.Image != null && i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         return true;
                     }
@@ -81,8 +81,8 @@ namespace KBaekQGame
             if (GreenCubes.Contains(cube))
             {
                 foreach (var i in RedCubes)
-                {
-                    if (i.Bounds.IntersectsWith(cube.Bounds))
+                {                    
+                    if (i.Image != null && i.Bounds.IntersectsWith(cube.Bounds))
                     {
                         return true;
                     }

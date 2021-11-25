@@ -12,6 +12,7 @@ namespace KBaekQGame
      */
     class GameGenerator
     {
+        #region Methods
         /// <summary>
         /// Generates game board using picture boxes dynamically 
         /// based on the rows and columns that a user has entered
@@ -111,23 +112,17 @@ namespace KBaekQGame
         /// </summary>
         public static void RemoveEmptyBoxes()
         {
-            //test clean -> delete box without pic
             for (int row = 0; row < Game.Rows; row++)
             {
                 for (int col = 0; col < Game.Cols; col++)
                 {
                     if (Game.Cubes[row, col].Image == null)
                     {
-                        //Game.Cubes[row, col] = null; // this creates errors
                         Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
                     }
-                    //if (Game.Cubes[row, col] != null && Game.Cubes[row, col].Image == null)
-                    //{
-                    //    Game.Cubes[row, col] = null; // this creates errors
-                    //    Game.SpcBoard.Panel2.Controls.Remove(Game.Cubes[row, col]);
-                    //}
                 }
             }
         }
+        #endregion
     }
 }
