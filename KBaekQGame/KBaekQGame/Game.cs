@@ -36,6 +36,7 @@ namespace KBaekQGame
         public static TextBox BoxesLeftDisplay { get; set; } 
         public static TextBox MovementDisplay { get; set; }
         public static string LoadString { get; set; }
+        public static List<Button> Cursors { get; set; }
 
         #endregion
 

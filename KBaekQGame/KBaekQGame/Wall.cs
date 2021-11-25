@@ -11,6 +11,10 @@ namespace KBaekQGame
     {
         public static List<Cube> Walls { get; set; }
 
+        #region Method
+        /// <summary>
+        /// Creates wall list to detect collision with boxes
+        /// </summary>
         public static void SetWalls()
         {
             Walls = new List<Cube>();
@@ -29,6 +33,11 @@ namespace KBaekQGame
             }
         }
 
+        /// <summary>
+        /// Detects collision between boxes        
+        /// </summary>
+        /// <param name="cube"></param>
+        /// <returns></returns>
         public static bool DetectWallCollision(Cube cube)
         {
             foreach (var i in Walls)
@@ -63,6 +72,7 @@ namespace KBaekQGame
 
             return false;
         }
+        #endregion
     }
 }
 

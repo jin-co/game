@@ -11,6 +11,10 @@ namespace KBaekQGame
         public static List<Cube> RedDoors { get; set; }
         public static List<Cube> GreenDoors { get; set; }
 
+        #region Methods
+        /// <summary>
+        /// Creates door list to detect collision with boxes
+        /// </summary>
         public static void SetDoors()
         {
             RedDoors = new List<Cube>();
@@ -35,6 +39,11 @@ namespace KBaekQGame
             }
         }
 
+        /// <summary>
+        /// Detects collision between the door and boxes
+        /// removes the box that has the same color as the door
+        /// </summary>
+        /// <param name="cube"></param>
         public static void DetectDoorCollision(Cube cube)
         {
             if (RedCubes.Contains(cube))
@@ -67,5 +76,6 @@ namespace KBaekQGame
                 }                
             }
         }
+        #endregion
     }
 }

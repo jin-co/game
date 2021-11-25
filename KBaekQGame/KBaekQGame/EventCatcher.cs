@@ -134,6 +134,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+                GameScore.ChangeGameStatus(true);
             }
             GameGenerator.RemoveEmptyBoxes();
         }
@@ -161,6 +162,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+                GameScore.ChangeGameStatus(true);
             }
             GameGenerator.RemoveEmptyBoxes();
         }
@@ -188,6 +190,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+                GameScore.ChangeGameStatus(true);
             }
             GameGenerator.RemoveEmptyBoxes();
         }
@@ -215,6 +218,7 @@ namespace KBaekQGame
             {
                 CubeTimer.Stop();
                 GameMessage.ShowMessage(3, $"Congratulations\nFinished");
+                GameScore.ChangeGameStatus(true);
             }
             GameGenerator.RemoveEmptyBoxes();
         }

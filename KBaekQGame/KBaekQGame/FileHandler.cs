@@ -97,6 +97,7 @@ namespace KBaekQGame
 
             GameScore.BoxCount = 0;
             GameScore.MovementCount = 0;
+            GameScore.ChangeGameStatus(false);
         }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace KBaekQGame
         public static List<Cube> RedCubes { get; set; }
         public static List<Cube> GreenCubes { get; set; }
 
+        #region Methods
         /// <summary>
         /// Generates lists of red and green boxes with tags attached
         /// and add count of each box
@@ -101,5 +102,6 @@ namespace KBaekQGame
             }
             return false;
         }
+        #endregion
     }
 }

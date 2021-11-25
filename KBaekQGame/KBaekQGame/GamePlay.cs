@@ -38,6 +38,15 @@ namespace KBaekQGame
             Game.BoxesLeftDisplay = txtNumberOfRemainingBoxes;
             Game.MovementDisplay = txtNumberOfMoves;
             Game.IsPlay = true;
+
+            Game.Cursors = new List<Button>();
+            Game.Cursors.Add(btnUp);
+            Game.Cursors.Add(btnDown);
+            Game.Cursors.Add(btnLeft);
+            Game.Cursors.Add(btnRight);
+
+            // disable controls to begin with
+            GameScore.ChangeGameStatus(true);
         }
 
         /// <summary>
