@@ -9,8 +9,9 @@ namespace MonoParallax
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public static int screenWidth = 1280;
-        public static int screenHeight = 720;
+        public static int screenWidth = 1920;
+        public static int screenHeight = 1080;
+        private GameElements gameElements;
 
         public GameMain()
         {
@@ -22,6 +23,9 @@ namespace MonoParallax
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = screenWidth;
+            _graphics.PreferredBackBufferHeight = screenHeight;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -29,6 +33,8 @@ namespace MonoParallax
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            gameElements = new GameElements();
+            gameElements.Load(Content);
 
             // TODO: use this.Content to load your game content here
         }
@@ -37,6 +43,8 @@ namespace MonoParallax
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            gameElements.Update(gameTime);
 
             // TODO: Add your update logic here
 
@@ -47,6 +55,7 @@ namespace MonoParallax
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            gameElements.Draw(gameTime, _spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

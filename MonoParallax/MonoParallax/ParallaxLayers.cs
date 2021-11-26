@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -49,7 +50,7 @@ namespace MonoParallax
 
                 if (_currentIsFirst)
                 {
-                    if (_position1.X < -GameMain.screenWidth)
+                    if (_position1.X <= -GameMain.screenWidth)
                     {
                         _position1.X = GameMain.screenWidth - speedX;
                     }
@@ -61,6 +62,7 @@ namespace MonoParallax
                     {
                         _position2.X = GameMain.screenWidth - speedX;
                     }
+                    _currentIsFirst = true;
                 }
             }
             else
@@ -84,6 +86,20 @@ namespace MonoParallax
                     }
                     _currentIsFirst = true;
                 }
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.L))
+            {
+                _moveLeft = true;
+                _position1 = Vector2.Zero;
+                _position2 = new Vector2(GameMain.screenWidth, 0);
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                _moveLeft = false;
+                _position1 = Vector2.Zero;
+                _position2 = new Vector2(-GameMain.screenWidth, 0);
             }
         }
 
