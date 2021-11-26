@@ -1,1 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/christmas.png","C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/bin/Windows/Content/christmas.xnb","TextureProcessor","Texture2DContent",334266,3686485,0.2817024
+"C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/NatKingCole.mp3","C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/bin/Windows/Content/NatKingCole.xnb","SongProcessor","SongContent",3179126,129,2.7926037
+"C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/snowflake16.png","C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/bin/Windows/Content/snowflake16.xnb","TextureProcessor","Texture2DContent",835,1109,0.0033931
+"C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/snowman.png","C:/Users/jin/Documents/GitHub/game/MonoChrismas/MonoChrismas/Content/bin/Windows/Content/snowman.xnb","TextureProcessor","Texture2DContent",102331,3686485,0.0962008
