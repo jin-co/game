@@ -4,12 +4,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoParallax
 {
-    public class Game1 : Game
+    public class GameMain : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public Game1()
+        public static int screenWidth = 1280;
+        public static int screenHeight = 720;
+
+        public GameMain()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
