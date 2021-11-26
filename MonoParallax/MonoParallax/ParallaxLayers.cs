@@ -47,8 +47,51 @@ namespace MonoParallax
                 _position1.X -= speedX;
                 _position2.X -= speedX;
 
-
+                if (_currentIsFirst)
+                {
+                    if (_position1.X < -GameMain.screenWidth)
+                    {
+                        _position1.X = GameMain.screenWidth - speedX;
+                    }
+                    _currentIsFirst = false;
+                }
+                else
+                {
+                    if (_position2.X <= -GameMain.screenWidth)
+                    {
+                        _position2.X = GameMain.screenWidth - speedX;
+                    }
+                }
             }
+            else
+            {
+                _position1.X += speedX;
+                _position2.X += speedX;
+
+                if (_currentIsFirst)
+                {
+                    if (_position1.X >= GameMain.screenWidth)
+                    {
+                        _position1.X = -GameMain.screenWidth + speedX;
+                    }
+                    _currentIsFirst = false;
+                }
+                else
+                {
+                    if (_position2.X >= GameMain.screenWidth)
+                    {
+                        _position2.X = -GameMain.screenWidth + speedX;
+                    }
+                    _currentIsFirst = true;
+                }
+            }
+        }
+
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(_sprite1, _position1, null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layer);
+            spriteBatch.Draw(_sprite2, _position2, null, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layer);
+
         }
     }
 }
