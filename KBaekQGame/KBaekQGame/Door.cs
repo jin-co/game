@@ -8,8 +8,10 @@ namespace KBaekQGame
 {
     class Door : Cube
     {
+        #region Properties
         public static List<Cube> RedDoors { get; set; }
         public static List<Cube> GreenDoors { get; set; }
+        #endregion
 
         #region Methods
         /// <summary>

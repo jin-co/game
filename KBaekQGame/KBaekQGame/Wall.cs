@@ -9,9 +9,11 @@ namespace KBaekQGame
 {
     class Wall : Cube
     {
+        #region Properties
         public static List<Cube> Walls { get; set; }
+        #endregion
 
-        #region Method
+        #region Methods
         /// <summary>
         /// Creates wall list to detect collision with boxes
         /// </summary>

@@ -11,10 +11,12 @@ namespace KBaekQGame
     // and adds necessary features for a box
     class Cube : PictureBox
     {
+        #region Properties
         public int X { get; set; }
         public int Y { get; set; }
         public static List<Cube> RedCubes { get; set; }
         public static List<Cube> GreenCubes { get; set; }
+        #endregion
 
         #region Methods
         /// <summary>

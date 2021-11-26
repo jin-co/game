@@ -53,7 +53,11 @@ namespace KBaekQGame
             ImageTag = btn.ImageIndex;
         }
 
-        
+        /// <summary>
+        /// Event handler that stores clicked box to manipulate
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void PlayCursor_Click(object sender, EventArgs e)
         {
             Cube clicked = (Cube)sender;
@@ -74,7 +78,12 @@ namespace KBaekQGame
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Event handler that distributes movement between cursors
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void Cursor_Click(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
@@ -111,6 +120,12 @@ namespace KBaekQGame
             }  
         }
 
+        /// <summary>
+        /// Event handler that keeps box moving upward
+        /// until it hits wall or another box of different color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         public static void Top_Tick(object sender, EventArgs eventArgs)
         {
             if (!Wall.DetectWallCollision(CubeClicked) &&
@@ -139,6 +154,12 @@ namespace KBaekQGame
             GameGenerator.RemoveEmptyBoxes();
         }
 
+        /// <summary>
+        /// Event handler that keeps box moving downward
+        /// until it hits wall or another box of different color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         public static void Bottom_Tick(object sender, EventArgs eventArgs)
         {
             if (!Wall.DetectWallCollision(CubeClicked) &&
@@ -167,6 +188,12 @@ namespace KBaekQGame
             GameGenerator.RemoveEmptyBoxes();
         }
 
+        /// <summary>
+        /// Event handler that keeps box moving to the right
+        /// until it hits wall or another box of different color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         public static void Right_Tick(object sender, EventArgs eventArgs)
         {
             if (!Wall.DetectWallCollision(CubeClicked) &&
@@ -195,6 +222,12 @@ namespace KBaekQGame
             GameGenerator.RemoveEmptyBoxes();
         }
 
+        /// <summary>
+        /// Event handler that keeps box moving to the left
+        /// until it hits wall or another box of different color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         public static void Left_Tick(object sender, EventArgs eventArgs)
         {
             if (!Wall.DetectWallCollision(CubeClicked) &&
