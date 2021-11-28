@@ -1,0 +1,8 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/about.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/about.xnb","TextureProcessor","Texture2DContent",38585,3732565,0.4844192
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/aboutbutton.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/aboutbutton.xnb","TextureProcessor","Texture2DContent",5613,64085,0.005272
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/background.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/background.xnb","TextureProcessor","Texture2DContent",192917,6048085,0.2057203
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/help.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/help.xnb","TextureProcessor","Texture2DContent",128496,3732565,0.1136078
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/helpbutton.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/helpbutton.xnb","TextureProcessor","Texture2DContent",3210,64085,0.0106789
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/menu.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/menu.xnb","TextureProcessor","Texture2DContent",70915,3732565,0.1087059
+"C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/menubutton.png","C:/Users/jin/Documents/GitHub/game/MonoMenu/MonoMenu/Content/bin/Windows/menubutton.xnb","TextureProcessor","Texture2DContent",5208,64085,0.0053154
