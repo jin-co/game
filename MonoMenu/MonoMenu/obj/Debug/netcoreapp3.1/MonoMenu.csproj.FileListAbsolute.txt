@@ -40,3 +40,4 @@ C:\Users\jin\Documents\GitHub\game\MonoMenu\MonoMenu\bin\Debug\netcoreapp3.1\Con
 C:\Users\jin\Documents\GitHub\game\MonoMenu\MonoMenu\bin\Debug\netcoreapp3.1\Content\helpbutton.xnb
 C:\Users\jin\Documents\GitHub\game\MonoMenu\MonoMenu\bin\Debug\netcoreapp3.1\Content\menu.xnb
 C:\Users\jin\Documents\GitHub\game\MonoMenu\MonoMenu\bin\Debug\netcoreapp3.1\Content\menubutton.xnb
+C:\Users\jin\Documents\GitHub\game\MonoMenu\MonoMenu\obj\Debug\netcoreapp3.1\MonoMenu.csproj.AssemblyReference.cache
