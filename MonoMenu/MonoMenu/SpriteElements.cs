@@ -27,9 +27,19 @@ namespace MonoMenu
             return Sprite;
         }
 
+        public virtual void Update()
+        {
+
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Sprite, Position, Color.White);
+        }
+
+        public virtual void Reset()
+        {
+
         }
     }
 }
