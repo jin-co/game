@@ -4,12 +4,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MonoWorrier
 {
-    public class Game1 : Game
+    public class GameMain : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        int screenWidth = 1700;
+        int screenHeight = 1200;
 
-        public Game1()
+        public GameMain()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -18,7 +20,9 @@ namespace MonoWorrier
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = screenWidth;
+            _graphics.PreferredBackBufferHeight = screenHeight;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
