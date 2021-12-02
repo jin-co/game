@@ -15,10 +15,13 @@ namespace MonoShooting
         public int Height { get; set; }
         public int Width { get; set; }
         public List<Rectangle> Rectangles { get; set; }
-        public Vector2 Location = new Vector2(50, 50);
+        public Vector2 Position = new Vector2(50, 795);  //bottom: 900 / top: 975
+
+        //test 
 
         //test
-        private int _motionIndex = -1;
+        private int _motionIndex = 01;
+        private bool _isMoving = false;
 
         public Biker(ContentManager content)
         {
@@ -28,6 +31,11 @@ namespace MonoShooting
         public Texture2D BikerLoad()
         {
             Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
+            Rectangles = new List<Rectangle> { };
+            for (int i = 0; i < 6; i++)
+            {
+                Rectangles.Add(new Rectangle(0, i, 48, 48));
+            }
             return Sprite;
         }
 
@@ -36,51 +44,44 @@ namespace MonoShooting
             KeyboardState kState = Keyboard.GetState();
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            Rectangles = new List<Rectangle> { };
-            for (int i = 0; i < 4; i++)
-            {
-                Rectangles.Add(new Rectangle(0, i, 48, 48));
-            }
-
-            //idle
-            //if (_motionIndex > 2)
-            //{
-            //    _motionIndex = -1;
-            //}
-            //_motionIndex++;
-
             if (kState.IsKeyDown(Keys.Right))
             {
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
-                Rectangles = new List<Rectangle> { };
-                for (int i = 0; i < 6; i++)
-                {
-                    Rectangles.Add(new Rectangle(0, i, 48, 48));
-                }
+                _motionIndex++;
                 if (_motionIndex > 5)
                 {
-                    _motionIndex = -1;
+                    _motionIndex = 0;
                 }
-                _motionIndex++;
-                Location.X += 30 * elapsedTime;
+                _isMoving = true;
+                Position.X += 30 * elapsedTime;
             }
             if (kState.IsKeyDown(Keys.Left))
             {
-                Location.X -= 30 * elapsedTime;
+                Position.X -= 30 * elapsedTime;
             }
             if (kState.IsKeyDown(Keys.Up))
             {
-                Location.Y -= 30 * elapsedTime;
+                Position.Y -= 30 * elapsedTime;
             }
             if (kState.IsKeyDown(Keys.Down))
             {
-                Location.Y += 30 * elapsedTime;
+                Position.Y += 30 * elapsedTime;
+            }
+            if (kState.IsKeyDown(Keys.Space))
+            {
+                for (int i = 0, j = 200; i < 2; i++)
+                {
+                    if (i == 0)
+                    {
+                        Position.Y += j * elapsedTime;
+                    }
+                }
             }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Location, Rectangles[_motionIndex], Color.White);
+            spriteBatch.Draw(Sprite, Position, Rectangles[_motionIndex], Color.White);
         }
     }
 }

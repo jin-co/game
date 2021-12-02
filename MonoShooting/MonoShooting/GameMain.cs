@@ -10,13 +10,14 @@ namespace MonoShooting
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        int screenWidth = 1700;
-        int screenHeight =1000;
+        int screenWidth = 1400;
+        int screenHeight =950;
 
 
         // sprites
         Texture2D bikerSprite;
         Texture2D skyBackground;
+        Texture2D ground;
 
         //test
         List<Rectangle> rectangles;
@@ -24,6 +25,7 @@ namespace MonoShooting
 
         //test
         Biker biker;
+        Bullet bullet;
 
         public GameMain()
         {
@@ -39,6 +41,7 @@ namespace MonoShooting
             _graphics.ApplyChanges();
 
             biker = new Biker(Content);
+            bullet = new Bullet(Content);
 
             base.Initialize();
         }
@@ -47,8 +50,10 @@ namespace MonoShooting
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            skyBackground = Content.Load<Texture2D>("Assets/sky");
+            //skyBackground = Content.Load<Texture2D>("Assets/sky");
+            ground = Content.Load<Texture2D>("Assets/ground");
             biker.BikerLoad();
+            bullet.BulletLoad();
 
         }
 
@@ -58,7 +63,7 @@ namespace MonoShooting
                 Exit();
             // biker move
             biker.BikerUpdate(gameTime);
-
+            bullet.BulletUpdate(gameTime);
             
             
 
@@ -71,10 +76,11 @@ namespace MonoShooting
 
             _spriteBatch.Begin();
 
-            _spriteBatch.Draw(skyBackground, new Vector2(0, 0), Color.White);
+            _spriteBatch.Draw(ground, new Vector2(0, 0), Color.White);
 
             //test
             biker.Draw(gameTime, _spriteBatch);
+            bullet.Draw(gameTime, _spriteBatch);
 
             //_spriteBatch.Draw(biker, new Vector2(50, 50), rectangles[num], Color.White);
 
