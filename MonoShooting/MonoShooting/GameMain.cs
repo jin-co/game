@@ -80,8 +80,6 @@ namespace MonoShooting
                     collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
                 }
             }
-
-
             base.Update(gameTime);
         }
 

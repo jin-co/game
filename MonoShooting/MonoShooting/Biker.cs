@@ -17,11 +17,13 @@ namespace MonoShooting
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
         public Vector2 Position = new Vector2(50, 815);  //bottom: 900 -> 912/ top: 795 -> 810
-        private double _timer = 2;
+        private double _timer = 1;
         //test 
 
+        private bool _jumped = false;
+
         //test
-        private int _motionIndex = 01;
+        private int _motionIndex = 1;
         private bool _isMoving = false;
 
         public Biker(ContentManager content)
@@ -32,11 +34,11 @@ namespace MonoShooting
 
         public Texture2D BikerLoad()
         {
-            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
+            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_attack1");
             Rectangles = new List<Rectangle> { };
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 30; i++)
             {
-                Rectangles.Add(new Rectangle(0, i, 48, 48));
+                Rectangles.Add(new Rectangle(i, 0, 48, 48));
             }
             return Sprite;
         }
@@ -45,24 +47,53 @@ namespace MonoShooting
         {
             KeyboardState kState = Keyboard.GetState();
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (_timer <= 0)
-            {
-                _motionIndex++;
-                _timer = 2;
-            }
-            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+
+            //_timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            _motionIndex++;            
             if (_motionIndex > 5)
             {
                 _motionIndex = 0;
             }
 
+            if (_jumped)
+            {
+                _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+                Position.Y += 20 * elapsedTime;
+                
+                if (_timer <= 0)
+                {
+                    _timer = 1;
+                    _jumped = false;
+                    Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
+                }
+            }
+
+            if (_isMoving)
+            {
+                Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
+                if (_timer <= 0)
+                {
+                    _motionIndex++;
+                    _timer = 1;
+                    if (_motionIndex > 5)
+                    {
+                        _motionIndex = 0;
+                    }
+                }
+            }            
+
             if (kState.IsKeyDown(Keys.Right))
             {
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
                 _motionIndex++;
-                if (_motionIndex > 5)
+                if (_timer <= 0)
                 {
-                    _motionIndex = 0;
+                    _motionIndex++;
+                    _timer = 1;
+                    if (_motionIndex > 5)
+                    {
+                        _motionIndex = 0;
+                    }
                 }
                 _isMoving = true;
                 Position.X += 30 * elapsedTime;
@@ -87,19 +118,17 @@ namespace MonoShooting
             }
             if (kState.IsKeyDown(Keys.Space))
             {
-                for (int i = 0, j = 200; i < 2; i++)
-                {
-                    if (i == 0)
-                    {
-                        Position.Y += j * elapsedTime;
-                    }
-                }
+                Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
+                
+                Position.Y -= 160 * elapsedTime;                
+                _jumped = true;
             }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y - Radius), Rectangles[_motionIndex], Color.White);
+            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y - Radius), new Rectangle(48, 0, 48, 48), Color.White);
+            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y + 30), Color.White);
         }
     }
 }
