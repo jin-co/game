@@ -18,13 +18,13 @@ namespace MonoShooting
         {
             Random random = new Random();
             this.speed = 200;
-            this.position = new Vector2(1200, random.Next(700));
+            this.position = new Vector2(1200, random.Next(795, 900));
             bullets = new List<Bullet> { };
         }
 
         public Texture2D BulletLoad()
         {
-            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_punch");
+            Sprite = Content.Load<Texture2D>("Assets/Enemies/file_ball");
             return Sprite;
         }
 

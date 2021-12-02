@@ -50,3 +50,7 @@ C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Biker\Biker_run.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Biker\Biker_run_attack.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\ground.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\bullet.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\file_ball.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enermies\bullet.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enermies\file_ball.xnb

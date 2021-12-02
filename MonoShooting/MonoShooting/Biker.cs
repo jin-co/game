@@ -15,7 +15,7 @@ namespace MonoShooting
         public int Height { get; set; }
         public int Width { get; set; }
         public List<Rectangle> Rectangles { get; set; }
-        public Vector2 Position = new Vector2(50, 795);  //bottom: 900 / top: 975
+        public Vector2 Position = new Vector2(50, 795);  //bottom: 900 / top: 795
 
         //test 
 
@@ -56,16 +56,22 @@ namespace MonoShooting
                 Position.X += 30 * elapsedTime;
             }
             if (kState.IsKeyDown(Keys.Left))
-            {
+            {                
                 Position.X -= 30 * elapsedTime;
             }
             if (kState.IsKeyDown(Keys.Up))
-            {
-                Position.Y -= 30 * elapsedTime;
+            {                
+                if (Position.Y > 795)
+                {
+                    Position.Y -= 30 * elapsedTime;
+                }
             }
             if (kState.IsKeyDown(Keys.Down))
             {
-                Position.Y += 30 * elapsedTime;
+                if (Position.Y < 900)
+                {
+                    Position.Y += 30 * elapsedTime;
+                }
             }
             if (kState.IsKeyDown(Keys.Space))
             {

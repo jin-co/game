@@ -157,6 +157,30 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Biker/Biker_run_attack.png
 
+#begin Assets/Enemies/bullet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Enemies/bullet.png
+
+#begin Assets/Enemies/file_ball.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Enemies/file_ball.jpg
+
 #begin Assets/ground.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
