@@ -7,37 +7,23 @@ using System.Text;
 
 namespace MonoShooting
 {
-    class Bullet : SpriteLoader
+    class Bullet
     {
         public Vector2 position = new Vector2(600, 300);
         public int speed;
-        public int radius = 59;
-        public List<Bullet> bullets;
+        public int radius = 12;
 
-        public Bullet(ContentManager content) : base(content)
+        public Bullet()
         {
             Random random = new Random();
             this.speed = 200;
-            this.position = new Vector2(1200, random.Next(795, 900));
-            bullets = new List<Bullet> { };
-        }
-
-        public Texture2D BulletLoad()
-        {
-            Sprite = Content.Load<Texture2D>("Assets/Enemies/file_ball");
-            return Sprite;
-        }
+            this.position = new Vector2(1300, random.Next(795, 950));
+        }        
 
         public void BulletUpdate(GameTime gameTime)
         {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             position.X -= speed * elapsedTime;
         }
-
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(Sprite, position, Color.White);
-        }
-
     }
 }

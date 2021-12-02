@@ -14,6 +14,7 @@ namespace MonoShooting
         public Texture2D Sprite { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
+        public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
         public Vector2 Position = new Vector2(50, 795);  //bottom: 900 / top: 795
 

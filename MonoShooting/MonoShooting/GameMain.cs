@@ -11,13 +11,15 @@ namespace MonoShooting
         private SpriteBatch _spriteBatch;
 
         int screenWidth = 1400;
-        int screenHeight =950;
+        int screenHeight = 950;
 
 
         // sprites
         Texture2D bikerSprite;
         Texture2D skyBackground;
         Texture2D ground;
+        Texture2D bullet;
+        Texture2D collisionEffectSprite;
 
         //test
         List<Rectangle> rectangles;
@@ -25,7 +27,10 @@ namespace MonoShooting
 
         //test
         Biker biker;
-        Bullet bullet;
+
+        //test
+        GameController controller = new GameController();
+        Vector2 collisionPoint;
 
         public GameMain()
         {
@@ -41,7 +46,6 @@ namespace MonoShooting
             _graphics.ApplyChanges();
 
             biker = new Biker(Content);
-            bullet = new Bullet(Content);
 
             base.Initialize();
         }
@@ -53,7 +57,8 @@ namespace MonoShooting
             //skyBackground = Content.Load<Texture2D>("Assets/sky");
             ground = Content.Load<Texture2D>("Assets/ground");
             biker.BikerLoad();
-            bullet.BulletLoad();
+            bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
+            collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");
 
         }
 
@@ -63,9 +68,19 @@ namespace MonoShooting
                 Exit();
             // biker move
             biker.BikerUpdate(gameTime);
-            bullet.BulletUpdate(gameTime);
-            
-            
+            controller.Update(gameTime);
+
+            foreach (var i in controller.bullets)
+            {
+                i.BulletUpdate(gameTime);
+
+                if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
+                {
+                    controller.GameOver = true;
+                    collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                }
+            }
+
 
             base.Update(gameTime);
         }
@@ -80,7 +95,16 @@ namespace MonoShooting
 
             //test
             biker.Draw(gameTime, _spriteBatch);
-            bullet.Draw(gameTime, _spriteBatch);
+            foreach (var i in controller.bullets)
+            {
+                _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y), Color.White);
+            }
+
+            if (controller.GameOver)
+            {
+                _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
+
+            }
 
             //_spriteBatch.Draw(biker, new Vector2(50, 50), rectangles[num], Color.White);
 

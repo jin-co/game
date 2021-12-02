@@ -157,6 +157,18 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Biker/Biker_run_attack.png
 
+#begin Assets/effect_collision.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/effect_collision.png
+
 #begin Assets/Enemies/bullet.png
 /importer:TextureImporter
 /processor:TextureProcessor
