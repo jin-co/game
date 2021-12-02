@@ -16,7 +16,7 @@ namespace MonoShooting
 
         // sprites
         Texture2D bikerSprite;
-        Texture2D skyBackground;
+        Texture2D ladderSprite;
         Texture2D ground;
         Texture2D bullet;
         Texture2D collisionEffectSprite;
@@ -59,7 +59,7 @@ namespace MonoShooting
             biker.BikerLoad();
             bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
             collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");
-
+            ladderSprite = Content.Load<Texture2D>("Assets/ladder");
         }
 
         protected override void Update(GameTime gameTime)
@@ -67,19 +67,27 @@ namespace MonoShooting
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             // biker move
-            biker.BikerUpdate(gameTime);
-            controller.Update(gameTime);
-
-            foreach (var i in controller.bullets)
+            if (!GameController.GameOver)
             {
-                i.BulletUpdate(gameTime);
+                biker.BikerUpdate(gameTime);
+                controller.Update(gameTime);
 
-                if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
+                foreach (var i in controller.bullets)
                 {
-                    controller.GameOver = true;
-                    collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                    i.BulletUpdate(gameTime);
+
+                    if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
+                    {
+                        //controller.GameOver = true;
+                        biker.Dead = true;
+                        biker.BikerUpdate(gameTime);
+                        collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                    }
                 }
             }
+
+            
+
             base.Update(gameTime);
         }
 
@@ -98,18 +106,16 @@ namespace MonoShooting
                 _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
             }
 
-            if (controller.GameOver)
+            if (GameController.GameOver)
             {
                 _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
 
             }
 
-            //_spriteBatch.Draw(biker, new Vector2(50, 50), rectangles[num], Color.White);
-
+            _spriteBatch.Draw(ladderSprite, new Vector2(1300, 730), Color.White);
 
 
             _spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }

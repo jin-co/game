@@ -8,13 +8,14 @@ namespace MonoShooting
     class GameController
     {
         public List<Bullet> bullets = new List<Bullet>();
-        public bool GameOver { get; set; }
+        public static bool GameOver { get; set; }
         private double _timer = 2;
-        public GameController() {
-            this.GameOver = false;
-        }
 
-        
+        public bool Clear { get; set; }
+        public GameController() {
+            
+            this.Clear = false;
+        }        
 
         public void Update(GameTime gameTime)
         {
@@ -28,6 +29,11 @@ namespace MonoShooting
                     _timer = 2;
                 }
             }
+        }
+
+        public void ResetBullets()
+        {
+            bullets.Clear();
         }
     }
 }
