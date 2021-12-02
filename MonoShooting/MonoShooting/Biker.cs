@@ -49,25 +49,25 @@ namespace MonoShooting
 
             //test motion
             
-                _timer -= gameTime.ElapsedGameTime.TotalSeconds;
-                if (_timer < 0)
+            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            if (_timer < 0)
+            {
+                _motionIndex += FRAME_WIDTH;
+                _frameCount++;
+                if (_frameCount >= _frameMax)
                 {
-                    _motionIndex += FRAME_WIDTH;
-                    _frameCount++;
-                    if (_frameCount >= _frameMax)
-                    {
-                        _frameCount = 0;
-                        _motionIndex = 0;
-                    }
-                    _timer = 1;
+                    _frameCount = 0;
+                    _motionIndex = 0;
                 }
+                _timer = 1;
+            }
             
             if (_jumped)
             {
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;
-                Position.Y += 5 * elapsedTime;
+                Position.Y += 60 * elapsedTime;
 
-                if (_timer <= 0)
+                if (_timer <= 0.85)
                 {
                     _motionIndex += FRAME_WIDTH;
                     _frameCount++;
@@ -131,15 +131,15 @@ namespace MonoShooting
                     Position.Y += 30 * elapsedTime;
                 }
             }
-            if (OneshotPress.IsKeyPressed(Keys.Space, _jumped))
+            if (kState.IsKeyDown(Keys.Space) )
             {
-
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
-
-                
+                if (Position.Y > 815 )
+                {
                     Position.Y -= 60 * elapsedTime;
-                    _jumped = true;
-                    _isMoving = true;
+                }
+                _jumped = true;
+                _isMoving = true;
             }
         }
 
