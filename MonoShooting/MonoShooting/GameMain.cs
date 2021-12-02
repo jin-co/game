@@ -15,7 +15,8 @@ namespace MonoShooting
 
 
         // sprites
-        Texture2D bikerSprite;
+        Texture2D gameoverSprite;
+        Texture2D gameoverBackSprite;
         Texture2D ladderSprite;
         Texture2D ground;
         Texture2D bullet;
@@ -31,6 +32,8 @@ namespace MonoShooting
         //test
         GameController controller = new GameController();
         Vector2 collisionPoint;
+
+        double timer = 1;
 
         public GameMain()
         {
@@ -60,6 +63,8 @@ namespace MonoShooting
             bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
             collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");
             ladderSprite = Content.Load<Texture2D>("Assets/ladder");
+            gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
+            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
         }
 
         protected override void Update(GameTime gameTime)
@@ -86,8 +91,6 @@ namespace MonoShooting
                 }
             }
 
-            
-
             base.Update(gameTime);
         }
 
@@ -106,13 +109,19 @@ namespace MonoShooting
                 _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
             }
 
+            _spriteBatch.Draw(ladderSprite, new Vector2(1300, 730), Color.White);
+            
             if (GameController.GameOver)
             {
                 _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
 
+                timer -= gameTime.ElapsedGameTime.TotalSeconds;
+                if (timer <= 0.5)
+                {
+                    _spriteBatch.Draw(gameoverBackSprite, new Vector2(0, 0), Color.White);
+                    _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250 , (screenHeight / 2) - 250), Color.White);                    
+                }
             }
-
-            _spriteBatch.Draw(ladderSprite, new Vector2(1300, 730), Color.White);
 
 
             _spriteBatch.End();
