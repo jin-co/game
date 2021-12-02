@@ -11,7 +11,7 @@ namespace MonoShooting
     {
         public Vector2 position = new Vector2(600, 300);
         public int speed;
-        public int radius = 12;
+        public int radius = 3;
 
         public Bullet()
         {

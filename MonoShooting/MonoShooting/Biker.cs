@@ -16,8 +16,8 @@ namespace MonoShooting
         public int Width { get; set; }
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
-        public Vector2 Position = new Vector2(50, 795);  //bottom: 900 / top: 795
-
+        public Vector2 Position = new Vector2(50, 815);  //bottom: 900 -> 912/ top: 795 -> 810
+        private double _timer = 2;
         //test 
 
         //test
@@ -26,7 +26,8 @@ namespace MonoShooting
 
         public Biker(ContentManager content)
         {
-            Content = content;            
+            Content = content;
+            Radius = 18; // 48 / 2 - alpha
         }
 
         public Texture2D BikerLoad()
@@ -44,6 +45,16 @@ namespace MonoShooting
         {
             KeyboardState kState = Keyboard.GetState();
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (_timer <= 0)
+            {
+                _motionIndex++;
+                _timer = 2;
+            }
+            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            if (_motionIndex > 5)
+            {
+                _motionIndex = 0;
+            }
 
             if (kState.IsKeyDown(Keys.Right))
             {
@@ -62,14 +73,14 @@ namespace MonoShooting
             }
             if (kState.IsKeyDown(Keys.Up))
             {                
-                if (Position.Y > 795)
+                if (Position.Y > 815)
                 {
                     Position.Y -= 30 * elapsedTime;
                 }
             }
             if (kState.IsKeyDown(Keys.Down))
             {
-                if (Position.Y < 900)
+                if (Position.Y < 915)
                 {
                     Position.Y += 30 * elapsedTime;
                 }
@@ -88,7 +99,7 @@ namespace MonoShooting
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Position, Rectangles[_motionIndex], Color.White);
+            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y - Radius), Rectangles[_motionIndex], Color.White);
         }
     }
 }

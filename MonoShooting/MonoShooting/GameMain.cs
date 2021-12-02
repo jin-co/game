@@ -97,7 +97,7 @@ namespace MonoShooting
             biker.Draw(gameTime, _spriteBatch);
             foreach (var i in controller.bullets)
             {
-                _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y), Color.White);
+                _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
             }
 
             if (controller.GameOver)

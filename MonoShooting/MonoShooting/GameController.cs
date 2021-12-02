@@ -9,7 +9,7 @@ namespace MonoShooting
     {
         public List<Bullet> bullets = new List<Bullet>();
         public bool GameOver { get; set; }
-
+        private double _timer = 2;
         public GameController() {
             this.GameOver = false;
         }
@@ -18,9 +18,15 @@ namespace MonoShooting
 
         public void Update(GameTime gameTime)
         {
+            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            
             if (!GameOver)
             {
-                bullets.Add(new Bullet());
+                if (_timer <= 0)
+                {
+                    bullets.Add(new Bullet());
+                    _timer = 2;
+                }
             }
         }
     }
