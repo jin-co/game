@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace MonoShooting
 {
@@ -14,9 +15,15 @@ namespace MonoShooting
 
 
         // sprites
-        Texture2D biker;
+        Texture2D bikerSprite;
         Texture2D skyBackground;
 
+        //test
+        List<Rectangle> rectangles;
+        int num = -1;
+
+        //test
+        Biker biker;
 
         public GameMain()
         {
@@ -31,6 +38,8 @@ namespace MonoShooting
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.ApplyChanges();
 
+            biker = new Biker(Content);
+
             base.Initialize();
         }
 
@@ -39,16 +48,19 @@ namespace MonoShooting
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             skyBackground = Content.Load<Texture2D>("Assets/sky");
-            biker = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
-            
+            biker.BikerLoad();
+
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            // biker move
+            biker.BikerUpdate(gameTime);
 
-            // TODO: Add your update logic here
+            
+            
 
             base.Update(gameTime);
         }
@@ -60,15 +72,11 @@ namespace MonoShooting
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(skyBackground, new Vector2(0, 0), Color.White);
-            _spriteBatch.Draw(biker, new Vector2(30, 30), Color.White);
-            Rectangle rec = new Rectangle(0, 0, 48, 48);
-            Rectangle rec1 = new Rectangle(1, 1, 48, 48);
-            Rectangle rec2 = new Rectangle(2, 2, 48, 48);
-            Rectangle rec3 = new Rectangle(3, 3, 48, 48);
-            _spriteBatch.Draw(biker, new Vector2(50, 50), rec, Color.White);
-            _spriteBatch.Draw(biker, new Vector2(150, 50), rec1, Color.White);
-            _spriteBatch.Draw(biker, new Vector2(250, 50), rec2, Color.White);
-            _spriteBatch.Draw(biker, new Vector2(350, 50), rec3, Color.White);
+
+            //test
+            biker.Draw(gameTime, _spriteBatch);
+
+            //_spriteBatch.Draw(biker, new Vector2(50, 50), rectangles[num], Color.White);
 
 
 
