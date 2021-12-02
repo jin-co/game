@@ -23,8 +23,11 @@ namespace MonoShooting
         private bool _jumped = false;
 
         //test
-        private int _motionIndex = 1;
+        private int _motionIndex = 0;
         private bool _isMoving = false;
+        private int _frameMax = 4;
+        private int _frameCount = 0;
+        private const int FRAME_WIDTH = 48;
 
         public Biker(ContentManager content)
         {
@@ -34,12 +37,7 @@ namespace MonoShooting
 
         public Texture2D BikerLoad()
         {
-            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_attack1");
-            Rectangles = new List<Rectangle> { };
-            for (int i = 0; i < 30; i++)
-            {
-                Rectangles.Add(new Rectangle(i, 0, 48, 48));
-            }
+            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");            
             return Sprite;
         }
 
@@ -48,22 +46,39 @@ namespace MonoShooting
             KeyboardState kState = Keyboard.GetState();
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            //_timer -= gameTime.ElapsedGameTime.TotalSeconds;
-            _motionIndex++;            
-            if (_motionIndex > 5)
-            {
-                _motionIndex = 0;
-            }
 
+            //test motion
+            
+                _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+                if (_timer < 0)
+                {
+                    _motionIndex += FRAME_WIDTH;
+                    _frameCount++;
+                    if (_frameCount >= _frameMax)
+                    {
+                        _frameCount = 0;
+                        _motionIndex = 0;
+                    }
+                    _timer = 1;
+                }
+            
             if (_jumped)
             {
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;
-                Position.Y += 20 * elapsedTime;
-                
+                Position.Y += 5 * elapsedTime;
+
                 if (_timer <= 0)
                 {
+                    _motionIndex += FRAME_WIDTH;
+                    _frameCount++;
+                    if (_frameCount >= _frameMax)
+                    {
+                        _frameCount = 0;
+                        _motionIndex = 0;
+                    }
                     _timer = 1;
                     _jumped = false;
+                    _isMoving = false;
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
                 }
             }
@@ -116,19 +131,25 @@ namespace MonoShooting
                     Position.Y += 30 * elapsedTime;
                 }
             }
-            if (kState.IsKeyDown(Keys.Space))
+            if (OneshotPress.IsKeyPressed(Keys.Space, _jumped))
             {
+
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
+
                 
-                Position.Y -= 160 * elapsedTime;                
-                _jumped = true;
+                    Position.Y -= 60 * elapsedTime;
+                    _jumped = true;
+                    _isMoving = true;
             }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y - Radius), new Rectangle(48, 0, 48, 48), Color.White);
-            spriteBatch.Draw(Sprite, new Vector2(Position.X, Position.Y + 30), Color.White);
+            spriteBatch.Draw(
+                Sprite, 
+                new Vector2(Position.X, Position.Y - Radius), 
+                new Rectangle(_motionIndex, 0, 48, 48), 
+                Color.White);
         }
     }
 }
