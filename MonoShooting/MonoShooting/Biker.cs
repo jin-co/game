@@ -24,8 +24,7 @@ namespace MonoShooting
         private bool _movingForward = false;
 
         //test
-        private int _motionIndex = 0;
-        private bool _isMoving = false;
+        private int _frameX = 0;        
         private int _frameMax = 4;
         private int _frameCount = 0;
         private const int FRAME_WIDTH = 48;
@@ -38,10 +37,9 @@ namespace MonoShooting
             Radius = 18; // 48 / 2 - alpha
         }
 
-        public Texture2D BikerLoad()
+        public void BikerLoad()
         {
             Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");            
-            return Sprite;
         }
 
         public void BikerUpdate(GameTime gameTime)
@@ -54,12 +52,12 @@ namespace MonoShooting
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;
                 if (_timer < 0)
                 {
-                    _motionIndex += FRAME_WIDTH;
+                    _frameX += FRAME_WIDTH;
                     _frameCount++;
                     if (_frameCount >= _frameMax)
                     {
                         _frameCount = 0;
-                        _motionIndex = 0;
+                        _frameX = 0;
                     }
                     _timer = 1;
                 }
@@ -72,12 +70,12 @@ namespace MonoShooting
 
                     if (_timer <= 0.85)
                     {
-                        _motionIndex += FRAME_WIDTH;
+                        _frameX += FRAME_WIDTH;
                         _frameCount++;
                         if (_frameCount >= _frameMax)
                         {
                             _frameCount = 0;
-                            _motionIndex = 0;
+                            _frameX = 0;
                         }
                         _timer = 1;
                         _jumped = false;
@@ -87,16 +85,15 @@ namespace MonoShooting
 
                 if (_movingForward && !_jumped)
                 {
-                    _timer -= gameTime.ElapsedGameTime.TotalSeconds;
-
+                    _timer -= gameTime.ElapsedGameTime.TotalSeconds;                    
                     if (_timer <= 0.85)
                     {
-                        _motionIndex += FRAME_WIDTH;
+                        _frameX += FRAME_WIDTH;
                         _frameCount++;
                         if (_frameCount >= _frameMax)
                         {
                             _frameCount = 0;
-                            _motionIndex = 0;
+                            _frameX = 0;
                         }
                         _timer = 1;
                     }
@@ -119,7 +116,14 @@ namespace MonoShooting
                         Position.X += 30 * elapsedTime;
                     }
                     _movingForward = true;
-                    _frameMax = 6;
+                    if (_jumped)
+                    {
+                        _frameMax = 4;
+                    }
+                    else
+                    {
+                        _frameMax = 6;
+                    }
                 }
 
                 if (kState.IsKeyDown(Keys.Left))
@@ -135,7 +139,14 @@ namespace MonoShooting
                         Position.Y -= 30 * elapsedTime;
                     }
                     _movingForward = true;
-                    _frameMax = 6;
+                    if (_jumped)
+                    {
+                        _frameMax = 4;
+                    }
+                    else
+                    {
+                        _frameMax = 6;
+                    }
                 }
                 if (kState.IsKeyDown(Keys.Down))
                 {
@@ -145,7 +156,14 @@ namespace MonoShooting
                         Position.Y += 30 * elapsedTime;
                     }
                     _movingForward = true;
-                    _frameMax = 6;
+                    if (_jumped)
+                    {
+                        _frameMax = 4;
+                    }
+                    else
+                    {
+                        _frameMax = 6;
+                    }
                 }
                 if (kState.IsKeyDown(Keys.Space))
                 {
@@ -156,7 +174,6 @@ namespace MonoShooting
                     }
                     _jumped = true;
                 }
-
             }
             else
             {
@@ -164,12 +181,12 @@ namespace MonoShooting
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;
                 if (_timer < 0.7)
                 {
-                    _motionIndex += FRAME_WIDTH;
+                    _frameX += FRAME_WIDTH;
                     _frameCount++;
                     if (_frameCount >= _frameMax)
                     {
                         _frameCount = 0;
-                        _motionIndex = 0;
+                        _frameX = 0;
                     }
                     _timer = 1;
                     GameController.GameOver = true;                    
@@ -180,7 +197,8 @@ namespace MonoShooting
                     if (kState.IsKeyDown(Keys.Enter))
                     {
                         GameController.GameOver = false;
-                        GameController.StartGame = false;
+                        GameController.GameStart = false;
+                        GameController.TotalTime = 0;
                     }
                 }
             }
@@ -191,7 +209,7 @@ namespace MonoShooting
             spriteBatch.Draw(
                 Sprite, 
                 new Vector2(Position.X, Position.Y - Radius), 
-                new Rectangle(_motionIndex, 0, 48, 48), 
+                new Rectangle(_frameX, 0, 48, 48), 
                 Color.White);
         }
     }

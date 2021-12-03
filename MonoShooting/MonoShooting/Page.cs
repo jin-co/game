@@ -73,7 +73,7 @@ namespace MonoShooting
                 {
                     if (_pageIdx == 0)
                     {
-                        GameController.StartGame = true;
+                        GameController.GameStart = true;
                     }
                     else
                     {

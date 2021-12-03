@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace MonoShooting
@@ -15,8 +16,7 @@ namespace MonoShooting
 
         // sprites
         Texture2D gameoverSprite;
-        Texture2D gameoverBackSprite;
-        Texture2D ladderSprite;
+        Texture2D gameoverBackSprite;       
         Texture2D ground;
         Texture2D bullet;
         Texture2D collisionEffectSprite;        
@@ -24,13 +24,14 @@ namespace MonoShooting
         //test
         Biker biker;
         Page page;
+        Ladder ladder;
 
         //test
         GameController controller = new GameController();
         Vector2 collisionPoint;
 
-        //test
-        KeyboardState kState;
+        //timer
+        SpriteFont timerFont;
 
         double timer = 1;
 
@@ -49,6 +50,7 @@ namespace MonoShooting
 
             biker = new Biker(Content);
             page = new Page(Content);
+            ladder = new Ladder(Content);
 
             base.Initialize();
         }
@@ -58,13 +60,14 @@ namespace MonoShooting
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             ground = Content.Load<Texture2D>("Assets/ground");
-            biker.BikerLoad();
             bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
-            collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");
-            ladderSprite = Content.Load<Texture2D>("Assets/ladder");
+            collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");            
             gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
-            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");            
+            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
+            timerFont = Content.Load<SpriteFont>("Assets/timerFont");
+            biker.BikerLoad();
             page.Load();
+            ladder.Load();
         }
 
         protected override void Update(GameTime gameTime)
@@ -72,7 +75,7 @@ namespace MonoShooting
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             
-            if (!GameController.StartGame)
+            if (!GameController.GameStart)
             {
                 page.PageUpdate(gameTime);
             }
@@ -94,32 +97,41 @@ namespace MonoShooting
                             collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);                            
                         }
                     }
+
+                    if (Vector2.Distance(ladder.Position, biker.Position) < ladder.Radius + biker.Radius)
+                    {
+                        GameController.GameClear = true;
+                    }
+
                 }
                 else
                 {
                     biker.BikerUpdate(gameTime);
                 }
             }        
-
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             _spriteBatch.Begin();
 
             // main page
-            if (!GameController.StartGame)
+            if (!GameController.GameStart)
             {
                 page.Draw(gameTime, _spriteBatch);
             }
 
             //game play
-            if (GameController.StartGame)
+            if (GameController.GameStart)
             {
-                _spriteBatch.Draw(ground, new Vector2(0, 0), Color.White);
+                _spriteBatch.Draw(ground, new Vector2(0, 0), Color.Black);
+                
+                // timer record
+                _spriteBatch.DrawString(timerFont,
+                "Time: " + Math.Floor(GameController.TotalTime),
+                new Vector2(3, 3), Color.White);
 
                 //test
                 biker.Draw(gameTime, _spriteBatch);
@@ -128,7 +140,7 @@ namespace MonoShooting
                     _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
                 }
 
-                _spriteBatch.Draw(ladderSprite, new Vector2(1300, 730), Color.White);
+                ladder.Draw(gameTime, _spriteBatch);                
 
                 if (GameController.GameOver)
                 {
@@ -141,8 +153,8 @@ namespace MonoShooting
                         _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
                     }
                 }
-            }           
-
+            }
+            
             _spriteBatch.End();
             base.Draw(gameTime);
         }

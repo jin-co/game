@@ -8,15 +8,16 @@ namespace MonoShooting
 {
     class GameController
     {
-        public List<Bullet> bullets = new List<Bullet>();
-        public static bool GameOver { get; set; }
-        public static bool StartGame { get; set; }
-
         private double _timer = 2;
+        public List<Bullet> bullets = new List<Bullet>();
 
-        public bool Clear { get; set; }
+        public static bool GameOver { get; set; }
+        public static bool GameStart { get; set; }
+        public static bool GameClear { get; set; }
+        public static double TotalTime { get; set; }
+
         public GameController() {
-            this.Clear = false;
+            TotalTime = 0;
         }        
 
         public void Update(GameTime gameTime)
@@ -24,6 +25,7 @@ namespace MonoShooting
             _timer -= gameTime.ElapsedGameTime.TotalSeconds;            
             if (!GameOver)
             {
+                TotalTime += gameTime.ElapsedGameTime.TotalSeconds;
                 if (_timer <= 0)
                 {
                     bullets.Add(new Bullet());
