@@ -21,9 +21,9 @@ namespace MonoShooting
         Texture2D ground;
         Texture2D bullet;
         Texture2D collisionEffectSprite;
-        Texture2D maingPageSprite;
-        Texture2D helpPageSprite;
-        Texture2D aboutPageSprite;
+        //Texture2D maingPageSprite;
+        //Texture2D helpPageSprite;
+        //Texture2D aboutPageSprite;
 
         //test
         List<Rectangle> rectangles;
@@ -71,9 +71,10 @@ namespace MonoShooting
             ladderSprite = Content.Load<Texture2D>("Assets/ladder");
             gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
             gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
-            maingPageSprite = Content.Load<Texture2D>("Assets/main");
-            helpPageSprite = Content.Load<Texture2D>("Assets/help");
-            aboutPageSprite = Content.Load<Texture2D>("Assets/about");
+            //maingPageSprite = Content.Load<Texture2D>("Assets/main");
+            //helpPageSprite = Content.Load<Texture2D>("Assets/help");
+            //aboutPageSprite = Content.Load<Texture2D>("Assets/about");
+            page.Load();
         }
 
         protected override void Update(GameTime gameTime)
@@ -120,7 +121,7 @@ namespace MonoShooting
             // main page
             if (!GameController.StartGame)
             {
-                _spriteBatch.Draw(maingPageSprite, new Vector2(0, 0), Color.White);
+                page.Draw(gameTime, _spriteBatch);
             }
 
 

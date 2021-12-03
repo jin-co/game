@@ -11,7 +11,10 @@ namespace MonoShooting
     class Page
     {
         private string _currentPage;
-        private string[] pageMainNames = { };
+        private string[] pageMainNames = {"start", "help", "about"};
+        private int _pageIdx = 0;
+        private double _timer = 1;
+        
 
         public ContentManager Content { get; set; }
         public Texture2D Sprite { get; set; }
@@ -20,6 +23,7 @@ namespace MonoShooting
         public Page(ContentManager content)
         {
             Content = content;
+            _currentPage = "start";
         }
 
         public Texture2D Load()
@@ -32,16 +36,43 @@ namespace MonoShooting
         {
             KeyboardState kState = Keyboard.GetState();            
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (kState.IsKeyDown(Keys.Left))
+            _timer -= elapsedTime;
+            if (_timer < 0.8)
             {
+                if (kState.IsKeyDown(Keys.Left))
+                {
+                    if (_pageIdx > 0)
+                    {
+                        _pageIdx--;
+                    }
+                    else
+                    {
+                        _pageIdx = pageMainNames.Length - 1;
+                    }
+                    _currentPage = pageMainNames[_pageIdx];
+                    Sprite = Content.Load<Texture2D>($"Assets/PageMain/main_{_currentPage}");
+                }
 
-            }
+                if (kState.IsKeyDown(Keys.Right))
+                {
+                    if (_pageIdx < pageMainNames.Length - 1)
+                    {
+                        _pageIdx++;
+                    }
+                    else
+                    {
+                        _pageIdx = 0;
+                    }                    
+                    _currentPage = pageMainNames[_pageIdx];
+                    Sprite = Content.Load<Texture2D>($"Assets/PageMain/main_{_currentPage}");
+                }
+                _timer = 1;
+            }           
+        }
 
-            if (kState.IsKeyDown(Keys.Right))
-            {
-
-            }
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Sprite, new Vector2(0, 0), Color.White);
         }
     }
 }
