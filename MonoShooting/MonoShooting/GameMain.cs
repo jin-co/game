@@ -31,6 +31,7 @@ namespace MonoShooting
 
         //test
         Biker biker;
+        Page page;
 
         //test
         GameController controller = new GameController();
@@ -52,6 +53,8 @@ namespace MonoShooting
             _graphics.ApplyChanges();
 
             biker = new Biker(Content);
+            page = new Page(Content);
+
 
             base.Initialize();
         }
@@ -77,6 +80,11 @@ namespace MonoShooting
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            if (!GameController.StartGame)
+            {
+                page.PageUpdate(gameTime);
+            }
+
             if (GameController.StartGame)
             {
                 if (!GameController.GameOver)
