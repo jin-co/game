@@ -59,3 +59,6 @@ C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\gameover.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\gamover_back.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\gameover_back.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\about.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\help.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\main.xnb

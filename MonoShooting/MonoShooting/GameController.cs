@@ -9,11 +9,12 @@ namespace MonoShooting
     {
         public List<Bullet> bullets = new List<Bullet>();
         public static bool GameOver { get; set; }
+        public static bool StartGame { get; set; }
+
         private double _timer = 2;
 
         public bool Clear { get; set; }
         public GameController() {
-            
             this.Clear = false;
         }        
 
