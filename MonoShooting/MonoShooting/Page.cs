@@ -11,9 +11,12 @@ namespace MonoShooting
     class Page
     {
         private string _currentPage;
-        private string[] pageMainNames = {"start", "help", "about"};
+        private string[] pageMainNames = { 
+            "PageMain/main_start", "PageMain/main_help", "PageMain/main_about" };
         private int _pageIdx = 0;
         private double _timer = 1;
+
+        SpriteFont gameFont;
         
 
         public ContentManager Content { get; set; }
@@ -23,13 +26,14 @@ namespace MonoShooting
         public Page(ContentManager content)
         {
             Content = content;
-            _currentPage = "start";
+            _currentPage = "PageMain/main_start";
         }
 
-        public Texture2D Load()
+        public void Load()
         {
-            Sprite = Content.Load<Texture2D>($"Assets/PageMain/main_{_currentPage}");
-            return Sprite;
+            Sprite = Content.Load<Texture2D>($"Assets/{_currentPage}");
+            //test
+            gameFont = Content.Load<SpriteFont>("Assets/timerFont");
         }
 
         public void PageUpdate(GameTime gameTime)
@@ -49,8 +53,7 @@ namespace MonoShooting
                     {
                         _pageIdx = pageMainNames.Length - 1;
                     }
-                    _currentPage = pageMainNames[_pageIdx];
-                    Sprite = Content.Load<Texture2D>($"Assets/PageMain/main_{_currentPage}");
+                    _currentPage = pageMainNames[_pageIdx];                    
                 }
 
                 if (kState.IsKeyDown(Keys.Right))
@@ -63,9 +66,21 @@ namespace MonoShooting
                     {
                         _pageIdx = 0;
                     }                    
-                    _currentPage = pageMainNames[_pageIdx];
-                    Sprite = Content.Load<Texture2D>($"Assets/PageMain/main_{_currentPage}");
+                    _currentPage = pageMainNames[_pageIdx];                    
                 }
+
+                if (kState.IsKeyDown(Keys.Enter))
+                {
+                    if (_pageIdx == 0)
+                    {
+                        GameController.StartGame = true;
+                    }
+                    else
+                    {
+                        _currentPage = pageMainNames[_pageIdx].Split('_')[1];                        
+                    }
+                }
+                Sprite = Content.Load<Texture2D>($"Assets/{_currentPage}");
                 _timer = 1;
             }           
         }
@@ -73,6 +88,8 @@ namespace MonoShooting
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Sprite, new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(gameFont, _pageIdx.ToString(), new Vector2(0, 0), Color.Black);
+
         }
     }
 }

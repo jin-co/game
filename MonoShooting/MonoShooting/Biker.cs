@@ -172,11 +172,9 @@ namespace MonoShooting
                         _motionIndex = 0;
                     }
                     _timer = 1;
-                    GameController.GameOver = true;
-                }
+                    GameController.GameOver = true;                    
+                }                
             }
-
-            
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

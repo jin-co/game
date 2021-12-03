@@ -13,22 +13,14 @@ namespace MonoShooting
         int screenWidth = 1400;
         int screenHeight = 950;
 
-
         // sprites
         Texture2D gameoverSprite;
         Texture2D gameoverBackSprite;
         Texture2D ladderSprite;
         Texture2D ground;
         Texture2D bullet;
-        Texture2D collisionEffectSprite;
-        //Texture2D maingPageSprite;
-        //Texture2D helpPageSprite;
-        //Texture2D aboutPageSprite;
-
-        //test
-        List<Rectangle> rectangles;
-        int num = -1;
-
+        Texture2D collisionEffectSprite;        
+       
         //test
         Biker biker;
         Page page;
@@ -36,6 +28,9 @@ namespace MonoShooting
         //test
         GameController controller = new GameController();
         Vector2 collisionPoint;
+
+        //test
+        KeyboardState kState;
 
         double timer = 1;
 
@@ -55,7 +50,6 @@ namespace MonoShooting
             biker = new Biker(Content);
             page = new Page(Content);
 
-
             base.Initialize();
         }
 
@@ -63,17 +57,13 @@ namespace MonoShooting
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //skyBackground = Content.Load<Texture2D>("Assets/sky");
             ground = Content.Load<Texture2D>("Assets/ground");
             biker.BikerLoad();
             bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
             collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");
             ladderSprite = Content.Load<Texture2D>("Assets/ladder");
             gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
-            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
-            //maingPageSprite = Content.Load<Texture2D>("Assets/main");
-            //helpPageSprite = Content.Load<Texture2D>("Assets/help");
-            //aboutPageSprite = Content.Load<Texture2D>("Assets/about");
+            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");            
             page.Load();
         }
 
@@ -81,12 +71,12 @@ namespace MonoShooting
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            
             if (!GameController.StartGame)
             {
                 page.PageUpdate(gameTime);
             }
-
-            if (GameController.StartGame)
+            else
             {
                 if (!GameController.GameOver)
                 {
@@ -98,16 +88,19 @@ namespace MonoShooting
                         i.BulletUpdate(gameTime);
 
                         if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
-                        {
-                            //controller.GameOver = true;
+                        {                            
                             biker.Dead = true;
                             biker.BikerUpdate(gameTime);
-                            collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                            collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);                            
                         }
                     }
                 }
-            }
-            
+                else
+                {
+                    // start over
+                    controller.Update(gameTime);                    
+                }
+            }        
 
             base.Update(gameTime);
         }
@@ -123,7 +116,6 @@ namespace MonoShooting
             {
                 page.Draw(gameTime, _spriteBatch);
             }
-
 
             //game play
             if (GameController.StartGame)
@@ -150,10 +142,7 @@ namespace MonoShooting
                         _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
                     }
                 }
-            }
-
-           
-
+            }           
 
             _spriteBatch.End();
             base.Draw(gameTime);

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/PageMain/main_help.png</SourceFile>
-  <SourceTime>2021-12-03T19:23:26.951743+09:00</SourceTime>
+  <SourceTime>2021-12-03T19:27:58.7628716+09:00</SourceTime>
   <DestFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/bin/Windows/Assets/PageMain/main_help.xnb</DestFile>
-  <DestTime>2021-12-03T19:26:56.0043092+09:00</DestTime>
+  <DestTime>2021-12-03T19:42:48.495651+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
