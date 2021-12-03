@@ -16,7 +16,7 @@ namespace MonoShooting
         public int Width { get; set; }
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
-        public Vector2 Position = new Vector2(50, 815);  //bottom: 900 -> 912/ top: 795 -> 810
+        public Vector2 Position = new Vector2(50, 815);
         private double _timer = 1;
         //test 
 

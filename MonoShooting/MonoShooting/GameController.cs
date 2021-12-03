@@ -15,6 +15,7 @@ namespace MonoShooting
         public static bool GameStart { get; set; }
         public static bool GameClear { get; set; }
         public static double TotalTime { get; set; }
+        public static int GameLevel { get; set; }
 
         public GameController() {
             TotalTime = 0;
@@ -22,7 +23,7 @@ namespace MonoShooting
 
         public void Update(GameTime gameTime)
         {            
-            _timer -= gameTime.ElapsedGameTime.TotalSeconds;            
+            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
             if (!GameOver)
             {
                 TotalTime += gameTime.ElapsedGameTime.TotalSeconds;

@@ -35,6 +35,14 @@ namespace MonoShooting
 
         double timer = 1;
 
+        ////test
+        //Vector2 bikerL;
+        //Vector2 ladderL;
+        //float collisionP;
+        //float compareV;
+        //bool collision;
+        ////test
+
         public GameMain()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -74,40 +82,50 @@ namespace MonoShooting
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
+
             if (!GameController.GameStart)
             {
                 page.PageUpdate(gameTime);
             }
             else
             {
-                if (!GameController.GameOver)
+                if (!GameController.GameClear)
                 {
-                    biker.BikerUpdate(gameTime);
-                    controller.Update(gameTime);
-
-                    foreach (var i in controller.bullets)
+                    if (!GameController.GameOver)
                     {
-                        i.BulletUpdate(gameTime);
+                        biker.BikerUpdate(gameTime);
+                        controller.Update(gameTime);
 
-                        if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
-                        {                            
-                            biker.Dead = true;
-                            biker.BikerUpdate(gameTime);
-                            collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);                            
+                        foreach (var i in controller.bullets)
+                        {
+                            i.BulletUpdate(gameTime);
+
+                            if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
+                            {
+                                biker.Dead = true;
+                                biker.BikerUpdate(gameTime);
+                                collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                            }
+                        }
+
+                        ////test
+                        //bikerL = biker.Position;
+                        //ladderL = ladder.Position;
+                        //collisionP = Vector2.Distance(ladder.Position, biker.Position);
+                        //compareV = ladder.Radius + biker.Radius;
+                        ////test
+                        if (Vector2.Distance(ladder.Position, biker.Position) <= ladder.Radius + biker.Radius)
+                        {
+                            GameController.GameLevel++;
+                            GameController.GameClear = true;
                         }
                     }
-
-                    if (Vector2.Distance(ladder.Position, biker.Position) < ladder.Radius + biker.Radius)
+                    else
                     {
-                        GameController.GameClear = true;
+                        biker.BikerUpdate(gameTime);
                     }
-
                 }
-                else
-                {
-                    biker.BikerUpdate(gameTime);
-                }
+                
             }        
             base.Update(gameTime);
         }
@@ -126,22 +144,24 @@ namespace MonoShooting
             //game play
             if (GameController.GameStart)
             {
-                _spriteBatch.Draw(ground, new Vector2(0, 0), Color.Black);
+                _spriteBatch.Draw(ground, new Vector2(0, 0), Color.White);
                 
-                // timer record
+                // timer
                 _spriteBatch.DrawString(timerFont,
                 "Time: " + Math.Floor(GameController.TotalTime),
-                new Vector2(3, 3), Color.White);
+                new Vector2(3, 3), Color.Black);
 
-                //test
+                // ladder
+                ladder.Draw(gameTime, _spriteBatch);
+
+                // plaer
                 biker.Draw(gameTime, _spriteBatch);
                 foreach (var i in controller.bullets)
                 {
                     _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
                 }
 
-                ladder.Draw(gameTime, _spriteBatch);                
-
+                // game over
                 if (GameController.GameOver)
                 {
                     _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
@@ -153,8 +173,28 @@ namespace MonoShooting
                         _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
                     }
                 }
+
+                // game clear
+                if (GameController.GameClear)
+                {
+                    _spriteBatch.DrawString(
+                    timerFont,
+                    "Stage" + GameController.GameLevel + " Cleared",
+                    new Vector2((screenWidth / 2) - 85, (screenHeight / 2) - 40), Color.Black);
+                }
             }
-            
+
+            ////test
+            //_spriteBatch.DrawString(
+            //    timerFont,
+            //    bikerL.ToString() + "\n" +
+            //    ladderL.ToString() + "\n" +
+            //    collisionP.ToString() + "\n" +
+            //    compareV.ToString() + "\n" +                 
+            //    collision.ToString(), 
+            //    new Vector2(3, 130), Color.Black);
+            ////test
+
             _spriteBatch.End();
             base.Draw(gameTime);
         }

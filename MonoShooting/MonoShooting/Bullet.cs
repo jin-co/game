@@ -17,7 +17,7 @@ namespace MonoShooting
         {
             Random random = new Random();
             this.speed = 200;
-            this.position = new Vector2(1300, random.Next(795, 950));
+            this.position = new Vector2(1400, random.Next(795, 950));
         }        
 
         public void BulletUpdate(GameTime gameTime)

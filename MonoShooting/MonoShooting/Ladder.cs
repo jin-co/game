@@ -18,7 +18,7 @@ namespace MonoShooting
         {
             Content = content;
             Position = new Vector2(1300, 730);
-            Radius = 12;
+            Radius = 68;
         }
 
         public void Load()
