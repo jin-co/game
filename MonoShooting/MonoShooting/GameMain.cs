@@ -118,7 +118,7 @@ namespace MonoShooting
                             if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
                             {                                
                                 biker.Dead = true;
-                                Sounds.Hurt.Play();
+                                Sounds.Hurt.Play();                                
                                 biker.BikerUpdate(gameTime);
                                 collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
                             }
