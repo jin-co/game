@@ -173,7 +173,16 @@ namespace MonoShooting
                     }
                     _timer = 1;
                     GameController.GameOver = true;                    
-                }                
+                }
+
+                if (GameController.GameOver == true)
+                {
+                    if (kState.IsKeyDown(Keys.Enter))
+                    {
+                        GameController.GameOver = false;
+                        GameController.StartGame = false;
+                    }
+                }
             }
         }
 

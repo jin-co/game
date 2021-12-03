@@ -97,8 +97,7 @@ namespace MonoShooting
                 }
                 else
                 {
-                    // start over
-                    controller.Update(gameTime);                    
+                    biker.BikerUpdate(gameTime);
                 }
             }        
 

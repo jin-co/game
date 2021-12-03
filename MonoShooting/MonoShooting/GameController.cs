@@ -20,10 +20,8 @@ namespace MonoShooting
         }        
 
         public void Update(GameTime gameTime)
-        {
-            KeyboardState kState = new KeyboardState();
-            _timer -= gameTime.ElapsedGameTime.TotalSeconds;
-            
+        {            
+            _timer -= gameTime.ElapsedGameTime.TotalSeconds;            
             if (!GameOver)
             {
                 if (_timer <= 0)
@@ -31,18 +29,6 @@ namespace MonoShooting
                     bullets.Add(new Bullet());
                     _timer = 2;
                 }
-            }
-            else
-            {
-                if (_timer <= 0.9)
-                {
-                    bullets.Add(new Bullet());
-                    if (kState.IsKeyDown(Keys.Enter))
-                    {
-                        StartGame = false;
-                        _timer = 2;
-                    }
-                }                
             }
         }
 
