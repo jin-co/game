@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -32,6 +33,8 @@ namespace MonoShooting
         public void Load()
         {
             Sprite = Content.Load<Texture2D>($"Assets/{_currentPage}");
+            Sounds.Tap = Content.Load<SoundEffect>("Assets/Sounds/sound_menu_tab");
+            Sounds.Enter = Content.Load<SoundEffect>("Assets/Sounds/sound_menu_enter");
             //test
             gameFont = Content.Load<SpriteFont>("Assets/timerFont");
         }
@@ -45,6 +48,7 @@ namespace MonoShooting
             {
                 if (kState.IsKeyDown(Keys.Left))
                 {
+                    Sounds.Tap.Play();
                     if (_pageIdx > 0)
                     {
                         _pageIdx--;
@@ -58,6 +62,7 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Right))
                 {
+                    Sounds.Tap.Play();
                     if (_pageIdx < pageMainNames.Length - 1)
                     {
                         _pageIdx++;
@@ -71,6 +76,7 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Enter))
                 {
+                    Sounds.Enter.Play();
                     if (_pageIdx == 0)
                     {
                         GameController.GameStart = true;
@@ -80,7 +86,7 @@ namespace MonoShooting
                         _currentPage = pageMainNames[_pageIdx].Split('_')[1];                        
                     }
                 }
-                Sprite = Content.Load<Texture2D>($"Assets/{_currentPage}");
+                Sprite = Content.Load<Texture2D>($"Assets/{_currentPage}");                
                 _timer = 1;
             }           
         }

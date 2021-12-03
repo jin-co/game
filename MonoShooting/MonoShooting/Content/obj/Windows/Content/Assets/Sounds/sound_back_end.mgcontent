@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Sounds/sound_back_end.mp3</SourceFile>
+  <SourceTime>2021-12-04T01:07:07.3518988+09:00</SourceTime>
+  <DestFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/bin/Windows/Content/Assets/Sounds/sound_back_end.xnb</DestFile>
+  <DestTime>2021-12-04T01:08:37.3809086+09:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-10T16:17:54+09:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-10T16:17:54+09:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/bin/Windows/Content/Assets/Sounds/sound_back_end.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

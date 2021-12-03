@@ -66,3 +66,17 @@ C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\PageMain\main_help.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\PageMain\main_start.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\timerFont.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back.wma
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_bullet.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_clear.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_jump.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_damage_man.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_menu.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_hurt_man.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_menu_dead.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_menu_enter.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_menu_tab.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_dead.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_end.wma
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_end.xnb

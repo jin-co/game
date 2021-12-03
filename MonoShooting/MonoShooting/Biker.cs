@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -39,7 +41,9 @@ namespace MonoShooting
 
         public void BikerLoad()
         {
-            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");            
+            Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
+            Sounds.Jump = Content.Load<SoundEffect>("Assets/Sounds/sound_jump");
+            
         }
 
         public void BikerUpdate(GameTime gameTime)
@@ -70,6 +74,7 @@ namespace MonoShooting
 
                     if (_timer <= 0.85)
                     {
+                        Sounds.Jump.Play();
                         _frameX += FRAME_WIDTH;
                         _frameCount++;
                         if (_frameCount >= _frameMax)
@@ -169,7 +174,7 @@ namespace MonoShooting
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
                     if (Position.Y > 815)
-                    {
+                    {                        
                         Position.Y -= 60 * elapsedTime;
                     }
                     _jumped = true;
@@ -177,10 +182,12 @@ namespace MonoShooting
             }
             else
             {
+                MediaPlayer.Play(Sounds.BackgroundMusicEnd);
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_death");
-                _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+                _timer -= gameTime.ElapsedGameTime.TotalSeconds;                
                 if (_timer < 0.7)
                 {
+                    
                     _frameX += FRAME_WIDTH;
                     _frameCount++;
                     if (_frameCount >= _frameMax)
@@ -193,12 +200,15 @@ namespace MonoShooting
                 }
 
                 if (GameController.GameOver == true)
-                {
+                {                    
                     if (kState.IsKeyDown(Keys.Enter))
                     {
                         GameController.GameOver = false;
                         GameController.GameStart = false;
                         GameController.TotalTime = 0;
+                        Dead = false;
+                        Position = new Vector2(50, 815);
+                        //MediaPlayer.Stop();
                     }
                 }
             }

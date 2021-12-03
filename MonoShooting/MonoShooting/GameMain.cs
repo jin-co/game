@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 
@@ -76,6 +78,13 @@ namespace MonoShooting
             biker.BikerLoad();
             page.Load();
             ladder.Load();
+            Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
+            Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
+            Sounds.StageClear = Content.Load<SoundEffect>("Assets/Sounds/sound_clear");
+            Sounds.Dead = Content.Load<SoundEffect>("Assets/Sounds/sound_dead");
+            Sounds.Hurt = Content.Load<SoundEffect>("Assets/Sounds/sound_hurt_man");
+            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");
+            MediaPlayer.Play(Sounds.BackgroundMusicEnd);
         }
 
         protected override void Update(GameTime gameTime)
@@ -86,9 +95,10 @@ namespace MonoShooting
             if (!GameController.GameStart)
             {
                 page.PageUpdate(gameTime);
+                MediaPlayer.Play(Sounds.BackgroundMusic);
             }
             else
-            {
+            {                
                 if (!GameController.GameClear)
                 {
                     if (!GameController.GameOver)
@@ -99,29 +109,32 @@ namespace MonoShooting
                         foreach (var i in controller.bullets)
                         {
                             i.BulletUpdate(gameTime);
+                            if (Vector2.Distance(i.position, biker.Position) >= i.radius + biker.Radius &&
+                                Vector2.Distance(i.position, biker.Position) < (i.radius + biker.Radius) + 5)
+                            {
+                                Sounds.Bullet.Play();
+                            }
 
                             if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
-                            {
+                            {                                
                                 biker.Dead = true;
+                                Sounds.Hurt.Play();
                                 biker.BikerUpdate(gameTime);
                                 collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
                             }
                         }
 
-                        ////test
-                        //bikerL = biker.Position;
-                        //ladderL = ladder.Position;
-                        //collisionP = Vector2.Distance(ladder.Position, biker.Position);
-                        //compareV = ladder.Radius + biker.Radius;
-                        ////test
                         if (Vector2.Distance(ladder.Position, biker.Position) <= ladder.Radius + biker.Radius)
                         {
+                            MediaPlayer.Stop();
+                            Sounds.StageClear.Play();
                             GameController.GameLevel++;
                             GameController.GameClear = true;
                         }
                     }
                     else
                     {
+                        MediaPlayer.Stop();                        
                         biker.BikerUpdate(gameTime);
                     }
                 }
@@ -183,17 +196,6 @@ namespace MonoShooting
                     new Vector2((screenWidth / 2) - 85, (screenHeight / 2) - 40), Color.Black);
                 }
             }
-
-            ////test
-            //_spriteBatch.DrawString(
-            //    timerFont,
-            //    bikerL.ToString() + "\n" +
-            //    ladderL.ToString() + "\n" +
-            //    collisionP.ToString() + "\n" +
-            //    compareV.ToString() + "\n" +                 
-            //    collision.ToString(), 
-            //    new Vector2(3, 130), Color.Black);
-            ////test
 
             _spriteBatch.End();
             base.Draw(gameTime);
