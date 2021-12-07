@@ -26,6 +26,7 @@ namespace MonoShooting
 
         private bool _jumped = false;
         private bool _movingForward = false;
+        private bool _movingLeft;
         private bool _climbing = false;        
 
         //test
@@ -51,7 +52,7 @@ namespace MonoShooting
         public void BikerUpdate(GameTime gameTime)
         {
             KeyboardState kState = Keyboard.GetState();
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;            
             if (!Dead)
             {
                 // idle motion
@@ -134,6 +135,7 @@ namespace MonoShooting
                     }
                     
                     _movingForward = true;
+                    _movingLeft = false;
                     if (_jumped || GameController.Climbable)
                     {
                         _frameMax = 4;
@@ -162,6 +164,7 @@ namespace MonoShooting
                         }
                     }                    
                     _movingForward = true;
+                    _movingLeft = true;
                     if (_jumped || GameController.Climbable)
                     {
                         _frameMax = 4;
@@ -175,10 +178,26 @@ namespace MonoShooting
                 if (kState.IsKeyDown(Keys.Up) && !GameController.Climbable)
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
-                    if (Position.Y > 815)
+                    if (_movingLeft)
                     {
-                        Position.Y -= 30 * elapsedTime;
+                        Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run_left");
                     }
+                    
+                    if (OnSecondStage)
+                    {
+                        if (Position.Y > 625)
+                        {
+                            Position.Y -= 30 * elapsedTime;
+                        }
+                    }
+                    else
+                    {
+                        if (Position.Y > 815)
+                        {
+                            Position.Y -= 30 * elapsedTime;
+                        }
+                    }
+                    
                     _movingForward = true;
                     if (_jumped)
                     {
@@ -192,10 +211,26 @@ namespace MonoShooting
                 if (kState.IsKeyDown(Keys.Down))
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
-                    if (Position.Y < 915)
+                    if (_movingLeft)
                     {
-                        Position.Y += 30 * elapsedTime;
+                        Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run_left");
                     }
+
+                    if (OnSecondStage)
+                    {
+                        if (Position.Y < 703)
+                        {
+                            Position.Y += 30 * elapsedTime;
+                        }
+                    }
+                    else
+                    {
+                        if (Position.Y < 915)
+                        {
+                            Position.Y += 30 * elapsedTime;
+                        }
+                    }
+
                     _movingForward = true;
                     if (_jumped)
                     {

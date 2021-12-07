@@ -27,6 +27,7 @@ namespace MonoShooting
         Biker biker;
         Page page;
         Ladder ladder;
+        Box box;
         
         GameController controller = new GameController();
         GameStage stage = new GameStage();
@@ -60,6 +61,7 @@ namespace MonoShooting
             biker = new Biker(Content);
             page = new Page(Content);
             ladder = new Ladder(Content);
+            box = new Box(Content);
 
             base.Initialize();
         }
@@ -77,6 +79,8 @@ namespace MonoShooting
             biker.BikerLoad();
             page.Load();
             ladder.Load();
+            box.Load();
+
             Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
             Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
             Sounds.BackgroundMusicInbound = Content.Load<Song>("Assets/Sounds/sound_back_inbound");
@@ -241,7 +245,12 @@ namespace MonoShooting
                     "Stage" + GameController.GameLevel + " Cleared",
                     new Vector2((screenWidth / 2) - 85, (screenHeight / 2) - 40), Color.Black);
                 }
-            }
+
+                if (GameController.GameLevel == 2)
+                {
+                    box.Draw(gameTime, _spriteBatch);
+                }
+            }            
 
             //test
             _spriteBatch.DrawString(
