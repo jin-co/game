@@ -17,6 +17,7 @@ namespace MonoShooting
         public static bool GameClear { get; set; }
         public static double TotalTime { get; set; }
         public static int GameLevel { get; set; }
+        public static bool Climbable { get; internal set; }
 
         public GameController() {
             TotalTime = 0;

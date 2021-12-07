@@ -18,12 +18,13 @@ namespace MonoShooting
         public int Width { get; set; }
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
-        public Vector2 Position = new Vector2(50, 815);
+        public Vector2 Position = new Vector2(1350, 815); //50, 815
         private double _timer = 1;
         //test 
 
         private bool _jumped = false;
         private bool _movingForward = false;
+        private bool _climbing = false;
 
         //test
         private int _frameX = 0;        
@@ -113,14 +114,25 @@ namespace MonoShooting
                 }
 
                 if (kState.IsKeyDown(Keys.Right))
-                {
-                    Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
-                    if (Position.X < 1400 - FRAME_WIDTH)
+                {                    
+                    if (GameController.Climbable)
                     {
-                        Position.X += 30 * elapsedTime;
+                        if (Position.X < 1324 - FRAME_WIDTH)
+                        {
+                            Position.X += 10 * elapsedTime;
+                        }
                     }
+                    else
+                    {
+                        Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
+                        if (Position.X < 1400 - FRAME_WIDTH)
+                        {
+                            Position.X += 30 * elapsedTime;
+                        }
+                    }
+                    
                     _movingForward = true;
-                    if (_jumped)
+                    if (_jumped || GameController.Climbable)
                     {
                         _frameMax = 4;
                     }
@@ -132,10 +144,33 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Left))
                 {
-                    Position.X -= 30 * elapsedTime;
+                    if (GameController.Climbable)
+                    {
+                        if (Position.X > 1300)
+                        {
+                            Position.X -= 10 * elapsedTime;
+                        }
+                    }
+                    else
+                    {
+                        Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run_left");
+                        if (Position.X > 0 + FRAME_WIDTH)
+                        {
+                            Position.X -= 30 * elapsedTime;
+                        }
+                    }                    
+                    _movingForward = true;
+                    if (_jumped || GameController.Climbable)
+                    {
+                        _frameMax = 4;
+                    }
+                    else
+                    {
+                        _frameMax = 6;
+                    }                    
                 }
 
-                if (kState.IsKeyDown(Keys.Up))
+                if (kState.IsKeyDown(Keys.Up) && !GameController.Climbable)
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run");
                     if (Position.Y > 815)
@@ -169,7 +204,9 @@ namespace MonoShooting
                         _frameMax = 6;
                     }
                 }
-                if (kState.IsKeyDown(Keys.Space))
+
+                // jump
+                if (kState.IsKeyDown(Keys.Space) && !GameController.Climbable)
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
                     if (Position.Y > 815)
@@ -177,6 +214,17 @@ namespace MonoShooting
                         Position.Y -= 60 * elapsedTime;
                     }
                     _jumped = true;
+                }
+
+                // climb
+                if (kState.IsKeyDown(Keys.Up) &&
+                    kState.IsKeyDown(Keys.Space))
+                {
+                    Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_climb");
+                    
+                    Position.Y -= 30 * elapsedTime;
+                    _climbing = true;
+                    _frameMax = 6;                    
                 }
             }
             else
@@ -206,7 +254,7 @@ namespace MonoShooting
                         GameController.TotalTime = 0;
                         Dead = false;
                         Position = new Vector2(50, 815);
-                        //MediaPlayer.Stop();
+                        MediaPlayer.Play(Sounds.BackgroundMusicEnd);
                     }
                 }
             }

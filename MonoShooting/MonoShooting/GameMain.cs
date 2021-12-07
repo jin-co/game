@@ -27,13 +27,21 @@ namespace MonoShooting
         Biker biker;
         Page page;
         Ladder ladder;
-
-        //test
+        
         GameController controller = new GameController();
+        GameStage stage = new GameStage();
+
         Vector2 collisionPoint;
 
         //timer
         SpriteFont timerFont;
+
+        //test
+        Vector2 testBikerP;
+        Vector2 testLaddetP;
+        bool testCollide = false;
+        bool testContact = false;
+        //test
 
         double timer = 1;
         public GameMain()
@@ -76,7 +84,10 @@ namespace MonoShooting
             Sounds.Dead = Content.Load<SoundEffect>("Assets/Sounds/sound_dead");
             Sounds.Hurt = Content.Load<SoundEffect>("Assets/Sounds/sound_hurt_man");
             Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");            
-            MediaPlayer.Play(Sounds.BackgroundMusicEnd);            
+            MediaPlayer.Play(Sounds.BackgroundMusicEnd);
+
+            //game level
+            GameController.GameLevel = 1;
         }
 
         protected override void Update(GameTime gameTime)
@@ -89,51 +100,99 @@ namespace MonoShooting
                 page.PageUpdate(gameTime);                
             }
             else
-            {                
+            {
+                
                 if (!GameController.GameClear)
                 {
-                    if (!GameController.GameOver)
+                    switch (GameController.GameLevel)
                     {
-                        biker.BikerUpdate(gameTime);
-                        controller.Update(gameTime);
-
-                        foreach (var i in controller.bullets)
-                        {
-                            i.BulletUpdate(gameTime);
-                            if (Vector2.Distance(i.position, biker.Position) 
-                                >= i.radius + biker.Radius &&
-                                Vector2.Distance(i.position, biker.Position) 
-                                < (i.radius + biker.Radius) + 5)
+                        case 1:
+                            if (!GameController.GameOver)
                             {
-                                Sounds.Bullet.Play();
-                            }
-
-                            if (Vector2.Distance(i.position, biker.Position) 
-                                < i.radius + biker.Radius)
-                            {                                
-                                biker.Dead = true;
-                                Sounds.Hurt.Play();                                
                                 biker.BikerUpdate(gameTime);
-                                collisionPoint = new Vector2(
-                                    i.position.X - i.radius, i.position.Y - i.radius);
-                            }
-                        }
+                                controller.Update(gameTime);
 
-                        // stage 1 clear
-                        if (Vector2.Distance(ladder.Position, biker.Position) 
-                            <= ladder.Radius + biker.Radius)
-                        {
-                            //MediaPlayer.Stop();
-                            Sounds.StageClear.Play();
-                            GameController.GameLevel++;
-                            GameController.GameClear = true;
-                        }
+                                foreach (var i in controller.bullets)
+                                {
+                                    i.BulletUpdate(gameTime);
+                                    if (Vector2.Distance(i.position, biker.Position)
+                                        >= i.radius + biker.Radius &&
+                                        Vector2.Distance(i.position, biker.Position)
+                                        < (i.radius + biker.Radius) + 5)
+                                    {
+                                        Sounds.Bullet.Play();
+                                    }
+
+                                    if (Vector2.Distance(i.position, biker.Position)
+                                        < i.radius + biker.Radius)
+                                    {
+                                        biker.Dead = true;
+                                        Sounds.Hurt.Play();
+                                        biker.BikerUpdate(gameTime);
+                                        collisionPoint = new Vector2(
+                                            i.position.X - i.radius, i.position.Y - i.radius);
+                                    }
+                                }
+                                if (Vector2.Distance(ladder.Position, biker.Position)
+                                    <= ladder.Radius + biker.Radius)
+                                {
+                                    MediaPlayer.Stop();
+                                    Sounds.StageClear.Play();                                    
+                                    GameController.GameClear = true;
+                                }
+                            }
+                            else
+                            {
+                                biker.BikerUpdate(gameTime);
+                            }
+                            break;
+
+                        case 2:
+                            if (!GameController.GameOver)
+                            {
+                                if (Vector2.Distance(ladder.Position, biker.Position) 
+                                    <= ladder.Radius + biker.Radius)
+                                {
+                                    GameController.Climbable = true;
+                                    testContact = true;
+                                    testCollide = true;
+                                    //if (biker.Position.Y <= 700)
+                                    //{
+                                    //    GameController.Climbable = false;
+                                    //    testCollide = false;
+                                    //}
+                                    //else
+                                    //{
+                                    //    GameController.Climbable = true;
+                                    //    testCollide = true;
+                                    //}
+                                                                        
+                                }
+                                else
+                                {
+                                    testContact = false;
+                                    GameController.Climbable = false;
+                                }
+                                biker.BikerUpdate(gameTime);
+                                controller.Update(gameTime);
+
+                                foreach (var i in controller.bullets)
+                                {
+
+                                }
+                            }
+                            else
+                            {
+                                biker.BikerUpdate(gameTime);
+                            }
+
+                            break;
                     }
-                    else
-                    {
-                        //MediaPlayer.Stop();                        
-                        biker.BikerUpdate(gameTime);
-                    }
+                    
+                }
+                else
+                {
+                    stage.Update(gameTime);
                 }
                 
             }        
@@ -193,6 +252,21 @@ namespace MonoShooting
                     new Vector2((screenWidth / 2) - 85, (screenHeight / 2) - 40), Color.Black);
                 }
             }
+
+            //test
+            _spriteBatch.DrawString(
+                    timerFont,
+                    testBikerP.ToString() + "\n" +
+                    testLaddetP.ToString() + "\n" +
+                    testCollide.ToString() + "\n" +
+                    testContact.ToString() + "\n" +
+                    "Climbable: " + GameController.Climbable.ToString() + "\n" +
+                    "biker: " + biker.Position.ToString() + "\n" +
+                    "ladder: " + ladder.Position.ToString() + "\n" 
+                    ,
+                    new Vector2(100, 100), Color.Black);
+            
+            //test
 
             _spriteBatch.End();
             base.Draw(gameTime);
