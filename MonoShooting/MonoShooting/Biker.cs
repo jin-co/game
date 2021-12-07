@@ -43,7 +43,6 @@ namespace MonoShooting
         {
             Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_idle");
             Sounds.Jump = Content.Load<SoundEffect>("Assets/Sounds/sound_jump");
-            
         }
 
         public void BikerUpdate(GameTime gameTime)
@@ -181,8 +180,7 @@ namespace MonoShooting
                 }
             }
             else
-            {
-                MediaPlayer.Play(Sounds.BackgroundMusicEnd);
+            {                
                 Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_death");
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;                
                 if (_timer < 0.7)

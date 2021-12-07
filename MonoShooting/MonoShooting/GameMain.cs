@@ -71,11 +71,12 @@ namespace MonoShooting
             ladder.Load();
             Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
             Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
+            Sounds.BackgroundMusicInbound = Content.Load<Song>("Assets/Sounds/sound_back_inbound");
             Sounds.StageClear = Content.Load<SoundEffect>("Assets/Sounds/sound_clear");
             Sounds.Dead = Content.Load<SoundEffect>("Assets/Sounds/sound_dead");
             Sounds.Hurt = Content.Load<SoundEffect>("Assets/Sounds/sound_hurt_man");
-            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");
-            MediaPlayer.Play(Sounds.BackgroundMusicEnd);
+            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");            
+            MediaPlayer.Play(Sounds.BackgroundMusicEnd);            
         }
 
         protected override void Update(GameTime gameTime)
@@ -85,8 +86,7 @@ namespace MonoShooting
 
             if (!GameController.GameStart)
             {
-                page.PageUpdate(gameTime);
-                MediaPlayer.Play(Sounds.BackgroundMusic);
+                page.PageUpdate(gameTime);                
             }
             else
             {                
@@ -119,9 +119,11 @@ namespace MonoShooting
                             }
                         }
 
-                        if (Vector2.Distance(ladder.Position, biker.Position) <= ladder.Radius + biker.Radius)
+                        // stage 1 clear
+                        if (Vector2.Distance(ladder.Position, biker.Position) 
+                            <= ladder.Radius + biker.Radius)
                         {
-                            MediaPlayer.Stop();
+                            //MediaPlayer.Stop();
                             Sounds.StageClear.Play();
                             GameController.GameLevel++;
                             GameController.GameClear = true;
@@ -129,7 +131,7 @@ namespace MonoShooting
                     }
                     else
                     {
-                        MediaPlayer.Stop();                        
+                        //MediaPlayer.Stop();                        
                         biker.BikerUpdate(gameTime);
                     }
                 }

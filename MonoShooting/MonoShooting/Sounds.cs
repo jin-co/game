@@ -10,6 +10,7 @@ namespace MonoShooting
     {
         public static Song BackgroundMusic { get; set; }
         public static Song BackgroundMusicEnd { get; set; }
+        public static Song BackgroundMusicInbound { get; internal set; }
         public static SoundEffect Jump { get; set; }
         public static SoundEffect StageClear { get; set; }
         public static SoundEffect Tap { get; set; }
