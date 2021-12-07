@@ -18,13 +18,15 @@ namespace MonoShooting
         public int Width { get; set; }
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
+        public bool OnSecondStage { get; set; }
+
         public Vector2 Position = new Vector2(1350, 815); //50, 815
-        private double _timer = 1;
+        private double _timer = 1;        
         //test 
 
         private bool _jumped = false;
         private bool _movingForward = false;
-        private bool _climbing = false;
+        private bool _climbing = false;        
 
         //test
         private int _frameX = 0;        
@@ -221,7 +223,11 @@ namespace MonoShooting
                     kState.IsKeyDown(Keys.Space))
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_climb");
-                    
+
+                    if (Position.Y <= 700)
+                    {                        
+                        OnSecondStage = true;
+                    }
                     Position.Y -= 30 * elapsedTime;
                     _climbing = true;
                     _frameMax = 6;                    

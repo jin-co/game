@@ -151,22 +151,12 @@ namespace MonoShooting
                             if (!GameController.GameOver)
                             {
                                 if (Vector2.Distance(ladder.Position, biker.Position) 
-                                    <= ladder.Radius + biker.Radius)
+                                    <= ladder.Radius + biker.Radius && 
+                                    !biker.OnSecondStage)
                                 {
                                     GameController.Climbable = true;
                                     testContact = true;
                                     testCollide = true;
-                                    //if (biker.Position.Y <= 700)
-                                    //{
-                                    //    GameController.Climbable = false;
-                                    //    testCollide = false;
-                                    //}
-                                    //else
-                                    //{
-                                    //    GameController.Climbable = true;
-                                    //    testCollide = true;
-                                    //}
-                                                                        
                                 }
                                 else
                                 {
