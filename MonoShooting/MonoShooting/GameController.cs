@@ -33,6 +33,10 @@ namespace MonoShooting
                     _timer = 2;
                 }
             }
+            else
+            {
+                bullets.Clear();
+            }
         }
 
         public void ResetBullets()

@@ -36,15 +36,6 @@ namespace MonoShooting
         SpriteFont timerFont;
 
         double timer = 1;
-
-        ////test
-        //Vector2 bikerL;
-        //Vector2 ladderL;
-        //float collisionP;
-        //float compareV;
-        //bool collision;
-        ////test
-
         public GameMain()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -109,18 +100,22 @@ namespace MonoShooting
                         foreach (var i in controller.bullets)
                         {
                             i.BulletUpdate(gameTime);
-                            if (Vector2.Distance(i.position, biker.Position) >= i.radius + biker.Radius &&
-                                Vector2.Distance(i.position, biker.Position) < (i.radius + biker.Radius) + 5)
+                            if (Vector2.Distance(i.position, biker.Position) 
+                                >= i.radius + biker.Radius &&
+                                Vector2.Distance(i.position, biker.Position) 
+                                < (i.radius + biker.Radius) + 5)
                             {
                                 Sounds.Bullet.Play();
                             }
 
-                            if (Vector2.Distance(i.position, biker.Position) < i.radius + biker.Radius)
+                            if (Vector2.Distance(i.position, biker.Position) 
+                                < i.radius + biker.Radius)
                             {                                
                                 biker.Dead = true;
                                 Sounds.Hurt.Play();                                
                                 biker.BikerUpdate(gameTime);
-                                collisionPoint = new Vector2(i.position.X - i.radius, i.position.Y - i.radius);
+                                collisionPoint = new Vector2(
+                                    i.position.X - i.radius, i.position.Y - i.radius);
                             }
                         }
 
