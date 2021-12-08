@@ -10,7 +10,8 @@ namespace MonoShooting
     class GameController
     {
         private double _timer = 2;
-        public List<Bullet> bullets = new List<Bullet>();
+        public List<Bullet> Bullets = new List<Bullet>();
+        public List<Dog> Dogs = new List<Dog>();
 
         public static bool GameOver { get; set; }
         public static bool GameStart { get; set; }
@@ -28,23 +29,32 @@ namespace MonoShooting
             _timer -= gameTime.ElapsedGameTime.TotalSeconds;
             if (!GameOver)
             {
+                // total time
                 TotalTime += gameTime.ElapsedGameTime.TotalSeconds;
                 if (_timer <= 0)
                 {
-                    bullets.Add(new Bullet());
+                    if (GameController.GameLevel == 1)
+                    {
+                        Bullets.Add(new Bullet());                        
+                    }
+                    
+                    if (GameController.GameLevel == 2)
+                    {
+                        Dogs.Add(new Dog());
+                    }
                     _timer = 2;
                 }
             }
             else
             {
                 MediaPlayer.Play(Sounds.BackgroundMusicInbound);
-                bullets.Clear();
+                Bullets.Clear();
             }
         }
 
         public void ResetBullets()
         {
-            bullets.Clear();
+            Bullets.Clear();
         }
     }
 }

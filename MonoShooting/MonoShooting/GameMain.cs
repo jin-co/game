@@ -22,12 +22,13 @@ namespace MonoShooting
         Texture2D ground;
         Texture2D bullet;
         Texture2D collisionEffectSprite;        
-       
-        //test
+               
         Biker biker;
         Page page;
         Ladder ladder;
         Box box;
+        //test
+        Texture2D dog;
         
         GameController controller = new GameController();
         GameStage stage = new GameStage();
@@ -62,6 +63,7 @@ namespace MonoShooting
             page = new Page(Content);
             ladder = new Ladder(Content);
             box = new Box(Content);
+            //dog = new Dog(Content);
 
             base.Initialize();
         }
@@ -71,7 +73,7 @@ namespace MonoShooting
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             ground = Content.Load<Texture2D>("Assets/ground");
-            bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");
+            bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");            
             collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");            
             gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
             gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
@@ -80,6 +82,8 @@ namespace MonoShooting
             page.Load();
             ladder.Load();
             box.Load();
+            //dog.Load();
+            dog = Content.Load<Texture2D>("Assets/Enemies/Dog/Idle");
 
             Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
             Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
@@ -116,7 +120,7 @@ namespace MonoShooting
                                 biker.BikerUpdate(gameTime);
                                 controller.Update(gameTime);
 
-                                foreach (var i in controller.bullets)
+                                foreach (var i in controller.Bullets)
                                 {
                                     i.BulletUpdate(gameTime);
                                     if (Vector2.Distance(i.position, biker.Position)
@@ -170,10 +174,15 @@ namespace MonoShooting
                                 biker.BikerUpdate(gameTime);
                                 controller.Update(gameTime);
 
-                                foreach (var i in controller.bullets)
+                                if (biker.OnSecondStage)
                                 {
-
+                                    controller.Update(gameTime);
+                                    foreach (var i in controller.Dogs)
+                                    {
+                                        i.Update(gameTime);
+                                    }
                                 }
+                                
                             }
                             else
                             {
@@ -219,7 +228,7 @@ namespace MonoShooting
 
                 // plaer
                 biker.Draw(gameTime, _spriteBatch);
-                foreach (var i in controller.bullets)
+                foreach (var i in controller.Bullets)
                 {
                     _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
                 }
@@ -249,6 +258,10 @@ namespace MonoShooting
                 if (GameController.GameLevel == 2)
                 {
                     box.Draw(gameTime, _spriteBatch);
+                    foreach (var i in controller.Dogs)
+                    {
+                        _spriteBatch.Draw(dog, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
+                    }                    
                 }
             }            
 

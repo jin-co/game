@@ -16,8 +16,7 @@ namespace MonoShooting
         public Texture2D Sprite { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
-        public int Radius { get; set; }
-        public List<Rectangle> Rectangles { get; set; }
+        public int Radius { get; set; }        
         public bool OnSecondStage { get; set; }
 
         public Vector2 Position = new Vector2(1350, 815); //50, 815
@@ -185,7 +184,7 @@ namespace MonoShooting
                     
                     if (OnSecondStage)
                     {
-                        if (Position.Y > 625)
+                        if (Position.Y > 640)
                         {
                             Position.Y -= 30 * elapsedTime;
                         }
