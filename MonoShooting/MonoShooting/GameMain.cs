@@ -185,7 +185,7 @@ namespace MonoShooting
                                         }
 
                                         if (Vector2.Distance(i.position, biker.Position)
-                                            < i.radius + biker.Radius)
+                                            < i.radius + biker.Radius - 10)
                                         {
                                             biker.Dead = true;
                                             Sounds.Hurt.Play();
