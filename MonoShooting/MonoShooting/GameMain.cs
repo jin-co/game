@@ -179,19 +179,25 @@ namespace MonoShooting
                                     controller.Update(gameTime);
                                     foreach (var i in controller.Dogs)
                                     {
-                                        i.Update(gameTime);
+                                        i.Update(gameTime, biker.Position);
+                                    }
+
+                                    // stage 2 clear
+                                    if (Vector2.Distance(box.Position, biker.Position)
+                                    <= box.Radius + biker.Radius)
+                                    {
+                                        MediaPlayer.Stop();
+                                        Sounds.StageClear.Play();
+                                        GameController.GameClear = true;
                                     }
                                 }
-                                
                             }
                             else
                             {
                                 biker.BikerUpdate(gameTime);
                             }
-
                             break;
                     }
-                    
                 }
                 else
                 {
@@ -260,7 +266,11 @@ namespace MonoShooting
                     box.Draw(gameTime, _spriteBatch);
                     foreach (var i in controller.Dogs)
                     {
-                        _spriteBatch.Draw(dog, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
+                        _spriteBatch.Draw(
+                            dog, 
+                            new Vector2(i.position.X, i.position.Y + i.radius),
+                            new Rectangle(0, 0, 48, 48),
+                            Color.White);
                     }                    
                 }
             }            

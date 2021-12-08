@@ -18,17 +18,12 @@ namespace MonoShooting
         {
             Content = content;
             Position = new Vector2(50, 680);
-            Radius = 68; //width 24
+            Radius = 10;
         }
 
         public void Load()
         {
             Sprite = Content.Load<Texture2D>("Assets/box");
-        }
-
-        public void Update(GameTime gameTimer)
-        {
-
         }
 
         public void Draw(GameTime gameTimer, SpriteBatch spriteBatch)

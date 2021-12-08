@@ -45,7 +45,7 @@ namespace MonoShooting
             this.position = new Vector2(random.Next(100, 950), random.Next(643, 703));
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Vector2 playerPos)
         {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             // idle motion
@@ -61,6 +61,22 @@ namespace MonoShooting
                 }
                 _timer = 1;
             }
+
+            if (true)
+            {
+                Vector2 moveDir = playerPos - position;
+                moveDir.Normalize(); // moveDir -> provides the direction to head
+                position += moveDir * speed * elapsedTime;
+            }
         }
+
+        //public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        //{
+        //    spriteBatch.Draw(
+        //        Sprite,
+        //        new Vector2(Position.X, Position.Y - Radius),
+        //        new Rectangle(_frameX, 0, 48, 48),
+        //        Color.White);
+        //}
     }
 }
