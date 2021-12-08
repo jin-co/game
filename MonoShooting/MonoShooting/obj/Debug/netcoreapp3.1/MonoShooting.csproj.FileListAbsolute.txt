@@ -94,3 +94,4 @@ C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\Dog\Hurt.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\Dog\Idle.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\Dog\Walk.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Biker\Biker_jump_left.xnb

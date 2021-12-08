@@ -133,6 +133,18 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Biker/Biker_jump.png
 
+#begin Assets/Biker/Biker_jump_left.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Biker/Biker_jump_left.png
+
 #begin Assets/Biker/Biker_punch.png
 /importer:TextureImporter
 /processor:TextureProcessor

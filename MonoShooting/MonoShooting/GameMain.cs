@@ -201,7 +201,7 @@ namespace MonoShooting
                 }
                 else
                 {
-                    stage.Update(gameTime);
+                    stage.Update(gameTime, biker);
                 }
                 
             }        

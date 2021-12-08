@@ -14,6 +14,7 @@
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_hurt.png</File>
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_idle.png</File>
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_jump.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_jump_left.png</File>
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_punch.png</File>
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_run.png</File>
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Biker/Biker_run_attack.png</File>
@@ -48,6 +49,7 @@
     <File>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/timerFont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -18,7 +18,6 @@ namespace MonoShooting
         public int Width { get; set; }
         public int Radius { get; set; }        
         public bool OnSecondStage { get; set; }
-
         public Vector2 Position = new Vector2(1350, 815); //50, 815
         private double _timer = 1;        
         //test 
@@ -159,7 +158,7 @@ namespace MonoShooting
                         Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_run_left");
                         if (Position.X > 0 + FRAME_WIDTH)
                         {
-                            Position.X -= 30 * elapsedTime;
+                            Position.X -= 230 * elapsedTime;
                         }
                     }                    
                     _movingForward = true;
@@ -245,15 +244,31 @@ namespace MonoShooting
                 if (kState.IsKeyDown(Keys.Space) && !GameController.Climbable)
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump");
-                    if (Position.Y > 815)
-                    {                        
-                        Position.Y -= 60 * elapsedTime;
+                    if (_movingLeft)
+                    {
+                        Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_jump_left");
                     }
+                    if (OnSecondStage)
+                    {
+                        if (Position.Y < 703)
+                        {
+                            Position.Y -= 60 * elapsedTime;
+                        }
+                    }
+                    else
+                    {
+                        if (Position.Y > 815)
+                        {
+                            Position.Y -= 60 * elapsedTime;
+                        }
+                    }
+
                     _jumped = true;
                 }
 
                 // climb
-                if (kState.IsKeyDown(Keys.Up) &&
+                if (GameController.Climbable && 
+                    kState.IsKeyDown(Keys.Up) &&
                     kState.IsKeyDown(Keys.Space))
                 {
                     Sprite = Content.Load<Texture2D>("Assets/Biker/Biker_climb");
