@@ -84,6 +84,7 @@ namespace MonoShooting
             box.Load();
             //dog.Load();
             dog = Content.Load<Texture2D>("Assets/Enemies/Dog/Idle");
+            Dog.Content = Content;
 
             Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
             Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
@@ -253,19 +254,6 @@ namespace MonoShooting
                     _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
                 }
 
-                // game over
-                if (GameController.GameOver)
-                {
-                    _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
-
-                    timer -= gameTime.ElapsedGameTime.TotalSeconds;
-                    if (timer <= 0.5)
-                    {
-                        _spriteBatch.Draw(gameoverBackSprite, new Vector2(0, 0), Color.White);
-                        _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
-                    }
-                }
-
                 // game clear
                 if (GameController.GameClear)
                 {
@@ -280,12 +268,26 @@ namespace MonoShooting
                     box.Draw(gameTime, _spriteBatch);
                     foreach (var i in controller.Dogs)
                     {
-                        _spriteBatch.Draw(
-                            dog, 
-                            new Vector2(i.position.X, i.position.Y + i.radius),
-                            new Rectangle(0, 0, 48, 48),
-                            Color.White);
+                        Dog.Draw(gameTime, _spriteBatch, i.position);
+                        //_spriteBatch.Draw(
+                        //    dog, 
+                        //    new Vector2(i.position.X, i.position.Y + i.radius),
+                        //    new Rectangle(0, 0, 48, 48),
+                        //    Color.White);
                     }                    
+                }
+
+                // game over
+                if (GameController.GameOver)
+                {
+                    _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
+
+                    timer -= gameTime.ElapsedGameTime.TotalSeconds;
+                    if (timer <= 0.5)
+                    {
+                        _spriteBatch.Draw(gameoverBackSprite, new Vector2(0, 0), Color.White);
+                        _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
+                    }
                 }
             }            
 
