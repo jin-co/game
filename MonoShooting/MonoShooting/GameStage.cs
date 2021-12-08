@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace MonoShooting
                     {
                         GameController.GameClear = false;
                         GameController.GameLevel = 2;
+                        MediaPlayer.Play(Sounds.BackgroundMusicSlayer);
                     }
 
                     break;

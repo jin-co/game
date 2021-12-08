@@ -20,8 +20,7 @@ namespace MonoShooting
         public int Radius { get; set; }
         public List<Rectangle> Rectangles { get; set; }
         public bool OnSecondStage { get; set; }
-
-        public Vector2 Position = new Vector2(1350, 815); //50, 815
+        
         private double _timer = 1;
         //test 
 
@@ -41,7 +40,7 @@ namespace MonoShooting
         public Dog()
         {
             Random random = new Random();
-            this.speed = 200;
+            this.speed = 50;
             this.position = new Vector2(random.Next(100, 950), random.Next(643, 703));
         }
 
@@ -62,7 +61,7 @@ namespace MonoShooting
                 _timer = 1;
             }
 
-            if (true)
+            if (position.Y > 640 && position.Y < 703)
             {
                 Vector2 moveDir = playerPos - position;
                 moveDir.Normalize(); // moveDir -> provides the direction to head

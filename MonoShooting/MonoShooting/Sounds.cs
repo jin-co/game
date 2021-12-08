@@ -18,5 +18,7 @@ namespace MonoShooting
         public static SoundEffect Dead { get; set; }
         public static SoundEffect Hurt { get; set; }
         public static SoundEffect Bullet { get; set; }
+        public static SoundEffect DogBark { get; internal set; }
+        public static Song BackgroundMusicSlayer { get; internal set; }
     }
 }

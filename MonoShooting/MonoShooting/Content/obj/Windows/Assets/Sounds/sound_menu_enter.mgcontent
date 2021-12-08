@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/Assets/Sounds/sound_menu_enter.wav</SourceFile>
   <SourceTime>2021-12-04T00:33:57.4712268+09:00</SourceTime>
   <DestFile>C:/Users/jin/Documents/GitHub/game/MonoShooting/MonoShooting/Content/bin/Windows/Assets/Sounds/sound_menu_enter.xnb</DestFile>
-  <DestTime>2021-12-04T00:35:05.3783787+09:00</DestTime>
+  <DestTime>2021-12-08T20:58:28.2614081+09:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+09:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

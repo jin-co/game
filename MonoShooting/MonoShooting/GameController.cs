@@ -49,6 +49,7 @@ namespace MonoShooting
             {
                 MediaPlayer.Play(Sounds.BackgroundMusicInbound);
                 Bullets.Clear();
+                Dogs.Clear();
             }
         }
 

@@ -307,6 +307,8 @@ namespace MonoShooting
                         GameController.GameOver = false;
                         GameController.GameStart = false;
                         GameController.TotalTime = 0;
+                        GameController.GameLevel = 1;
+                        OnSecondStage = false;
                         Dead = false;
                         Position = new Vector2(50, 815);
                         MediaPlayer.Play(Sounds.BackgroundMusicEnd);

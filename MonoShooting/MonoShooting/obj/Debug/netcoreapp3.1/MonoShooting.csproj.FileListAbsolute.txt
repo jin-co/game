@@ -95,3 +95,12 @@ C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreap
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\Dog\Idle.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Enemies\Dog\Walk.xnb
 C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Biker\Biker_jump_left.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound-dog-barking.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back-dragon.wma
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back-dragon.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_dragon.wma
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_dragon.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_slayer.wma
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_back_slayer.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_dog_bark.xnb
+C:\Users\jin\Documents\GitHub\game\MonoShooting\MonoShooting\bin\Debug\netcoreapp3.1\Content\Assets\Sounds\sound_dog_barking.xnb

@@ -88,10 +88,12 @@ namespace MonoShooting
             Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
             Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
             Sounds.BackgroundMusicInbound = Content.Load<Song>("Assets/Sounds/sound_back_inbound");
+            Sounds.BackgroundMusicSlayer = Content.Load<Song>("Assets/Sounds/sound_back_slayer");
             Sounds.StageClear = Content.Load<SoundEffect>("Assets/Sounds/sound_clear");
             Sounds.Dead = Content.Load<SoundEffect>("Assets/Sounds/sound_dead");
             Sounds.Hurt = Content.Load<SoundEffect>("Assets/Sounds/sound_hurt_man");
-            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");            
+            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");
+            Sounds.DogBark = Content.Load<SoundEffect>("Assets/Sounds/sound_dog_bark");
             MediaPlayer.Play(Sounds.BackgroundMusicEnd);
 
             //game level
@@ -112,11 +114,11 @@ namespace MonoShooting
                 
                 if (!GameController.GameClear)
                 {
-                    switch (GameController.GameLevel)
+                    if (!GameController.GameOver)
                     {
-                        case 1:
-                            if (!GameController.GameOver)
-                            {
+                        switch (GameController.GameLevel)
+                        {
+                            case 1:
                                 biker.BikerUpdate(gameTime);
                                 controller.Update(gameTime);
 
@@ -145,21 +147,14 @@ namespace MonoShooting
                                     <= ladder.Radius + biker.Radius)
                                 {
                                     MediaPlayer.Stop();
-                                    Sounds.StageClear.Play();                                    
+                                    Sounds.StageClear.Play();
                                     GameController.GameClear = true;
                                 }
-                            }
-                            else
-                            {
-                                biker.BikerUpdate(gameTime);
-                            }
-                            break;
+                                break;
 
-                        case 2:
-                            if (!GameController.GameOver)
-                            {
-                                if (Vector2.Distance(ladder.Position, biker.Position) 
-                                    <= ladder.Radius + biker.Radius && 
+                            case 2:
+                                if (Vector2.Distance(ladder.Position, biker.Position)
+                                    <= ladder.Radius + biker.Radius &&
                                     !biker.OnSecondStage)
                                 {
                                     GameController.Climbable = true;
@@ -180,6 +175,25 @@ namespace MonoShooting
                                     foreach (var i in controller.Dogs)
                                     {
                                         i.Update(gameTime, biker.Position);
+
+                                        if (Vector2.Distance(i.position, biker.Position)
+                                            >= i.radius + biker.Radius &&
+                                            Vector2.Distance(i.position, biker.Position)
+                                            < (i.radius + biker.Radius) + 5)
+                                        {
+                                            Sounds.DogBark.Play();
+                                        }
+
+                                        if (Vector2.Distance(i.position, biker.Position)
+                                            < i.radius + biker.Radius)
+                                        {
+                                            biker.Dead = true;
+                                            Sounds.Hurt.Play();
+                                            Sounds.DogBark.Dispose();
+                                            biker.BikerUpdate(gameTime);
+                                            collisionPoint = new Vector2(
+                                                i.position.X - i.radius, i.position.Y - i.radius);
+                                        }
                                     }
 
                                     // stage 2 clear
@@ -191,12 +205,12 @@ namespace MonoShooting
                                         GameController.GameClear = true;
                                     }
                                 }
-                            }
-                            else
-                            {
-                                biker.BikerUpdate(gameTime);
-                            }
-                            break;
+                                break;
+                        }                        
+                    }
+                    else
+                    {
+                        biker.BikerUpdate(gameTime);
                     }
                 }
                 else
