@@ -28,8 +28,8 @@ namespace MonoShooting
         Texture2D bullet;
         Texture2D collisionEffectSprite;        
                
-        Biker biker;
-        Page page;
+        Biker biker = new Biker();
+        Page page = new Page();
         Ladder ladder;
         Box box;
         //test
@@ -56,11 +56,14 @@ namespace MonoShooting
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.ApplyChanges();
-
-            biker = new Biker(Content);
-            page = new Page(Content);
+            
+            
+            
             ladder = new Ladder(Content);
             box = new Box(Content);
+            Sounds sound = new Sounds(Content);
+            SpriteLoader.Content = Content;
+            SpriteFontLoader.Content = Content;
 
             base.Initialize();
         }
@@ -82,16 +85,7 @@ namespace MonoShooting
             //dog.Load();
             dog = Content.Load<Texture2D>("Assets/Enemies/Dog/Idle");
             Dog.Content = Content;
-
-            Sounds.BackgroundMusic = Content.Load<Song>("Assets/Sounds/sound_back");
-            Sounds.BackgroundMusicEnd = Content.Load<Song>("Assets/Sounds/sound_back_end");
-            Sounds.BackgroundMusicInbound = Content.Load<Song>("Assets/Sounds/sound_back_inbound");
-            Sounds.BackgroundMusicSlayer = Content.Load<Song>("Assets/Sounds/sound_back_slayer");
-            Sounds.StageClear = Content.Load<SoundEffect>("Assets/Sounds/sound_clear");
-            Sounds.Dead = Content.Load<SoundEffect>("Assets/Sounds/sound_dead");
-            Sounds.Hurt = Content.Load<SoundEffect>("Assets/Sounds/sound_hurt_man");
-            Sounds.Bullet = Content.Load<SoundEffect>("Assets/Sounds/sound_bullet");
-            Sounds.DogBark = Content.Load<SoundEffect>("Assets/Sounds/sound_dog_bark");
+                        
             MediaPlayer.Play(Sounds.BackgroundMusicEnd);
 
             //game level
@@ -123,21 +117,21 @@ namespace MonoShooting
                                 {
                                     i.BulletUpdate(gameTime);
                                     if (Vector2.Distance(i.position, biker.Position)
-                                        >= i.radius + biker.Radius &&
+                                        >= i.Radius + biker.Radius &&
                                         Vector2.Distance(i.position, biker.Position)
-                                        < (i.radius + biker.Radius) + 5)
+                                        < (i.Radius + biker.Radius) + 5)
                                     {
                                         Sounds.Bullet.Play();
                                     }
 
                                     if (Vector2.Distance(i.position, biker.Position)
-                                        < i.radius + biker.Radius)
+                                        < i.Radius + biker.Radius)
                                     {
                                         biker.Dead = true;
                                         Sounds.Hurt.Play();
                                         biker.BikerUpdate(gameTime);
                                         collisionPoint = new Vector2(
-                                            i.position.X - i.radius, i.position.Y - i.radius);
+                                            i.position.X - i.Radius, i.position.Y - i.Radius);
                                     }
                                 }
                                 if (Vector2.Distance(ladder.Position, biker.Position)
@@ -171,22 +165,22 @@ namespace MonoShooting
                                         i.Update(gameTime, biker.Position);
 
                                         if (Vector2.Distance(i.position, biker.Position)
-                                            >= i.radius + biker.Radius &&
+                                            >= i.Radius + biker.Radius &&
                                             Vector2.Distance(i.position, biker.Position)
-                                            < (i.radius + biker.Radius) + 5)
+                                            < (i.Radius + biker.Radius) + 5)
                                         {
                                             Sounds.DogBark.Play();
                                         }
 
                                         if (Vector2.Distance(i.position, biker.Position)
-                                            < i.radius + biker.Radius - 10)
+                                            < i.Radius + biker.Radius - 10)
                                         {
                                             biker.Dead = true;
                                             Sounds.Hurt.Play();
                                             Sounds.DogBark.Dispose();
                                             biker.BikerUpdate(gameTime);
                                             collisionPoint = new Vector2(
-                                                i.position.X - i.radius, i.position.Y - i.radius);
+                                                i.position.X - i.Radius, i.position.Y - i.Radius);
                                         }
                                     }
 
@@ -244,7 +238,7 @@ namespace MonoShooting
                 biker.Draw(gameTime, _spriteBatch);
                 foreach (var i in controller.Bullets)
                 {
-                    _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.radius), Color.White);
+                    _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.Radius), Color.White);
                 }
 
                 // game clear

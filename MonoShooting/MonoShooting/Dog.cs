@@ -7,33 +7,32 @@ using System.Text;
 
 namespace MonoShooting
 {
+    // dog class that controls the dog
     class Dog
     {
-        public Vector2 position;
-        public int speed;
-        public int radius = 3;
-
-        public static ContentManager Content { get; set; }
-        public static Texture2D Sprite { get; set; }
-        public int Height { get; set; }
-        public int Width { get; set; }        
-        private double _timer = 1;
-        
-
-        //test
+        #region Fields
         private static int _frameX = 0;
         private static int _frameMax = 4;
         private static int _frameCount = 0;
         private const int FRAME_WIDTH = 48;
+        private int _speed;
+        private double _timer = 1;
+        public Vector2 position;
+        #endregion
 
-        public bool Dead { get; set; }
+        #region Properties
+        public static ContentManager Content { get; set; }
+        public static Texture2D Sprite { get; set; }
+        public int Radius { get; set; }
+        #endregion
 
         public Dog()
         {
             Random random = new Random();
-            this.speed = random.Next(10, 50);
+            this._speed = random.Next(10, 50);
             this.position = new Vector2(random.Next(100, 950), random.Next(643, 703));
             Sprite = Content.Load<Texture2D>("Assets/Enemies/Dog/Walk");
+            Radius = 3;
         }
 
         public void Update(GameTime gameTime, Vector2 playerPos)
@@ -62,12 +61,13 @@ namespace MonoShooting
             if (position.Y > 640 && position.Y < 703)
             {
                 Vector2 moveDir = playerPos - position;
-                moveDir.Normalize(); // moveDir -> provides the direction to head
-                position += moveDir * speed * elapsedTime;
+                moveDir.Normalize(); 
+                position += moveDir * _speed * elapsedTime;
             }
         }
 
-        public static void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 dogPosition)
+        public static void Draw(GameTime gameTime, 
+            SpriteBatch spriteBatch, Vector2 dogPosition)
         {            
             spriteBatch.Draw(
                 Sprite,

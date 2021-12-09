@@ -8,15 +8,15 @@ namespace MonoShooting
 {
     class SpriteLoader
     {
-        public ContentManager Content { get; set; }
-        public Texture2D Sprite { get; set; }
+        public static ContentManager Content { get; set; }
+        private static Texture2D Sprite { get; set; }
 
         public SpriteLoader(ContentManager content)
         {
-            Content = content;
+            Content = content;            
         }
 
-        public Texture2D Load(string fileName)
+        public static Texture2D Load(string fileName)
         {
             Sprite = Content.Load<Texture2D>(fileName);
             return Sprite;

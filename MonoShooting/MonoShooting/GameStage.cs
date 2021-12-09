@@ -7,6 +7,7 @@ using System.Text;
 
 namespace MonoShooting
 {
+    // gamestage class that controls the game level
     class GameStage
     {
         public void Update(GameTime gameTime, Biker biker)
@@ -33,9 +34,7 @@ namespace MonoShooting
                         GameController.GameLevel = 1;
                         biker.Position = new Vector2(50, 815);
                         biker.OnSecondStage = false;
-                        
                     }
-
                     break;
             }
         }

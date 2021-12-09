@@ -49,7 +49,10 @@ namespace MonoShooting
                     if (GameController.GameLevel == 2)
                     {
                         Bullets.Clear();
-                        Dogs.Add(new Dog());
+                        if (Dogs.Count < 10)
+                        {
+                            Dogs.Add(new Dog());
+                        }
                     }
                     _timer = 2;
                 }
