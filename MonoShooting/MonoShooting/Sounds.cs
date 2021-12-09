@@ -6,11 +6,13 @@ using System.Text;
 
 namespace MonoShooting
 {
+    // sound class that controls the sounds
     class Sounds
     {
         public static Song BackgroundMusic { get; set; }
         public static Song BackgroundMusicEnd { get; set; }
-        public static Song BackgroundMusicInbound { get; internal set; }
+        public static Song BackgroundMusicInbound { get; set; }
+        public static Song BackgroundMusicSlayer { get; set; }
         public static SoundEffect Jump { get; set; }
         public static SoundEffect StageClear { get; set; }
         public static SoundEffect Tap { get; set; }
@@ -18,7 +20,6 @@ namespace MonoShooting
         public static SoundEffect Dead { get; set; }
         public static SoundEffect Hurt { get; set; }
         public static SoundEffect Bullet { get; set; }
-        public static SoundEffect DogBark { get; internal set; }
-        public static Song BackgroundMusicSlayer { get; internal set; }
+        public static SoundEffect DogBark { get; set; }        
     }
 }

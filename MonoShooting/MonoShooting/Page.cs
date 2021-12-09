@@ -10,6 +10,7 @@ using System.Text;
 
 namespace MonoShooting
 {
+    // page class that controls the pages
     class Page
     {
         private string _currentPage;
@@ -18,7 +19,7 @@ namespace MonoShooting
         private int _pageIdx = 0;
         private double _timer = 1;
 
-        SpriteFont gameFont;
+        private SpriteFont _gameFont;
         
 
         public ContentManager Content { get; set; }
@@ -37,7 +38,7 @@ namespace MonoShooting
             Sounds.Tap = Content.Load<SoundEffect>("Assets/Sounds/sound_menu_tab");
             Sounds.Enter = Content.Load<SoundEffect>("Assets/Sounds/sound_menu_enter");
             //test
-            gameFont = Content.Load<SpriteFont>("Assets/timerFont");
+            _gameFont = Content.Load<SpriteFont>("Assets/timerFont");
         }
 
         public void PageUpdate(GameTime gameTime)
@@ -96,7 +97,7 @@ namespace MonoShooting
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Sprite, new Vector2(0, 0), Color.White);
-            spriteBatch.DrawString(gameFont, _pageIdx.ToString(), new Vector2(0, 0), Color.Black);
+            spriteBatch.DrawString(_gameFont, _pageIdx.ToString(), new Vector2(0, 0), Color.Black);
 
         }
     }

@@ -7,22 +7,30 @@ using System.Text;
 
 namespace MonoShooting
 {
+    // game controller class that controls the flow of the 
+    // entire game
     class GameController
     {
+        #region Fields
         private double _timer = 2;
         public List<Bullet> Bullets = new List<Bullet>();
         public List<Dog> Dogs = new List<Dog>();
+        #endregion
 
+        #region Properties
         public static bool GameOver { get; set; }
         public static bool GameStart { get; set; }
         public static bool GameClear { get; set; }
         public static double TotalTime { get; set; }
         public static int GameLevel { get; set; }
-        public static bool Climbable { get; internal set; }
+        public static bool Climbable { get; set; }
+        #endregion
 
+        #region Constructors
         public GameController() {
             TotalTime = 0;
-        }        
+        }
+        #endregion
 
         public void Update(GameTime gameTime)
         {            
@@ -40,6 +48,7 @@ namespace MonoShooting
                     
                     if (GameController.GameLevel == 2)
                     {
+                        Bullets.Clear();
                         Dogs.Add(new Dog());
                     }
                     _timer = 2;
@@ -51,11 +60,6 @@ namespace MonoShooting
                 Bullets.Clear();
                 Dogs.Clear();
             }
-        }
-
-        public void ResetBullets()
-        {
-            Bullets.Clear();
         }
     }
 }

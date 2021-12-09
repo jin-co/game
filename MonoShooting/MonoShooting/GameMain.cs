@@ -8,6 +8,11 @@ using System.Collections.Generic;
 
 namespace MonoShooting
 {
+    /* Author: Kwangjin Baek
+     * Date: 2021. Dec. 1.
+     * Description: game that a player has to get to
+     * the finish point to win
+     */
     public class GameMain : Game
     {
         private GraphicsDeviceManager _graphics;
@@ -36,14 +41,7 @@ namespace MonoShooting
         Vector2 collisionPoint;
 
         //timer
-        SpriteFont timerFont;
-
-        //test
-        Vector2 testBikerP;
-        Vector2 testLaddetP;
-        bool testCollide = false;
-        bool testContact = false;
-        //test
+        SpriteFont timerFont;        
 
         double timer = 1;
         public GameMain()
@@ -63,7 +61,6 @@ namespace MonoShooting
             page = new Page(Content);
             ladder = new Ladder(Content);
             box = new Box(Content);
-            //dog = new Dog(Content);
 
             base.Initialize();
         }
@@ -112,7 +109,6 @@ namespace MonoShooting
             }
             else
             {
-                
                 if (!GameController.GameClear)
                 {
                     if (!GameController.GameOver)
@@ -159,12 +155,9 @@ namespace MonoShooting
                                     !biker.OnSecondStage)
                                 {
                                     GameController.Climbable = true;
-                                    testContact = true;
-                                    testCollide = true;
                                 }
                                 else
                                 {
-                                    testContact = false;
                                     GameController.Climbable = false;
                                 }
                                 biker.BikerUpdate(gameTime);
@@ -269,11 +262,6 @@ namespace MonoShooting
                     foreach (var i in controller.Dogs)
                     {
                         Dog.Draw(gameTime, _spriteBatch, i.position);
-                        //_spriteBatch.Draw(
-                        //    dog, 
-                        //    new Vector2(i.position.X, i.position.Y + i.radius),
-                        //    new Rectangle(0, 0, 48, 48),
-                        //    Color.White);
                     }                    
                 }
 
@@ -290,21 +278,6 @@ namespace MonoShooting
                     }
                 }
             }            
-
-            //test
-            _spriteBatch.DrawString(
-                    timerFont,
-                    testBikerP.ToString() + "\n" +
-                    testLaddetP.ToString() + "\n" +
-                    testCollide.ToString() + "\n" +
-                    testContact.ToString() + "\n" +
-                    "Climbable: " + GameController.Climbable.ToString() + "\n" +
-                    "biker: " + biker.Position.ToString() + "\n" +
-                    "ladder: " + ladder.Position.ToString() + "\n" 
-                    ,
-                    new Vector2(100, 100), Color.Black);
-            
-            //test
 
             _spriteBatch.End();
             base.Draw(gameTime);
