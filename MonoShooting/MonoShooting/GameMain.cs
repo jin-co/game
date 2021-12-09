@@ -21,13 +21,6 @@ namespace MonoShooting
         int screenWidth = 1400;
         int screenHeight = 950;
 
-        // sprites
-        Texture2D gameoverSprite;
-        Texture2D gameoverBackSprite;       
-        Texture2D ground;
-        Texture2D bullet;
-        Texture2D collisionEffectSprite;        
-               
         Biker biker = new Biker();
         Page page = new Page();
         Ladder ladder;
@@ -56,9 +49,6 @@ namespace MonoShooting
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.ApplyChanges();
-            
-            
-            
             ladder = new Ladder(Content);
             box = new Box(Content);
             Sounds sound = new Sounds(Content);
@@ -71,12 +61,7 @@ namespace MonoShooting
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            ground = Content.Load<Texture2D>("Assets/ground");
-            bullet = Content.Load<Texture2D>("Assets/Enemies/bullet");            
-            collisionEffectSprite = Content.Load<Texture2D>("Assets/effect_collision");            
-            gameoverBackSprite = Content.Load<Texture2D>("Assets/gameover_back");
-            gameoverSprite = Content.Load<Texture2D>("Assets/gameover");
+                                    
             timerFont = Content.Load<SpriteFont>("Assets/timerFont");
             biker.BikerLoad();
             page.Load();
@@ -224,7 +209,9 @@ namespace MonoShooting
             //game play
             if (GameController.GameStart)
             {
-                _spriteBatch.Draw(ground, new Vector2(0, 0), Color.White);
+                _spriteBatch.Draw(
+                    SpriteLoader.Load("Assets/ground"), 
+                    new Vector2(0, 0), Color.White);
                 
                 // timer
                 _spriteBatch.DrawString(timerFont,
@@ -238,7 +225,10 @@ namespace MonoShooting
                 biker.Draw(gameTime, _spriteBatch);
                 foreach (var i in controller.Bullets)
                 {
-                    _spriteBatch.Draw(bullet, new Vector2(i.position.X, i.position.Y + i.Radius), Color.White);
+                    _spriteBatch.Draw(
+                        SpriteLoader.Load("Assets/Enemies/bullet"), 
+                        new Vector2(i.position.X, i.position.Y + i.Radius), 
+                        Color.White);
                 }
 
                 // game clear
@@ -262,13 +252,20 @@ namespace MonoShooting
                 // game over
                 if (GameController.GameOver)
                 {
-                    _spriteBatch.Draw(collisionEffectSprite, collisionPoint, Color.White);
+                    _spriteBatch.Draw(
+                        SpriteLoader.Load("Assets/effect_collision"), 
+                        collisionPoint, Color.White);
 
                     timer -= gameTime.ElapsedGameTime.TotalSeconds;
                     if (timer <= 0.5)
                     {
-                        _spriteBatch.Draw(gameoverBackSprite, new Vector2(0, 0), Color.White);
-                        _spriteBatch.Draw(gameoverSprite, new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), Color.White);
+                        _spriteBatch.Draw(
+                            SpriteLoader.Load("Assets/gameover_back"), 
+                            new Vector2(0, 0), Color.White);
+                        _spriteBatch.Draw(
+                            SpriteLoader.Load("Assets/gameover"), 
+                            new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), 
+                            Color.White);
                     }
                 }
             }            
