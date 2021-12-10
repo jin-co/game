@@ -10,17 +10,18 @@ namespace MonoShooting
     // box class that controls box
     class Box
     {
-        #region Properties
-        public ContentManager Content { get; set; }
-        public Texture2D Sprite { get; set; }
+        #region Fields
+        private Texture2D _sprite;
+        #endregion
+
+        #region Properties        
         public Vector2 Position { get; set; }
         public int Radius { get; set; }
         #endregion
 
         #region Contructors
-        public Box(ContentManager content)
+        public Box()
         {
-            Content = content;
             Position = new Vector2(50, 680);
             Radius = 10;
         }
@@ -28,12 +29,12 @@ namespace MonoShooting
 
         public void Load()
         {
-            Sprite = Content.Load<Texture2D>("Assets/box");
+            _sprite = SpriteLoader.Load("Assets/box");
         }
 
         public void Draw(GameTime gameTimer, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Position, Color.White);
+            spriteBatch.Draw(_sprite, Position, Color.White);
         }
     }
 }

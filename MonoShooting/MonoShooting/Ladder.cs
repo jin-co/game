@@ -10,17 +10,18 @@ namespace MonoShooting
     // ladder class that controls the ladder
     class Ladder
     {
-        #region Properties
-        public ContentManager Content { get; set; }
-        public Texture2D Sprite { get; set; }
+        #region Fields
+        private Texture2D _sprite;
+        #endregion
+
+        #region Properties        
         public Vector2 Position { get; set; }
         public int Radius { get; set; }
         #endregion
 
         #region Constructors
-        public Ladder(ContentManager content)
+        public Ladder()
         {
-            Content = content;
             Position = new Vector2(1300, 730);
             Radius = 68; 
         }
@@ -28,12 +29,12 @@ namespace MonoShooting
 
         public void Load()
         {
-            Sprite = Content.Load<Texture2D>("Assets/ladder");
+            _sprite = SpriteLoader.Load("Assets/ladder");
         }
 
         public void Draw(GameTime gameTimer, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Position, Color.White);
+            spriteBatch.Draw(_sprite, Position, Color.White);
         }
     }
 }

@@ -23,18 +23,13 @@ namespace MonoShooting
 
         Biker biker = new Biker();
         Page page = new Page();
-        Ladder ladder;
-        Box box;
-        //test
-        Texture2D dog;
+        Ladder ladder = new Ladder();
+        Box box = new Box();
         
         GameController controller = new GameController();
         GameStage stage = new GameStage();
 
         Vector2 collisionPoint;
-
-        //timer
-        SpriteFont timerFont;        
 
         double timer = 1;
         public GameMain()
@@ -48,33 +43,21 @@ namespace MonoShooting
         {
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.PreferredBackBufferHeight = screenHeight;
-            _graphics.ApplyChanges();
-            ladder = new Ladder(Content);
-            box = new Box(Content);
+            _graphics.ApplyChanges();                        
             Sounds sound = new Sounds(Content);
             SpriteLoader.Content = Content;
             SpriteFontLoader.Content = Content;
-
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-                                    
-            timerFont = Content.Load<SpriteFont>("Assets/timerFont");
             biker.BikerLoad();
             page.Load();
             ladder.Load();
-            box.Load();
-            //dog.Load();
-            dog = Content.Load<Texture2D>("Assets/Enemies/Dog/Idle");
-            Dog.Content = Content;
-                        
-            MediaPlayer.Play(Sounds.BackgroundMusicEnd);
-
-            //game level
-            GameController.GameLevel = 1;
+            box.Load();                                   
+            MediaPlayer.Play(Sounds.BackgroundMusicEnd);                        
         }
 
         protected override void Update(GameTime gameTime)
@@ -214,9 +197,10 @@ namespace MonoShooting
                     new Vector2(0, 0), Color.White);
                 
                 // timer
-                _spriteBatch.DrawString(timerFont,
-                "Time: " + Math.Floor(GameController.TotalTime),
-                new Vector2(3, 3), Color.Black);
+                _spriteBatch.DrawString(
+                    SpriteFontLoader.Load("Assets/timerFont"),
+                    "Time: " + Math.Floor(GameController.TotalTime),
+                    new Vector2(3, 3), Color.Black);
 
                 // ladder
                 ladder.Draw(gameTime, _spriteBatch);
@@ -235,9 +219,10 @@ namespace MonoShooting
                 if (GameController.GameClear)
                 {
                     _spriteBatch.DrawString(
-                    timerFont,
+                    SpriteFontLoader.Load("Assets/timerFont"),
                     "Stage" + GameController.GameLevel + " Cleared",
-                    new Vector2((screenWidth / 2) - 85, (screenHeight / 2) - 40), Color.Black);
+                    new Vector2((screenWidth / 2) - 85, 
+                    (screenHeight / 2) - 40), Color.Black);
                 }
 
                 if (GameController.GameLevel == 2)
@@ -269,7 +254,6 @@ namespace MonoShooting
                     }
                 }
             }            
-
             _spriteBatch.End();
             base.Draw(gameTime);
         }

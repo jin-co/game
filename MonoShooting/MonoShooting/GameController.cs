@@ -29,6 +29,7 @@ namespace MonoShooting
         #region Constructors
         public GameController() {
             TotalTime = 0;
+            GameLevel = 1;
         }
         #endregion
 

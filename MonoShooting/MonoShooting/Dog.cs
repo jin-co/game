@@ -21,28 +21,30 @@ namespace MonoShooting
         #endregion
 
         #region Properties
-        public static ContentManager Content { get; set; }
         public static Texture2D Sprite { get; set; }
         public int Radius { get; set; }
         #endregion
 
+        #region Contructors
         public Dog()
         {
             Random random = new Random();
             this._speed = random.Next(10, 50);
             this.position = new Vector2(random.Next(100, 950), random.Next(643, 703));
-            Sprite = Content.Load<Texture2D>("Assets/Enemies/Dog/Walk");
+            Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk");
             Radius = 3;
         }
+        #endregion
 
         public void Update(GameTime gameTime, Vector2 playerPos)
         {
-            Sprite = Content.Load<Texture2D>("Assets/Enemies/Dog/Walk");
+            Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk");
             if (playerPos.X < position.X)
             {
-                Sprite = Content.Load<Texture2D>("Assets/Enemies/Dog/Walk_left");
+                Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk_left");
             }
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
             // motion
             _timer -= gameTime.ElapsedGameTime.TotalSeconds;
             if (_timer < 0.5)

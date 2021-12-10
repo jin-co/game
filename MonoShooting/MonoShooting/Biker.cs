@@ -269,7 +269,8 @@ namespace MonoShooting
                     kState.IsKeyDown(Keys.Up) &&
                     kState.IsKeyDown(Keys.Space))
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_climb");                    if (Position.Y <= 700)
+                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_climb");
+                    if (Position.Y <= 700)
                     {                        
                         OnSecondStage = true;
                     }
