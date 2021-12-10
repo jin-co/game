@@ -62,7 +62,8 @@ namespace MonoShooting
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
+                Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             if (!GameController.GameStart)
@@ -148,7 +149,8 @@ namespace MonoShooting
                                             Sounds.DogBark.Dispose();
                                             biker.BikerUpdate(gameTime);
                                             collisionPoint = new Vector2(
-                                                i.position.X - i.Radius, i.position.Y - i.Radius);
+                                                i.position.X - i.Radius, 
+                                                i.position.Y - i.Radius);
                                         }
                                     }
 
@@ -205,7 +207,7 @@ namespace MonoShooting
                 // ladder
                 ladder.Draw(gameTime, _spriteBatch);
 
-                // plaer
+                // bullet
                 biker.Draw(gameTime, _spriteBatch);
                 foreach (var i in controller.Bullets)
                 {

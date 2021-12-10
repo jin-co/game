@@ -20,7 +20,6 @@ namespace MonoShooting
         private int _pageIdx = 0;
         private double _timer = 1;
         private Texture2D _sprite;
-        private SpriteFont _gameFont;
         #endregion
 
         #region Properties
@@ -37,7 +36,6 @@ namespace MonoShooting
         public void Load()
         {
             _sprite = SpriteLoader.Load($"Assets/{_currentPage}");            
-            _gameFont = SpriteFontLoader.Load("Assets/timerFont");
         }
 
         public void PageUpdate(GameTime gameTime)
@@ -96,7 +94,6 @@ namespace MonoShooting
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_sprite, new Vector2(0, 0), Color.White);
-            spriteBatch.DrawString(_gameFont, _pageIdx.ToString(), new Vector2(0, 0), Color.Black);
         }
     }
 }
