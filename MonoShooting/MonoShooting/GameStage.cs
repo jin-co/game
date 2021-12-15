@@ -32,8 +32,10 @@ namespace MonoShooting
                         GameController.GameStart = false;
                         GameController.GameClear = false;
                         GameController.GameLevel = 1;
+                        GameController.TotalTime = 0;
                         biker.Position = new Vector2(50, 815);
                         biker.OnSecondStage = false;
+
                     }
                     break;
             }

@@ -65,118 +65,126 @@ namespace MonoShooting
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            Pause.Update(gameTime);
 
-            if (!GameController.GameStart)
+            if (!GameController.Pause)
             {
-                page.PageUpdate(gameTime);                
-            }
-            else
-            {
-                if (!GameController.GameClear)
+                MediaPlayer.Resume();
+                if (!GameController.GameStart)
                 {
-                    if (!GameController.GameOver)
+                    page.PageUpdate(gameTime);
+                }
+                else
+                {
+                    if (!GameController.GameClear)
                     {
-                        switch (GameController.GameLevel)
+                        if (!GameController.GameOver)
                         {
-                            case 1:
-                                biker.BikerUpdate(gameTime);
-                                controller.Update(gameTime);
-
-                                foreach (var i in controller.Bullets)
-                                {
-                                    i.BulletUpdate(gameTime);
-                                    if (Vector2.Distance(i.position, biker.Position)
-                                        >= i.Radius + biker.Radius &&
-                                        Vector2.Distance(i.position, biker.Position)
-                                        < (i.Radius + biker.Radius) + 5)
-                                    {
-                                        Sounds.Bullet.Play();
-                                    }
-
-                                    if (Vector2.Distance(i.position, biker.Position)
-                                        < i.Radius + biker.Radius)
-                                    {
-                                        biker.Dead = true;
-                                        Sounds.Hurt.Play();
-                                        biker.BikerUpdate(gameTime);
-                                        collisionPoint = new Vector2(
-                                            i.position.X - i.Radius, i.position.Y - i.Radius);
-                                    }
-                                }
-                                if (Vector2.Distance(ladder.Position, biker.Position)
-                                    <= ladder.Radius + biker.Radius)
-                                {
-                                    MediaPlayer.Stop();
-                                    Sounds.StageClear.Play();
-                                    GameController.GameClear = true;
-                                }
-                                break;
-
-                            case 2:
-                                if (Vector2.Distance(ladder.Position, biker.Position)
-                                    <= ladder.Radius + biker.Radius &&
-                                    !biker.OnSecondStage)
-                                {
-                                    GameController.Climbable = true;
-                                }
-                                else
-                                {
-                                    GameController.Climbable = false;
-                                }
-                                biker.BikerUpdate(gameTime);
-                                controller.Update(gameTime);
-
-                                if (biker.OnSecondStage)
-                                {
+                            switch (GameController.GameLevel)
+                            {
+                                case 1:
+                                    biker.BikerUpdate(gameTime);
                                     controller.Update(gameTime);
-                                    foreach (var i in controller.Dogs)
-                                    {
-                                        i.Update(gameTime, biker.Position);
 
+                                    foreach (var i in controller.Bullets)
+                                    {
+                                        i.BulletUpdate(gameTime);
                                         if (Vector2.Distance(i.position, biker.Position)
                                             >= i.Radius + biker.Radius &&
                                             Vector2.Distance(i.position, biker.Position)
                                             < (i.Radius + biker.Radius) + 5)
                                         {
-                                            Sounds.DogBark.Play();
+                                            Sounds.Bullet.Play();
                                         }
 
                                         if (Vector2.Distance(i.position, biker.Position)
-                                            < i.Radius + biker.Radius - 10)
+                                            < i.Radius + biker.Radius)
                                         {
                                             biker.Dead = true;
                                             Sounds.Hurt.Play();
-                                            Sounds.DogBark.Dispose();
                                             biker.BikerUpdate(gameTime);
                                             collisionPoint = new Vector2(
-                                                i.position.X - i.Radius, 
-                                                i.position.Y - i.Radius);
+                                                i.position.X - i.Radius, i.position.Y - i.Radius);
                                         }
                                     }
-
-                                    // stage 2 clear
-                                    if (Vector2.Distance(box.Position, biker.Position)
-                                    <= box.Radius + biker.Radius)
+                                    if (Vector2.Distance(ladder.Position, biker.Position)
+                                        <= ladder.Radius + biker.Radius)
                                     {
                                         MediaPlayer.Stop();
                                         Sounds.StageClear.Play();
                                         GameController.GameClear = true;
                                     }
-                                }
-                                break;
-                        }                        
+                                    break;
+
+                                case 2:
+                                    if (Vector2.Distance(ladder.Position, biker.Position)
+                                        <= ladder.Radius + biker.Radius &&
+                                        !biker.OnSecondStage)
+                                    {
+                                        GameController.Climbable = true;
+                                    }
+                                    else
+                                    {
+                                        GameController.Climbable = false;
+                                    }
+                                    biker.BikerUpdate(gameTime);
+                                    controller.Update(gameTime);
+
+                                    if (biker.OnSecondStage)
+                                    {
+                                        controller.Update(gameTime);
+                                        foreach (var i in controller.Dogs)
+                                        {
+                                            i.Update(gameTime, biker.Position);
+
+                                            if (Vector2.Distance(i.position, biker.Position)
+                                                >= i.Radius + biker.Radius &&
+                                                Vector2.Distance(i.position, biker.Position)
+                                                < (i.Radius + biker.Radius) + 5)
+                                            {
+                                                Sounds.DogBark.Play();
+                                            }
+
+                                            if (Vector2.Distance(i.position, biker.Position)
+                                                < i.Radius + biker.Radius - 10)
+                                            {
+                                                biker.Dead = true;
+                                                Sounds.Hurt.Play();                                                
+                                                biker.BikerUpdate(gameTime);
+                                                collisionPoint = new Vector2(
+                                                    i.position.X - i.Radius,
+                                                    i.position.Y - i.Radius);
+                                            }
+                                        }
+
+                                        // stage 2 clear
+                                        if (Vector2.Distance(box.Position, biker.Position)
+                                        <= box.Radius + biker.Radius)
+                                        {
+                                            MediaPlayer.Stop();
+                                            Sounds.StageClear.Play();
+                                            GameController.GameClear = true;
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            biker.BikerUpdate(gameTime);
+                        }
                     }
                     else
                     {
-                        biker.BikerUpdate(gameTime);
+                        stage.Update(gameTime, biker);
                     }
-                }
-                else
-                {
-                    stage.Update(gameTime, biker);
-                }
-                
-            }        
+
+                }                
+            }
+            else
+            {
+                MediaPlayer.Pause();
+            }
             base.Update(gameTime);
         }
 
@@ -188,7 +196,7 @@ namespace MonoShooting
             // main page
             if (!GameController.GameStart)
             {
-                page.Draw(gameTime, _spriteBatch);
+                page.Draw(gameTime, _spriteBatch);                
             }
 
             //game play

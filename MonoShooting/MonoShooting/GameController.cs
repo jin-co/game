@@ -14,7 +14,7 @@ namespace MonoShooting
         #region Fields
         private double _timer = 2;
         public List<Bullet> Bullets = new List<Bullet>();
-        public List<Dog> Dogs = new List<Dog>();
+        public List<Dog> Dogs = new List<Dog>();      
         #endregion
 
         #region Properties
@@ -24,18 +24,21 @@ namespace MonoShooting
         public static double TotalTime { get; set; }
         public static int GameLevel { get; set; }
         public static bool Climbable { get; set; }
+        public static bool Pause { get; set; }
         #endregion
 
         #region Constructors
         public GameController() {
             TotalTime = 0;
             GameLevel = 1;
+            Pause = false;
         }
         #endregion
 
         public void Update(GameTime gameTime)
         {            
             _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+
             if (!GameOver)
             {
                 // total time
@@ -44,6 +47,7 @@ namespace MonoShooting
                 {
                     if (GameController.GameLevel == 1)
                     {
+                        Dogs.Clear();
                         Bullets.Add(new Bullet());                        
                     }
                     
@@ -62,7 +66,7 @@ namespace MonoShooting
             {
                 MediaPlayer.Play(Sounds.BackgroundMusicInbound);
                 Bullets.Clear();
-                Dogs.Clear();
+                Dogs.Clear();                
             }
         }
     }
