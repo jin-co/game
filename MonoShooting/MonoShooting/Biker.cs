@@ -23,7 +23,7 @@ namespace MonoShooting
         private int _frameX = 0;
         private int _frameMax = 4;
         private int _frameCount = 0;
-        private int _speed = 330;
+        private int _speed = 30;
         public Vector2 Position = new Vector2(50, 815);
         #endregion
 
