@@ -49,7 +49,11 @@ namespace MonoKingdom
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            Map.Draw(gameTime, _spriteBatch);
+            for (int i = 0; i < 10; i+=32)
+            {
+                Map.Draw(gameTime, _spriteBatch, new Vector2(i, i));
+            }
+            
 
 
 
