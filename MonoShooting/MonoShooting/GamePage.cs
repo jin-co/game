@@ -11,7 +11,7 @@ using System.Text;
 namespace MonoShooting
 {
     // page class that controls the pages
-    class Page
+    class GamePage
     {
         #region Fields
         private string _currentPage;
@@ -27,7 +27,7 @@ namespace MonoShooting
         #endregion
 
         #region Constructors
-        public Page()
+        public GamePage()
         {            
             _currentPage = "PageMain/main_start";
         }
@@ -35,7 +35,7 @@ namespace MonoShooting
 
         public void Load()
         {
-            _sprite = SpriteLoader.Load($"Assets/{_currentPage}");            
+            _sprite = GameSpriteLoader.Load($"Assets/{_currentPage}");            
         }
 
         public void PageUpdate(GameTime gameTime)
@@ -47,7 +47,7 @@ namespace MonoShooting
             {
                 if (kState.IsKeyDown(Keys.Left))
                 {
-                    Sounds.Tap.Play();
+                    GameSounds.Tap.Play();
                     if (_pageIdx > 0)
                     {
                         _pageIdx--;
@@ -61,7 +61,7 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Right))
                 {
-                    Sounds.Tap.Play();
+                    GameSounds.Tap.Play();
                     if (_pageIdx < pageMainNames.Length - 1)
                     {
                         _pageIdx++;
@@ -75,18 +75,18 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Enter))
                 {
-                    Sounds.Enter.Play();
+                    GameSounds.Enter.Play();
                     if (_pageIdx == 0)
                     {
                         GameController.GameStart = true;
-                        MediaPlayer.Play(Sounds.BackgroundMusic);
+                        MediaPlayer.Play(GameSounds.BackgroundMusic);
                     }
                     else
                     {
                         _currentPage = pageMainNames[_pageIdx].Split('_')[1];                        
                     }
                 }
-                _sprite = SpriteLoader.Load($"Assets/{_currentPage}");                
+                _sprite = GameSpriteLoader.Load($"Assets/{_currentPage}");                
                 _timer = 1;
             }           
         }

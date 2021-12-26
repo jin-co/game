@@ -6,12 +6,12 @@ using System.Text;
 
 namespace MonoShooting
 {
-    class SpriteFontLoader
+    class GameSpriteFontLoader
     {
         public static ContentManager Content { get; set; }
         private static SpriteFont SpriteFont { get; set; }
 
-        public SpriteFontLoader(ContentManager content)
+        public GameSpriteFontLoader(ContentManager content)
         {
             Content = content;
         }

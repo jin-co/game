@@ -22,7 +22,7 @@ namespace MonoShooting
         int screenHeight = 950;
 
         Biker biker = new Biker();
-        Page page = new Page();
+        GamePage page = new GamePage();
         Ladder ladder = new Ladder();
         Box box = new Box();
         
@@ -44,9 +44,9 @@ namespace MonoShooting
             _graphics.PreferredBackBufferWidth = screenWidth;
             _graphics.PreferredBackBufferHeight = screenHeight;
             _graphics.ApplyChanges();                        
-            Sounds sound = new Sounds(Content);
-            SpriteLoader.Content = Content;
-            SpriteFontLoader.Content = Content;
+            GameSounds sound = new GameSounds(Content);
+            GameSpriteLoader.Content = Content;
+            GameSpriteFontLoader.Content = Content;
             base.Initialize();
         }
 
@@ -57,7 +57,7 @@ namespace MonoShooting
             page.Load();
             ladder.Load();
             box.Load();                                   
-            MediaPlayer.Play(Sounds.BackgroundMusicEnd);                        
+            MediaPlayer.Play(GameSounds.BackgroundMusicEnd);                        
         }
 
         protected override void Update(GameTime gameTime)
@@ -65,7 +65,7 @@ namespace MonoShooting
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            Pause.Update(gameTime);
+            GamePause.Update(gameTime);
 
             if (!GameController.Pause)
             {
@@ -94,14 +94,14 @@ namespace MonoShooting
                                             Vector2.Distance(i.position, biker.Position)
                                             < (i.Radius + biker.Radius) + 5)
                                         {
-                                            Sounds.Bullet.Play();
+                                            GameSounds.Bullet.Play();
                                         }
 
                                         if (Vector2.Distance(i.position, biker.Position)
                                             < i.Radius + biker.Radius)
                                         {
                                             biker.Dead = true;
-                                            Sounds.Hurt.Play();
+                                            GameSounds.Hurt.Play();
                                             biker.BikerUpdate(gameTime);
                                             collisionPoint = new Vector2(
                                                 i.position.X - i.Radius, i.position.Y - i.Radius);
@@ -111,7 +111,7 @@ namespace MonoShooting
                                         <= ladder.Radius + biker.Radius)
                                     {
                                         MediaPlayer.Stop();
-                                        Sounds.StageClear.Play();
+                                        GameSounds.StageClear.Play();
                                         GameController.GameClear = true;
                                     }
                                     break;
@@ -142,14 +142,14 @@ namespace MonoShooting
                                                 Vector2.Distance(i.position, biker.Position)
                                                 < (i.Radius + biker.Radius) + 5)
                                             {
-                                                Sounds.DogBark.Play();
+                                                GameSounds.DogBark.Play();
                                             }
 
                                             if (Vector2.Distance(i.position, biker.Position)
                                                 < i.Radius + biker.Radius - 10)
                                             {
                                                 biker.Dead = true;
-                                                Sounds.Hurt.Play();                                                
+                                                GameSounds.Hurt.Play();                                                
                                                 biker.BikerUpdate(gameTime);
                                                 collisionPoint = new Vector2(
                                                     i.position.X - i.Radius,
@@ -162,7 +162,7 @@ namespace MonoShooting
                                         <= box.Radius + biker.Radius)
                                         {
                                             MediaPlayer.Stop();
-                                            Sounds.StageClear.Play();
+                                            GameSounds.StageClear.Play();
                                             GameController.GameClear = true;
                                         }
                                     }
@@ -203,12 +203,12 @@ namespace MonoShooting
             if (GameController.GameStart)
             {
                 _spriteBatch.Draw(
-                    SpriteLoader.Load("Assets/ground"), 
+                    GameSpriteLoader.Load("Assets/ground"), 
                     new Vector2(0, 0), Color.White);
                 
                 // timer
                 _spriteBatch.DrawString(
-                    SpriteFontLoader.Load("Assets/timerFont"),
+                    GameSpriteFontLoader.Load("Assets/timerFont"),
                     "Time: " + Math.Floor(GameController.TotalTime),
                     new Vector2(3, 3), Color.Black);
 
@@ -220,7 +220,7 @@ namespace MonoShooting
                 foreach (var i in controller.Bullets)
                 {
                     _spriteBatch.Draw(
-                        SpriteLoader.Load("Assets/Enemies/bullet"), 
+                        GameSpriteLoader.Load("Assets/Enemies/bullet"), 
                         new Vector2(i.position.X, i.position.Y + i.Radius), 
                         Color.White);
                 }
@@ -229,7 +229,7 @@ namespace MonoShooting
                 if (GameController.GameClear)
                 {
                     _spriteBatch.DrawString(
-                    SpriteFontLoader.Load("Assets/timerFont"),
+                    GameSpriteFontLoader.Load("Assets/timerFont"),
                     "Stage" + GameController.GameLevel + " Cleared",
                     new Vector2((screenWidth / 2) - 85, 
                     (screenHeight / 2) - 40), Color.Black);
@@ -248,17 +248,17 @@ namespace MonoShooting
                 if (GameController.GameOver)
                 {
                     _spriteBatch.Draw(
-                        SpriteLoader.Load("Assets/effect_collision"), 
+                        GameSpriteLoader.Load("Assets/effect_collision"), 
                         collisionPoint, Color.White);
 
                     timer -= gameTime.ElapsedGameTime.TotalSeconds;
                     if (timer <= 0.5)
                     {
                         _spriteBatch.Draw(
-                            SpriteLoader.Load("Assets/gameover_back"), 
+                            GameSpriteLoader.Load("Assets/gameover_back"), 
                             new Vector2(0, 0), Color.White);
                         _spriteBatch.Draw(
-                            SpriteLoader.Load("Assets/gameover"), 
+                            GameSpriteLoader.Load("Assets/gameover"), 
                             new Vector2((screenWidth / 2) - 250, (screenHeight / 2) - 250), 
                             Color.White);
                     }

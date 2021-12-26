@@ -8,7 +8,7 @@ using System.Text;
 namespace MonoShooting
 {
     // sound class that controls the sounds
-    class Sounds
+    class GameSounds
     {
         public ContentManager Content { get; set; }
         public static Song BackgroundMusic { get; set; }
@@ -24,7 +24,7 @@ namespace MonoShooting
         public static SoundEffect Bullet { get; set; }
         public static SoundEffect DogBark { get; set; }
 
-        public Sounds(ContentManager content)
+        public GameSounds(ContentManager content)
         {
             Content = content;
             // background

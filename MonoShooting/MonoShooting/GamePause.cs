@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MonoShooting
 {
-    class Pause
+    class GamePause
     {
         private static float _timer = 1;
         public static void Update(GameTime gameTime)

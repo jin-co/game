@@ -22,7 +22,7 @@ namespace MonoShooting
                     {
                         GameController.GameClear = false;
                         GameController.GameLevel = 2;
-                        MediaPlayer.Play(Sounds.BackgroundMusicSlayer);
+                        MediaPlayer.Play(GameSounds.BackgroundMusicSlayer);
                     }
 
                     break;

@@ -31,17 +31,17 @@ namespace MonoShooting
             Random random = new Random();
             this._speed = random.Next(10, 50);
             this.position = new Vector2(random.Next(100, 950), random.Next(643, 703));
-            Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk");
+            Sprite = GameSpriteLoader.Load("Assets/Enemies/Dog/Walk");
             Radius = 3;
         }
         #endregion
 
         public void Update(GameTime gameTime, Vector2 playerPos)
         {
-            Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk");
+            Sprite = GameSpriteLoader.Load("Assets/Enemies/Dog/Walk");
             if (playerPos.X < position.X)
             {
-                Sprite = SpriteLoader.Load("Assets/Enemies/Dog/Walk_left");
+                Sprite = GameSpriteLoader.Load("Assets/Enemies/Dog/Walk_left");
             }
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             

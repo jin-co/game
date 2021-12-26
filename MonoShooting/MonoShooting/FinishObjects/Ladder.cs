@@ -29,7 +29,7 @@ namespace MonoShooting
 
         public void Load()
         {
-            _sprite = SpriteLoader.Load("Assets/ladder");
+            _sprite = GameSpriteLoader.Load("Assets/ladder");
         }
 
         public void Draw(GameTime gameTimer, SpriteBatch spriteBatch)

@@ -6,12 +6,12 @@ using System.Text;
 
 namespace MonoShooting
 {
-    class SpriteLoader
+    class GameSpriteLoader
     {
         public static ContentManager Content { get; set; }
         private static Texture2D Sprite { get; set; }
 
-        public SpriteLoader(ContentManager content)
+        public GameSpriteLoader(ContentManager content)
         {
             Content = content;            
         }

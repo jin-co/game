@@ -42,7 +42,7 @@ namespace MonoShooting
 
         public void BikerLoad()
         {
-            _sprite = SpriteLoader.Load("Assets/Biker/Biker_idle");            
+            _sprite = GameSpriteLoader.Load("Assets/Biker/Biker_idle");            
         }
 
         public void BikerUpdate(GameTime gameTime)
@@ -73,7 +73,7 @@ namespace MonoShooting
 
                     if (_timer <= 0.85)
                     {
-                        Sounds.Jump.Play();
+                        GameSounds.Jump.Play();
                         _frameX += FRAME_WIDTH;
                         _frameCount++;
                         if (_frameCount >= _frameMax)
@@ -83,7 +83,7 @@ namespace MonoShooting
                         }
                         _timer = 1;
                         _jumped = false;
-                        _sprite = SpriteLoader.Load("Assets/Biker/Biker_idle");
+                        _sprite = GameSpriteLoader.Load("Assets/Biker/Biker_idle");
                     }
                 }
 
@@ -107,7 +107,7 @@ namespace MonoShooting
                     kState.IsKeyUp(Keys.Up) ||
                     kState.IsKeyUp(Keys.Down))
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_idle");
+                    _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_idle");
                     _movingForward = true;
                     _frameMax = 4;
                 }
@@ -123,7 +123,7 @@ namespace MonoShooting
                     }
                     else
                     {
-                        _sprite =  SpriteLoader.Load("Assets/Biker/Biker_run");
+                        _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_run");
                         if (Position.X < 1400 - FRAME_WIDTH)
                         {
                             Position.X += _speed * elapsedTime;
@@ -153,7 +153,7 @@ namespace MonoShooting
                     }
                     else
                     {
-                        _sprite =  SpriteLoader.Load("Assets/Biker/Biker_run_left");
+                        _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_run_left");
                         if (Position.X > 0 + FRAME_WIDTH)
                         {
                             Position.X -= _speed * elapsedTime;
@@ -173,10 +173,10 @@ namespace MonoShooting
 
                 if (kState.IsKeyDown(Keys.Up) && !GameController.Climbable)
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_run");
+                    _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_run");
                     if (_movingLeft)
                     {
-                        _sprite = SpriteLoader.Load("Assets/Biker/Biker_run_left");
+                        _sprite = GameSpriteLoader.Load("Assets/Biker/Biker_run_left");
                     }
                     
                     if (OnSecondStage)
@@ -206,10 +206,10 @@ namespace MonoShooting
                 }
                 if (kState.IsKeyDown(Keys.Down))
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_run");
+                    _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_run");
                     if (_movingLeft)
                     {
-                        _sprite = SpriteLoader.Load("Assets/Biker/Biker_run_left");
+                        _sprite = GameSpriteLoader.Load("Assets/Biker/Biker_run_left");
                     }
 
                     if (OnSecondStage)
@@ -241,10 +241,10 @@ namespace MonoShooting
                 // jump
                 if (kState.IsKeyDown(Keys.Space) && !GameController.Climbable)
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_jump");
+                    _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_jump");
                     if (_movingLeft)
                     {
-                        _sprite =  SpriteLoader.Load("Assets/Biker/Biker_jump_left");
+                        _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_jump_left");
                     }
                     if (OnSecondStage)
                     {
@@ -269,7 +269,7 @@ namespace MonoShooting
                     kState.IsKeyDown(Keys.Up) &&
                     kState.IsKeyDown(Keys.Space))
                 {
-                    _sprite =  SpriteLoader.Load("Assets/Biker/Biker_climb");
+                    _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_climb");
                     if (Position.Y <= 700)
                     {                        
                         OnSecondStage = true;
@@ -280,7 +280,7 @@ namespace MonoShooting
             }
             else
             {                
-                _sprite =  SpriteLoader.Load("Assets/Biker/Biker_death");
+                _sprite =  GameSpriteLoader.Load("Assets/Biker/Biker_death");
                 _timer -= gameTime.ElapsedGameTime.TotalSeconds;                
                 if (_timer < 0.7)
                 {
@@ -307,7 +307,7 @@ namespace MonoShooting
                         OnSecondStage = false;
                         Dead = false;
                         Position = new Vector2(50, 815);
-                        MediaPlayer.Play(Sounds.BackgroundMusicEnd);
+                        MediaPlayer.Play(GameSounds.BackgroundMusicEnd);
                     }
                 }
             }
