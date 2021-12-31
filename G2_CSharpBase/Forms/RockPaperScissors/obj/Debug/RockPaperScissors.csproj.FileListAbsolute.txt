@@ -9,3 +9,14 @@ C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\labs\RockP
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\labs\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\labs\RockPaperScissors\obj\Debug\RockPaperScissors.exe
 C:\Users\jin\Desktop\1.conestoga\0_Semester_3\3.GameProgrammingWithDS\labs\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.AssemblyReference.cache
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.Board.resources
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.Properties.Resources.resources
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.Resources.resources
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.GenerateResource.cache
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.pdb

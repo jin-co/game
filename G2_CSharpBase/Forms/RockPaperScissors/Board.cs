@@ -28,8 +28,8 @@ namespace RockPaperScissors
         private PlayerTurn currentTurn = PlayerTurn.Player1;
 
         // Game status
-        private const string PLAYER1_WINS = "Player 1 Win";
-        private const string PLAYER2_WINS = "Player 2 Win";
+        private const string PLAYER1_WINS = "Player 1 Won";
+        private const string PLAYER2_WINS = "Player 2 Won";
         private const string TIE = "Tie";
 
         // Images
