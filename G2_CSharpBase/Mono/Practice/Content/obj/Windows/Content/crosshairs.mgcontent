@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/crosshairs.png</SourceFile>
+  <SourceFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/crosshairs.png</SourceFile>
   <SourceTime>2017-11-18T08:35:48+09:00</SourceTime>
-  <DestFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/bin/Windows/Content/crosshairs.xnb</DestFile>
-  <DestTime>2021-12-31T12:18:06.3495462+09:00</DestTime>
+  <DestFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/bin/Windows/Content/crosshairs.xnb</DestFile>
+  <DestTime>2022-01-02T14:17:36.8142889+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

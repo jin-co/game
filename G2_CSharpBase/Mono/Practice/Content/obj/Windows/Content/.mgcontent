@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/crosshairs.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/galleryFont.spritefont</File>
-    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/sky.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Forms/Practice/Content/target.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/crosshairs.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/galleryFont.spritefont</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/sky.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/Practice/Content/target.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

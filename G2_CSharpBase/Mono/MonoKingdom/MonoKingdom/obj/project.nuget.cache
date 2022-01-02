@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nK1Ze8Yw1a9yD18NuL3Ey5Dx7y28O7J5UDzFmiQTQ4ZyY3uMqSdeg0rOHqsALOXV3zxLJ90n3hG0mExbMOsP3g==",
+  "dgSpecHash": "24Y0U20mhAJbYm0x/FxEyBBS0WUXb/Hmh/nzbOngno4zW34ZPgE1WSGt6ZLqUJOj5/YsuzUe9W2gR7A2wheLEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoKingdom\\MonoKingdom\\MonoKingdom.csproj",
+  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoKingdom\\MonoKingdom\\MonoKingdom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jin\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\jin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

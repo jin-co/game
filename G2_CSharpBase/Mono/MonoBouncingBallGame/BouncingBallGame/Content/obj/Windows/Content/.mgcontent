@@ -4,13 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Images/Ball.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Images/Bat.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Images/explosion.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Music/applause1.wav</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Music/chimes.mp3</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Music/click.wav</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoBouncingBallGame/BouncingBallGame/Content/Music/ding.wav</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Images/Ball.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Images/Bat.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Images/explosion.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Music/applause1.wav</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Music/chimes.mp3</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Music/click.wav</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoBouncingBallGame/BouncingBallGame/Content/Music/ding.wav</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
