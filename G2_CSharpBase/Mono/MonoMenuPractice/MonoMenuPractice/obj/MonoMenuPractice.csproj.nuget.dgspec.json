@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoHelpAboutMenu\\HelpAboutMenu\\HelpAboutMenu.csproj": {}
+    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenuPractice\\MonoMenuPractice\\MonoMenuPractice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoHelpAboutMenu\\HelpAboutMenu\\HelpAboutMenu.csproj": {
+    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenuPractice\\MonoMenuPractice\\MonoMenuPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoHelpAboutMenu\\HelpAboutMenu\\HelpAboutMenu.csproj",
-        "projectName": "HelpAboutMenu",
-        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoHelpAboutMenu\\HelpAboutMenu\\HelpAboutMenu.csproj",
+        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenuPractice\\MonoMenuPractice\\MonoMenuPractice.csproj",
+        "projectName": "MonoMenuPractice",
+        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenuPractice\\MonoMenuPractice\\MonoMenuPractice.csproj",
         "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoHelpAboutMenu\\HelpAboutMenu\\obj\\",
+        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenuPractice\\MonoMenuPractice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

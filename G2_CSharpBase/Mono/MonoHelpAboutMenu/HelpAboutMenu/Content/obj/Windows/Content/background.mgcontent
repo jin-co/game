@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/background.png</SourceFile>
+  <SourceFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/background.png</SourceFile>
   <SourceTime>2021-11-06T06:29:08.1276873+09:00</SourceTime>
-  <DestFile>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/bin/Windows/Content/background.xnb</DestFile>
-  <DestTime>2021-11-14T22:38:46.0496462+09:00</DestTime>
+  <DestFile>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/bin/Windows/Content/background.xnb</DestFile>
+  <DestTime>2022-01-04T13:50:59.4457+09:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+09:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

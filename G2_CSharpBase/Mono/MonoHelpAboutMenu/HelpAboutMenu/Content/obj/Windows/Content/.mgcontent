@@ -4,13 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/about.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/aboutbutton.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/background.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/help.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/helpbutton.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/menu.png</File>
-    <File>C:/Users/jin/Documents/GitHub/game/MonoHelpAboutMenu/HelpAboutMenu/Content/menubutton.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/about.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/aboutbutton.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/background.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/help.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/helpbutton.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/menu.png</File>
+    <File>C:/Users/jin/Documents/GitHub/game/G2_CSharpBase/Mono/MonoHelpAboutMenu/HelpAboutMenu/Content/menubutton.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
