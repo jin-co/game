@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\MonoMenu.csproj": {}
+    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\MonoMenu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\MonoMenu.csproj": {
+    "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\MonoMenu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
+        "projectUniqueName": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
         "projectName": "MonoMenu",
-        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
+        "projectPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
         "packagesPath": "C:\\Users\\jin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\obj\\",
+        "outputPath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -73,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

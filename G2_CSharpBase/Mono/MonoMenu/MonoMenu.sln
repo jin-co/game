@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoMenu", "MonoMenu\MonoMenu.csproj", "{1C18846C-81D9-4CE3-861C-C78E2CBAD789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoMenu", "MonoMenu\MonoMenu.csproj", "{29128000-C0FE-4AA0-B8B9-D6486177A136}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C18846C-81D9-4CE3-861C-C78E2CBAD789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C18846C-81D9-4CE3-861C-C78E2CBAD789}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C18846C-81D9-4CE3-861C-C78E2CBAD789}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C18846C-81D9-4CE3-861C-C78E2CBAD789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29128000-C0FE-4AA0-B8B9-D6486177A136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29128000-C0FE-4AA0-B8B9-D6486177A136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29128000-C0FE-4AA0-B8B9-D6486177A136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29128000-C0FE-4AA0-B8B9-D6486177A136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9580E132-5808-4DA6-B6ED-30A96D1BDDCF}
+		SolutionGuid = {791BF4CD-D2EA-43A3-8D64-610016F5070D}
 	EndGlobalSection
 EndGlobal

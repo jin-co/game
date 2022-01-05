@@ -5,25 +5,10 @@ using Microsoft.Xna.Framework.Input;
 namespace MonoMenu
 {
     public class GameMain : Game
-    {        
+    {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         
-        Texture2D backgroundSprite;
-        Texture2D aboutSprite;
-        Texture2D aboutBtnSprite;
-        Texture2D helpSprite;
-        Texture2D helpBtnSprite;
-        Texture2D menuSprite;
-        Texture2D menuBtnSprite;
-
-        SpriteFont gameFont;
-
-        private int screenWidth = 1600;
-        private int screenHeight = 900;
-
-        SpriteElements se;
-
         public GameMain()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -33,11 +18,7 @@ namespace MonoMenu
 
         protected override void Initialize()
         {
-            _graphics.PreferredBackBufferWidth = screenWidth;
-            _graphics.PreferredBackBufferHeight = screenHeight;
-            _graphics.ApplyChanges();
-
-            se = new SpriteElements(Content);
+            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
@@ -46,9 +27,7 @@ namespace MonoMenu
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //backgroundSprite = Content.Load<Texture2D>("background");
-            se.Load("background");
-
+            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
@@ -65,11 +44,7 @@ namespace MonoMenu
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
-            //_spriteBatch.Draw(backgroundSprite, new Vector2(50, 50), Color.White);
-            se.Draw(gameTime, _spriteBatch);
-
-            _spriteBatch.End();
+            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }

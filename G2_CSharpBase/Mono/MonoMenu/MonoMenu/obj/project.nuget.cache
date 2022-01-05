@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h/06gcPQzOf2Foz375CmD/mY8Iq7VDhBrWn3gS5TF5KU5lz+riSqXztOU5MhzH5+lw1Ff6hd3xNF/E8ETluCog==",
+  "dgSpecHash": "vzrH25Tgw+3tYVWWoArtK4lO1ApRmncADWR+HZNESYXRMFGB2wshWwxLJOECN+NZdEovj4NyjhsMgkcfn65tAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\game\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
+  "projectFilePath": "C:\\Users\\jin\\Documents\\GitHub\\game\\G2_CSharpBase\\Mono\\MonoMenu\\MonoMenu\\MonoMenu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jin\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\jin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
