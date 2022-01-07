@@ -21,6 +21,11 @@ namespace MonoMenu
             this.content = content;
         }
 
+        public void Update()
+        {
+
+        }
+
         public Texture2D Load(string name)
         {
             sprite = content.Load<Texture2D>(name);
@@ -32,6 +37,11 @@ namespace MonoMenu
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, Color.White);
+        }
+
+        public virtual void Reset()
+        {
+
         }
     }
 }
