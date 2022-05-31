@@ -64,6 +64,7 @@ function getImageEl() {
         img.addEventListener('click', (e) => {
             // capsule
             console.log(e.target.parentNode)
+            
             e.target.parentNode.className = 'character-box pick'            
 
             let copied = e.target.parentNode.cloneNode()
