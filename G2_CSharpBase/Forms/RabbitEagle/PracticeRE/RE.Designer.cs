@@ -177,6 +177,7 @@ namespace PracticeRE
             this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "Test: ";
+            this.label1.Visible = false;
             // 
             // txtTest
             // 
@@ -184,6 +185,7 @@ namespace PracticeRE
             this.txtTest.Name = "txtTest";
             this.txtTest.Size = new System.Drawing.Size(1008, 24);
             this.txtTest.TabIndex = 12;
+            this.txtTest.Visible = false;
             // 
             // RE
             // 
