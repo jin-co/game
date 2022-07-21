@@ -1,0 +1,5 @@
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\KBMIdterm\LoadImage\LoadImage\bin\publish\KBMidterm.exe
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\KBMIdterm\LoadImage\LoadImage\bin\publish\KBMidterm.dll
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\KBMIdterm\LoadImage\LoadImage\bin\publish\KBMidterm.deps.json
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\KBMIdterm\LoadImage\LoadImage\bin\publish\KBMidterm.runtimeconfig.json
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\KBMIdterm\LoadImage\LoadImage\bin\publish\KBMidterm.pdb
