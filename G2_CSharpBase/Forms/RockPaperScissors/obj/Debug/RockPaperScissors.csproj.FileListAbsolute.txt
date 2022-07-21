@@ -20,3 +20,7 @@ C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Deb
 C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
 C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.exe
 C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\bin\Debug\RockPaperScissors.exe.manifest
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\bin\Debug\RockPaperScissors.application
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.exe.manifest
+C:\Users\jin\Documents\GitHub\game\G2_CSharpBase\Forms\RockPaperScissors\obj\Debug\RockPaperScissors.application
